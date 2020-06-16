@@ -111,3 +111,24 @@ columns display at their designated widths at all device sizes, small (sma) abov
 
 
 /***############### Beginning of Website-specific style sheet. ****/
+
+/*General styling*/
+
+
+/*Footer*/
+.site-footer__copyright { padding-bottom: 30px; }
+.site-footer__social { font-size: 0; }
+.site-footer .site-footer__social-logo { display: inline-block; padding-right: 30px; font-size: 0.71111rem; }
+.site-footer__social-logo:last-of-type { padding-right: 0; }
+
+
+
+@media only screen and (min-width: 700px){
+    
+}
+
+
+
+@media only screen and (min-width: 1200px){
+      
+}

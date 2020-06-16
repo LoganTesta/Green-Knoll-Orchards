@@ -35,13 +35,9 @@
                         <div class="site-footer__social-logo facebook">
                             <a class="site-footer__social-link" href=""><i class="fab fa-facebook-f fa-2x social-icon"><span class="sr-only">Facebook</span></i></a>
                         </div>
-                    </div>
-                    <div class="site-footer__social">
                         <div class="site-footer__social-logo twitter">
                             <a class="site-footer__social-link" href=""><i class="fab fa-twitter fa-2x social-icon"><span class="sr-only">Twitter</span></i></a>
                         </div>
-                    </div>
-                    <div class="site-footer__social">
                         <div class="site-footer__social-logo pinterest">
                             <a class="site-footer__social-link" href=""><i class="fab fa-pinterest fa-2x social-icon"><span class="sr-only">Pinterest</span></i></a>
                         </div>
