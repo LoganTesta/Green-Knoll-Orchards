@@ -116,7 +116,7 @@ columns display at their designated widths at all device sizes, small (sma) abov
 
 
 /*Footer*/
-.site-footer__copyright { padding-bottom: 30px; }
+.site-footer__copyright { padding-bottom: 30px; text-align: center; }
 
 .site-footer__social { }
 .site-footer__social-inner-wrapper { font-size: 0; }

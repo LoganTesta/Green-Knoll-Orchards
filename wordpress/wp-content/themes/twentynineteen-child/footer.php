@@ -31,29 +31,31 @@
 				?>
 			</a>
                     </div>
-                    <div class="site-footer__location-and-phone">
-                        <div class="site-footer__subheading">Location</div>
-                        <div class="site-footer__location-text">842 Pine Highway Willamette Valley, Oregon</div>
-                        <div class="site-footer__phone">503-712-0440</div>
-                    </div>
-                    <div class="site-footer__social">
-                        <div class="site-footer__subheading">Social</div>
-                        <div class="site-footer__social-inner-wrapper">
-                        <div class="site-footer__social-logo facebook">
-                            <a class="site-footer__social-link" href=""><i class="fab fa-facebook-f fa-2x social-icon"><span class="sr-only">Facebook</span></i></a>
+                    <div class="content-row">
+                        <div class="site-footer__location-and-phone col-sma-4">
+                            <div class="site-footer__subheading">Location</div>
+                            <div class="site-footer__location-text">842 Pine Highway Willamette Valley, Oregon</div>
+                            <div class="site-footer__phone">503-712-0440</div>
                         </div>
-                        <div class="site-footer__social-logo twitter">
-                            <a class="site-footer__social-link" href=""><i class="fab fa-twitter fa-2x social-icon"><span class="sr-only">Twitter</span></i></a>
+                        <div class="site-footer__social col-sma-4">
+                            <div class="site-footer__subheading">Social</div>
+                            <div class="site-footer__social-inner-wrapper">
+                            <div class="site-footer__social-logo facebook">
+                                <a class="site-footer__social-link" href=""><i class="fab fa-facebook-f fa-2x social-icon"><span class="sr-only">Facebook</span></i></a>
+                            </div>
+                            <div class="site-footer__social-logo twitter">
+                                <a class="site-footer__social-link" href=""><i class="fab fa-twitter fa-2x social-icon"><span class="sr-only">Twitter</span></i></a>
+                            </div>
+                            <div class="site-footer__social-logo pinterest">
+                                <a class="site-footer__social-link" href=""><i class="fab fa-pinterest fa-2x social-icon"><span class="sr-only">Pinterest</span></i></a>
+                            </div>
+                            </div>
                         </div>
-                        <div class="site-footer__social-logo pinterest">
-                            <a class="site-footer__social-link" href=""><i class="fab fa-pinterest fa-2x social-icon"><span class="sr-only">Pinterest</span></i></a>
+                        <div class="site-footer__hours col-sma-4">
+                            <div class="site-footer__subheading">Hours</div>
+                            <div class="">Tuesday - Friday: 10am - 5pm</div>
+                            <div class="">Saturday: 9am - 6pm</div>
                         </div>
-                        </div>
-                    </div>
-                    <div class="site-footer__hours">
-                        <div class="site-footer__subheading">Hours</div>
-                        <div class="">Tuesday - Friday: 10am - 5pm</div>
-                        <div class="">Saturday: 9am - 6pm</div>
                     </div>
                     <?php
                     if ( function_exists( 'the_privacy_policy_link' ) ) {
