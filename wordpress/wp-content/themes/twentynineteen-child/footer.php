@@ -18,7 +18,7 @@
 	<footer id="colophon" class="site-footer">
 		<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
 		<div class="site-info">
-                    <div>Copyright &copy; <?php echo date("Y"); ?>
+                    <div class="site-footer__copyright">Copyright &copy; <?php echo date("Y"); ?>
 			<?php $blog_info = get_bloginfo( 'name' ); ?>
 			<?php if ( ! empty( $blog_info ) ) : ?>
 				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
@@ -31,24 +31,39 @@
 				?>
 			</a>
                     </div>
-			<?php
-			if ( function_exists( 'the_privacy_policy_link' ) ) {
-				the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
-			}
-			?>
-			<?php if ( has_nav_menu( 'footer' ) ) : ?>
-				<nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'twentynineteen' ); ?>">
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'footer',
-							'menu_class'     => 'footer-menu',
-							'depth'          => 1,
-						)
-					);
-					?>
-				</nav><!-- .footer-navigation -->
-			<?php endif; ?>
+                    <div class="site-footer__social">
+                        <div class="site-footer__social-logo facebook">
+                            <a class="site-footer__social-link" href=""><i class="fab fa-facebook-f fa-2x social-icon"><span class="sr-only">Facebook</span></i></a>
+                        </div>
+                    </div>
+                    <div class="site-footer__social">
+                        <div class="site-footer__social-logo twitter">
+                            <a class="site-footer__social-link" href=""><i class="fab fa-twitter fa-2x social-icon"><span class="sr-only">Twitter</span></i></a>
+                        </div>
+                    </div>
+                    <div class="site-footer__social">
+                        <div class="site-footer__social-logo pinterest">
+                            <a class="site-footer__social-link" href=""><i class="fab fa-pinterest fa-2x social-icon"><span class="sr-only">Pinterest</span></i></a>
+                        </div>
+                    </div>
+                    <?php
+                    if ( function_exists( 'the_privacy_policy_link' ) ) {
+                            the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
+                    }
+                    ?>
+                    <?php if ( has_nav_menu( 'footer' ) ) : ?>
+                            <nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'twentynineteen' ); ?>">
+                                    <?php
+                                    wp_nav_menu(
+                                            array(
+                                                    'theme_location' => 'footer',
+                                                    'menu_class'     => 'footer-menu',
+                                                    'depth'          => 1,
+                                            )
+                                    );
+                                    ?>
+                            </nav><!-- .footer-navigation -->
+                    <?php endif; ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 
