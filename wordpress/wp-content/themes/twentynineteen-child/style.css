@@ -1,0 +1,113 @@
+/*
+Theme Name: twentynineteen Child
+Description: A child theme of the Twenty Nineteen WP Theme
+Author: Me
+Author URI: tualatintopbakery.com
+Template: twentynineteen
+Version: 1.0
+*/
+
+
+
+/***############### General Styling Reset and Setup: reset, grid, typography, general classes and divs.  Mobile-first styling setup. ***/
+/*No Reset styles*/
+
+/***########## Grid Column layout available.  Desktop and mobile settings.  Automatically make columns full width below a certain width. Very-small (vsm) 
+columns display at their designated widths at all device sizes, small (sma) above the first breakpoint, large (lar) above the next breakpoint. ***/
+.content { width: 100%; padding: 20px 10px 20px 10px; }
+.content-row { width: 100%; padding: 0; }
+.content-row:after { content: ""; display: block; clear: both; }
+.content-row.no-content-row-padding { padding: 0; }
+ 
+.col-sma-1, .col-sma-2, .col-sma-3, .col-sma-4, .col-sma-5, .col-sma-6, .col-sma-7, .col-sma-8, .col-sma-9, .col-sma-10, .col-sma-11, .col-sma-12,
+.col-lar-1, .col-lar-2, .col-lar-3, .col-lar-4, .col-lar-5, .col-lar-6, .col-lar-7, .col-lar-8, .col-lar-9, .col-lar-10, .col-lar-11, .col-lar-12 {
+    float: none;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.col-vsm-1, .col-vsm-2, .col-vsm-3, .col-vsm-4, .col-vsm-5, .col-vsm-6, .col-vsm-7, .col-vsm-8, .col-vsm-9, .col-vsm-10, .col-vsm-11, .col-vsm-12 {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.col-vsm-1 { width: 8.333333%; }
+.col-vsm-2 { width: 16.666667%; }
+.col-vsm-3 { width: 25%; }
+.col-vsm-4 { width: 33.333333%; }
+.col-vsm-5 { width: 41.666667%; }
+.col-vsm-6 { width: 50%; }
+.col-vsm-7 { width: 58.33333%; }
+.col-vsm-8 { width: 66.666667%; }
+.col-vsm-9 { width: 75%; }
+.col-vsm-10 { width: 83.333333%; }
+.col-vsm-11 { width: 91.666667%; }
+.col-vsm-12 { width: 100%; }  
+
+/* Switch to 12 columns at 700px for small columns and 1200px for large columns. */
+@media only screen and (min-width: 700px){
+    .content-row { padding: 10px 0 10px 0; }
+    .content-row:first-of-type { padding-top: 0; }
+    .content-row:last-of-type { padding-bottom: 0; }
+    
+    .col-sma-1, .col-sma-2, .col-sma-3, .col-sma-4, .col-sma-5, .col-sma-6, .col-sma-7, .col-sma-8, .col-sma-9, .col-sma-10, .col-sma-11, .col-sma-12 {
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-sma-1 { width: 8.333333%; }
+    .col-sma-2 { width: 16.666667%; }
+    .col-sma-3 { width: 25%; }
+    .col-sma-4 { width: 33.333333%; }
+    .col-sma-5 { width: 41.666667%; }
+    .col-sma-6 { width: 50%; }
+    .col-sma-7 { width: 58.33333%; }
+    .col-sma-8 { width: 66.666667%; }
+    .col-sma-9 { width: 75%; }
+    .col-sma-10 { width: 83.333333%; }
+    .col-sma-11 { width: 91.666667%; }
+    .col-sma-12 { width: 100%; }    
+}
+
+@media only screen and (min-width: 1200px){
+    .content-row { padding: 25px 0 25px 0; }
+    .content-row:first-of-type { padding-top: 0; }
+    .content-row:last-of-type { padding-bottom: 0; }
+       
+    .col-lar-1, .col-lar-2, .col-lar-3, .col-lar-4, .col-lar-5, .col-lar-6, .col-lar-7, .col-lar-8, .col-lar-9, .col-lar-10, .col-lar-11, .col-lar-12 {
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-lar-1 { width: 8.333333%; }
+    .col-lar-2 { width: 16.666667%; }
+    .col-lar-3 { width: 25%; }
+    .col-lar-4 { width: 33.333333%; }
+    .col-lar-5 { width: 41.666667%; }
+    .col-lar-6 { width: 50%; }
+    .col-lar-7 { width: 58.33333%; }
+    .col-lar-8 { width: 66.666667%; }
+    .col-lar-9 { width: 75%; }
+    .col-lar-10 { width: 83.333333%; }
+    .col-lar-11 { width: 91.666667%; }
+    .col-lar-12 { width: 100%; }
+}
+
+/* General Resuable Classes */
+.sr-only { display: block; width: 0; height: 0; opacity: 0; }
+.width-100-percent { width: 100%; }
+.clear-both { clear: both; }
+
+/*No typography, no genearl styling classes included*/
+
+/***########## End of General Styling Reset and Setup ****/
+
+
+
+
+
+
+
+/***############### Beginning of Website-specific style sheet. ****/
