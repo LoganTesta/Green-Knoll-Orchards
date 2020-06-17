@@ -115,6 +115,12 @@ columns display at their designated widths at all device sizes, small (sma) abov
 /*General styling*/
 
 
+/*Customize reset and grid.*/
+.site-content .content-area .content-row {
+    max-width: 100%;
+}
+
+
 /*Footer*/
 .site-footer__copyright { padding-bottom: 30px; text-align: center; }
 
