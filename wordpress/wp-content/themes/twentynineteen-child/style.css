@@ -126,8 +126,27 @@ columns display at their designated widths at all device sizes, small (sma) abov
 
 
 
+/*Customize reset and grid.*/
+@media only screen and (max-width: 767px){
+    .col-sma-1, .col-sma-2, .col-sma-3, .col-sma-4, .col-sma-5, .col-sma-6, .col-sma-7, .col-sma-8, .col-sma-9, .col-sma-10, .col-sma-11, .col-sma-12 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+
 @media only screen and (min-width: 700px){
-    
+
+}
+
+
+
+@media only screen and (min-width: 768px){
+    /*For content, to allow content-row columns to align with theme.*/
+    .entry .entry-content, .entry .entry-summary {
+        padding: 0 45px;
+    }
 }
 
 
