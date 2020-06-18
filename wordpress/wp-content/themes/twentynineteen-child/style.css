@@ -142,6 +142,9 @@ columns display at their designated widths at all device sizes, small (sma) abov
 .site-footer__social-logo:last-of-type { padding-right: 0; }
 
 
+/*Index page*/
+.page-id-5 .site-header.featured-image .site-featured-image .post-thumbnail img { height: auto; top: 0px; }
+
 
 /*Customize reset and grid.*/
 @media only screen and (max-width: 767px){
