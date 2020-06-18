@@ -118,6 +118,7 @@ columns display at their designated widths at all device sizes, small (sma) abov
 /*Customize reset and grid.*/
 .site-content { }
 .site-content .content-area .content-row { max-width: 100%; }
+.content-row.no-content-row-padding { margin-top: 0; margin-bottom: 0; }
 
 
 /*Header*/
@@ -146,6 +147,15 @@ columns display at their designated widths at all device sizes, small (sma) abov
 
 
 /*Index page*/
+.index-product { }
+.index-product__title { font-size: 1.25em; font-weight: 700; }
+.index-product__background { height: 200px; }
+.index-product__description { }
+
+.index-product.zero .index-product__background { background: url('assets/images/cherry-bunch.jpg') 0% 0%/cover no-repeat; }
+.index-product.one .index-product__background { background: url('assets/images/plums-on-branch.jpg') 0% 0%/cover no-repeat; }
+.index-product.two .index-product__background { background: url('assets/images/apple-on-branch.jpg') 0% 0%/cover no-repeat; }
+.index-product.three .index-product__background { background: url('assets/images/pear-on-tree.jpg') 0% 0%/cover no-repeat; }
 
 
 /*Customize reset and grid.*/
@@ -178,6 +188,8 @@ columns display at their designated widths at all device sizes, small (sma) abov
 
 
 
-@media only screen and (min-width: 1200px){
-      
+@media only screen and (min-width: 1200px){      
+    /*Index page*/
+    .index-product { }
+    .index-product__background { height: 240px; }
 }
