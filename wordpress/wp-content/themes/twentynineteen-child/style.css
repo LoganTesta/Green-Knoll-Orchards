@@ -119,6 +119,13 @@ columns display at their designated widths at all device sizes, small (sma) abov
 .site-content .content-area .content-row { max-width: 100%; }
 
 
+/*Header*/
+.entry .entry-header { margin-bottom: 44px; }
+.site-header.featured-image { min-height: 0px; margin-bottom: 0; }
+.site-header.featured-image .site-branding-container::after, .site-header.featured-image .site-featured-image::before, .site-header.featured-image .site-featured-image::after, .site-header.featured-image::after { display: none; }
+
+
+
 /*Nav*/
 .main-navigation .main-menu { font-size: 0; }
 .main-navigation .main-menu li { font-size: 1.125rem; }
@@ -157,6 +164,10 @@ columns display at their designated widths at all device sizes, small (sma) abov
     .entry .entry-content, .entry .entry-summary {
         padding: 0 45px;
     }
+    
+    
+    /*Header*/
+    .entry .entry-header { margin-top: 0; margin-bottom: 88px; }
 }
 
 
