@@ -116,6 +116,7 @@ columns display at their designated widths at all device sizes, small (sma) abov
 
 
 /*Customize reset and grid.*/
+.site-content { }
 .site-content .content-area .content-row { max-width: 100%; }
 
 
@@ -170,7 +171,8 @@ columns display at their designated widths at all device sizes, small (sma) abov
     
     
     /*Header*/
-    .entry .entry-header { margin-top: 0; margin-bottom: 88px; }
+    .entry .entry-header { position: absolute; top: 307px; margin-top: 0; margin-bottom: 88px; }
+    .site-header { height: 500px; }
 }
 
 
