@@ -121,7 +121,8 @@ columns display at their designated widths at all device sizes, small (sma) abov
 
 
 /*Header*/
-.entry .entry-header { margin-bottom: 44px; }
+.site-header { height: 400px; }
+.entry .entry-header { position: absolute; top: 199px; margin-bottom: 44px; }
 .site-header.featured-image { min-height: 0px; margin-bottom: 0; }
 .site-header.featured-image .site-branding-container::after, .site-header.featured-image .site-featured-image::before, .site-header.featured-image .site-featured-image::after, .site-header.featured-image::after { display: none; }
 
