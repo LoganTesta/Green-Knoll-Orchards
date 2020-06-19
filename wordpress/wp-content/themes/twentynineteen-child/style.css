@@ -127,8 +127,8 @@ Color 3: #737836    olive green    (115, 120, 54)
 
 
 /*General styling*/
-h2 { color: var(--color-3); }
-.entry-title, .not-found .page-title, .error-404 .page-title, .has-larger-font-size, h2 { font-size: 1.25em; }
+.entry-title, .not-found .page-title, .error-404 .page-title, .has-larger-font-size { font-size: 1.375em; }
+h2 { font-size: 1.25em; color: var(--color-3); }
 
 /*Customize reset and grid.*/
 .site-content { }
@@ -142,7 +142,7 @@ h2 { color: var(--color-3); }
 .site-header.featured-image { min-height: 0px; margin-bottom: 0; }
 .site-header.featured-image .site-featured-image .post-thumbnail img { height: auto; top: 0px; }
 .site-header.featured-image .site-branding-container::after, .site-header.featured-image .site-featured-image::before, .site-header.featured-image .site-featured-image::after, .site-header.featured-image::after { display: none; }
-.site-title a, .site-title a:link, .site-title a:visited { font-size: 1.75em; font-weight: 700; color: rgba(255, 255, 255, 1); }
+.site-title a, .site-title a:link, .site-title a:visited { font-size: 1.75em; font-weight: 700; color: rgba(255, 255, 255, 1); text-shadow: 1px 2px var(--color-1); }
 .entry .entry-title { color: #ffffff; }
 .site-description { color: #eeeeee; }
 
@@ -163,9 +163,10 @@ h2 { color: var(--color-3); }
 
 .site-footer__social { }
 .site-footer__social-inner-wrapper { font-size: 0; }
-.site-footer__subheading { font-size: 1.6875em; font-weight: 700; }
+.site-footer__subheading { font-size: 1.6875em; font-weight: 700; color: var(--color-1); }
 .site-footer .site-footer__social-logo { display: inline-block; padding-right: 30px; font-size: 0.71111rem; }
 .site-footer__social-logo:last-of-type { padding-right: 0; }
+.social-icon { color: var(--color-1); }
 
 
 /*Index page*/
@@ -217,7 +218,8 @@ h2 { color: var(--color-3); }
 
 @media only screen and (min-width: 768px){
     /*General Styling*/
-    .entry-title, .not-found .page-title, .error-404 .page-title, .has-larger-font-size, h2 { font-size: 1.75em; }
+    .entry-title, .not-found .page-title, .error-404 .page-title, .has-larger-font-size { font-size: 1.75em; }
+    h2 { font-size: 1.375em; }
     
     
     /*For content, to allow content-row columns to align with theme.*/
@@ -227,6 +229,7 @@ h2 { color: var(--color-3); }
     
     
     /*Header*/
+    .site-title a, .site-title a:link, .site-title a:visited { font-size: 2em; }
     .entry .entry-header { position: absolute; top: 307px; margin-top: 0; margin-bottom: 88px; }
     .site .site-header { height: 500px; }
 }
