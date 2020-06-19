@@ -177,7 +177,9 @@ h3 { font-size: 1.125em; color: var(--color-2); }
 /*Index page*/
 .index-product { }
 .index-product__title { font-size: 1.25em; font-weight: 700; color: var(--color-2); }
+.index-product .index-product__title-link { color: var(--color-2); }
 .index-product__background { height: 200px; }
+.index-product__background-link { display: block; height: 100%; }
 .index-product__description { }
 
 .index-product.zero .index-product__background { background: url('assets/images/cherry-bunch.jpg') 0% 0%/cover no-repeat; }
