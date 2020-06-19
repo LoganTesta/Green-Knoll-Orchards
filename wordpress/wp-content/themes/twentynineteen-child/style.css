@@ -111,9 +111,24 @@ columns display at their designated widths at all device sizes, small (sma) abov
 
 
 /***############### Beginning of Website-specific style sheet. ****/
+/*Site color scheme.  Adjacent color scheme, with 45 degrees variation.  */
+/*
+Color 1: #42692f    tree green     (66,  105, 47)
+Color 2: #23434c    dark blue      (35,   67, 76)
+Color 3: #737836    olive green    (115, 120, 54)
+
+*/
+
+:root {
+    --color-1: #42692f;
+    --color-2: #23434c;
+    --color-3: #737836;
+}
+
 
 /*General styling*/
-
+h2 { color: var(--color-3); }
+.entry-title, .not-found .page-title, .error-404 .page-title, .has-larger-font-size, h2 { font-size: 1.25em; }
 
 /*Customize reset and grid.*/
 .site-content { }
@@ -127,7 +142,7 @@ columns display at their designated widths at all device sizes, small (sma) abov
 .site-header.featured-image { min-height: 0px; margin-bottom: 0; }
 .site-header.featured-image .site-featured-image .post-thumbnail img { height: auto; top: 0px; }
 .site-header.featured-image .site-branding-container::after, .site-header.featured-image .site-featured-image::before, .site-header.featured-image .site-featured-image::after, .site-header.featured-image::after { display: none; }
-.site-title a, .site-title a:link, .site-title a:visited { color: #ffffff; }
+.site-title a, .site-title a:link, .site-title a:visited { font-size: 1.75em; font-weight: 700; color: rgba(255, 255, 255, 1); }
 .entry .entry-title { color: #ffffff; }
 .site-description { color: #eeeeee; }
 
@@ -201,6 +216,10 @@ columns display at their designated widths at all device sizes, small (sma) abov
 
 
 @media only screen and (min-width: 768px){
+    /*General Styling*/
+    .entry-title, .not-found .page-title, .error-404 .page-title, .has-larger-font-size, h2 { font-size: 1.75em; }
+    
+    
     /*For content, to allow content-row columns to align with theme.*/
     .entry .entry-content, .entry .entry-summary {
         padding: 0 45px;
