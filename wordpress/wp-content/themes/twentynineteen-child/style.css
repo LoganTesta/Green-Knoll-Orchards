@@ -158,6 +158,9 @@ h3 { font-size: 1.125em; color: var(--color-2); }
 .main-navigation .main-menu li { font-size: 1.125rem; }
 .main-navigation .main-menu > li > a { margin-right: 1em; color: #ffffff; }
 .main-navigation .main-menu > li > a:hover, .main-navigation .main-menu > li > a:hover + svg { color: var(--color-1); text-shadow: 0.6px 1.2px #ffffff; }
+.main-navigation .main-menu > li { color: #ffffff; }
+.main-navigation .sub-menu { background-color: var(--color-1); }
+.main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus, .main-navigation .sub-menu > li > .menu-item-link-return:hover, .main-navigation .sub-menu > li > .menu-item-link-return:focus { background-color: var(--color-3); }
 
 
 /*Footer*/
