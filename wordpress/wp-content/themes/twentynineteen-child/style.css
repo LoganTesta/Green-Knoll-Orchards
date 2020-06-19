@@ -165,6 +165,25 @@ columns display at their designated widths at all device sizes, small (sma) abov
 .index-product.three .index-product__background { background: url('assets/images/pear-on-tree.jpg') 0% 0%/cover no-repeat; }
 
 
+/*About page*/
+
+
+/*The Orchard page*/
+.product { }
+.product__title { font-size: 1.375em; font-weight: 700; }
+.product__background { height: 200px; }
+.product__price { font-weight: 600; }
+.product__description { }
+
+.product.zero .product__background { background: url('assets/images/cherry-bunch.jpg') 0% 0%/cover no-repeat; }
+.product.one .product__background { background: url('assets/images/plums-on-branch.jpg') 0% 0%/cover no-repeat; }
+.product.two .product__background { background: url('assets/images/apple-on-branch.jpg') 0% 0%/cover no-repeat; }
+.product.three .product__background { background: url('assets/images/pear-on-tree.jpg') 0% 0%/cover no-repeat; }
+
+/*Contact Us page*/
+
+
+
 /*Customize reset and grid.*/
 @media only screen and (max-width: 767px){
     .col-sma-1, .col-sma-2, .col-sma-3, .col-sma-4, .col-sma-5, .col-sma-6, .col-sma-7, .col-sma-8, .col-sma-9, .col-sma-10, .col-sma-11, .col-sma-12 {
@@ -199,4 +218,15 @@ columns display at their designated widths at all device sizes, small (sma) abov
     /*Index page*/
     .index-product { }
     .index-product__background { height: 240px; }
+    
+    
+    /*About page*/
+
+
+    /*The Orchard page*/
+    .product { }
+    .product__background { height: 280px; }
+
+
+    /*Contact Us page*/
 }
