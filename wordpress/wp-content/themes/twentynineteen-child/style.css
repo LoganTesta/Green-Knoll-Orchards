@@ -122,18 +122,25 @@ columns display at their designated widths at all device sizes, small (sma) abov
 
 
 /*Header*/
-.site-header { height: 400px; }
+.site .site-header { height: 400px; background: url('assets/images/apple-orchard-looking-downhill.jpg') 0% 0%/cover no-repeat; }
 .entry .entry-header { position: absolute; top: 199px; margin-bottom: 44px; }
 .site-header.featured-image { min-height: 0px; margin-bottom: 0; }
 .site-header.featured-image .site-featured-image .post-thumbnail img { height: auto; top: 0px; }
 .site-header.featured-image .site-branding-container::after, .site-header.featured-image .site-featured-image::before, .site-header.featured-image .site-featured-image::after, .site-header.featured-image::after { display: none; }
+.site-title a, .site-title a:link, .site-title a:visited { color: #ffffff; }
+.entry .entry-title { color: #ffffff; }
+.site-description { color: #eeeeee; }
 
+/*Logo*/
+.site-header .custom-logo-link { background: rgba(255, 255, 255, 0.7); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+
+.site-logo .custom-logo-link:hover, .site-logo .custom-logo-link:active, .site-logo .custom-logo-link:focus { box-shadow: 0 0 0 2px rgba(255, 255, 255, 1); }
 
 
 /*Nav*/
 .main-navigation .main-menu { font-size: 0; }
 .main-navigation .main-menu li { font-size: 1.125rem; }
-.main-navigation .main-menu > li > a { margin-right: 1em; }
+.main-navigation .main-menu > li > a { margin-right: 1em; color: #ffffff; }
 
 
 /*Footer*/
@@ -183,7 +190,7 @@ columns display at their designated widths at all device sizes, small (sma) abov
     
     /*Header*/
     .entry .entry-header { position: absolute; top: 307px; margin-top: 0; margin-bottom: 88px; }
-    .site-header { height: 500px; }
+    .site .site-header { height: 500px; }
 }
 
 
