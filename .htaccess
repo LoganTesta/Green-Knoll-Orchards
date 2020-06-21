@@ -5,11 +5,18 @@
 # Any changes to the directives between these markers will be overwritten.
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /GreenKnollOrchards/wordpress/
+RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /GreenKnollOrchards/wordpress/index.php [L]
+RewriteRule . /index.php [L]
 </IfModule>
 
+
 # END WordPress
+
+#Redirects domain to subdirectory.  Uncomment for live.  
+#RewriteEngine on
+#RewriteCond %{HTTP_HOST} greenknollorchards\.com [NC]
+#RewriteCond %{REQUEST_URI} ^/$
+#RewriteRule ^(.*)$ /wordpress/$1 [L]
