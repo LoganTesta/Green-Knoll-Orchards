@@ -12,11 +12,4 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
 
-
 # END WordPress
-
-#Redirects domain to subdirectory.  Uncomment for live.  
-#RewriteEngine on
-#RewriteCond %{HTTP_HOST} greenknollorchards\.com [NC]
-#RewriteCond %{REQUEST_URI} ^/$
-#RewriteRule ^(.*)$ /wordpress/$1 [L]
