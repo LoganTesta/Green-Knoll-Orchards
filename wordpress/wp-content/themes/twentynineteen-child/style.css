@@ -140,7 +140,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 /*Customize reset and grid.*/
 .site-content { }
-.site-content .content-area .content-row { max-width: 100%; }
+.site-content .content-area .content-row { max-width: 100%; padding: 25px 0 25px 0; margin-top: 0; margin-bottom: 0; }
 .content-row.no-content-row-padding { margin-top: 0; margin-bottom: 0; }
 
 
