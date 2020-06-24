@@ -240,9 +240,9 @@ h3 { font-size: 1.125em; color: var(--color-2); }
 @media only screen and (min-width: 700px){
 
     /*Footer*/
-    .site-footer__location { padding-bottom: 0px; text-align: left; }
-    .site-footer__social { padding-bottom: 0px; text-align: left; }
-    .site-footer__hours { text-align: left; }
+    .site-footer__location { padding-bottom: 0px; }
+    .site-footer__social { padding-bottom: 0px; }
+    .site-footer__hours { }
 }
 
 
