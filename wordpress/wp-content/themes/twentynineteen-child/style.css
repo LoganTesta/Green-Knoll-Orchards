@@ -136,7 +136,7 @@ h3 { font-size: 1.125em; color: var(--color-2); }
 a:hover, a:active { color: var(--color-1); }
 #colophon .site-info a:hover { color: var(--color-1); }
 .button, button, input[type="button"], input[type="reset"], input[type="submit"] { background: var(--color-1); }
-
+h1:not(.site-title)::before, h2::before { content: none; }
 
 /*Customize reset and grid.*/
 .site-content { }
