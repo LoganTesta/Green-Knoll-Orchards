@@ -174,7 +174,7 @@ h3 { font-size: 1.125em; color: var(--color-2); }
 
 .site-footer__social { }
 .site-footer__social-inner-wrapper { font-size: 0; }
-.site-footer__subheading { font-size: 1.6875em; font-weight: 700; color: var(--color-1); }
+.site-footer__subheading { padding-bottom: 20px; font-size: 1.6875em; font-weight: 700; color: var(--color-1); }
 .site-footer .site-footer__social-logo { display: inline-block; padding-right: 30px; font-size: 0.71111rem; }
 .site-footer__social-logo:last-of-type { padding-right: 0; }
 .social-icon { color: var(--color-1); }

@@ -24,18 +24,14 @@
 				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
 			<?php endif; ?>
                         All Rights Reserved.
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentynineteen' ) ); ?>" class="imprint">
-				<?php
-				/* translators: %s: WordPress. */
-				printf( __( 'Proudly powered by %s.', 'twentynineteen' ), 'WordPress' );
-				?>
-			</a>
                     </div>
                     <div class="content-row">
-                        <div class="site-footer__location-and-phone col-sma-4">
+                        <div class="site-footer__location col-sma-4">
                             <div class="site-footer__subheading">Location</div>
-                            <div class="site-footer__location-text">842 Pine Highway Willamette Valley, Oregon</div>
-                            <div class="site-footer__phone">503-712-0440</div>
+                            <div class="site-footer__location-text">
+                                <div>842 Pine Highway</div>
+                                <div>Amity, Oregon 97101</div>
+                            </div>
                         </div>
                         <div class="site-footer__social col-sma-4">
                             <div class="site-footer__subheading">Social</div>
@@ -55,6 +51,7 @@
                             <div class="site-footer__subheading">Hours</div>
                             <div class="">Tuesday - Friday: 10am - 5pm</div>
                             <div class="">Saturday: 9am - 6pm</div>
+                            <div class="site-footer__phone">503-712-0440</div>
                         </div>
                     </div>
                     <?php
