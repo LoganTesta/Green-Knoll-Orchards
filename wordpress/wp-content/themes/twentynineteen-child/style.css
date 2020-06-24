@@ -127,6 +127,8 @@ Color 3: #737836    olive green    (115, 120, 54)
 
 
 /*General styling*/
+body { line-height: 1.6em; }
+p { margin-top: 0; margin-bottom: 17px; }
 .entry-title, .not-found .page-title, .error-404 .page-title, .has-larger-font-size { font-size: 1.375em; }
 h2 { font-size: 1.25em; color: var(--color-3); }
 h3 { font-size: 1.125em; color: var(--color-2); }
