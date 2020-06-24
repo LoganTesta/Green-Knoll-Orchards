@@ -144,7 +144,7 @@ a:hover, a:active { color: var(--color-1); }
 
 /*Header*/
 .site .site-header { height: 400px; background: url('assets/images/apple-orchard-looking-downhill.jpg') 0% 0%/cover no-repeat; }
-.entry .entry-header { position: absolute; top: 280px; margin-bottom: 44px; }
+.entry .entry-header { position: absolute; top: 245px; margin-bottom: 44px; }
 .site-header.featured-image { min-height: 0px; margin-bottom: 0; }
 .site-header.featured-image .site-featured-image .post-thumbnail img { height: auto; top: 0px; }
 .site-header.featured-image .site-branding-container::after, .site-header.featured-image .site-featured-image::before, .site-header.featured-image .site-featured-image::after, .site-header.featured-image::after { display: none; }
