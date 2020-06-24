@@ -131,6 +131,10 @@ Color 3: #737836    olive green    (115, 120, 54)
 h2 { font-size: 1.25em; color: var(--color-3); }
 h3 { font-size: 1.125em; color: var(--color-2); }
 
+a:hover, a:active { color: var(--color-1); }
+#colophon .site-info a:hover { color: var(--color-1); }
+.button, button, input[type="button"], input[type="reset"], input[type="submit"] { background: var(--color-1); }
+
 
 /*Customize reset and grid.*/
 .site-content { }
@@ -180,6 +184,7 @@ h3 { font-size: 1.125em; color: var(--color-2); }
 .site-footer .site-footer__social-logo { display: inline-block; padding-right: 30px; font-size: 0.71111rem; }
 .site-footer__social-logo:last-of-type { padding-right: 0; }
 .social-icon { color: var(--color-1); }
+.social-icon:hover { color: var(--color-3); }
 
 .site-footer__hours { text-align: center; }
 
