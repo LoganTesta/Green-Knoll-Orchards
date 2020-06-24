@@ -240,8 +240,8 @@ h3 { font-size: 1.125em; color: var(--color-2); }
 @media only screen and (min-width: 700px){
 
     /*Footer*/
-    .site-footer__location { padding-bottom: 0px; }
-    .site-footer__social { padding-bottom: 0px; }
+    .site-footer__location { padding-bottom: 0; }
+    .site-footer__social { padding-bottom: 0; }
     .site-footer__hours { }
 }
 
@@ -267,7 +267,9 @@ h3 { font-size: 1.125em; color: var(--color-2); }
     
     
     /*Content*/
-    .page-additional-image { float: left; width: 320px; height: 240px; margin-left: 0; margin-right: 30px; margin-bottom: 5px; }
+    .page-additional-image { width: 320px; height: 240px;  margin-bottom: 5px; }
+    .page-additional-image.left { float: left; margin-left: 0; margin-right: 30px; }
+    .page-additional-image.right { float: right; margin-left: 30px; margin-right: 0; }
     
     
     /*About page*/
@@ -301,5 +303,5 @@ h3 { font-size: 1.125em; color: var(--color-2); }
 
 @media only screen and (min-width: 1500px){  
     /*Content*/
-    .page-additional-image { width: 450px; height: 300px; }
+    .page-additional-image { width: 480px; height: 300px; }
 }
