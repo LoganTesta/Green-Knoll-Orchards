@@ -210,6 +210,9 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 .index-product.two, .index-product.three { padding-bottom: 0px; }
 
+.testimonial { padding-bottom: 40px; }
+.testimonial.two { padding-bottom: 0; }
+
 
 /*About page*/
 .page-additional-image.about-us { background: url('assets/images/cherry-trees-blooming-in-sunlight.jpg') 0% 0%/cover no-repeat; }
@@ -277,6 +280,8 @@ h1:not(.site-title)::before, h2::before { content: none; }
     .index-product.two { padding-bottom: 40px; }
     .index-product.three { padding-bottom: 0px; }
         
+    .testimonial { padding-bottom: 0; }
+    
         
     /*About page*/
     .page-additional-image.about-us { float: right; }
