@@ -219,7 +219,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 
 /*The Orchard page*/
-.product { }
+.product { padding-bottom: 50px; }
 .product__title { font-size: 1.375em; font-weight: 700; color: var(--color-2); }
 .product__background { height: 200px; }
 .product__price { font-weight: 600; }
@@ -229,6 +229,9 @@ h1:not(.site-title)::before, h2::before { content: none; }
 .product.one .product__background { background: url('assets/images/plums-on-branch.jpg') 0% 0%/cover no-repeat; }
 .product.two .product__background { background: url('assets/images/apple-on-branch.jpg') 0% 0%/cover no-repeat; }
 .product.three .product__background { background: url('assets/images/pear-on-tree.jpg') 0% 0%/cover no-repeat; }
+
+.product.three { padding-bottom: 0; }
+
 
 /*Contact Us page*/
 
@@ -293,6 +296,8 @@ h1:not(.site-title)::before, h2::before { content: none; }
     
     /*The Orchard page*/
     .product__background { height: 220px; }
+    
+    .product.two, .product.three { padding-bottom: 0; }
 }
 
 
@@ -313,7 +318,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 
     /*The Orchard page*/
-    .product { }
+    .product { padding-bottom: 0; }
     .product__background { height: 200px; }
 
 
