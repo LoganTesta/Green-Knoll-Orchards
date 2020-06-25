@@ -241,6 +241,10 @@ h1:not(.site-title)::before, h2::before { content: none; }
     
     /*Index page*/
     .index-product__background { height: 220px; }
+    
+    
+    /*The Orchard page*/
+    .product__background { height: 280px; }
 }
 
 
@@ -285,6 +289,10 @@ h1:not(.site-title)::before, h2::before { content: none; }
         
     /*About page*/
     .page-additional-image.about-us { float: right; }
+    
+    
+    /*The Orchard page*/
+    .product__background { height: 220px; }
 }
 
 
@@ -306,7 +314,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
     /*The Orchard page*/
     .product { }
-    .product__background { height: 280px; }
+    .product__background { height: 200px; }
 
 
     /*Contact Us page*/
@@ -317,4 +325,8 @@ h1:not(.site-title)::before, h2::before { content: none; }
 @media only screen and (min-width: 1500px){  
     /*Content*/
     .page-additional-image { width: 480px; height: 300px; }
+    
+    
+    /*The Orchard page*/
+    .product__background { height: 280px; }
 }
