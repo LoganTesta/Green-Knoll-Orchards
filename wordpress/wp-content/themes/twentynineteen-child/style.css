@@ -293,6 +293,8 @@ h1:not(.site-title)::before, h2::before { content: none; }
     .index-product { padding-bottom: 0; }
     .index-product__background { height: 240px; }
     
+    .index-product.two, .index-product.three  { padding-bottom: 0px; }
+    
     
     /*About page*/
 
