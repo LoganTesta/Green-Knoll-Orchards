@@ -215,7 +215,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 
 /*About page*/
-.page-additional-image.about-us { background: url('assets/images/cherry-trees-blooming-in-sunlight.jpg') 0% 0%/cover no-repeat; }
+.content-area.about .page-additional-image { background: url('assets/images/cherry-trees-blooming-in-sunlight.jpg') 0% 0%/cover no-repeat; }
 
 
 /*The Orchard page*/

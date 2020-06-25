@@ -28,29 +28,34 @@
 	<?php twentynineteen_post_thumbnail(); ?>
 
 	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Post title. Only visible to screen readers. */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentynineteen' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
+            <div class="content-row">
+                <div class="col-sma-12">
+                    <div class="page-additional-image right about-us"></div>
+                    <?php
+                    the_content(
+                            sprintf(
+                                    wp_kses(
+                                            /* translators: %s: Post title. Only visible to screen readers. */
+                                            __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentynineteen' ),
+                                            array(
+                                                    'span' => array(
+                                                            'class' => array(),
+                                                    ),
+                                            )
+                                    ),
+                                    get_the_title()
+                            )
+                    );
 
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'twentynineteen' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
+                    wp_link_pages(
+                            array(
+                                    'before' => '<div class="page-links">' . __( 'Pages:', 'twentynineteen' ),
+                                    'after'  => '</div>',
+                            )
+                    );
+                    ?>
+                </div>
+            </div>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
