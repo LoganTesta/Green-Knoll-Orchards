@@ -208,6 +208,8 @@ h1:not(.site-title)::before, h2::before { content: none; }
 .index-product.two .index-product__background { background: url('assets/images/apple-on-branch.jpg') 0% 0%/cover no-repeat; }
 .index-product.three .index-product__background { background: url('assets/images/pear-on-tree.jpg') 0% 0%/cover no-repeat; }
 
+.index-product.two, .index-product.three { padding-bottom: 0px; }
+
 
 /*About page*/
 .page-additional-image.about-us { background: url('assets/images/cherry-trees-blooming-in-sunlight.jpg') 0% 0%/cover no-repeat; }
@@ -272,6 +274,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
     
     
     /*Index page*/
+    .index-product.two { padding-bottom: 40px; }
     .index-product.three { padding-bottom: 0px; }
         
         
