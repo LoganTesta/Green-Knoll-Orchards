@@ -15,7 +15,7 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 
-				get_template_part( 'template-parts/content/content-index', 'index-custom-page' );
+				get_template_part( 'template-parts/content/content-index', 'page-index-custom' );
 
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) {
