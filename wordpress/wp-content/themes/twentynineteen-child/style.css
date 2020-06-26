@@ -194,7 +194,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 
 /*Index page*/
-.page-additional-image.index { background: url('assets/images/green-apples-on-branch.jpg') 0% 0%/cover no-repeat; }
+.content-area.index .page-additional-image { background: url('assets/images/green-apples-on-branch.jpg') 0% 0%/cover no-repeat; }
 
 .index-product { padding-bottom: 40px; }
 .index-product__title { font-size: 1.25em; font-weight: 700; color: var(--color-2); }
