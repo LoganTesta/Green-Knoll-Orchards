@@ -30,7 +30,7 @@
 	<div class="entry-content">
             <div class="content-row">
                 <div class="col-sma-12">
-                    <div class="page-additional-image right about-us"></div>
+                    <div class="page-additional-image right"></div>
                     <?php
                     the_content(
                             sprintf(
