@@ -158,19 +158,19 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 
 /*Logo*/
-.site-header .custom-logo-link { background: rgba(255, 255, 255, 0.7); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+.site-header .site-logo .custom-logo-link { background: rgba(255, 255, 255, 0.7); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
 
-.site-logo .custom-logo-link:hover, .site-logo .custom-logo-link:active, .site-logo .custom-logo-link:focus { box-shadow: 0 0 0 2px rgba(255, 255, 255, 1); }
+.site-header .site-logo .custom-logo-link:hover, .site-logo .custom-logo-link:active, .site-logo .custom-logo-link:focus { box-shadow: 0 0 0 2px rgba(255, 255, 255, 1); }
 
 
 /*Nav*/
-.main-navigation .main-menu { font-size: 0; }
-.main-navigation .main-menu li { font-size: 1.125rem; }
-.main-navigation .main-menu > li > a { margin-right: 1em; color: #ffffff; text-shadow: 1px 2px var(--color-1); }
-.main-navigation .main-menu > li > a:hover, .main-navigation .main-menu > li > a:hover + svg { color: var(--color-1); text-shadow: 1px 2px #ffffff; }
-.main-navigation .main-menu > li { color: #ffffff; }
-.main-navigation .sub-menu { background-color: var(--color-1); }
-.main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus, .main-navigation .sub-menu > li > .menu-item-link-return:hover, .main-navigation .sub-menu > li > .menu-item-link-return:focus { background-color: var(--color-3); }
+.site-header .main-navigation .main-menu { font-size: 0; }
+.site-header .main-navigation .main-menu li { font-size: 1.125rem; }
+.site-header .main-navigation .main-menu > li > a { margin-right: 1em; color: #ffffff; text-shadow: 1px 2px var(--color-1); }
+.site-header .main-navigation .main-menu > li > a:hover, .main-navigation .main-menu > li > a:hover + svg { opacity: 1; color: var(--color-1); text-shadow: 1px 2px #ffffff; }
+.site-header .main-navigation .main-menu > li { color: #ffffff; }
+.site-header .main-navigation .sub-menu { background-color: var(--color-1); }
+.site-header .main-navigation .sub-menu > li > a:hover, .main-navigation .sub-menu > li > a:focus, .main-navigation .sub-menu > li > .menu-item-link-return:hover, .main-navigation .sub-menu > li > .menu-item-link-return:focus { background-color: var(--color-3); }
 
 
 /*Content*/
