@@ -1,7 +1,7 @@
 <?php
 
-/*Template Name: General Custom Page Template
- Description: the customized generic page layout for this site. */
+/*Template Name: Index page custom template
+ Description: the customized index page layout for this site. */
 
 get_header();
 ?>
@@ -15,7 +15,7 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 
-				get_template_part( 'template-parts/content/content', 'page-general-custom' );
+				get_template_part( 'template-parts/content/content-index', 'page-index' );
 
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) {
