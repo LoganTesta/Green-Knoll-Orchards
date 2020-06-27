@@ -122,8 +122,8 @@ function pw_url_custom_metabox() {
     global $post;
     
     /*Gather the input data, sanitize it, and update the database.*/
-    $productprovidedname = sanitize_text_field( get_post_meta( $post->ID, 'productprovidedname', true ) );
-    update_post_meta( $post->ID, 'productprovidedname', $productprovidedname );
+    $productprice = sanitize_text_field( get_post_meta( $post->ID, 'productprice', true ) );
+    update_post_meta( $post->ID, 'productprice', $productprice );
     $productlabel = sanitize_text_field( get_post_meta( $post->ID, 'productlabel', true ) );
     update_post_meta( $post->ID, 'productlabel', $productlabel );
     $producturl = sanitize_text_field( get_post_meta( $post->ID, 'producturl', true ) );
@@ -135,9 +135,9 @@ function pw_url_custom_metabox() {
     update_post_meta( $post->ID, 'productorder', $productorder );
 
 
-    $errorsprovidedname = "";
-    if( isset( $errorsprovidedname ) ){
-        echo $errorsprovidedname;
+    $errorsprice = "";
+    if( isset( $errorsprice ) ){
+        echo $errorsprice;
     }
     
     $errorslabel = "";
@@ -162,8 +162,8 @@ function pw_url_custom_metabox() {
     
     ?>
     <p>
-        <label for="productprovidedname">Provided Product Name:<br />
-            <input id="productprovidedname" name="productprovidedname" size="37" value="<?php if( isset($productprovidedname ) ) { echo $productprovidedname; } ?>" />
+        <label for="productprice">Price:<br />
+            <input id="productprice" name="productprice" size="37" value="<?php if( isset($productprice ) ) { echo $productprice; } ?>" />
         </label>
     </p>
     <p>
@@ -186,18 +186,18 @@ function pw_url_custom_metabox() {
 
 
 //Save user provided field data.
-function pw_save_custom_productprovidedname( $post_id ) {
+function pw_save_custom_productprice( $post_id ) {
     global $post;
     
-    if( isset( $_POST['productprovidedname']) ) {
-        update_post_meta( $post->ID, 'productprovidedname', $_POST['productprovidedname'] );
+    if( isset( $_POST['productprice']) ) {
+        update_post_meta( $post->ID, 'productprice', $_POST['productprice'] );
     }
 }
-add_action( 'save_post', 'pw_save_custom_productprovidedname' );
+add_action( 'save_post', 'pw_save_custom_productprice' );
 
-function pw_get_productprovidedname( $post ) {
-    $productname = get_post_meta( $post->ID, 'productprovidedname', true );
-    return $productname;
+function pw_get_productprice( $post ) {
+    $productprice = get_post_meta( $post->ID, 'productprice', true );
+    return $productprice;
 }
 
 
@@ -256,7 +256,7 @@ if ( $_GET[ 'post_type' ] === "website-products" ){
             'title' => __( 'Title' ),
             'image' => __( 'Image' ), 
             'content' => __( 'Product Text' ),
-            'productprovidedname' => __( 'Provided Name', 'pw' ),
+            'productprice' => __( 'Product Price', 'pw' ),
             'order' => __( 'Order' ),
             'date' => __( 'Date' ),
         );   
@@ -270,8 +270,8 @@ if ( $_GET[ 'post_type' ] === "website-products" ){
         if( 'image' === $column ) {
             echo get_the_post_thumbnail( $post_id, array(100, 100) );
         }
-        if ( 'productprovidedname' === $column ) {
-            echo get_post_meta( $post_id, 'productprovidedname', true);
+        if ( 'productprice' === $column ) {
+            echo get_post_meta( $post_id, 'productprice', true);
         }
         if( 'content' === $column ) {
             echo get_post_field( 'post_content', $post_id );
@@ -328,7 +328,7 @@ function pw_load_products( $a ) {
         if( $count < $numberToDisplay  || $numberToDisplay === -1){
             $url_thumb = wp_get_attachment_thumb_url( get_post_thumbnail_id( $post->ID ) );
             $url_altText = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
-            $providedName = pw_get_productprovidedname( $post );
+            $price = pw_get_productprice( $post );
             $label = pw_get_productlabel( $post );
             $link = pw_get_url( $post );
             echo '<div class="product">';
@@ -339,11 +339,11 @@ function pw_load_products( $a ) {
             if ( !empty( $post->post_content ) ) {
                 echo '<p class="product__content">' . $post->post_content . '</p>';
             }
-            if ( !empty( $providedName ) ) {
+            if ( !empty( $price ) ) {
                 if (!empty( $link )) {
-                    echo '<span class="product__provided-name"><a class="product__link" href="' . $link . '" target="__blank">' . $providedName . '</a></span>';
+                    echo '<span class="product__price"><a class="product__link" href="' . $link . '" target="__blank">' . $price . '</a></span>';
                 } else {
-                    echo '<span class="product__provided-name">' . $providedName . '</span>';
+                    echo '<span class="product__price">' . $price . '</span>';
                 }
             }
             if ( !empty( $label ) ) {
