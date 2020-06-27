@@ -25,12 +25,10 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php twentynineteen_post_thumbnail(); ?>
-
 	<div class="entry-content">
             <div class="content-row">
                 <div class="col-sma-12">
-                    <div class="page-additional-image right"></div>
+                    <?php twentynineteen_post_thumbnail(); ?>
                     <?php
                     the_content(
                             sprintf(

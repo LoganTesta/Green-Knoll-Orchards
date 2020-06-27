@@ -174,7 +174,9 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 
 /*Content*/
-.page-additional-image { width: 100%; height: 220px; margin-left: auto; margin-right: auto; }
+.site-header .site-featured-image { display: none; }
+.entry .post-thumbnail { width: 100%; margin: 0 auto 0 auto; }
+.entry .post-thumbnail img { display: block; }
 
 
 /*Footer*/
@@ -194,8 +196,6 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 
 /*Index page*/
-.content-area.index .page-additional-image { background: url('assets/images/green-apples-on-branch.jpg') 0% 0%/cover no-repeat; }
-
 .index-product { padding-bottom: 40px; }
 .index-product__title { font-size: 1.25em; font-weight: 700; color: var(--color-2); }
 .index-product .index-product__title-link { color: var(--color-2); }
@@ -215,7 +215,6 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 
 /*About page*/
-.content-area.about .page-additional-image { background: url('assets/images/cherry-trees-blooming-in-sunlight.jpg') 0% 0%/cover no-repeat; }
 
 
 /*The Orchard page*/
@@ -239,7 +238,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 @media only screen and (min-width: 500px){
     /*Content*/
-    .page-additional-image { width: 100%; height: 380px; }
+    .entry .post-thumbnail { width: 100%; }
     
     
     /*Index page*/
@@ -278,12 +277,11 @@ h1:not(.site-title)::before, h2::before { content: none; }
     
     
     /*Content*/
-    .page-additional-image { width: 320px; height: 240px;  margin-bottom: 5px; }
-    .page-additional-image.left { float: left; margin-left: 0; margin-right: 30px; }
-    .page-additional-image.right { float: right; margin-left: 30px; margin-right: 0; }
+    .entry .post-thumbnail { float: right; width: 320px; margin-bottom: 5px; margin-left: 30px; margin-right: 0; }
     
     
     /*Index page*/
+    .index .entry .post-thumbnail { float: left; margin-left: 0px; margin-right: 30px; }
     .index-product.two { padding-bottom: 40px; }
     .index-product.three { padding-bottom: 0px; }
         
@@ -291,7 +289,6 @@ h1:not(.site-title)::before, h2::before { content: none; }
     
         
     /*About page*/
-    .page-additional-image.about-us { float: right; }
     
     
     /*The Orchard page*/
@@ -313,9 +310,9 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 @media only screen and (min-width: 1200px){      
     /*Content*/
-    .page-additional-image { width: 360px; height: 250px; }
+    .entry .post-thumbnail { width: 360px; }
     
-    
+     
     /*Index page*/
     .index-product { padding-bottom: 0; }
     .index-product__background { height: 240px; }
@@ -338,7 +335,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 @media only screen and (min-width: 1500px){  
     /*Content*/
-    .page-additional-image { width: 480px; height: 300px; }
+    .entry .post-thumbnail { width: 450px; }
     
     
     /*The Orchard page*/
