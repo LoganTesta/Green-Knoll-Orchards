@@ -1,0 +1,37 @@
+
+/*WordPress Admin styling customization for this plugin.*/
+.website-products__plugin-title { padding-top: 5px; padding-bottom: 15px; font-size: 23px; font-weight: 400; }
+
+.products-settings-form { padding-right: 10px; }
+
+.website-products-leading-text { }
+
+.admin-input-container { padding-bottom: 40px; }
+.admin-input-container__trailing-text { padding-left: 5px; font-weight: 600; }
+.admin-input-container__label { display: block; padding-bottom: 4px; font-weight: 600; }
+.admin-input-container__input { display: inline-block; width: 100%; }
+
+.admin-input-container__label--right { padding-right: 15px; }
+.admin-input-container__input.smaller { width: 100px; }
+
+.products-settings-form .website-products-border-radius { width: 80px; }
+
+
+
+@media only screen and (min-width: 700px){
+
+}
+
+
+
+@media only screen and (min-width: 1200px){
+    
+    .post-type-website-products .manage-column.column-title { width: 20%; }
+    .post-type-website-products .manage-column.column-image { width: 120px; }
+    
+    .admin-input-container__label { display: inline-block; width: 250px; padding-right: 20px; padding-bottom: 0; }
+    .admin-input-container__input { display: inline-block; width: 400px; }
+    
+    .website-products-leading-text { width: 400px; }
+    
+}
