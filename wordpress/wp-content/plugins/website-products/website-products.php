@@ -100,6 +100,8 @@ function pw_generate_settings_page() {
                 <label class="admin-input-container__label--right" for="websiteProductsProductsPerRow0">2</label>
                 <input id="websiteProductsProductsPerRow1" class="website-products-products-per-row" name="website-products-products-per-row" type="radio" value="3" <?php if(get_option( 'website-products-products-per-row' ) === "3") { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="websiteProductsProductsPerRow1">3</label>
+                <input id="websiteProductsProductsPerRow2" class="website-products-products-per-row" name="website-products-products-per-row" type="radio" value="4" <?php if(get_option( 'website-products-products-per-row' ) === "4") { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="websiteProductsProductsPerRow2">4</label>
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="website-products-number-to-display">Products to Display (Empty: display all)</label>
