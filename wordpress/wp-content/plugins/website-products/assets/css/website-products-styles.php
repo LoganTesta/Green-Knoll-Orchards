@@ -16,11 +16,11 @@ $productWidth = 100/$numberOfProductsPerRow;
 
 $productImageWidthHeight = (int)( get_option( 'website-products-image-width-height' ) );
 if ( $productImageWidthHeight <= 0 ) {
-    $productImageWidthHeight = 150;
-} elseif ( 0 < $productImageWidthHeight && $productImageWidthHeight < 60 ) {
-    $productImageWidthHeight = 60;
-} elseif ( $productImageWidthHeight > 150 ) {
-    $productImageWidthHeight = 150;
+    $productImageWidthHeight = 200;
+} elseif ( 0 < $productImageWidthHeight && $productImageWidthHeight < 80 ) {
+    $productImageWidthHeight = 80;
+} elseif ( $productImageWidthHeight > 400 ) {
+    $productImageWidthHeight = 400;
 }
 
 

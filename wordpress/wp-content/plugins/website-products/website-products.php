@@ -80,8 +80,8 @@ function pw_generate_settings_page() {
                 <input id="websiteProductsLeadingText" class="admin-input-container__input website-products-leading-text" name="website-products-leading-text" type="text" value="<?php echo get_option( 'website-products-leading-text' ); ?>" />
             </div>
             <div class="admin-input-container">
-                <label class="admin-input-container__label" for="website-products-image-width-height">Image Width, Height (60-150px)</label>
-                <input id="websiteProductsNumberToDisplay" class="admin-input-container__input smaller website-products-image-width-height" name="website-products-image-width-height" type="number" value="<?php echo get_option( 'website-products-image-width-height' ); ?>" min="60" max="150" /><span class="admin-input-container__trailing-text">px</span>
+                <label class="admin-input-container__label" for="website-products-image-width-height">Image Width, Height (80-400px)</label>
+                <input id="websiteProductsNumberToDisplay" class="admin-input-container__input smaller website-products-image-width-height" name="website-products-image-width-height" type="number" value="<?php echo get_option( 'website-products-image-width-height' ); ?>" min="80" max="400" /><span class="admin-input-container__trailing-text">px</span>
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="website-products-border-radius">Image Border Radius</label>
@@ -326,7 +326,7 @@ function pw_load_products( $a ) {
     $count = 0;
     foreach ($posts as $post) {
         if( $count < $numberToDisplay  || $numberToDisplay === -1){
-            $url_thumb = wp_get_attachment_thumb_url( get_post_thumbnail_id( $post->ID ) );
+            $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_square_crop' ); 
             $url_altText = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
             $price = pw_get_productprice( $post );
             $label = pw_get_productlabel( $post );
