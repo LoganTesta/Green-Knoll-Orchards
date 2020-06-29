@@ -220,7 +220,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
 /*The Orchard page*/
 .product { padding-bottom: 50px; }
 .product__title { font-size: 1.375em; font-weight: 700; color: var(--color-2); }
-.product__background { height: 200px; }
+.product__background { height: 260px; }
 .product__price { font-weight: 600; }
 .product__description { }
 
@@ -246,7 +246,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
     
     
     /*The Orchard page*/
-    .product__background { height: 280px; }
+    .product__background { height: 320px; }
 }
 
 
@@ -315,7 +315,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
      
     /*Index page*/
     .index-product { padding-bottom: 0; }
-    .index-product__background { height: 240px; }
+    .index-product__background { height: 180px; }
     
     .index-product.two, .index-product.three  { padding-bottom: 0px; }
     
@@ -325,7 +325,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
     /*The Orchard page*/
     .product { padding-bottom: 0; }
-    .product__background { height: 200px; }
+    .product__background { height: 180px; }
 
 
     /*Contact Us page*/
@@ -338,6 +338,10 @@ h1:not(.site-title)::before, h2::before { content: none; }
     .entry .post-thumbnail { width: 450px; }
     
     
+    /*Index page*/
+    .index-product__background { height: 240px; }
+    
+    
     /*The Orchard page*/
-    .product__background { height: 280px; }
+    .product__background { height: 240px; }
 }
