@@ -43,14 +43,12 @@ function pw_register_settings() {
     add_option( 'website-products-leading-text', 'Some text' );
     add_option( 'website-products-image-width-height', "150" );
     add_option( 'website-products-border-radius', "45" );
-    add_option( 'website-products-float-image-direction', "left" );
     add_option( 'website-products-products-per-row', "2" );
     add_option( 'website-products-number-to-display', "" );
 
     register_setting( 'website-products-settings-group', 'website-products-leading-text', 'pw_validatetextfield' );
     register_setting( 'website-products-settings-group', 'website-products-image-width-height', 'pw_validatetextfield' );
     register_setting( 'website-products-settings-group', 'website-products-border-radius', 'pw_validatetextfield' );
-    register_setting( 'website-products-settings-group', 'website-products-float-image-direction', 'pw_validatetextfield' );
     register_setting( 'website-products-settings-group', 'website-products-products-per-row', 'pw_validatetextfield' );  
     register_setting( 'website-products-settings-group', 'website-products-number-to-display', 'pw_validatetextfield' );  
 }
@@ -86,13 +84,6 @@ function pw_generate_settings_page() {
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="website-products-border-radius">Image Border Radius</label>
                 <input id="websiteProductsImageWidthHeight" class="admin-input-container__input website-products-border-radius" name="website-products-border-radius" type="text" value="<?php echo get_option( 'website-products-border-radius' ); ?>" /><span class="admin-input-container__trailing-text">px</span>
-            </div>
-            <div class="admin-input-container">
-                <span class="admin-input-container__label">Float Image Direction</span>         
-                <input id="websiteProductsFloatImageDirection0" class="website-products-float-image-direction" name="website-products-float-image-direction" type="radio" value="left" <?php if(get_option( 'website-products-float-image-direction' ) === "left") { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="websiteProductsFloatImageDirection0">Left</label>
-                <input id="websiteProductsFloatImageDirection1" class="website-products-float-image-direction" name="website-products-float-image-direction" type="radio" value="right" <?php if(get_option( 'website-products-float-image-direction' ) === "right") { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="websiteProductsFloatImageDirection1">Right</label>
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Number of Products Per Row</span>         
