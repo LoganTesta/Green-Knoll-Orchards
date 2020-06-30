@@ -328,15 +328,14 @@ function pw_load_products( $a ) {
     $count = 0;
     foreach ($posts as $post) {
         if( $count < $numberToDisplay  || $numberToDisplay === -1){
-            $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_square_crop' ); 
-            $url_altText = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
+            $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
             $price = pw_get_productprice( $post );
             $label = pw_get_productlabel( $post );
             $link = pw_get_url( $post );
             echo '<div class="product">';
             echo '<h4 class="product__title">' . $post->post_title . '</h4>';
             if ( !empty( $url_thumb ) ) {
-                echo '<img class="product__image" src="' . $url_thumb . '" alt="' . $url_altText . '" />';
+                echo '<div class="product__image" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
             }
             if ( !empty( $price ) ) {
                 if (!empty( $link )) {
