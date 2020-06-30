@@ -64,6 +64,18 @@ if ( $websiteProductsFloatImageDirection === "left" ) {
 
 
 
+@media only screen and (min-width: 768px) and (max-width: 1199px){   
+    .products-container__inner-wrapper > div:nth-child(<?php if( $numberOfProductsPerRow >= 4 ) { echo $numberOfProductsPerRow / 2; } else { echo $numberOfProductsPerRow; } ?>n+1){ content: ""; display: block; clear: both; }
+}
+
+
+
+@media only screen and (min-width: 1200px){   
+    .products-container__inner-wrapper > div:nth-child(<?php echo $numberOfProductsPerRow; ?>n+1){ content: ""; display: block; clear: both; }
+}
+
+
+
 @media only screen and (min-width: 768px){
     .product { float: left; width: <?php echo $productWidthTablet; ?>%; padding: 0 20px 15px 20px; }   
     .product__image { float: <?php echo $websiteProductsFloatImageDirection; ?>; height: <?php echo 0.6 * $productImageWidthHeight; ?>px; margin-left: <?php echo $websiteProductsImageTabletPlusMarginLeft; ?>; margin-right: <?php echo $websiteProductsImageTabletPlusMarginRight; ?>; }
