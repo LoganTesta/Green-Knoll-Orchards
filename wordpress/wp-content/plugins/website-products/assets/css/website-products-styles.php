@@ -47,10 +47,10 @@ if ( $websiteProductsFloatImageDirection === "left" ) {
 
 .product { padding-bottom: 40px; }
 .product__image { display: block; width: <?php echo $productImageWidthHeight; ?>px; height: <?php echo $productImageWidthHeight; ?>px; margin-bottom: 15px; margin-left: auto; margin-right: auto; border-radius: <?php echo get_option( 'website-products-border-radius' ); ?>px; }
-.product__title { }
+.product__title { padding-bottom: 4px; }
 .product__content { padding-bottom: 5px; }
-.product__price { font-size: 17px; font-weight: bold; }
-.product__label { font-size: 17px; font-style: italic; }
+.product__price { display: inline-block; padding-right: 25px; font-size: 18px; font-weight: bold; }
+.product__label { display: inline-block; font-size: 18px; font-style: italic; }
 
 .product:last-of-type { padding-bottom: 0; }
 .products-container__inner-wrapper::after { content: ""; display: block; clear: both; }

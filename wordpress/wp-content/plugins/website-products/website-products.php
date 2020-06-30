@@ -334,22 +334,22 @@ function pw_load_products( $a ) {
             $label = pw_get_productlabel( $post );
             $link = pw_get_url( $post );
             echo '<div class="product">';
+            echo '<h4 class="product__title">' . $post->post_title . '</h4>';
             if ( !empty( $url_thumb ) ) {
                 echo '<img class="product__image" src="' . $url_thumb . '" alt="' . $url_altText . '" />';
             }
-            echo '<h4 class="product__title">' . $post->post_title . '</h4>';
-            if ( !empty( $post->post_content ) ) {
-                echo '<p class="product__content">' . $post->post_content . '</p>';
-            }
             if ( !empty( $price ) ) {
                 if (!empty( $link )) {
-                    echo '<span class="product__price"><a class="product__link" href="' . $link . '" target="__blank">' . $price . '</a></span>';
+                    echo '<div class="product__price"><a class="product__link" href="' . $link . '" target="__blank">' . $price . '</a></div>';
                 } else {
-                    echo '<span class="product__price">' . $price . '</span>';
+                    echo '<div class="product__price">' . $price . '</div>';
                 }
             }
             if ( !empty( $label ) ) {
-                echo '<span class="product__label">, ' . $label . '</span>';
+                echo '<div class="product__label">' . $label . '</div>';
+            }
+            if ( !empty( $post->post_content ) ) {
+                echo '<p class="product__content">' . $post->post_content . '</p>';
             }
             echo '</div>';
         }
