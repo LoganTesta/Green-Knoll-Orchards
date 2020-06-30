@@ -43,7 +43,7 @@ function pw_register_settings() {
     add_option( 'website-products-leading-text', 'Some text' );
     add_option( 'website-products-image-width-height', "240" );
     add_option( 'website-products-border-radius', "5" );
-    add_option( 'website-products-products-per-row', "2" );
+    add_option( 'website-products-products-per-row', "3" );
     add_option( 'website-products-number-to-display', "" );
 
     register_setting( 'website-products-settings-group', 'website-products-leading-text', 'pw_validatetextfield' );
