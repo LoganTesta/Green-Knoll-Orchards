@@ -51,8 +51,8 @@ if ( $websiteProductsFloatImageDirection === "left" ) {
 .products-container__heading { padding-bottom: 0; text-align: center; }
 .products-container__inner-wrapper { padding-top: 30px; }
 
-.product { padding-bottom: 40px; }
-.product__image { display: block; width: 100%; height: <?php echo $productImageWidthHeight; ?>px; margin-bottom: 15px; margin-left: auto; margin-right: auto; max-width: 100%; border-radius: <?php echo get_option( 'website-products-border-radius' ); ?>px; }
+.product { float: left; width: 50%; padding: 0 20px 15px 20px;  }
+.product__image { display: block; float: <?php echo $websiteProductsFloatImageDirection; ?>; width: 100%; height: <?php echo 0.6 * $productImageWidthHeight; ?>px; margin-bottom: 15px; margin-left: <?php echo $websiteProductsImageTabletPlusMarginLeft; ?>; margin-right: <?php echo $websiteProductsImageTabletPlusMarginRight; ?>; max-width: 100%; border-radius: <?php echo get_option( 'website-products-border-radius' ); ?>px; }
 .product__title { padding-bottom: 4px; }
 .product__content { padding-bottom: 5px; }
 .product__price { display: inline-block; padding-right: 25px; font-size: 18px; font-weight: bold; }
@@ -64,8 +64,8 @@ if ( $websiteProductsFloatImageDirection === "left" ) {
 
 
 
-@media only screen and (min-width: 768px) and (max-width: 1199px){   
-    .products-container__inner-wrapper > div:nth-child(<?php if( $numberOfProductsPerRow >= 4 ) { echo $numberOfProductsPerRow / 2; } else { echo $numberOfProductsPerRow; } ?>n+1){ content: ""; display: block; clear: both; }
+@media only screen and (max-width: 1199px){   
+    .products-container__inner-wrapper > div:nth-child(2n+1){ content: ""; display: block; clear: both; }
 }
 
 
@@ -76,9 +76,15 @@ if ( $websiteProductsFloatImageDirection === "left" ) {
 
 
 
+@media only screen and (min-width: 500px){ 
+     .product__image { height: <?php echo 0.8 * $productImageWidthHeight; ?>px; }
+}
+
+
+
 @media only screen and (min-width: 768px){
-    .product { float: left; width: <?php echo $productWidthTablet; ?>%; padding: 0 20px 15px 20px; }   
-    .product__image { float: <?php echo $websiteProductsFloatImageDirection; ?>; height: <?php echo 0.6 * $productImageWidthHeight; ?>px; margin-left: <?php echo $websiteProductsImageTabletPlusMarginLeft; ?>; margin-right: <?php echo $websiteProductsImageTabletPlusMarginRight; ?>; }
+    .product { <?php echo $productWidthTablet; ?> }   
+    .product__image { height: <?php echo $productImageWidthHeight; ?>px;  }
     
     .product:last-of-type { padding-bottom: 15px; }
 }
@@ -94,5 +100,4 @@ if ( $websiteProductsFloatImageDirection === "left" ) {
 
 @media only screen and (min-width: 1500px){ 
      .product__image { height: <?php echo $productImageWidthHeight; ?>px; }
-
 }
