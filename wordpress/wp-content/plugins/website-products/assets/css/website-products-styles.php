@@ -80,8 +80,6 @@ if ( $websiteProductsFloatImageDirection === "left" ) {
     .product { float: left; width: <?php echo $productWidthTablet; ?>%; padding: 0 20px 15px 20px; }   
     .product__image { float: <?php echo $websiteProductsFloatImageDirection; ?>; height: <?php echo 0.6 * $productImageWidthHeight; ?>px; margin-left: <?php echo $websiteProductsImageTabletPlusMarginLeft; ?>; margin-right: <?php echo $websiteProductsImageTabletPlusMarginRight; ?>; }
     
-    .product:nth-of-type(<?php echo $numberOfProductsPerRow; ?>n+1) { padding-left: 0; }
-    .product:nth-of-type(<?php echo $numberOfProductsPerRow; ?>n+<?php echo $numberOfProductsPerRow; ?>) { padding-right: 0; }
     .product:last-of-type { padding-bottom: 15px; }
 }
 
