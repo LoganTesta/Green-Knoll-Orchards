@@ -11,7 +11,13 @@ $numberOfProductsPerRow = (int)( get_option( 'website-products-products-per-row'
 if ( $numberOfProductsPerRow <= 0 ) {
     $numberOfProductsPerRow = 2;
 }
-$productWidth = 100/$numberOfProductsPerRow;
+$productWidthTablet = 100;
+if($numberOfProductsPerRow >= 4) {
+    $productWidthTablet = (100/$numberOfProductsPerRow) * 2;
+} else {
+    $productWidthTablet = 100/$numberOfProductsPerRow;
+}
+$productWidthDesktop = 100/$numberOfProductsPerRow;
 
 
 $productImageWidthHeight = (int)( get_option( 'website-products-image-width-height' ) );
@@ -58,10 +64,9 @@ if ( $websiteProductsFloatImageDirection === "left" ) {
 
 
 
-@media only screen and (min-width: 700px){
-    .product { float: left; width: <?php echo $productWidth; ?>%; padding: 0 20px 15px 20px; }
-    
-    .product__image { float: <?php echo $websiteProductsFloatImageDirection; ?>; margin-left: <?php echo $websiteProductsImageTabletPlusMarginLeft; ?>; margin-right: <?php echo $websiteProductsImageTabletPlusMarginRight; ?>; }
+@media only screen and (min-width: 768px){
+    .product { float: left; width: <?php echo $productWidthTablet; ?>%; padding: 0 20px 15px 20px; }   
+    .product__image { float: <?php echo $websiteProductsFloatImageDirection; ?>; height: <?php echo 0.6 * $productImageWidthHeight; ?>px; margin-left: <?php echo $websiteProductsImageTabletPlusMarginLeft; ?>; margin-right: <?php echo $websiteProductsImageTabletPlusMarginRight; ?>; }
     
     .product:nth-of-type(<?php echo $numberOfProductsPerRow; ?>n+1) { padding-left: 0; }
     .product:nth-of-type(<?php echo $numberOfProductsPerRow; ?>n+<?php echo $numberOfProductsPerRow; ?>) { padding-right: 0; }
@@ -71,5 +76,13 @@ if ( $websiteProductsFloatImageDirection === "left" ) {
 
 
 @media only screen and (min-width: 1200px){ 
-     
+     .product { width: <?php echo $productWidthDesktop; ?>%; }
+     .product__image { height: <?php echo 0.8 * $productImageWidthHeight; ?>px; }
+}
+
+
+
+@media only screen and (min-width: 1500px){ 
+     .product__image { height: <?php echo $productImageWidthHeight; ?>px; }
+
 }
