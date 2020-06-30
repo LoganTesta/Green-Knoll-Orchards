@@ -11,12 +11,7 @@ $numberOfProductsPerRow = (int)( get_option( 'website-products-products-per-row'
 if ( $numberOfProductsPerRow <= 0 ) {
     $numberOfProductsPerRow = 2;
 }
-$productWidthTablet = 100;
-if($numberOfProductsPerRow >= 4) {
-    $productWidthTablet = (100/$numberOfProductsPerRow) * 2;
-} else {
-    $productWidthTablet = 100/$numberOfProductsPerRow;
-}
+
 $productWidthDesktop = 100/$numberOfProductsPerRow;
 
 
@@ -65,8 +60,8 @@ if ( $productImageWidthHeight <= 0 ) {
 
 
 @media only screen and (min-width: 768px){
-    .product { <?php echo $productWidthTablet; ?> }   
-    .product__image { height: <?php echo $productImageWidthHeight; ?>px;  }
+    .product { }   
+    .product__image { height: <?php echo $productImageWidthHeight; ?>px; }
     
     .product:last-of-type { padding-bottom: 15px; }
 }

@@ -4,7 +4,7 @@
  * Plugin URI: https://www.greenknollorchards.com/website-products
  * Version: 1.0
  * Author: Green Knoll Orchards
- * Description: Add website products to your site.  Use the shortcode [website-products] where you want to output products, for example in a WordPress generated admin page or a custom PHP page with WordPress enabled.
+ * Description: Add website products to your site.  Use the shortcode [website_products] where you want to output products, for example in a WordPress generated admin page or a custom PHP page with WordPress enabled.
  * Author URI: https://www.greenknollorchards.com
  */
 
@@ -41,8 +41,8 @@ add_action( 'init', 'pw_create_product_post_type' );
 /*Set up the settings page inputs*/
 function pw_register_settings() {
     add_option( 'website-products-leading-text', 'Some text' );
-    add_option( 'website-products-image-width-height', "150" );
-    add_option( 'website-products-border-radius', "45" );
+    add_option( 'website-products-image-width-height', "240" );
+    add_option( 'website-products-border-radius', "5" );
     add_option( 'website-products-products-per-row', "2" );
     add_option( 'website-products-number-to-display', "" );
 
