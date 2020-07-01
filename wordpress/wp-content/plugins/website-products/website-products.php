@@ -40,7 +40,7 @@ add_action( 'init', 'pw_create_product_post_type' );
 
 /*Set up the settings page inputs*/
 function pw_register_settings() {
-    add_option( 'website-products-leading-text', 'Some text' );
+    add_option( 'website-products-leading-text', 'Our Products' );
     add_option( 'website-products-image-width-height', "240" );
     add_option( 'website-products-border-radius', "5" );
     add_option( 'website-products-products-per-row', "3" );
