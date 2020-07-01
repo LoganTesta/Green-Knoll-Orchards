@@ -289,6 +289,7 @@ if ( $_GET[ 'post_type' ] === "website-products" ){
 
 //Register the shortcode so we can show products.
 function pw_load_products( $a ) {
+    $pluginContainer = "";
     $args = array(
         "post_type" => "website-products"
     );
@@ -307,9 +308,9 @@ function pw_load_products( $a ) {
 
     //Get all products.
     $posts = get_posts($args);
-    echo '<div class="products-container">';
-    echo '<h3 class="products-container__heading">' . get_option( 'website-products-leading-text' ) . '</h3>';
-    echo '<div class="products-container__inner-wrapper">';
+    $pluginContainer .= '<div class="products-container">';
+    $pluginContainer .= '<h3 class="products-container__heading">' . get_option( 'website-products-leading-text' ) . '</h3>';
+    $pluginContainer .= '<div class="products-container__inner-wrapper">';
     
     $numberToDisplay = get_option( 'website-products-number-to-display' );
     if( $numberToDisplay === "" ) {
@@ -323,30 +324,32 @@ function pw_load_products( $a ) {
             $price = pw_get_productprice( $post );
             $label = pw_get_productlabel( $post );
             $link = pw_get_url( $post );
-            echo '<div class="product">';
-            echo '<h4 class="product__title">' . $post->post_title . '</h4>';
+            $pluginContainer .= '<div class="product">';
+            $pluginContainer .= '<h4 class="product__title">' . $post->post_title . '</h4>';
             if ( !empty( $url_thumb ) ) {
-                echo '<div class="product__image" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
+                $pluginContainer .= '<div class="product__image" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
             }
             if ( !empty( $price ) ) {
                 if (!empty( $link )) {
-                    echo '<div class="product__price"><a class="product__link" href="' . $link . '" target="__blank">' . $price . '</a></div>';
+                    $pluginContainer .= '<div class="product__price"><a class="product__link" href="' . $link . '" target="__blank">' . $price . '</a></div>';
                 } else {
-                    echo '<div class="product__price">' . $price . '</div>';
+                    $pluginContainer .= '<div class="product__price">' . $price . '</div>';
                 }
             }
             if ( !empty( $label ) ) {
-                echo '<div class="product__label">' . $label . '</div>';
+                $pluginContainer .= '<div class="product__label">' . $label . '</div>';
             }
             if ( !empty( $post->post_content ) ) {
-                echo '<p class="product__content">' . $post->post_content . '</p>';
+                $pluginContainer .= '<p class="product__content">' . $post->post_content . '</p>';
             }
-            echo '</div>';
+            $pluginContainer .= '</div>';
         }
         $count++;
     }
-    echo '</div>';
-    echo '</div>';
+    $pluginContainer .= '</div>';
+    $pluginContainer .= '</div>';
+    
+    return $pluginContainer;
 }
 add_shortcode( "website_products", "pw_load_products" );
 add_filter( 'widget_text', 'do_shortcode' );
