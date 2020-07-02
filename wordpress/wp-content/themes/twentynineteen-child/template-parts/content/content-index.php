@@ -79,32 +79,6 @@
                     <div class="index-product__description"></div>
                 </div>
             </div>
-            <div class="content-row testimonials">
-                <div class="col-sma-12">
-                    <h2>Testimonials</h2>
-                </div>
-                <div class="col-sma-4 testimonial zero">
-                    <h3>I go here every week in the spring and fall for fresh fruit!</h3>
-                    I go here everyday in the spring and summer. They always have the best cherries and pears and apples. I frequently use the apples in pies I make too. The staff is real friendly and they always make everyone feel at home!
-
-                    -Amanda, A Happy Regular Customer
-
-                </div>
-                <div class="col-sma-4 testimonial one">
-                    <h3>Great Pears</h3>
-                    A couple of friends and I like to pick out apples and pears here every fall for baking. It's a fun tradition my friends and I do and then we go bake things.
-
-                    -Katie, A Happy Regular Customer
-
-                </div>
-                <div class="col-sma-4 testimonial two">
-                    <h3>Just Found Out About This Farm</h3>
-                    Look no further for fresh local fruit! I just found out about this farm two months ago and am going back again this weekend to get more fruit from them.  Highly recommend paying them a visit.
-
-                    -Robert, A Happy New Customer
-
-                </div>
-            </div>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
