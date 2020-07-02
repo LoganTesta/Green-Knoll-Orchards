@@ -79,6 +79,7 @@
                     <div class="index-product__description"></div>
                 </div>
             </div>
+            <?php echo do_shortcode("[general_testimonials]"); ?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
