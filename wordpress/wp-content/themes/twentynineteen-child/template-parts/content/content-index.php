@@ -79,7 +79,11 @@
                     <div class="index-product__description"></div>
                 </div>
             </div>
-            <?php echo do_shortcode("[general_testimonials]"); ?>
+            <div class="content-row">
+                <div class="col-sma-12">
+                    <?php echo do_shortcode( "[general_testimonials]" ); ?>
+                </div>
+            </div>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
