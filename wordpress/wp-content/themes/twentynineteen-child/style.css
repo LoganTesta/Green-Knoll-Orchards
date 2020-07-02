@@ -212,9 +212,6 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 .index-product.two, .index-product.three { padding-bottom: 0px; }
 
-.testimonial { padding-bottom: 40px; }
-.testimonial.two { padding-bottom: 0; }
-
 
 /*About page*/
 
@@ -253,6 +250,14 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 
 
+@media only screen and (min-width: 700px){
+    /*Plugins*/
+    /*General Testimonials plugin customization.*/
+    .testimonial { padding-bottom: 50px; }
+}
+
+
+
 @media only screen and (min-width: 768px){
     /*General Styling*/
     .entry-title, .not-found .page-title, .error-404 .page-title, .has-larger-font-size { font-size: 1.875em; }
@@ -286,10 +291,8 @@ h1:not(.site-title)::before, h2::before { content: none; }
     .index .entry .post-thumbnail { float: left; margin-left: 0px; margin-right: 30px; }
     .index-product.two { padding-bottom: 40px; }
     .index-product.three { padding-bottom: 0px; }
-        
-    .testimonial { padding-bottom: 0; }
     
-        
+    
     /*About page*/
     
     
