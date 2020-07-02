@@ -254,6 +254,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
     /*Plugins*/
     /*General Testimonials plugin customization.*/
     .testimonial { padding-bottom: 50px; }
+    .testimonial:last-of-type { padding-bottom: 50px; }
 }
 
 
