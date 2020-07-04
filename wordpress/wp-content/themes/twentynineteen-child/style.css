@@ -200,6 +200,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 
 /*Index page*/
+.index .content-row:nth-child(1) p { letter-spacing: 1.2px; }
 .index-product { padding-bottom: 40px; }
 .index-product__title { font-size: 1.25em; font-weight: 700; color: var(--color-2); }
 .index-product .index-product__title-link { color: var(--color-2); }
