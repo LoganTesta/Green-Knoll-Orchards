@@ -180,10 +180,10 @@ h1:not(.site-title)::before, h2::before { content: none; }
 .entry .post-thumbnail { width: 100%; margin: 0 auto 0 auto; }
 .entry .post-thumbnail img { display: block; }
 
-
-/*Footer*/
 .entry .entry-footer { margin-top: 0; margin-bottom: 0; }
 
+
+/*Footer*/
 .site-footer__copyright { padding-bottom: 40px; text-align: center; }
 
 .site-footer__location { padding-bottom: 40px; text-align: center; }
@@ -257,6 +257,9 @@ h1:not(.site-title)::before, h2::before { content: none; }
     /*General Testimonials plugin customization.*/
     .testimonial { padding-bottom: 50px; }
     .testimonial:last-of-type { padding-bottom: 50px; }
+    .testimonial__provided-name { font-size: 1em; }
+    .testimonial__label { font-size: 1em; }
+    .testimonial__link { font-size: 1em; }
 }
 
 
