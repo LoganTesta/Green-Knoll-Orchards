@@ -182,6 +182,8 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 
 /*Footer*/
+.entry .entry-footer { margin-top: 0; margin-bottom: 0; }
+
 .site-footer__copyright { padding-bottom: 40px; text-align: center; }
 
 .site-footer__location { padding-bottom: 40px; text-align: center; }
