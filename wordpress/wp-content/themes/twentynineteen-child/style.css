@@ -187,8 +187,9 @@ h1:not(.site-title)::before, h2::before { content: none; }
 .site-footer__copyright { padding-bottom: 40px; text-align: center; }
 
 .site-footer__links { padding-bottom: 40px; text-align: center; }
-.footer-navigation { display: block; }
-.footer-navigation .footer-menu li { display: block; margin-right: 0; text-align: center; }
+.footer-navigation { display: block; padding-top: 4px; }
+.footer-navigation .footer-menu li { display: block; padding-bottom: 12px; margin-right: 0; text-align: center; }
+.footer-navigation .footer-menu li { line-height: }
 
 .site-footer__location { padding-bottom: 40px; text-align: center; }
 
