@@ -187,13 +187,16 @@ h1:not(.site-title)::before, h2::before { content: none; }
 /*Footer*/
 .site-footer__copyright { padding-bottom: 40px; text-align: center; }
 
-.site-footer__links { padding-bottom: 40px; text-align: center; }
+.site-footer__section { padding-bottom: 40px; }
+.site-footer__section:last-of-type { padding-bottom: 0; }
+
+.site-footer__links { text-align: center; }
 .footer-navigation { display: block; padding-top: 4px; }
 .footer-navigation .footer-menu li { display: block; padding-bottom: 8px; margin-right: 0; text-align: center; }
 
-.site-footer__location { padding-bottom: 40px; text-align: center; }
+.site-footer__location { text-align: center; }
 
-.site-footer__social { padding-bottom: 40px; text-align: center; }
+.site-footer__social { text-align: center; }
 .site-footer__social-inner-wrapper { font-size: 0; }
 .site-footer__subheading { padding-bottom: 12px; font-size: 1.6875em; font-weight: 700; color: var(--color-1); }
 .site-footer .site-footer__social-logo { display: inline-block; padding-right: 25px; font-size: 0.71111rem; }
@@ -298,10 +301,10 @@ h1:not(.site-title)::before, h2::before { content: none; }
     /*Footer*/
     .footer-navigation { padding-bottom: 0; margin-left: auto; margin-right: auto; }
     .footer-navigation .footer-menu li { text-align: center; }
-      
-    .site-footer__location { padding-bottom: 0; }
-    .site-footer__social { padding-bottom: 0; }
-    .site-footer__hours { }
+    
+    .site-footer__section { padding-bottom: 40px; }
+    .site-footer__section:last-of-type { padding-bottom: 40px; }
+    .site-footer.no-footer-nav .site-footer__section:last-of-type { padding-bottom: 0; }
     
     
     /*Content*/
@@ -345,7 +348,10 @@ h1:not(.site-title)::before, h2::before { content: none; }
     
     /*Footer*/
     .site-footer .site-footer__social-logo { padding-right: 30px; }
-     
+    
+    .site-footer__section { padding-bottom: 0px; }
+    .site-footer__section:last-of-type { padding-bottom: 0px; }
+    
     
     /*Index page*/
     .index-product { padding-bottom: 0; }

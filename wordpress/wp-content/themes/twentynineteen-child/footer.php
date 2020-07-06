@@ -15,7 +15,7 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
+        <footer id="colophon" class="site-footer <?php if ( !has_nav_menu( 'footer' ) ) { echo "no-footer-nav"; } ?>">
 		<?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
 		<div class="site-info">
                     <div class="site-footer__copyright">Copyright &copy; <?php echo date("Y"); ?>
