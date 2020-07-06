@@ -27,7 +27,7 @@
                     </div>
                     <div class="content-row">                        
                         <?php if ( has_nav_menu( 'footer' ) ) : ?>
-                        <div class="site-footer__links col-sma-3"> 
+                        <div class="site-footer__links site-footer__section col-sma-6 col-lar-3"> 
                             <div class="site-footer__subheading">Menu</div>
                             <nav class="footer-navigation" aria-label="<?php esc_attr_e( 'Footer Menu', 'twentynineteen' ); ?>">
                                     <?php
@@ -42,14 +42,14 @@
                             </nav><!-- .footer-navigation -->
                         </div>
                         <?php endif; ?> 
-                        <div class="site-footer__location <?php if ( has_nav_menu( 'footer' ) ) { echo "col-sma-3"; } else { echo "col-sma-4"; } ?>">
+                        <div class="site-footer__location site-footer__section <?php if ( has_nav_menu( 'footer' ) ) { echo "col-sma-6 col-lar-3"; } else { echo "col-sma-6 col-lar-4"; } ?>">
                             <div class="site-footer__subheading">Location</div>
                             <div class="site-footer__location-text">
                                 <div>842 Pine Highway</div>
                                 <div>Amity, Oregon 97101</div>
                             </div>
                         </div>
-                        <div class="site-footer__social <?php if ( has_nav_menu( 'footer' ) ) { echo "col-sma-3"; } else { echo "col-sma-4"; } ?>">
+                        <div class="site-footer__social site-footer__section <?php if ( has_nav_menu( 'footer' ) ) { echo "col-sma-6 col-lar-3"; } else { echo "col-sma-6 col-lar-4"; } ?>">
                             <div class="site-footer__subheading">Social</div>
                             <div class="site-footer__social-inner-wrapper">
                             <div class="site-footer__social-logo facebook">
@@ -63,7 +63,7 @@
                             </div>
                             </div>
                         </div>
-                        <div class="site-footer__hours <?php if ( has_nav_menu( 'footer' ) ) { echo "col-sma-3"; } else { echo "col-sma-4"; } ?>">
+                        <div class="site-footer__hours site-footer__section <?php if ( has_nav_menu( 'footer' ) ) { echo "col-sma-6 col-lar-3"; } else { echo "col-sma-12 col-lar-4"; } ?>">
                             <div class="site-footer__subheading">Hours</div>
                             <div class="">Tuesday - Friday: 10am - 5pm</div>
                             <div class="">Saturday: 9am - 6pm</div>
