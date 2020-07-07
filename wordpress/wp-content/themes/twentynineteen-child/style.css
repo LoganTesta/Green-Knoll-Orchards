@@ -149,7 +149,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 /*Header*/
 .site .site-header { height: 400px; background: url('assets/images/cherry-farm-trees.jpg') 0% 0%/cover no-repeat; }
-.site-header.featured-image .site-branding-container { }
+.site-branding-container { }
 .entry .entry-header { position: absolute; top: 245px; margin-bottom: 44px; }
 .site-header.featured-image { min-height: 0px; margin-bottom: 0; }
 .site-header.featured-image .site-featured-image .post-thumbnail img { height: auto; top: 0px; }
@@ -253,7 +253,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
     
     
     /*Header*/
-    .site-header.featured-image .site-branding-container { padding-top: 20px; }
+    .site-branding-container { padding-top: 20px; }
     
     
     /*Index page*/
@@ -298,7 +298,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
     
     
     /*Header*/
-    .site-header.featured-image .site-branding-container { padding-top: 80px; }
+    .site-branding-container { padding-top: 80px; }
     .site-title a, .site-title a:link, .site-title a:visited { font-size: 2em; }
     .entry .entry-header { position: absolute; top: 307px; margin-top: 0; margin-bottom: 88px; }
     .site .site-header { height: 480px; }
@@ -349,7 +349,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
     
     
     /*Header*/
-    .site-header.featured-image .site-branding-container { padding-top: 104px; }
+    .site-branding-container { padding-top: 104px; }
     
     
     /*Content*/
