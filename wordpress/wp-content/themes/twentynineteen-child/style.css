@@ -148,14 +148,15 @@ h1:not(.site-title)::before, h2::before { content: none; }
 
 
 /*Header*/
-.site .site-header { height: 400px; background: url('assets/images/apple-orchard-looking-downhill.jpg') 0% 0%/cover no-repeat; }
+.site .site-header { height: 400px; background: url('assets/images/cherry-farm-trees.jpg') 0% 0%/cover no-repeat; }
+.site-header.featured-image .site-branding-container { }
 .entry .entry-header { position: absolute; top: 245px; margin-bottom: 44px; }
 .site-header.featured-image { min-height: 0px; margin-bottom: 0; }
 .site-header.featured-image .site-featured-image .post-thumbnail img { height: auto; top: 0px; }
 .site-header.featured-image .site-branding-container::after, .site-header.featured-image .site-featured-image::before, .site-header.featured-image .site-featured-image::after, .site-header.featured-image::after { display: none; }
 .site-title a, .site-title a:link, .site-title a:visited { font-size: 1.75em; font-weight: 700; color: rgba(255, 255, 255, 1); text-shadow: 1.4px 2.8px var(--color-1); }
 .entry .entry-title { color: #ffffff; text-shadow: 1.2px 2.4px var(--color-1); }
-.site-description { font-size: 1.25em; color: #f3f3f3; text-shadow: 0.7px 1.4px var(--color-1); }
+.site-description { font-size: 1.4em; font-weight: bold; color: #f3f3f3; text-shadow: 0.7px 1.4px var(--color-1); }
 
 
 /*Logo*/
@@ -251,6 +252,10 @@ h1:not(.site-title)::before, h2::before { content: none; }
     .entry .post-thumbnail { width: 100%; }
     
     
+    /*Header*/
+    .site-header.featured-image .site-branding-container { padding-top: 20px; }
+    
+    
     /*Index page*/
     .index-product__background { height: 220px; }
     
@@ -293,6 +298,7 @@ h1:not(.site-title)::before, h2::before { content: none; }
     
     
     /*Header*/
+    .site-header.featured-image .site-branding-container { padding-top: 80px; }
     .site-title a, .site-title a:link, .site-title a:visited { font-size: 2em; }
     .entry .entry-header { position: absolute; top: 307px; margin-top: 0; margin-bottom: 88px; }
     .site .site-header { height: 480px; }
@@ -340,6 +346,10 @@ h1:not(.site-title)::before, h2::before { content: none; }
 @media only screen and (min-width: 1200px){      
     /*General Styling*/
     .fa-2x { font-size: 2em; }
+    
+    
+    /*Header*/
+    .site-header.featured-image .site-branding-container { padding-top: 104px; }
     
     
     /*Content*/
