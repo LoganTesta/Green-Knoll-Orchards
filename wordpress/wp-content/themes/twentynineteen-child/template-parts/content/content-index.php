@@ -54,9 +54,9 @@
                     ?>
                 </div>
             </div>
-            <div class="content-row">
+            <div class="content-row index-products">
                 <div class="col-sma-12">
-                    <h2>Delicious Local Fruits</h2>
+                    <h2 class="index-products__heading">Delicious Local Fruits</h2>
                 </div>
                 <div class="index-product zero col-vsm-6 col-sma-4 col-lar-3">
                     <div class="index-product__title"><a class="index-product__title-link" href="the-orchard">Cherries</a></div>
