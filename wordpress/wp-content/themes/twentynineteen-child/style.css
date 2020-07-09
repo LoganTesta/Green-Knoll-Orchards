@@ -154,7 +154,10 @@ h1:not(.site-title)::before, h2::before { content: none; }
 .site-header.featured-image { min-height: 0px; margin-bottom: 0; }
 .site-header.featured-image .site-featured-image .post-thumbnail img { height: auto; top: 0px; }
 .site-header.featured-image .site-branding-container::after, .site-header.featured-image .site-featured-image::before, .site-header.featured-image .site-featured-image::after, .site-header.featured-image::after { display: none; }
-.site-title a, .site-title a:link, .site-title a:visited { font-size: 1.75em; font-weight: 700; color: rgba(255, 255, 255, 1); text-shadow: 1.4px 2.8px var(--color-1); }
+.site-header .site-branding-container .site-title a, 
+.site-header .site-branding-container .site-title a:link, 
+.site-header .site-branding-container .site-title a:visited { font-size: 1.75em; font-weight: 700; color: rgba(255, 255, 255, 1); text-shadow: 1.4px 2.8px var(--color-1); }
+.site-header .site-branding-container .site-title a:hover { opacity: 0.7; }
 .entry .entry-title { color: #ffffff; text-shadow: 1.2px 2.4px var(--color-1); }
 .site-description { font-size: 1.4em; font-weight: bold; color: #f3f3f3; text-shadow: 0.7px 1.4px var(--color-1); }
 
@@ -299,7 +302,9 @@ h1:not(.site-title)::before, h2::before { content: none; }
     
     /*Header*/
     .site-branding-container { padding-top: 80px; }
-    .site-title a, .site-title a:link, .site-title a:visited { font-size: 2em; }
+    .site-header .site-branding-container .site-title a, 
+    .site-header .site-branding-container .site-title a:link, 
+    .site-header .site-branding-container .site-title a:visited { font-size: 2em; }
     .entry .entry-header { position: absolute; top: 307px; margin-top: 0; margin-bottom: 88px; }
     .site .site-header { height: 480px; }
     
