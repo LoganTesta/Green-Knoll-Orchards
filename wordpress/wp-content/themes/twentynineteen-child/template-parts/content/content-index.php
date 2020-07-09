@@ -26,9 +26,10 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-            <div class="content-row">
+            <div class="content-row index-intro no-padding-bottom">
                 <div class="col-sma-12">
-                    <?php twentynineteen_post_thumbnail(); ?>
+                    <?php $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );                 
+                        echo '<div class="index-intro__bg-image" style="background: url(' . $featured_image[0] . ') 0% 0%/cover no-repeat"></div>'; ?>
                     <?php
                     the_content(
                             sprintf(
@@ -52,6 +53,7 @@
                             )
                     );
                     ?>
+                    <div class="clear-both"></div>
                 </div>
             </div>
             <div class="content-row index-products">
