@@ -251,8 +251,15 @@ h2::before { content: none; }
 
 
 /*The Orchard page*/
+
+
+/*Contact Us page*/
+
+
+/*Plugins*/
+/*Website Products plugin customization.*/
 .product { padding-bottom: 50px; }
-.product__title { font-size: 1.375em; font-weight: 700; color: var(--color-2); }
+.product__title { font-weight: 700; color: var(--color-2); }
 .product__background { height: 260px; }
 .product__price { font-weight: 600; }
 .product__description { }
@@ -263,9 +270,6 @@ h2::before { content: none; }
 .product.three .product__background { background: url('assets/images/pear-on-tree.jpg') 0% 0%/cover no-repeat; }
 
 .product.three { padding-bottom: 0; }
-
-
-/*Contact Us page*/
 
 
 
@@ -279,10 +283,16 @@ h2::before { content: none; }
     
     
     /*Index page*/
+    .index-intro__bg-image { height: 280px; }
+    
     .index-product__background { height: 220px; }
     
     
     /*The Orchard page*/
+    
+    
+    /*Plugins*/
+    /*Website Products plugin customization.*/
     .product__background { height: 320px; }
 }
 
@@ -354,18 +364,18 @@ h2::before { content: none; }
     
     
     /*The Orchard page*/
-    .product__background { height: 220px; }
-    
-    .product.two, .product.three { padding-bottom: 0; }
-    
+
     
     /*Plugins*/
     /*Website Products plugin customization.*/
     .products-container__heading { margin-bottom: 0; }
     .product__title { margin-bottom: 0; }
+        .product__background { height: 220px; }
     .product__price { font-size: 1.125em; }
     .product__content { margin-bottom: 0; }
     .product__label { font-size: 1.125em; }
+    
+    .product.two, .product.three { padding-bottom: 0; }
 }
 
 
@@ -403,11 +413,15 @@ h2::before { content: none; }
 
 
     /*The Orchard page*/
-    .product { padding-bottom: 0; }
-    .product__background { height: 180px; }
 
 
     /*Contact Us page*/
+    
+    
+    /*Plugins*/
+    /*Website Products plugin customization.*/
+    .product { padding-bottom: 0; }
+    .product__background { height: 180px; }
 }
 
 
@@ -422,5 +436,9 @@ h2::before { content: none; }
     
     
     /*The Orchard page*/
+    
+    
+    /*Plugins*/
+    /*Website Products plugin customization.*/
     .product__background { height: 240px; }
 }

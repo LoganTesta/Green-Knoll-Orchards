@@ -29,7 +29,7 @@ if ( $productImageWidthHeight <= 0 ) {
 .products-container { }
 .products-container:after { content: ""; display: block; clear: both; }
 .products-container__heading { padding-bottom: 0; text-align: center; }
-.products-container__inner-wrapper { padding-top: 30px; }
+.products-container__inner-wrapper { padding-top: 20px; }
 
 .product { float: left; width: 50%; padding: 0 20px 15px 20px;  }
 .product__image { display: block; width: 100%; height: <?php echo 0.6 * $productImageWidthHeight; ?>px; margin-bottom: 15px; margin-left: 0; margin-right: 15px; max-width: 100%; border-radius: <?php echo get_option( 'website-products-border-radius' ); ?>px; }
