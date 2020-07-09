@@ -337,8 +337,8 @@ h2::before { content: none; }
     .site-header .site-branding-container .site-title a, 
     .site-header .site-branding-container .site-title a:link, 
     .site-header .site-branding-container .site-title a:visited { font-size: 2em; }
-    .entry .entry-header { position: absolute; top: 307px; margin-top: 0; margin-bottom: 88px; }
-    .site .site-header { height: 480px; }
+    .site .site-header { height: 400px; }
+    .entry .entry-header { position: absolute; top: 267px; margin-top: 0; margin-bottom: 88px; }
     
     
     /*Footer*/
@@ -386,7 +386,7 @@ h2::before { content: none; }
     
     
     /*Header*/
-    .site-branding-container { padding-top: 104px; }
+    .site-branding-container { }
     
     
     /*Content*/
@@ -401,7 +401,7 @@ h2::before { content: none; }
     
     
     /*Index page*/
-    .index-intro__bg-image { width: 440px; height: 250px; }
+    .index-intro__bg-image { width: 360px; height: 220px; }
     
     .index-product { padding-bottom: 0; }
     .index-product__background { height: 180px; }
@@ -426,12 +426,20 @@ h2::before { content: none; }
 
 
 
-@media only screen and (min-width: 1500px){  
+@media only screen and (min-width: 1500px){ 
+     /*Header*/
+     .site-branding-container { padding-top: 104px; }
+     .site .site-header { height: 480px; }
+     .entry .entry-header { top: 307px; }
+     
+    
     /*Content*/
     .entry .post-thumbnail { width: 450px; }
     
     
     /*Index page*/
+    .index-intro__bg-image { width: 440px; height: 250px; }
+        
     .index-product__background { height: 240px; }
     
     
