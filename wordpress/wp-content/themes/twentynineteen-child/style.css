@@ -326,12 +326,6 @@ h2::before { content: none; }
     h3 { font-size: 1.25em; }
     
     
-    /*For content, to allow content-row columns to align with theme.*/
-    .entry .entry-content, .entry .entry-summary {
-        padding: 0 45px;
-    }
-    
-    
     /*Header*/
     .site-branding-container { padding-top: 80px; }
     .site-header .site-branding-container .site-title a, 
@@ -351,6 +345,9 @@ h2::before { content: none; }
     
     
     /*Content*/
+    /*For content, to allow content-row columns to align with theme.*/
+    .entry .entry-content, .entry .entry-summary { padding: 0 45px; }
+    
     .entry .post-thumbnail { float: right; width: 320px; margin-bottom: 5px; margin-left: 30px; margin-right: 0; }
     
     
@@ -383,13 +380,15 @@ h2::before { content: none; }
 @media only screen and (min-width: 1200px){      
     /*General Styling*/
     .fa-2x { font-size: 2em; }
-    
+       
     
     /*Header*/
     .site-branding-container { }
     
     
     /*Content*/
+    .entry .entry-content, .entry .entry-summary { max-width: 94%; padding: 0 10px; margin: 0 3%; }
+    
     .entry .post-thumbnail { width: 360px; }
     
     
@@ -401,7 +400,7 @@ h2::before { content: none; }
     
     
     /*Index page*/
-    .index-intro__bg-image { width: 360px; height: 220px; }
+    .index-intro__bg-image { width: 360px; height: 200px; }
     
     .index-product { padding-bottom: 0; }
     .index-product__background { height: 180px; }
@@ -434,6 +433,8 @@ h2::before { content: none; }
      
     
     /*Content*/
+    .entry .entry-content, .entry .entry-summary { max-width: 80%; padding: 0 45px; margin: 0 10%; }
+    
     .entry .post-thumbnail { width: 450px; }
     
     
