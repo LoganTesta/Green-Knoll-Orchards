@@ -154,9 +154,9 @@ h2::before,
 
 
 /*Header*/
-.site .site-header { height: 400px; background: url('assets/images/cherry-farm-trees.jpg') 0% 0%/cover no-repeat; }
+.site .site-header { height: 300px; background: url('assets/images/cherry-farm-trees.jpg') 0% 0%/cover no-repeat; }
 .site-branding-container { }
-.entry .entry-header { position: absolute; top: 336px; margin-top: 0; margin-bottom: 0; }
+.entry .entry-header { position: absolute; top: 250px; margin-top: 0; margin-bottom: 0; }
 .site-header.featured-image { min-height: 0px; margin-bottom: 0; }
 .site-header.featured-image .site-featured-image .post-thumbnail img { height: auto; top: 0px; }
 .site-header.featured-image .site-branding-container::after, 
@@ -165,10 +165,10 @@ h2::before,
 .site-header.featured-image::after { display: none; }
 .site-header .site-branding-container .site-title a, 
 .site-header .site-branding-container .site-title a:link, 
-.site-header .site-branding-container .site-title a:visited { font-size: 1.75em; font-weight: 700; color: rgba(255, 255, 255, 1); text-shadow: 1.4px 2.8px var(--color-1); }
+.site-header .site-branding-container .site-title a:visited { font-size: 1.375em; font-weight: 700; color: rgba(255, 255, 255, 1); text-shadow: 1.4px 2.8px var(--color-1); }
 .site-header .site-branding-container .site-title a:hover { opacity: 0.7; }
 .entry .entry-title { color: #ffffff; text-shadow: 1.2px 2.4px var(--color-1); }
-.site-description { font-size: 1.25em; font-weight: bold; color: #f3f3f3; text-shadow: 0.7px 1.4px var(--color-1); }
+.site-description { font-size: 1.125em; font-weight: bold; color: #f3f3f3; text-shadow: 0.7px 1.4px var(--color-1); }
 
 
 /*Logo*/
