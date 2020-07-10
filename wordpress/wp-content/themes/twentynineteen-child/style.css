@@ -141,7 +141,8 @@ a:hover, a:active { color: var(--color-1); }
 input[type="reset"],
 input[type="submit"] { background: var(--color-1); }
 h1:not(.site-title)::before, 
-h2::before { content: none; }
+h2::before,
+.entry .entry-title::before { content: none; }
 .fa-2x { font-size: 1.6em; }
 .entry .entry-content a { text-decoration: none; }
 
@@ -155,7 +156,7 @@ h2::before { content: none; }
 /*Header*/
 .site .site-header { height: 400px; background: url('assets/images/cherry-farm-trees.jpg') 0% 0%/cover no-repeat; }
 .site-branding-container { }
-.entry .entry-header { position: absolute; top: 245px; margin-bottom: 44px; }
+.entry .entry-header { position: absolute; top: 270px; margin-bottom: 44px; }
 .site-header.featured-image { min-height: 0px; margin-bottom: 0; }
 .site-header.featured-image .site-featured-image .post-thumbnail img { height: auto; top: 0px; }
 .site-header.featured-image .site-branding-container::after, 
@@ -331,8 +332,8 @@ h2::before { content: none; }
     .site-header .site-branding-container .site-title a, 
     .site-header .site-branding-container .site-title a:link, 
     .site-header .site-branding-container .site-title a:visited { font-size: 2em; }
-    .site .site-header { height: 400px; }
-    .entry .entry-header { position: absolute; top: 267px; margin-top: 0; margin-bottom: 88px; }
+    .site .site-header { height: 355px; }
+    .entry .entry-header { position: absolute; top: 272px; margin-top: 0; margin-bottom: 88px; }
     
     
     /*Footer*/
@@ -383,7 +384,9 @@ h2::before { content: none; }
        
     
     /*Header*/
-    .site-branding-container { padding-top: 80px; }
+    .site-branding-container { padding-top: 60px; }
+    
+    .entry .entry-header { }
     
     
     /*Content*/
@@ -429,7 +432,7 @@ h2::before { content: none; }
      /*Header*/
      .site-branding-container { padding-top: 104px; }
      .site .site-header { height: 480px; }
-     .entry .entry-header { top: 307px; }
+     .entry .entry-header { top: 370px; }
      
     
     /*Content*/
