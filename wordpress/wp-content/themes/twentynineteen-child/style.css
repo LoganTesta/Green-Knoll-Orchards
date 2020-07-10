@@ -149,7 +149,7 @@ h2::before,
 
 /*Customize reset and grid.*/
 .site-content { }
-.site-content .content-area .content-row { max-width: 100%; padding: 25px 0 25px 0; margin-top: 0; margin-bottom: 0; }
+.site-content .content-area .content-row { max-width: 100%; padding: 10px 0 10px 0; margin-top: 0; margin-bottom: 0; }
 .site-content .content-area .content-row.no-padding-bottom { padding-bottom: 0; }
 
 
@@ -168,7 +168,7 @@ h2::before,
 .site-header .site-branding-container .site-title a:visited { font-size: 1.75em; font-weight: 700; color: rgba(255, 255, 255, 1); text-shadow: 1.4px 2.8px var(--color-1); }
 .site-header .site-branding-container .site-title a:hover { opacity: 0.7; }
 .entry .entry-title { color: #ffffff; text-shadow: 1.2px 2.4px var(--color-1); }
-.site-description { font-size: 1.4em; font-weight: bold; color: #f3f3f3; text-shadow: 0.7px 1.4px var(--color-1); }
+.site-description { font-size: 1.25em; font-weight: bold; color: #f3f3f3; text-shadow: 0.7px 1.4px var(--color-1); }
 
 
 /*Logo*/
@@ -181,7 +181,7 @@ h2::before,
 
 /*Nav*/
 .site-header .main-navigation .main-menu { font-size: 0; }
-.site-header .main-navigation .main-menu li { font-size: 1.125rem; }
+.site-header .main-navigation .main-menu li { font-size: 1.05rem; }
 .site-header .main-navigation .main-menu > li > a { margin-right: 1em; color: #ffffff; text-shadow: 1px 2px var(--color-1); }
 .site-header .main-navigation .main-menu > li > a:hover, 
 .main-navigation .main-menu > li > a:hover + svg { opacity: 1; color: var(--color-1); text-shadow: 1px 2px #ffffff; }
@@ -322,18 +322,19 @@ h2::before,
     .entry-title, 
     .not-found .page-title, 
     .error-404 .page-title, 
-    .has-larger-font-size { font-size: 1.875em; }
+    .has-larger-font-size { font-size: 1.375em; }
     h2 { font-size: 1.5em; }
     h3 { font-size: 1.25em; }
     
     
     /*Header*/
-    .site-branding-container { padding-top: 60px; }
+    .site-branding-container { padding-top: 55px; }
     .site-header .site-branding-container .site-title a, 
     .site-header .site-branding-container .site-title a:link, 
-    .site-header .site-branding-container .site-title a:visited { font-size: 2em; }
-    .site .site-header { height: 355px; }
-    .entry .entry-header { position: absolute; top: 285px; }
+    .site-header .site-branding-container .site-title a:visited { font-size: 1.5em; }
+    .site .site-header { height: 320px; }
+    
+    .entry .entry-header { top: 260px; }
     
     
     /*Footer*/
@@ -380,13 +381,28 @@ h2::before,
 
 @media only screen and (min-width: 1200px){      
     /*General Styling*/
+    .entry-title, 
+    .not-found .page-title, 
+    .error-404 .page-title, 
+    .has-larger-font-size { font-size: 1.875em; }
     .fa-2x { font-size: 2em; }
        
+    /*Customize reset and grid.*/
+    .site-content .content-area .content-row { padding: 20px 0 20px 0; }
+    
     
     /*Header*/
     .site-branding-container { padding-top: 60px; }
+    .site-header .site-branding-container .site-title a, 
+    .site-header .site-branding-container .site-title a:link, 
+    .site-header .site-branding-container .site-title a:visited { font-size: 2em; }
+    .site-description { font-size: 1.4em; }
     
     .entry .entry-header { }
+    
+    
+    /*Nav*/
+    .site-header .main-navigation .main-menu li { font-size: 1.125rem; }
     
     
     /*Content*/
