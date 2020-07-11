@@ -290,7 +290,7 @@ input[type="submit"]:hover { background: var(--color-3); }
 
  /*Contact Form 7*/
  .wpcf7 { }
- .wpcf7-form-control { height: 250px; }
+ .wpcf7-textarea { height: 250px; }
 
 
 
@@ -464,7 +464,7 @@ input[type="submit"]:hover { background: var(--color-3); }
     
     /*Contact Form 7*/
     .wpcf7 { width: 50%; max-width: 750px; }
-    .wpcf7-form-control { }
+    .wpcf7-textarea { }
 }
 
 
