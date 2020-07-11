@@ -283,6 +283,11 @@ h2::before,
 .testimonial__label { color: var(--color-3); }
 
 
+ /*Contact Form 7*/
+ .wpcf7 { }
+ .wpcf7-form-control { height: 250px; }
+
+
 
 @media only screen and (min-width: 500px){
     /*Content*/
@@ -450,6 +455,11 @@ h2::before,
     /*Website Products plugin customization.*/
     .product { padding-bottom: 0; }
     .product__background { height: 180px; }
+    
+    
+    /*Contact Form 7*/
+    .wpcf7 { width: 50%; max-width: 750px; }
+    .wpcf7-form-control { }
 }
 
 
