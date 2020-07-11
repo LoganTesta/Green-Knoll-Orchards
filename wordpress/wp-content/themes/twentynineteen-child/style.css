@@ -260,9 +260,10 @@ h2::before,
 /*Plugins*/
 /*Website Products plugin customization.*/
 .product { padding-bottom: 50px; }
-.product__title { font-weight: 700; color: var(--color-2); }
+.product__title { font-weight: 700; color: var(--color-1); }
 .product__background { height: 260px; }
-.product__price { font-weight: 600; }
+.product__price { font-weight: 600; color: var(--color-2); }
+.product__label { color: var(--color-3); }
 .product__description { }
 
 .product.zero .product__background { background: url('assets/images/cherry-bunch.jpg') 0% 0%/cover no-repeat; }
@@ -378,7 +379,7 @@ h2::before,
     /*Website Products plugin customization.*/
     .products-container__heading { margin-bottom: 0; }
     .product__title { margin-bottom: 0; }
-        .product__background { height: 220px; }
+    .product__background { height: 220px; }
     .product__price { font-size: 1.125em; }
     .product__content { margin-bottom: 0; }
     .product__label { font-size: 1.125em; }
