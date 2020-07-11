@@ -145,6 +145,11 @@ h2::before,
 .entry .entry-title::before { content: none; }
 .fa-2x { font-size: 1.6em; }
 .entry .entry-content a { text-decoration: none; }
+.button:hover, 
+button:hover, 
+input[type="button"]:hover, 
+input[type="reset"]:hover, 
+input[type="submit"]:hover { background: var(--color-3); }
 
 
 /*Customize reset and grid.*/
