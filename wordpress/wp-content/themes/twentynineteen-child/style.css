@@ -138,14 +138,17 @@ h3 { font-size: 1.125em; color: var(--color-2); }
 
 a:hover, a:active { color: var(--color-1); }
 #colophon .site-info a:hover { color: var(--color-1); }
-.button, button, input[type="button"], 
-input[type="reset"],
-input[type="submit"] { background: var(--color-1); }
+
 h1:not(.site-title)::before, 
 h2::before,
 .entry .entry-title::before { content: none; }
-.fa-2x { font-size: 1.6em; }
+
 .entry .entry-content a { text-decoration: none; }
+.entry .entry-content a.button, .entry .entry-content a:hover { color: var(--color-3); }
+
+.button, button, input[type="button"], 
+input[type="reset"],
+input[type="submit"] { background: var(--color-1); }
 .button:hover, 
 button:hover, 
 input[type="button"]:hover, 
@@ -167,6 +170,8 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus, 
 input[type="color"]:focus, 
 textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3px var(--color-1-semi-opaque); }
+
+.fa-2x { font-size: 1.6em; }
 
 
 /*Customize reset and grid.*/
@@ -256,7 +261,7 @@ textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3
 
 .index-products__heading { text-align: right; padding-right: 80px; }
 .index-product { padding-bottom: 40px; }
-.index-product__title { padding-bottom: 4px; font-size: 1.25em; font-weight: 700; color: var(--color-2); }
+.index-product__title { padding-bottom: 8px; font-size: 1.25em; font-weight: 700; color: var(--color-2); }
 .index-product .index-product__title-link { color: var(--color-2); }
 .index-product__background { height: 150px; }
 .index-product__background-link { display: block; height: 100%; }
@@ -298,7 +303,7 @@ textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3
 
 /*General Testimonials plugin customization.*/
 .testimonials-container__heading { margin-bottom: 0; }
-.testimonials-container__inner-wrapper { padding-top: 12px; }
+.testimonials-container__inner-wrapper { padding-top: 10px; }
 
 .testimonial__title { margin-bottom: 8px; font-weight: 600; letter-spacing: 0.8px; color: var(--color-1); }
 .testimonial__provided-name { color: var(--color-1); }
@@ -422,6 +427,7 @@ textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3
     .not-found .page-title, 
     .error-404 .page-title, 
     .has-larger-font-size { font-size: 1.875em; }
+    
     .fa-2x { font-size: 2em; }
        
     /*Customize reset and grid.*/
