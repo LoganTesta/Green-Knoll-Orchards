@@ -327,7 +327,7 @@ function pw_load_products( $a ) {
             $pluginContainer .= '<div class="product">';
             $pluginContainer .= '<h4 class="product__title">' . $post->post_title . '</h4>';
             if ( !empty( $url_thumb ) ) {
-                $pluginContainer .= '<div class="product__image" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
+                $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
             }
             if ( !empty( $price ) ) {
                 if (!empty( $link )) {

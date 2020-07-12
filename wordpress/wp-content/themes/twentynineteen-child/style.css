@@ -122,7 +122,7 @@ Color 3: #737836    olive green    (115, 120, 54)
     --color-2: #23434c;
     --color-3: #737836;
     --color-1-semi-opaque: rgba(66, 105, 47, 0.6);
-    --color-2-more-opaque: rgba(35, 67, 76, 0.6);
+    --color-2-more-opaque: rgba(35, 67, 76, 0.62);
     --color-2-mostly-opaque: rgba(35, 67, 76, 0.85);
 }
 
@@ -263,7 +263,7 @@ textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3
 
 .index-products__heading { text-align: right; padding-right: 80px; }
 .index-product { position: relative; padding-bottom: 40px; }
-.index-product__title { position: absolute; top: 15px; right: 25px;  }
+.index-product__title { position: absolute; top: 15px; right: 26px; }
 .index-product .index-product__title-link { display: inline-block; padding: 10px 12px; border: 3px solid #f0f0f0; border-radius: 14px; font-size: 1.25em; font-weight: 700; background-color: var(--color-2-mostly-opaque); color: #ffffff; }
 .index-product .index-product__title .index-product__title-link:hover { background-color: var(--color-2-more-opaque); color: #ffffff; text-decoration: underline; }
 .index-product__background { height: 180px; }
@@ -289,19 +289,20 @@ textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3
 
 /*Plugins*/
 /*Website Products plugin customization.*/
-.product { padding-bottom: 50px; }
-.product__title { font-weight: 700; color: var(--color-1); }
+.product { position: relative; padding-bottom: 50px; }
+.product__title { display: inline-block; position: absolute; top: 15px; right: 26px; padding: 10px 12px; border: 3px solid #f0f0f0; border-radius: 14px; font-size: 1.25em; font-weight: 700; background-color: var(--color-2-more-opaque); color: #ffffff; }
 .product__background { height: 260px; }
 .product__price { font-weight: 600; color: var(--color-2); }
 .product__label { color: var(--color-3); }
 .product__description { }
 
-.product.zero .product__background { background: url('assets/images/cherry-bunch.jpg') 0% 0%/cover no-repeat; }
-.product.one .product__background { background: url('assets/images/plums-on-branch.jpg') 0% 0%/cover no-repeat; }
-.product.two .product__background { background: url('assets/images/apple-on-branch.jpg') 0% 0%/cover no-repeat; }
-.product.three .product__background { background: url('assets/images/pear-on-tree.jpg') 0% 0%/cover no-repeat; }
-
 .product.three { padding-bottom: 0; }
+
+/*Clearing variable width columns */
+@media only screen and (max-width: 767px){   
+    .product { width: 100%; }
+    .products-container__inner-wrapper > div:nth-child(n+1){ content: ""; display: block; clear: both; }
+}
 
 
 /*General Testimonials plugin customization.*/
