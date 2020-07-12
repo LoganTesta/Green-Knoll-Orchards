@@ -121,6 +121,7 @@ Color 3: #737836    olive green    (115, 120, 54)
     --color-1: #42692f;
     --color-2: #23434c;
     --color-3: #737836;
+    --color-1-semi-opaque: rgba(66, 105, 47, 0.6);
 }
 
 
@@ -150,6 +151,22 @@ button:hover,
 input[type="button"]:hover, 
 input[type="reset"]:hover, 
 input[type="submit"]:hover { background: var(--color-3); }
+input[type="text"]:focus, 
+input[type="email"]:focus,
+input[type="url"]:focus, 
+input[type="password"]:focus, 
+input[type="search"]:focus, 
+input[type="number"]:focus, 
+input[type="tel"]:focus, 
+input[type="range"]:focus, 
+input[type="date"]:focus, 
+input[type="month"]:focus, 
+input[type="week"]:focus, 
+input[type="time"]:focus, 
+input[type="datetime"]:focus, 
+input[type="datetime-local"]:focus, 
+input[type="color"]:focus, 
+textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3px var(--color-1-semi-opaque); }
 
 
 /*Customize reset and grid.*/
@@ -281,7 +298,7 @@ input[type="submit"]:hover { background: var(--color-3); }
 
 /*General Testimonials plugin customization.*/
 .testimonials-container__heading { margin-bottom: 0; }
-.testimonials-container__inner-wrapper { padding-top: 22px; }
+.testimonials-container__inner-wrapper { padding-top: 12px; }
 
 .testimonial__title { margin-bottom: 8px; font-weight: 600; letter-spacing: 0.8px; color: var(--color-1); }
 .testimonial__provided-name { color: var(--color-1); }
