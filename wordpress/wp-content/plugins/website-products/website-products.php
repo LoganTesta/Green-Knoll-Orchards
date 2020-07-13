@@ -309,7 +309,7 @@ function pw_load_products( $a ) {
     //Get all products.
     $posts = get_posts($args);
     $pluginContainer .= '<div class="products-container">';
-    $pluginContainer .= '<h3 class="products-container__heading">' . get_option( 'website-products-leading-text' ) . '</h3>';
+    $pluginContainer .= '<div class="products-container__heading">' . get_option( 'website-products-leading-text' ) . '</div>';
     $pluginContainer .= '<div class="products-container__inner-wrapper">';
     
     $numberToDisplay = get_option( 'website-products-number-to-display' );
@@ -325,7 +325,7 @@ function pw_load_products( $a ) {
             $label = pw_get_productlabel( $post );
             $link = pw_get_url( $post );
             $pluginContainer .= '<div class="product">';
-            $pluginContainer .= '<h4 class="product__title">' . $post->post_title . '</h4>';
+            $pluginContainer .= '<div class="product__title">' . $post->post_title . '</div>';
             if ( !empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
             }
