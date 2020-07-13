@@ -306,8 +306,8 @@ textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3
 
 
 /*General Testimonials plugin customization.*/
-.testimonials-container__heading { margin-bottom: 0; }
-.testimonials-container__inner-wrapper { padding-top: 10px; }
+.testimonials-container__heading { margin-bottom: 16px; font-size: 1.5em; }
+.testimonials-container__inner-wrapper { padding-top: 0; }
 
 .testimonial__title { margin-bottom: 8px; font-weight: 600; letter-spacing: 0.8px; color: var(--color-1); }
 .testimonial__provided-name { color: var(--color-1); }
