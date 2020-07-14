@@ -264,7 +264,7 @@ textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3
 .index-products__heading { text-align: right; padding-right: 80px; }
 .index-product { position: relative; padding-bottom: 40px; }
 .index-product__title { position: absolute; top: 15px; right: 26px; }
-.index-product .index-product__title-link { display: inline-block; padding: 10px 12px; border: 3px solid var(--color-2); border-radius: 14px; font-size: 1.25em; font-weight: 700; background-color: rgba(255, 255, 255, 0.9); color: var(--color-2); }
+.index-product .index-product__title-link { display: inline-block; padding: 10px 12px; border: 2px solid var(--color-2); border-radius: 4px; font-size: 1.25em; font-weight: 700; background-color: rgba(255, 255, 255, 0.9); color: var(--color-2); }
 .index-product .index-product__title .index-product__title-link:hover { background-color: rgba(255, 255, 255, 0.62); color: var(--color-2); text-decoration: underline; }
 .index-product__background { height: 180px; }
 .index-product__background-link { display: block; height: 100%; }
