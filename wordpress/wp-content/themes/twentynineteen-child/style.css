@@ -295,7 +295,6 @@ textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3
 .products-container__inner-wrapper { }
 .product__title { display: inline-block; position: absolute; top: 15px; right: 26px; padding: 10px 12px; border: 3px solid var(--color-2); border-radius: 14px; font-size: 1.25em; font-weight: 700; background-color: rgba(255, 255, 255, 0.9); color: var(--color-2); }
 
-.product__background { height: 260px; }
 .product__background-link { display: block; height: 100%; }
 .product__price { font-weight: 600; color: var(--color-2); }
 .product__label { color: var(--color-3); }
@@ -345,15 +344,11 @@ textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3
     /*Index page*/
     .index-intro__bg-image { height: 280px; }
     
-    .index-product__background { height: 320px; }
-    
     
     /*The Orchard page*/
     
     
     /*Plugins*/
-    /*Website Products plugin customization.*/
-    .product__background { height: 320px; }
 }
 
 
@@ -414,8 +409,6 @@ textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3
     
     /*Index page*/
     .index-intro__bg-image { float: left; width: 60%; height: 220px; margin-right: 30px; }
-    
-    .index-product__background { height: 220px; }
         
     .index-product.two { padding-bottom: 40px; }
     .index-product.three { padding-bottom: 0px; }
@@ -431,7 +424,6 @@ textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3
     /*Website Products plugin customization.*/
     .products-container__heading { margin-bottom: 0; }
     .product__title { margin-bottom: 0; }
-    .product__background { height: 220px; }
     .product__price { font-size: 1.125em; }
     .product__content { margin-bottom: 0; }
     .product__label { font-size: 1.125em; }
@@ -502,7 +494,6 @@ textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3
     /*Plugins*/
     /*Website Products plugin customization.*/
     .product { padding-bottom: 0; }
-    .product__background { height: 180px; }
     
     
     /*Contact Form 7*/
@@ -535,6 +526,4 @@ textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3
     
     
     /*Plugins*/
-    /*Website Products plugin customization.*/
-    .product__background { height: 240px; }
 }
