@@ -4,7 +4,7 @@
  * Plugin URI: https://www.greenknollorchards.com/website-products
  * Version: 1.0
  * Author: Green Knoll Orchards
- * Description: Add website products to your site.  Use the shortcode [website_products] where you want to output products.  For an index page or another page, use the shortcode [website_products_index], which will take you to your products page.  
+ * Description: Add website products to your site.  Use the shortcode [website_products] where you want to output products.  There is also a second shortcode, [website_products_index], for when when you wish to create products on another page such as the index.  This different layout includes links to your products page, and in the plugin settings you can set a different header text too. 
  * Author URI: https://www.greenknollorchards.com
  */
 
