@@ -287,6 +287,62 @@ if ( $_GET[ 'post_type' ] === "website-products" ){
 }
 
 
+//Register the shortcode so we can show products on a different page, most likely the index page.
+function pw_load_products_index( $a ) {
+    $pluginContainer = "";
+    $args = array(
+        "post_type" => "website-products"
+    );
+
+    if ( isset( $a['rand'] ) && $a['rand'] == true ) {
+        $args['orderby'] = 'rand';
+    } else {
+        $args['orderby'] = 'meta_value';
+        $args['meta_key'] = 'productorder';
+        $args['order'] = 'ASC';
+    }
+
+    if ( isset( $a['max']) ) {
+        $args['posts_per_page'] = (int) $a['max'];
+    }
+
+    //Get all products.
+    $posts = get_posts($args);
+    $pluginContainer .= '<div class="products-container index">';
+    $pluginContainer .= '<div class="products-container__heading index">' . get_option( 'website-products-leading-text' ) . '</div>';
+    $pluginContainer .= '<div class="products-container__inner-wrapper">';
+    
+    $numberToDisplay = get_option( 'website-products-number-to-display' );
+    if( $numberToDisplay === "" ) {
+        $numberToDisplay = -1;
+    }
+    $numberToDisplay = (int) $numberToDisplay;
+    $count = 0;
+    foreach ($posts as $post) {
+        if( $count < $numberToDisplay  || $numberToDisplay === -1){
+            $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
+            $price = pw_get_productprice( $post );
+            $label = pw_get_productlabel( $post );
+            $link = pw_get_url( $post );
+            $pluginContainer .= '<div class="product">';
+            $pluginContainer .= '<div class="product__title"><a class="product__title-link" href="the-orchard">' . $post->post_title . '</a></div>';
+            if ( !empty( $url_thumb ) ) {
+                $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
+            }
+            if ( !empty( $post->post_content ) ) {
+                
+            }
+            $pluginContainer .= '</div>';
+        }
+        $count++;
+    }
+    $pluginContainer .= '</div>';
+    $pluginContainer .= '</div>';
+    
+    return $pluginContainer;
+}
+
+
 //Register the shortcode so we can show products.
 function pw_load_products( $a ) {
     $pluginContainer = "";
@@ -331,7 +387,7 @@ function pw_load_products( $a ) {
             }
             if ( !empty( $price ) ) {
                 if (!empty( $link )) {
-                    $pluginContainer .= '<div class="product__price"><a class="product__link" href="' . $link . '" target="__blank">' . $price . '</a></div>';
+                    $pluginContainer .= '<div class="product__price">' . $price . '</a></div>';
                 } else {
                     $pluginContainer .= '<div class="product__price">' . $price . '</div>';
                 }
@@ -351,5 +407,13 @@ function pw_load_products( $a ) {
     
     return $pluginContainer;
 }
+
+
+add_shortcode( "website_products_index", "pw_load_products_index" );
+add_filter( 'widget_text', 'do_shortcode' );
+
 add_shortcode( "website_products", "pw_load_products" );
 add_filter( 'widget_text', 'do_shortcode' );
+
+
+
