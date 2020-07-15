@@ -46,7 +46,8 @@ if ( $productImageWidthHeight <= 0 ) {
 /*For index page*/
 .products-container.index .product { padding: 0 15px 15px 15px; }
 
-.products-container.index  .product__background { border-radius: 0; }
+.products-container.index .product__background { border-radius: 0; }
+.products-container.index .product__background-link { display: block; height: 100%; }
 
 
 

@@ -333,7 +333,9 @@ function pw_load_products_index( $a ) {
             $pluginContainer .= '<div class="product">';
             $pluginContainer .= '<div class="product__title"><a class="product__title-link" href="the-orchard">' . $post->post_title . '</a></div>';
             if ( !empty( $url_thumb ) ) {
-                $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
+                $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
+                        . '<a class="product__background-link" href="the-orchard"><span class="sr-only">' . $post->post_title . 'Link</span></a>'
+                        . '</div>';
             }
             if ( !empty( $post->post_content ) ) {
                 
