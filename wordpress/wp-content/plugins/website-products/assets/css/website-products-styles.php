@@ -45,8 +45,6 @@ if ( $productImageWidthHeight <= 0 ) {
 
 /*For index page*/
 .products-container.index .product { padding: 0 15px 15px 15px; }
-.products-container.index .product:first-of-type { padding-left: 0; }
-.products-container.index .product:last-of-type { padding-right: 0; }
 
 .products-container.index  .product__background { border-radius: 0; }
 
