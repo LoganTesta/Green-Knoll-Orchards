@@ -4,7 +4,7 @@
  * Plugin URI: https://www.greenknollorchards.com/website-products
  * Version: 1.0
  * Author: Green Knoll Orchards
- * Description: Add website products to your site.  Use the shortcode [website_products] where you want to output products, for example in a WordPress generated admin page or a custom PHP page with WordPress enabled.
+ * Description: Add website products to your site.  Use the shortcode [website_products] where you want to output products.  For an index page or another page, use the shortcode [website_products_index], which will take you to your products page.  
  * Author URI: https://www.greenknollorchards.com
  */
 
@@ -41,12 +41,14 @@ add_action( 'init', 'pw_create_product_post_type' );
 /*Set up the settings page inputs*/
 function pw_register_settings() {
     add_option( 'website-products-leading-text', 'Our Products' );
+    add_option( 'website-products-leading-text-index', 'Our Products' );
     add_option( 'website-products-image-width-height', "240" );
     add_option( 'website-products-border-radius', "5" );
     add_option( 'website-products-products-per-row', "3" );
     add_option( 'website-products-number-to-display', "" );
 
     register_setting( 'website-products-settings-group', 'website-products-leading-text', 'pw_validatetextfield' );
+    register_setting( 'website-products-settings-group', 'website-products-leading-text-index', 'pw_validatetextfield' );
     register_setting( 'website-products-settings-group', 'website-products-image-width-height', 'pw_validatetextfield' );
     register_setting( 'website-products-settings-group', 'website-products-border-radius', 'pw_validatetextfield' );
     register_setting( 'website-products-settings-group', 'website-products-products-per-row', 'pw_validatetextfield' );  
@@ -76,6 +78,10 @@ function pw_generate_settings_page() {
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="website-products-leading-text">Products Leading Text</label>
                 <input id="websiteProductsLeadingText" class="admin-input-container__input website-products-leading-text" name="website-products-leading-text" type="text" value="<?php echo get_option( 'website-products-leading-text' ); ?>" />
+            </div>
+            <div class="admin-input-container">
+                <label class="admin-input-container__label" for="website-products-leading-text-index">Index/Additional Page Products Leading Text</label>
+                <input id="websiteProductsLeadingText" class="admin-input-container__input website-products-leading-text-index" name="website-products-leading-text-index" type="text" value="<?php echo get_option( 'website-products-leading-text-index' ); ?>" />
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="website-products-image-width-height">Max Image Height (80-400px)</label>
@@ -309,7 +315,7 @@ function pw_load_products_index( $a ) {
     //Get all products.
     $posts = get_posts($args);
     $pluginContainer .= '<div class="products-container index">';
-    $pluginContainer .= '<div class="products-container__heading index">' . get_option( 'website-products-leading-text' ) . '</div>';
+    $pluginContainer .= '<div class="products-container__heading index">' . get_option( 'website-products-leading-text-index' ) . '</div>';
     $pluginContainer .= '<div class="products-container__inner-wrapper">';
     
     $numberToDisplay = get_option( 'website-products-number-to-display' );
