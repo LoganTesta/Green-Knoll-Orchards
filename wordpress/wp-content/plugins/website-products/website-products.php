@@ -331,7 +331,7 @@ function pw_load_products_index( $a ) {
             $label = pw_get_productlabel( $post );
             $link = pw_get_url( $post );
             $pluginContainer .= '<div class="product">';
-            $pluginContainer .= '<div class="product__title"><a class="product__title-link" href="the-orchard">' . $post->post_title . '</a></div>';
+            $pluginContainer .= '<div class="product__name"><a class="product__name-link" href="the-orchard">' . $post->post_title . '</a></div>';
             if ( !empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
                         . '<a class="product__background-link" href="the-orchard"><span class="sr-only">' . $post->post_title . 'Link</span></a>'
