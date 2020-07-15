@@ -32,7 +32,7 @@ if ( $productImageWidthHeight <= 0 ) {
 .products-container__inner-wrapper { padding-top: 20px; }
 
 .product { float: left; width: 50%; padding: 0 20px 15px 20px; }
-.product__background { display: block; width: 100%; height: <?php echo 0.6 * $productImageWidthHeight; ?>px; margin-left: 0; max-width: 100%; border-radius: <?php echo get_option( 'website-products-bordborder-radiuser-radius' ); ?>px; }
+.product__background { display: block; width: 100%; height: <?php echo 0.6 * $productImageWidthHeight; ?>px; margin-left: 0; max-width: 100%; border-radius: <?php echo get_option( 'website-products-border-radius' ); ?>px; }
 .product__title { padding-bottom: 4px; }
 .product__content { padding-bottom: 5px; }
 .product__price { display: inline-block; padding-right: 25px; font-size: 18px; font-weight: bold; }

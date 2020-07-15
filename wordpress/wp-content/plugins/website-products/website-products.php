@@ -317,8 +317,8 @@ function pw_load_products_index( $a ) {
     $pluginContainer .= '<div class="products-container index">';
     $pluginContainer .= '<div class="products-container__heading index">' . get_option( 'website-products-leading-text-index' ) . '</div>';
     $pluginContainer .= '<div class="products-container__inner-wrapper">';
-    
-    $numberToDisplay = get_option( 'website-products-number-to-display' );
+
+    $numberToDisplay = get_option( 'website-products-products-per-row' );
     if( $numberToDisplay === "" ) {
         $numberToDisplay = -1;
     }
