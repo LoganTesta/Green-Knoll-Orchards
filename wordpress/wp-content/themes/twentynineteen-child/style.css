@@ -122,6 +122,7 @@ Color 3: #737836    olive green    (115, 120, 54)
     --color-2: #23434c;
     --color-3: #737836;
     --color-1-semi-opaque: rgba(66, 105, 47, 0.6);
+    --color-2-low-moderately-opaque: rgba(35, 67, 76, 0.3);
     --color-2-more-opaque: rgba(35, 67, 76, 0.62);
     --color-2-mostly-opaque: rgba(35, 67, 76, 0.85);
 }
@@ -279,7 +280,9 @@ textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3
 .products-container__inner-wrapper { }
 .product__title { display: inline-block; position: absolute; top: 15px; right: 26px; padding: 10px 12px; border: 3px solid var(--color-2); border-radius: 14px; font-size: 1.25em; font-weight: 700; background-color: rgba(255, 255, 255, 0.9); color: var(--color-2); }
 
-.product__background-link { display: block; height: 100%; }
+.product__background { }
+.product__background-link { display: block; height: 100%; transition: all 110ms ease-in-out; }
+.product__background-link:hover { background-color: var(--color-2-low-moderately-opaque); transition: all 110ms ease-in-out; }
 .product__price { font-weight: 600; color: var(--color-2); }
 .product__label { color: var(--color-3); }
 .product__description { }
@@ -289,8 +292,8 @@ textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3
 .content-row.index-products div { padding-left: 0; padding-right: 0; }
 .products-container.index .products-container__heading { text-align: right; padding-right: 95px; margin-top: 0; margin-bottom: 16px; font-size: 1.5em; color: var(--color-3); }
 .products-container.index .products-container__inner-wrapper { padding-top: 0; }
-.products-container.index .product .product__name-link { display: inline-block; position: absolute; top: 15px; right: 26px; padding: 10px 12px; border: 2px solid var(--color-2); border-radius: 4px; font-size: 1.25em; font-weight: 700; background-color: rgba(255, 255, 255, 0.9); color: var(--color-2); }
-.products-container.index .product .product__name-link:hover { background-color: rgba(255, 255, 255, 0.62); color: var(--color-2); text-decoration: underline; }
+.products-container.index .product .product__name-link { display: inline-block; position: absolute; top: 15px; right: 26px; padding: 10px 12px; border: 2px solid var(--color-2); border-radius: 4px; font-size: 1.25em; font-weight: 700; background-color: rgba(255, 255, 255, 0.9); color: var(--color-2); transition: all 110ms ease-in-out; }
+.products-container.index .product .product__name-link:hover { background-color: rgba(255, 255, 255, 0.62); color: var(--color-2); text-decoration: underline; transition: all 110ms ease-in-out; }
 
 
 
