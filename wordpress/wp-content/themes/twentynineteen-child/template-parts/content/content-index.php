@@ -57,29 +57,6 @@
                 </div>
             </div>
             <div class="content-row index-products">
-<!--                <div class="col-sma-12">
-                    <h2 class="index-products__heading">Delicious Local Fruits</h2>
-                </div>
-                <div class="index-product zero col-vsm-12 col-sma-4 col-lar-3">
-                    <div class="index-product__title"><a class="index-product__title-link" href="the-orchard">Cherries</a></div>
-                    <div class="index-product__background"><a class="index-product__background-link" href="the-orchard"><span class="sr-only">The Orchard Link</span></a></div>
-                    <div class="index-product__description"></div>
-                </div>
-                <div class="index-product one col-vsm-12 col-sma-4 col-lar-3">
-                    <div class="index-product__title"><a class="index-product__title-link" href="the-orchard">Plums</a></div>
-                    <div class="index-product__background"><a class="index-product__background-link" href="the-orchard"><span class="sr-only">The Orchard Link</span></a></div>
-                    <div class="index-product__description"></div>
-                </div>
-                <div class="index-product two col-vsm-12 col-sma-4 col-lar-3">
-                    <div class="index-product__title"><a class="index-product__title-link" href="the-orchard">Apples</a></div>
-                    <div class="index-product__background"><a class="index-product__background-link" href="the-orchard"><span class="sr-only">The Orchard Link</span></a></div>
-                    <div class="index-product__description"></div>
-                </div>
-                <div class="index-product three col-vsm-12 col-sma-4 col-lar-3">
-                    <div class="index-product__title"><a class="index-product__title-link" href="the-orchard">Pears</a></div>
-                    <div class="index-product__background"><a class="index-product__background-link" href="the-orchard"><span class="sr-only">The Orchard Link</span></a></div>
-                    <div class="index-product__description"></div>
-                </div>-->
                 <div class="col-sma-12">
                     <?php echo do_shortcode( "[website_products_index]" ); ?>
                 </div>
