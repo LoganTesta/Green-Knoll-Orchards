@@ -125,8 +125,6 @@ function pw_url_custom_metabox() {
     update_post_meta( $post->ID, 'productprice', $productprice );
     $productlabel = sanitize_text_field( get_post_meta( $post->ID, 'productlabel', true ) );
     update_post_meta( $post->ID, 'productlabel', $productlabel );
-    $producturl = sanitize_text_field( get_post_meta( $post->ID, 'producturl', true ) );
-    update_post_meta( $post->ID, 'producturl', $producturl );
     $productorder = sanitize_text_field( get_post_meta( $post->ID, 'productorder', true ) );
     if( isset( $productorder ) === false || $productorder === "" ) {
         $productorder = "n/a";
@@ -142,16 +140,6 @@ function pw_url_custom_metabox() {
     $errorslabel = "";
     if( isset( $errorslabel ) ){
         echo $errorslabel;
-    }
-   
-    $errorslink = "";
-    if ( !preg_match( "/http(s?):\/\//", $producturl ) && $producturl !== "" ) {
-        $errorslink = "This URL is not valid";
-        $producturl = "http://";
-    }
-    
-    if( isset( $errorslink ) ){
-        echo $errorslink;
     }
     
     $errorsorder = "";
@@ -171,9 +159,6 @@ function pw_url_custom_metabox() {
         </label>
     </p>
     <p>
-        <label for="producturl">Related URL:<br />
-            <input id="producturl" size="37" name="producturl" value="<?php if( isset( $producturl ) ) { echo $producturl; } ?>" />
-        </label>
     </p>
         <p>
         <label for="productorder">Product Order:<br />
@@ -212,21 +197,6 @@ add_action( 'save_post', 'pw_save_custom_productlabel' );
 function pw_get_productlabel( $post ) {
     $productlabel = get_post_meta( $post->ID, 'productlabel', true );
     return $productlabel;
-}
-
-
-function pw_save_custom_url( $post_id ) {
-    global $post;
-    
-    if( isset($_POST['producturl']) ) {
-        update_post_meta( $post->ID, 'producturl', $_POST['producturl'] );
-    }
-}
-add_action( 'save_post', 'pw_save_custom_url' );
-
-function pw_get_url( $post ) {
-    $producturl = get_post_meta( $post->ID, 'producturl', true );
-    return $producturl;
 }
 
 
@@ -329,7 +299,6 @@ function pw_load_products_index( $a ) {
             $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
             $price = pw_get_productprice( $post );
             $label = pw_get_productlabel( $post );
-            $link = pw_get_url( $post );
             $pluginContainer .= '<div class="product">';
             $pluginContainer .= '<div class="product__name"><a class="product__name-link" href="the-orchard">' . $post->post_title . '</a></div>';
             if ( !empty( $url_thumb ) ) {
@@ -387,18 +356,13 @@ function pw_load_products( $a ) {
             $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
             $price = pw_get_productprice( $post );
             $label = pw_get_productlabel( $post );
-            $link = pw_get_url( $post );
             $pluginContainer .= '<div class="product">';
             $pluginContainer .= '<div class="product__title">' . $post->post_title . '</div>';
             if ( !empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
             }
             if ( !empty( $price ) ) {
-                if (!empty( $link )) {
-                    $pluginContainer .= '<div class="product__price">' . $price . '</a></div>';
-                } else {
                     $pluginContainer .= '<div class="product__price">' . $price . '</div>';
-                }
             }
             if ( !empty( $label ) ) {
                 $pluginContainer .= '<div class="product__label">' . $label . '</div>';
