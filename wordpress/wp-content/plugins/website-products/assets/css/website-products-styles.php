@@ -44,7 +44,7 @@ if ( $productImageWidthHeight <= 0 ) {
 
 
 /*For index page*/
-.products-container.index .product { padding: 0 15px 0 15px; }
+.products-container.index .product { padding: 0 15px 50px 15px; }
 
 .products-container.index .product__background { margin-bottom: 0; border-radius: 0; }
 .products-container.index .product__background-link { display: block; height: 100%; }
@@ -84,6 +84,10 @@ if ( $productImageWidthHeight <= 0 ) {
 
     .product { width: <?php echo $productWidthDesktop; ?>%; }
     .product__background { height: <?php echo 0.8 * $productImageWidthHeight; ?>px; }
+    
+    
+    /*For index page*/
+    .products-container.index .product { padding-bottom: 0; }
 }
 
 
