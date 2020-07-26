@@ -28,6 +28,7 @@ function pw_create_product_post_type() {
                     'singular_name' => __('Website Product')
                 ),
                 'public' => true,
+                'show_in_menu' => true,
                 'supports' => array( 'title', 'editor', 'thumbnail', 'custom_fields' ),
                 'hierarchical' => false
             )
@@ -36,7 +37,12 @@ function pw_create_product_post_type() {
 add_action( 'init', 'pw_create_product_post_type' );
 
 
-/*Add a settings page for the plugin*/
+/*Set up the settings page*/
+function pw_admin_menu(){
+    add_submenu_page( 'edit.php?post_type=website-products', 'Settings', 'Settings', 'manage_options', 'website-products', 'pw_generate_settings_page' );
+}
+add_action( 'admin_menu', 'pw_admin_menu' );
+
 
 /*Set up the settings page inputs*/
 function pw_register_settings() {
@@ -57,17 +63,11 @@ function pw_register_settings() {
 add_action( 'admin_init', 'pw_register_settings');
 
 
-/*Set up the settings page*/
-function pw_add_options_page() {
-    add_options_page( 'Page Title', 'Website Products Settings', 'manage_options', 'website-products', 'pw_generate_settings_page' );
-}
-add_action( 'admin_menu', 'pw_add_options_page' );
-
-
 function pw_validatetextfield( $input ) {
     $updatedField = sanitize_text_field( $input );
     return $updatedField;
 }
+
 
 function pw_generate_settings_page() {
     ?>

@@ -37,13 +37,13 @@ function gt_create_testimonial_post_type() {
 add_action( 'init', 'gt_create_testimonial_post_type' );
 
 
+/*Set up the settings page*/
 function gt_admin_menu(){
     add_submenu_page( 'edit.php?post_type=general-testimonials', 'Settings', 'Settings', 'manage_options', 'general-testimonials', 'gt_generate_settings_page' );
 }
 add_action( 'admin_menu', 'gt_admin_menu' );
 
 
-/*Add a settings page for the plugin*/
 /*Set up the settings page inputs*/
 function gt_register_settings() {
     add_option( 'general-testimonials-leading-text', 'Some text' );
@@ -67,6 +67,7 @@ function gt_validatetextfield( $input ) {
     $updatedField = sanitize_text_field( $input );
     return $updatedField;
 }
+
 
 function gt_generate_settings_page() {
     ?>
