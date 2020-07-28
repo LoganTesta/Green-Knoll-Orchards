@@ -1,6 +1,7 @@
 
 /*WordPress Admin styling customization for this plugin.*/
 .general-testimonials__plugin-title { padding-top: 5px; padding-bottom: 15px; font-size: 23px; font-weight: 400; }
+.general-testimonials__instructions { display: block; padding-bottom: 20px; }
 
 .testimonials-settings-form { padding-right: 10px; }
 

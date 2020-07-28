@@ -72,6 +72,9 @@ function gt_validatetextfield( $input ) {
 function gt_generate_settings_page() {
     ?>
     <h1 class="general-testimonials__plugin-title">General Testimonials Settings</h1>
+    <div class="general-testimonials__instructions">
+        <p>Add customer testimonials to your site.  Use the shortcode [general_testimonials] where you want to output testimonials.</p>
+    </div>
     <form class="testimonials-settings-form" method="post" action="options.php">
         <?php settings_fields( 'general-testimonials-settings-group' ); ?>
             <div class="admin-input-container">
