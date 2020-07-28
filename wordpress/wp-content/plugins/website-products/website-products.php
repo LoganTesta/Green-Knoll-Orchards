@@ -85,11 +85,13 @@ function pw_generate_settings_page() {
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="website-products-image-width-height">Max Image Height (80-400px)</label>
-                <input id="websiteProductsNumberToDisplay" class="admin-input-container__input smaller website-products-image-width-height" name="website-products-image-width-height" type="number" value="<?php echo get_option( 'website-products-image-width-height' ); ?>" min="80" max="400" /><span class="admin-input-container__trailing-text">px</span>
+                <input id="websiteProductsNumberToDisplay" class="admin-input-container__input smaller website-products-image-width-height" name="website-products-image-width-height" type="number" value="<?php echo get_option( 'website-products-image-width-height' ); ?>" min="80" max="400" />
+                <span class="admin-input-container__trailing-text">px</span>
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="website-products-border-radius">Image Border Radius</label>
-                <input id="websiteProductsImageWidthHeight" class="admin-input-container__input website-products-border-radius" name="website-products-border-radius" type="text" value="<?php echo get_option( 'website-products-border-radius' ); ?>" /><span class="admin-input-container__trailing-text">px</span>
+                <input id="websiteProductsImageWidthHeight" class="admin-input-container__input website-products-border-radius" name="website-products-border-radius" type="text" value="<?php echo get_option( 'website-products-border-radius' ); ?>" />
+                <span class="admin-input-container__trailing-text">px</span>
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Number of Products Per Row</span>         
