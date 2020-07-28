@@ -1,6 +1,7 @@
 
 /*WordPress Admin styling customization for this plugin.*/
 .website-products__plugin-title { padding-top: 5px; padding-bottom: 15px; font-size: 23px; font-weight: 400; }
+.website-products__instructions { display: block; padding-bottom: 20px; }
 
 .products-settings-form { padding-right: 10px; }
 
