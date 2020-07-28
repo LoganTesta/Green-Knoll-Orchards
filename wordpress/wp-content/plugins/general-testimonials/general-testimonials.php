@@ -46,9 +46,9 @@ add_action( 'admin_menu', 'gt_admin_menu' );
 
 /*Set up the settings page inputs*/
 function gt_register_settings() {
-    add_option( 'general-testimonials-leading-text', 'Some text' );
-    add_option( 'general-testimonials-image-width-height', "150" );
-    add_option( 'general-testimonials-border-radius', "45" );
+    add_option( 'general-testimonials-leading-text', 'Customer Testimonials' );
+    add_option( 'general-testimonials-image-width-height', "120" );
+    add_option( 'general-testimonials-border-radius', "15" );
     add_option( 'general-testimonials-float-image-direction', "left" );
     add_option( 'general-testimonials-testimonials-per-row', "2" );
     add_option( 'general-testimonials-number-to-display', "" );
@@ -80,11 +80,15 @@ function gt_generate_settings_page() {
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="general-testimonials-image-width-height">Image Width, Height (60-150px)</label>
-                <input id="generalTestimonialsNumberToDisplay" class="admin-input-container__input smaller general-testimonials-image-width-height" name="general-testimonials-image-width-height" type="number" value="<?php echo get_option( 'general-testimonials-image-width-height' ); ?>" min="60" max="150" /><span class="admin-input-container__trailing-text">px</span>
+                <input id="generalTestimonialsNumberToDisplay" class="admin-input-container__input smaller general-testimonials-image-width-height" name="general-testimonials-image-width-height" type="number" value="<?php echo get_option( 'general-testimonials-image-width-height' ); ?>" min="60" max="150" />
+                <span class="admin-input-container__trailing-text">px</span>
+                <span class="admin-input-container__default-settings-text">Default: 120px</span>
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="general-testimonials-border-radius">Image Border Radius</label>
-                <input id="generalTestimonialsImageWidthHeight" class="admin-input-container__input general-testimonials-border-radius" name="general-testimonials-border-radius" type="text" value="<?php echo get_option( 'general-testimonials-border-radius' ); ?>" /><span class="admin-input-container__trailing-text">px</span>
+                <input id="generalTestimonialsImageWidthHeight" class="admin-input-container__input general-testimonials-border-radius" name="general-testimonials-border-radius" type="text" value="<?php echo get_option( 'general-testimonials-border-radius' ); ?>" />
+                <span class="admin-input-container__trailing-text">px</span>
+                <span class="admin-input-container__default-settings-text">Default: 15px</span>
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Float Image Direction</span>         

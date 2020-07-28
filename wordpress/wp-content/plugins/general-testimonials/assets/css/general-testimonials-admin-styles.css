@@ -8,6 +8,7 @@
 
 .admin-input-container { padding-bottom: 40px; }
 .admin-input-container__trailing-text { padding-left: 5px; font-weight: 600; }
+.admin-input-container__default-settings-text { padding-left: 15px; font-style: italic; }
 .admin-input-container__label { display: block; padding-bottom: 4px; font-weight: 600; }
 .admin-input-container__input { display: inline-block; width: 100%; }
 
