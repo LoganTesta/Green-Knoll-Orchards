@@ -1,0 +1,22 @@
+
+=== General Testimonials ==
+Contributors: Tualatin Top Bakery
+Tags: testimonials, customers
+Stable tag: 1.0
+
+Add customer testimonials to your site, with layout and styling customizations.
+
+
+== Description ==
+Add customer testimonials to your site, with layout and styling customizations.  Use the shortcode [general_testimonials] where you want to output testimonials.
+
+
+== Installation == 
+1. Upload the 'general-testimonials' folder in '/wp-content/plugins' directory.
+2. Activate the plugin in the Plugins menu in WordPress.
+
+
+== Screenshots ==
+
+
+
