@@ -226,7 +226,7 @@ function pw_get_order( $post ) {
 
 
 /*Adjust admin columns for Products*/
-if ( $_GET[ 'post_type' ] === "website-products" ){
+if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "website-products" ){
     add_filter( 'manage_posts_columns', 'pw_setup_adjust_admin_columns' );
     function pw_setup_adjust_admin_columns( $columns ) {
         $columns = array(
