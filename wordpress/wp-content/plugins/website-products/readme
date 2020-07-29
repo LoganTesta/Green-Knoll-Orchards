@@ -1,0 +1,25 @@
+
+=== Website Products ==
+Contributors: Green Knoll Orchards
+Tags: products, customers
+Stable tag: 1.0
+
+Add website products to your site, with layout and styling customizations. 
+
+
+== Description ==
+Add website products to your site, with layout and styling customizations.  Use the shortcode [website_products] where you want to output products.  
+There is also a second shortcode, [website_products_index], for when when you wish to create products on another page such as the index.  
+This different layout includes links to your products page, and in the plugin settings you can set a different header text too. 
+
+
+== Installation == 
+1. Upload the 'website-products' folder in '/wp-content/plugins' directory.
+2. Activate the plugin in the Plugins menu in WordPress.
+
+
+== Screenshots ==
+
+
+
+
