@@ -72,10 +72,6 @@ function gt_validatetextfield( $input ) {
 function gt_generate_settings_page() {
     ?>
     <h1 class="general-testimonials__plugin-title">General Testimonials Settings</h1>
-    <div class="general-testimonials__instructions">
-        <p>Add customer testimonials to your site, with layout and styling customizations.</p>
-        <p>Use the shortcode [general_testimonials] where you want to output testimonials.</p>
-    </div>
     <form class="testimonials-settings-form" method="post" action="options.php">
         <?php settings_fields( 'general-testimonials-settings-group' ); ?>
             <div class="admin-input-container">
@@ -241,7 +237,7 @@ function gt_get_url( $post ) {
 function gt_save_custom_order( $post_id ) {
     global $post;
     
-    if( isset( $_POST['testimonialorder'] ) ) {
+    if ( isset( $_POST['testimonialorder'] ) ) {
         update_post_meta( $post->ID, 'testimonialorder', $_POST['testimonialorder'] );
     }
 }
@@ -256,6 +252,18 @@ function gt_get_order( $post ) {
 
 /*Adjust admin columns for Testimonials*/
 if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "general-testimonials" ){
+
+    add_filter('admin_bar_menu', 'gt_setup_instructions');
+    function gt_setup_instructions() {
+        if ( get_admin_page_title() === 'General Testimonials' ) {
+            echo '<div class="general-testimonials__instructions">
+                <p>Add customer testimonials to your site, with layout and styling customizations.</p>
+                <p>Use the shortcode [general_testimonials] where you want to output testimonials.</p>
+                </div>';
+        }
+    }
+    
+
     add_filter( 'manage_posts_columns', 'gt_setup_adjust_admin_columns' );
     function gt_setup_adjust_admin_columns( $columns ) {
         $columns = array(
