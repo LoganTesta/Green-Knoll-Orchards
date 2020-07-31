@@ -1,7 +1,8 @@
 
 /*WordPress Admin styling customization for this plugin.*/
 .general-testimonials__plugin-title { padding-top: 5px; padding-bottom: 15px; font-size: 23px; font-weight: 400; }
-.general-testimonials__instructions { display: block; padding-bottom: 20px; }
+.general-testimonials__instructions { display: inline-block; padding: 2px 15px; margin-top: 15px; border: 1px solid #ccd0d4; background-color: #ffffff; }
+.general-testimonials__instructions__intro { padding-bottom: 25px; }
 
 .testimonials-settings-form { padding-right: 10px; }
 

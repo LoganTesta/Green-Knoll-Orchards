@@ -257,8 +257,9 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "general-testimonials
     function gt_setup_instructions() {
         if ( get_admin_page_title() === 'General Testimonials' ) {
             echo '<div class="general-testimonials__instructions">
-                <p>Add customer testimonials to your site, with layout and styling customizations.</p>
-                <p>Use the shortcode [general_testimonials] where you want to output testimonials.</p>
+                <p class="general-testimonials__instructions__intro">Add customer testimonials to your site, with layout and styling customizations.</p>
+                <p><strong>Shortcode:</strong> [general_testimonials].</p>
+                <p><strong>PHP code:</strong> <code>&lt?php echo do_shortcode( "[general_testimonials]" ); ?></code> 
                 </div>';
         }
     }
