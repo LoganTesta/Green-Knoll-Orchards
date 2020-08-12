@@ -74,6 +74,8 @@ columns display at their designated widths at all device sizes, small (sma) abov
 @media only screen and (min-width: 1200px){
     .content { padding: 20px 0 20px 0; }
     .content-row { padding: 25px 0 25px 0; }
+    .content-row:first-of-type { padding-top: 0; }
+    .content-row:last-of-type { padding-bottom: 0; }
        
     .col-lar-1, .col-lar-2, .col-lar-3, .col-lar-4, .col-lar-5, .col-lar-6, .col-lar-7, .col-lar-8, .col-lar-9, .col-lar-10, .col-lar-11, .col-lar-12 {
         float: left;
