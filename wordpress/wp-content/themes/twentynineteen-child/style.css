@@ -257,8 +257,8 @@ textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3
 .site-footer__subheading { padding-bottom: 12px; font-size: 1.6875em; font-weight: 700; color: var(--color-1); }
 .site-footer .site-footer__social-logo { display: inline-block; padding-right: 25px; font-size: 0.71111rem; }
 .site-footer .site-footer__social-logo:last-of-type { padding-right: 0; }
-.social-icon { color: var(--color-1); }
-.social-icon:hover { color: var(--color-3); }
+.social-icon { color: var(--color-1); transition: all 110ms ease-in-out; }
+.social-icon:hover { color: var(--color-3); transition: all 110ms ease-in-out; }
 
 .site-footer__hours { text-align: center; }
 
