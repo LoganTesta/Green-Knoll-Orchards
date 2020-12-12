@@ -178,7 +178,11 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus, 
 input[type="color"]:focus, 
 textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3px var(--color-1-semi-opaque); }
-
+.button:focus, 
+button:focus, 
+input[type="button"]:focus, 
+input[type="reset"]:focus, 
+input[type="submit"]:focus { background: var(--color-3); }
 .fa-2x { font-size: 1.6em; }
 
 
