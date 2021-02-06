@@ -194,9 +194,9 @@ input[type="submit"]:focus { background: var(--color-3); }
 
 
 /*Header*/
-.site .site-header { height: 340px; background: url('assets/images/cherry-farm-trees.jpg') 0% 0%/cover no-repeat; }
+.site .site-header { height: 600px; background: url('assets/images/cherry-farm-trees.jpg') 0% 0%/cover no-repeat; }
 .site-branding-container { }
-.entry .entry-header { position: absolute; top: 290px; margin-top: 0; margin-bottom: 0; }
+.entry .entry-header { position: absolute; top: 540px; margin-top: 0; margin-bottom: 0; }
 .site-header.featured-image { min-height: 0px; margin-bottom: 0; }
 .site-header.featured-image .site-featured-image .post-thumbnail img { height: auto; top: 0px; }
 .site-header.featured-image .site-branding-container::after, 
@@ -208,7 +208,8 @@ input[type="submit"]:focus { background: var(--color-3); }
 .site-header .site-branding-container .site-title a:visited { font-size: 1.375em; font-weight: 700; color: var(--color-1); text-shadow: 1px 2px rgba(255, 255, 255, 1); }
 .site-header .site-branding-container .site-title a:hover { opacity: 0.8; }
 .site-header.featured-image .main-navigation a:focus { color: var(--color-1); }
-.site-branding { padding: 20px; border-radius: 4px; box-shadow: 0 0 0 6px rgba(153, 160, 70, 0.9); background-color: rgba(255, 255, 255, 0.8); }
+.site-header.featured-image .main-navigation .sub-menu a:focus { color: #ffffff; }
+.site-branding { padding: 20px; border-radius: 4px; box-shadow: 0 0 0 6px rgba(87, 140, 61, 0.9); background-color: rgba(255, 255, 255, 0.8); }
 .entry .entry-title { color: #ffffff; text-shadow: 1.2px 2.4px var(--color-1); }
 .site-header .site-branding-container .site-branding .site-description { font-size: 1.125em; font-weight: bold; color: #333333; text-shadow: 0.7px 1.4px #ffffff; }
 
@@ -389,7 +390,7 @@ input[type="submit"]:focus { background: var(--color-3); }
     .site-header .site-branding-container .site-title a:visited { font-size: 1.5em; }
     .site .site-header { height: 360px; }
     
-    .entry .entry-header { top: 300px; }
+    .entry .entry-header { top: 320px; }
     
     
     /*Footer*/
