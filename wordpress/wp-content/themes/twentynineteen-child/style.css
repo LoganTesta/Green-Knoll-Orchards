@@ -215,10 +215,10 @@ input[type="submit"]:focus { background: var(--color-3); }
 
 
 /*Logo*/
-.site-header .site-logo .custom-logo-link { box-shadow: 0 0 0 6px rgba(87, 140, 61, 1); background: rgba(255, 255, 255, 0.7);  }
+.site-header .site-logo .custom-logo-link { box-shadow: 0 0 0 6px rgba(87, 140, 61, 1); background: rgba(255, 255, 255, 0.8); }
 .site-header .site-logo .custom-logo-link:hover, 
-.site-logo .custom-logo-link:active, 
-.site-logo .custom-logo-link:focus { box-shadow: 0 0 0 6px rgba(228, 228, 228, 1); }
+.site-header .site-logo .custom-logo-link:active, 
+.site-header .site-logo .custom-logo-link:focus { box-shadow: 0 0 0 6px rgba(87, 140, 61, 1); background: rgba(255, 255, 255, 0.5); }
 
 
 /*Nav*/
