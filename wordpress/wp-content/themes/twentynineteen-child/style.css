@@ -359,8 +359,8 @@ input[type="submit"]:focus { background: var(--color-3); }
 @media only screen and (min-width: 700px){
     /*Plugins*/
     /*General Testimonials plugin customization.*/
-    .testimonial { padding-bottom: 50px; }
-    .testimonial:last-of-type { padding-bottom: 50px; }
+    .testimonial { padding-bottom: 0px; }
+    .testimonial:last-of-type { padding-bottom: 0px; }
     .testimonial__provided-name { font-size: 1em; }
     .testimonial__label { font-size: 1em; }
     .testimonial__link { font-size: 1em; }
