@@ -144,7 +144,8 @@ h1, h2, h3, h4, h5, h6 { clear: none; margin-top: 0; margin-bottom: 16px; }
 h2 { font-size: 1.25em; color: var(--color-3); }
 h3 { font-size: 1.125em; color: var(--color-2); }
 
-a:hover, a:active { color: var(--color-1); }
+a { color: var(--color-1); }
+a:hover, a:active { color: var(--color-1-semi-opaque); }
 a:focus { outline: none; text-decoration: none; }
 #colophon .site-info a:hover { color: var(--color-1); }
 
@@ -270,6 +271,11 @@ input[type="submit"]:focus { background: var(--color-3); }
 .social-icon:hover { color: var(--color-3); transition: all 110ms ease-in-out; }
 
 .site-footer__hours { text-align: center; }
+
+
+/*Widgets*/
+.widget a { color: var(--color-1); }
+.widget a:hover { color: var(--color-1-semi-opaque); }
 
 
 /*Index page*/
