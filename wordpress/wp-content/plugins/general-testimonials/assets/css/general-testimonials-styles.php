@@ -50,6 +50,7 @@ if ( $generalTestimonialsFloatImageDirection === "left" ) {
 .testimonial__title { }
 .testimonial__content { padding-bottom: 5px; }
 .testimonial__provided-name { font-size: 17px; font-weight: bold; }
+.testimonial__comma { font-size: 17px; font-weight: bold; }
 .testimonial__label { font-size: 17px; font-style: italic; }
 
 .testimonial:last-of-type { padding-bottom: 0; }

@@ -365,7 +365,7 @@ function gt_load_testimonials( $a ) {
             }
             if ( !empty( $label ) ) {
                 if ( !empty( $providedName ) ) {
-                    $pluginContainer .= '<span class="testimonial__label">, ' . $label . '</span>';
+                    $pluginContainer .= '<span class="testimonial__comma">,</span><span class="testimonial__label"> ' . $label . '</span>';
                 } else {
                     $pluginContainer .= '<span class="testimonial__label">' . $label . '</span>';
                 }
