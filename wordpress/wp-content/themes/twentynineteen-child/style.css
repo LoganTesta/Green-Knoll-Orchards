@@ -223,6 +223,10 @@ input[type="submit"]:focus { background: var(--color-3); }
 
 
 /*Nav*/
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu, 
+.main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu, 
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu { margin-top: 8px; }
+.main-navigation .main-menu > li.menu-item-has-children .submenu-expand.main-menu-more-toggle { padding-top: 8px; }
 .site-header .main-navigation .main-menu { font-size: 0; }
 .site-header .main-navigation .main-menu li { font-size: 1.05rem; }
 .site-header .main-navigation .main-menu > li > a { margin-right: 1em; color: #333333; text-shadow: 1px 1px #ffffff; }
