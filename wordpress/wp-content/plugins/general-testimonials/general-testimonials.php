@@ -79,7 +79,7 @@ function gt_generate_settings_page() {
                 <input id="generalTestimonialsLeadingText" class="admin-input-container__input general-testimonials-leading-text" name="general-testimonials-leading-text" type="text" value="<?php echo get_option( 'general-testimonials-leading-text' ); ?>" />
             </div>
             <div class="admin-input-container">
-                <label class="admin-input-container__label" for="general-testimonials-image-width-height">Image Width, Height (60-150px)</label>
+                <label class="admin-input-container__label" for="general-testimonials-image-width-height">Image Width, Height (Max, 60-150px)</label>
                 <input id="generalTestimonialsNumberToDisplay" class="admin-input-container__input smaller general-testimonials-image-width-height" name="general-testimonials-image-width-height" type="number" value="<?php echo get_option( 'general-testimonials-image-width-height' ); ?>" min="60" max="150" />
                 <span class="admin-input-container__trailing-text">px</span>
                 <span class="admin-input-container__default-settings-text">Default: 120px</span>
@@ -98,11 +98,15 @@ function gt_generate_settings_page() {
                 <label class="admin-input-container__label--right" for="generalTestimonialsFloatImageDirection1">Right</label>
             </div>
             <div class="admin-input-container">
-                <span class="admin-input-container__label">Number of Testimonials Per Row</span>         
-                <input id="generalTestimonialsTestimonialsPerRow0" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="2" <?php if( get_option( 'general-testimonials-testimonials-per-row' ) === "2" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="generalTestimonialsTestimonialsPerRow0">2</label>
-                <input id="generalTestimonialsTestimonialsPerRow1" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="3" <?php if( get_option( 'general-testimonials-testimonials-per-row' ) === "3" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="generalTestimonialsTestimonialsPerRow1">3</label>
+                <span class="admin-input-container__label">Number of Testimonials Per Row (Max)</span>         
+                <input id="generalTestimonialsTestimonialsPerRow0" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="1" <?php if( get_option( 'general-testimonials-testimonials-per-row' ) === "1" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="generalTestimonialsTestimonialsPerRow0">1</label>
+                <input id="generalTestimonialsTestimonialsPerRow1" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="2" <?php if( get_option( 'general-testimonials-testimonials-per-row' ) === "2" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="generalTestimonialsTestimonialsPerRow1">2</label>
+                <input id="generalTestimonialsTestimonialsPerRow2" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="3" <?php if( get_option( 'general-testimonials-testimonials-per-row' ) === "3" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="generalTestimonialsTestimonialsPerRow2">3</label>
+                                <input id="generalTestimonialsTestimonialsPerRow3" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="4" <?php if( get_option( 'general-testimonials-testimonials-per-row' ) === "4" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="generalTestimonialsTestimonialsPerRow3">4</label>
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="general-testimonials-number-to-display">Testimonials to Display (Empty: display all)</label>
