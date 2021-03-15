@@ -309,7 +309,7 @@ function se_load_events_index( $a ) {
             $price = se_get_event_price( $post );
             $label = se_get_event_label( $post );
             $pluginContainer .= '<div class="event">';
-            $pluginContainer .= '<div class="event__name"><a class="event__name-link" href="the-orchard">' . $post->post_title . '</a></div>';
+            $pluginContainer .= '<div class="event__name"><a class="event__name-link" href="events">' . $post->post_title . '</a></div>';
             if ( !empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
                         . '<a class="event__background-link" href="the-orchard"><span class="sr-only">' . $post->post_title . 'Link</span></a>'
@@ -363,8 +363,8 @@ function se_load_events( $a ) {
     foreach ($posts as $post) {
         if( $count < $numberToDisplay  || $numberToDisplay === -1){
             $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
-            $price = se_get_eventprice( $post );
-            $label = se_get_eventlabel( $post );
+            $price = se_get_event_price( $post );
+            $label = se_get_event_label( $post );
             $pluginContainer .= '<div class="event">';
             $pluginContainer .= '<div class="event__title">' . $post->post_title . '</div>';
             if ( !empty( $url_thumb ) ) {

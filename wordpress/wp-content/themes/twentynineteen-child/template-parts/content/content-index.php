@@ -66,6 +66,11 @@
                     <?php echo do_shortcode( "[general_testimonials]" ); ?>
                 </div>
             </div>
+            <div class="content-row">
+                <div class="col-sma-12">
+                    <?php echo do_shortcode( "[simple_events_index]" ); ?>
+                </div>
+            </div>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
