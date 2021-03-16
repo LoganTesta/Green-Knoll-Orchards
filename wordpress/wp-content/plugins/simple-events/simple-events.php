@@ -132,6 +132,8 @@ function se_url_custom_metabox() {
     /*Gather the input data, sanitize it, and update the database.*/
     $eventprice = sanitize_text_field( get_post_meta( $post->ID, 'eventprice', true ) );
     update_post_meta( $post->ID, 'eventprice', $eventprice );
+    $eventdate = sanitize_text_field( get_post_meta( $post->ID, 'eventdate', true ) );
+    update_post_meta( $post->ID, 'eventdate', $eventdate );
     $eventlabel = sanitize_text_field( get_post_meta( $post->ID, 'eventlabel', true ) );
     update_post_meta( $post->ID, 'eventlabel', $eventlabel );
     $eventorder = sanitize_text_field( get_post_meta( $post->ID, 'eventorder', true ) );
@@ -160,6 +162,11 @@ function se_url_custom_metabox() {
     <p>
         <label for="eventprice">Price:<br />
             <input id="eventprice" name="eventprice" size="37" value="<?php if( isset($eventprice ) ) { echo $eventprice; } ?>" />
+        </label>
+    </p>
+        <p>
+        <label for="eventdate">Date:<br />
+            <input id="eventdate" name="eventdate" size="37" type="date" value="<?php if( isset($eventdate ) ) { echo $eventdate; } ?>" />
         </label>
     </p>
     <p>
@@ -191,6 +198,21 @@ add_action( 'save_post', 'se_save_custom_eventprice' );
 function se_get_event_price( $post ) {
     $eventprice = get_post_meta( $post->ID, 'eventprice', true );
     return $eventprice;
+}
+
+
+function se_save_custom_eventdate( $post_id ) {
+    global $post;
+    
+    if( isset( $_POST['eventdate']) ) {
+        update_post_meta( $post->ID, 'eventdate', $_POST['eventdate'] );
+    }
+}
+add_action( 'save_post', 'se_save_custom_eventdate' );
+
+function se_get_event_date( $post ) {
+    $eventdate = get_post_meta( $post->ID, 'eventdate', true );
+    return $eventdate;
 }
 
 
@@ -235,6 +257,7 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "simple-events" ){
             'image' => __( 'Image' ), 
             'content' => __( 'Event Text' ),
             'eventprice' => __( 'Event Price', 'swe' ),
+            'eventdate' => __( 'Event Date', 'swe' ),
             'order' => __( 'Order' ),
             'date' => __( 'Date' ),
         );   
@@ -250,6 +273,9 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "simple-events" ){
         }
         if ( 'eventprice' === $column ) {
             echo get_post_meta( $post_id, 'eventprice', true);
+        }
+        if ( 'eventdate' === $column ) {
+            echo get_post_meta( $post_id, 'eventdate', true);
         }
         if( 'content' === $column ) {
             echo get_post_field( 'post_content', $post_id );
@@ -307,9 +333,11 @@ function se_load_events_index( $a ) {
         if( $count < $numberToDisplay  || $numberToDisplay === -1){
             $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
             $price = se_get_event_price( $post );
+            $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
             $label = se_get_event_label( $post );
             $pluginContainer .= '<div class="event">';
             $pluginContainer .= '<div class="event__name"><a class="event__name-link" href="events">' . $post->post_title . '</a></div>';
+            $pluginContainer .= '<div class="event__date"><a class="event__date-link" href="events">' . $date . '</a></div>';
             if ( !empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
                         . '<a class="event__background-link" href="the-orchard"><span class="sr-only">' . $post->post_title . 'Link</span></a>'
@@ -364,11 +392,15 @@ function se_load_events( $a ) {
         if( $count < $numberToDisplay  || $numberToDisplay === -1){
             $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
             $price = se_get_event_price( $post );
+            $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
             $label = se_get_event_label( $post );
             $pluginContainer .= '<div class="event">';
             $pluginContainer .= '<div class="event__title">' . $post->post_title . '</div>';
             if ( !empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
+            }
+            if ( !empty( $date ) ) {
+                $pluginContainer .= '<div class="event__date">' . $date . '</div>';
             }
             if ( !empty( $price ) ) {
                     $pluginContainer .= '<div class="event__price">' . $price . '</div>';
