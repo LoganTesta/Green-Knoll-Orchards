@@ -36,6 +36,8 @@ if ( $eventImageWidthHeight <= 0 ) {
 .event__title { padding-bottom: 4px; }
 .event__content { padding-bottom: 5px; }
 .event__price { display: inline-block; padding-right: 25px; font-size: 18px; font-weight: bold; }
+.event__date { display: inline-block; }
+.event__starttime { display: inline-block; }
 .event__label { display: inline-block; font-size: 18px; font-style: italic; }
 
 .event:last-of-type { padding-bottom: 0; }
