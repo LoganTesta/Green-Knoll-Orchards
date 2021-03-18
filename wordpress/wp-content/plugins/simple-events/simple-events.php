@@ -360,15 +360,17 @@ function se_load_events_index( $a ) {
             $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
             $price = se_get_event_price( $post );
             $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
-            $startTime = se_get_event_starttime( $post );
+            $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
             $label = se_get_event_label( $post );
             $pluginContainer .= '<div class="event">';
             $pluginContainer .= '<div class="event__name"><a class="event__name-link" href="events">' . $post->post_title . '</a></div>';
             $pluginContainer .= '<div class="event__date">' . $date . '</div>';
-            $pluginContainer .= '<div class="event__starttime">&nbsp;at ' . $startTime . '</div>';
+            if ( !empty( $startTime ) ) {
+                $pluginContainer .= '<div class="event__starttime">&nbsp;at ' . $startTime . '</div>';
+            }
             if ( !empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
-                        . '<a class="event__background-link" href="the-orchard"><span class="sr-only">' . $post->post_title . 'Link</span></a>'
+                        . '<a class="event__background-link" href=""><span class="sr-only">' . $post->post_title . 'Link</span></a>'
                         . '</div>';
             }
             if ( !empty( $post->post_content ) ) {
@@ -421,7 +423,7 @@ function se_load_events( $a ) {
             $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
             $price = se_get_event_price( $post );
             $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
-            $startTime = se_get_event_starttime( $post );
+            $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
             $label = se_get_event_label( $post );
             $pluginContainer .= '<div class="event">';
             $pluginContainer .= '<div class="event__title">' . $post->post_title . '</div>';
