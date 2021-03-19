@@ -48,6 +48,7 @@ add_action( 'admin_menu', 'pw_admin_menu' );
 function pw_register_settings() {
     add_option( 'website-products-leading-text', 'Our Products' );
     add_option( 'website-products-leading-text-index', 'Our Products' );
+    add_option( 'website-products-products-page', '' );
     add_option( 'website-products-image-width-height', "240" );
     add_option( 'website-products-border-radius', "5" );
     add_option( 'website-products-products-per-row', "3" );
@@ -55,6 +56,7 @@ function pw_register_settings() {
 
     register_setting( 'website-products-settings-group', 'website-products-leading-text', 'pw_validatetextfield' );
     register_setting( 'website-products-settings-group', 'website-products-leading-text-index', 'pw_validatetextfield' );
+    register_setting( 'website-products-settings-group', 'website-products-products-page', 'pw_validatetextfield' );
     register_setting( 'website-products-settings-group', 'website-products-image-width-height', 'pw_validatetextfield' );
     register_setting( 'website-products-settings-group', 'website-products-border-radius', 'pw_validatetextfield' );
     register_setting( 'website-products-settings-group', 'website-products-products-per-row', 'pw_validatetextfield' );  
@@ -86,7 +88,11 @@ function pw_generate_settings_page() {
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="website-products-leading-text-index">Index/Additional Page Products Text</label>
-                <input id="websiteProductsLeadingText" class="admin-input-container__input website-products-leading-text-index" name="website-products-leading-text-index" type="text" value="<?php echo get_option( 'website-products-leading-text-index' ); ?>" />
+                <input id="websiteProductsLeadingTextIndex" class="admin-input-container__input website-products-leading-text-index" name="website-products-leading-text-index" type="text" value="<?php echo get_option( 'website-products-leading-text-index' ); ?>" />
+            </div>
+            <div class="admin-input-container">
+                <label class="admin-input-container__label" for="website-products-products-page">Products Page (page's URL Slug)</label>
+                <input id="websiteProductsProductsPage" class="admin-input-container__input website-products-products-page" name="website-products-products-page" type="text" value="<?php echo get_option( 'website-products-products-page' ); ?>" />
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="website-products-image-width-height">Max Image Height (80-400px)</label>
@@ -309,10 +315,10 @@ function pw_load_products_index( $a ) {
             $price = pw_get_productprice( $post );
             $label = pw_get_productlabel( $post );
             $pluginContainer .= '<div class="product">';
-            $pluginContainer .= '<div class="product__name"><a class="product__name-link" href="the-orchard">' . $post->post_title . '</a></div>';
+            $pluginContainer .= '<div class="product__name"><a class="product__name-link" href="' . get_option( 'website-products-products-page' ) . '">' . $post->post_title . '</a></div>';
             if ( !empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
-                        . '<a class="product__background-link" href="the-orchard"><span class="sr-only">' . $post->post_title . 'Link</span></a>'
+                        . '<a class="product__background-link" href="' . get_option( 'website-products-products-page' ) . '"><span class="sr-only">' . $post->post_title . 'Link</span></a>'
                         . '</div>';
             }
             if ( !empty( $post->post_content ) ) {
