@@ -48,6 +48,7 @@ add_action( 'admin_menu', 'se_admin_menu' );
 function se_register_settings() {
     add_option( 'simple-events-leading-text', 'Our Events' );
     add_option( 'simple-events-leading-text-index', 'Our Events' );
+    add_option( 'simple-events-events-page', '' );
     add_option( 'simple-events-image-width-height', "240" );
     add_option( 'simple-events-border-radius', "5" );
     add_option( 'simple-events-events-per-row', "3" );
@@ -55,6 +56,7 @@ function se_register_settings() {
 
     register_setting( 'simple-events-settings-group', 'simple-events-leading-text', 'se_validatetextfield' );
     register_setting( 'simple-events-settings-group', 'simple-events-leading-text-index', 'se_validatetextfield' );
+    register_setting( 'simple-events-settings-group', 'simple-events-events-page', 'se_validatetextfield' );
     register_setting( 'simple-events-settings-group', 'simple-events-image-width-height', 'se_validatetextfield' );
     register_setting( 'simple-events-settings-group', 'simple-events-border-radius', 'se_validatetextfield' );
     register_setting( 'simple-events-settings-group', 'simple-events-events-per-row', 'se_validatetextfield' );  
@@ -86,7 +88,11 @@ function se_generate_settings_page() {
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="simple-events-leading-text-index">Index/Additional Page Events Text</label>
-                <input id="simpleEventsLeadingText" class="admin-input-container__input simple-events-leading-text-index" name="simple-events-leading-text-index" type="text" value="<?php echo get_option( 'simple-events-leading-text-index' ); ?>" />
+                <input id="simpleEventsLeadingTextIndex" class="admin-input-container__input simple-events-leading-text-index" name="simple-events-leading-text-index" type="text" value="<?php echo get_option( 'simple-events-leading-text-index' ); ?>" />
+            </div>
+            <div class="admin-input-container">
+                <label class="admin-input-container__label" for="simple-events-events-page">Events Page (page's URL Slug)</label>
+                <input id="simpleEventsEventsPage" class="admin-input-container__input simple-events-events-page" name="simple-events-events-page" type="text" value="<?php echo get_option( 'simple-events-events-page' ); ?>" />
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="simple-events-image-width-height">Max Image Height (80-400px)</label>
@@ -363,14 +369,14 @@ function se_load_events_index( $a ) {
             $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
             $label = se_get_event_label( $post );
             $pluginContainer .= '<div class="event">';
-            $pluginContainer .= '<div class="event__name"><a class="event__name-link" href="events">' . $post->post_title . '</a></div>';
+            $pluginContainer .= '<div class="event__name"><a class="event__name-link" href="' . get_option( 'simple-events-events-page' ) . '">' . $post->post_title . '</a></div>';
             $pluginContainer .= '<div class="event__date">' . $date . '</div>';
             if ( !empty( $startTime ) ) {
                 $pluginContainer .= '<div class="event__starttime">&nbsp;at ' . $startTime . '</div>';
             }
             if ( !empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
-                        . '<a class="event__background-link" href=""><span class="sr-only">' . $post->post_title . 'Link</span></a>'
+                        . '<a class="event__background-link" href="' . get_option( 'simple-events-events-page' ) . '"><span class="sr-only">' . $post->post_title . 'Link</span></a>'
                         . '</div>';
             }
             if ( !empty( $post->post_content ) ) {
