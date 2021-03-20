@@ -142,6 +142,8 @@ function se_url_custom_metabox() {
     update_post_meta( $post->ID, 'eventdate', $eventdate );
     $eventstarttime = sanitize_text_field( get_post_meta( $post->ID, 'eventstarttime', true ) );
     update_post_meta( $post->ID, 'eventstarttime', $eventstarttime );
+    $eventendtime = sanitize_text_field( get_post_meta( $post->ID, 'eventendtime', true ) );
+    update_post_meta( $post->ID, 'eventendtime', $eventendtime );
     $eventlabel = sanitize_text_field( get_post_meta( $post->ID, 'eventlabel', true ) );
     update_post_meta( $post->ID, 'eventlabel', $eventlabel );
     $eventorder = sanitize_text_field( get_post_meta( $post->ID, 'eventorder', true ) );
@@ -180,6 +182,11 @@ function se_url_custom_metabox() {
     <p>
         <label for="eventstarttime">Start Time:<br />
             <input id="eventstarttime" name="eventstarttime" size="37" type="time" value="<?php if( isset( $eventstarttime ) ) { echo $eventstarttime; } ?>" />
+        </label>
+    </p>
+    <p>
+        <label for="eventendtime">End Time:<br />
+            <input id="eventendtime" name="eventendtime" size="37" type="time" value="<?php if( isset( $eventendtime ) ) { echo $eventendtime; } ?>" />
         </label>
     </p>
     <p>
@@ -244,6 +251,25 @@ function se_get_event_starttime( $post ) {
 }
 
 
+function se_save_custom_eventendtime( $post_id ) {
+    global $post;
+    
+    if( isset( $_POST['eventendtime']) ) {
+        if( $_POST['eventstarttime'] <= $_POST['eventendtime'] ) {
+            update_post_meta( $post->ID, 'eventendtime', $_POST['eventendtime'] );
+        } else {
+            update_post_meta( $post->ID, 'eventendtime', $_POST['eventstarttime'] );
+        }
+    }
+}
+add_action( 'save_post', 'se_save_custom_eventendtime' );
+
+function se_get_event_eventendtime( $post ) {
+    $eventendtime = get_post_meta( $post->ID, 'eventendtime', true );
+    return $eventendtime;
+}
+
+
 function se_save_custom_event_label( $post_id ) {
     global $post;
     
@@ -287,6 +313,7 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "simple-events" ){
             'eventprice' => __( 'Event Price', 'swe' ),
             'eventdate' => __( 'Event Date', 'swe' ),
             'eventstarttime' => __( 'Event Start Time', 'swe' ),
+            'eventendtime' => __( 'Event End Time', 'swe' ),
             'order' => __( 'Order' ),
             'date' => __( 'Date' ),
         );   
@@ -308,6 +335,9 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "simple-events" ){
         }
         if ( 'eventstarttime' === $column ) {
             echo get_post_meta( $post_id, 'eventstarttime', true);
+        }
+        if ( 'eventendtime' === $column ) {
+            echo get_post_meta( $post_id, 'eventendtime', true);
         }
         if( 'content' === $column ) {
             echo get_post_field( 'post_content', $post_id );
@@ -367,12 +397,16 @@ function se_load_events_index( $a ) {
             $price = se_get_event_price( $post );
             $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
             $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
+            $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
             $label = se_get_event_label( $post );
             $pluginContainer .= '<div class="event">';
             $pluginContainer .= '<div class="event__name"><a class="event__name-link" href="' . get_option( 'simple-events-events-page' ) . '">' . $post->post_title . '</a></div>';
             $pluginContainer .= '<div class="event__date">' . $date . '</div>';
             if ( !empty( $startTime ) ) {
-                $pluginContainer .= '<div class="event__starttime">&nbsp;at ' . $startTime . '</div>';
+                $pluginContainer .= '<div class="event__starttime">&nbsp;from ' . $startTime . '</div>';
+            }
+            if ( !empty( $endTime ) ) {
+                $pluginContainer .= '<div class="event__endtime">&nbsp;- ' . $endTime . '</div>';
             }
             if ( !empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
@@ -430,6 +464,7 @@ function se_load_events( $a ) {
             $price = se_get_event_price( $post );
             $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
             $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
+            $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
             $label = se_get_event_label( $post );
             $pluginContainer .= '<div class="event">';
             $pluginContainer .= '<div class="event__title">' . $post->post_title . '</div>';
@@ -441,6 +476,9 @@ function se_load_events( $a ) {
             }
             if ( !empty( $startTime ) ) {
                 $pluginContainer .= ' at <div class="event__starttime">' . $startTime . '.</div>';
+            }
+            if ( !empty( $endTime ) ) {
+                $pluginContainer .= '<div class="event__endtime">&nbsp;- ' . $endTime . '</div>';
             }
             if ( !empty( $price ) ) {
                     $pluginContainer .= '<div class="event__price">&nbsp;Cost: ' . $price . '</div>';

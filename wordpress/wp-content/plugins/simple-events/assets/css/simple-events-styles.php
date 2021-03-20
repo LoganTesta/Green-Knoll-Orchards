@@ -35,9 +35,10 @@ if ( $eventImageWidthHeight <= 0 ) {
 .event__background { display: block; width: 100%; height: <?php echo 0.6 * $eventImageWidthHeight; ?>px; margin-left: 0; margin-bottom: 15px; max-width: 100%; border-radius: <?php echo get_option( 'simple-events-border-radius' ); ?>px; }
 .event__title { padding-bottom: 4px; }
 .event__content { padding-bottom: 5px; }
-.event__price { display: inline-block; padding-right: 25px; font-size: 18px; font-weight: bold; }
+.event__price { padding-right: 25px; font-size: 18px; font-weight: bold; }
 .event__date { display: inline-block; }
 .event__starttime { display: inline-block; }
+.event__endtime { display: inline-block; }
 .event__label { display: inline-block; font-size: 18px; font-style: italic; }
 
 .event:last-of-type { padding-bottom: 0; }
