@@ -126,7 +126,8 @@ function se_generate_settings_page() {
 
 
 function se_add_custom_metabox_info() {
-    add_meta_box('custom-metabox', __('Event Information'), 'se_url_custom_metabox', 'simple-events', 'side', 'low');
+    add_meta_box( 'custom-metabox', __('Event Information'), 'se_url_custom_metabox', 'simple-events', 'side', 'low' );
+    add_meta_box( 'custom-metabox-main', __('More Event Fields'), 'se_url_more_event_fields', 'simple-events', 'normal', 'low' );
 }
 add_action( 'admin_init', 'se_add_custom_metabox_info' );
 
@@ -195,12 +196,34 @@ function se_url_custom_metabox() {
         </label>
     </p>
     <p>
-    </p>
-        <p>
         <label for="eventorder">Event Order:<br />
             <input id="eventorder" size="37" type="number" min="1" name="eventorder" value="<?php if( isset($eventorder) ) { echo $eventorder; } ?>" />
         </label>
     </p>
+ <?php 
+}
+
+
+//Admin area HTML and logic 
+function se_url_more_event_fields() {
+    global $post;
+    
+    /*Gather the input data, sanitize it, and update the database.*/
+    $eventshortdescription = sanitize_text_field( get_post_meta( $post->ID, 'eventshortdescription', true ) );
+    update_post_meta( $post->ID, 'eventshortdescription', $eventshortdescription );
+
+    $errorshortdescription = "";
+    if( isset( $shortdescription ) ){
+        echo $shortdescription;
+    }
+    
+    ?>
+    <p>
+        <label for="eventshortdescription">Short Description (max 200 characters):<br />
+            <textarea id="eventshortdescription" name="eventshortdescription" maxlength="200"><?php if( isset( $eventshortdescription ) ) { echo $eventshortdescription; } ?></textarea>
+        </label>
+    </p>
+    
  <?php 
 }
 
@@ -298,6 +321,22 @@ function se_get_order( $post ) {
     $eventorder = get_post_meta( $post->ID, 'eventorder', true );
     return $eventorder;
 }
+
+
+function se_save_custom_eventshortdescription( $post_id ) {
+    global $post;
+    
+    if( isset( $_POST['eventshortdescription']) ) {
+        update_post_meta( $post->ID, 'eventshortdescription', $_POST['eventshortdescription'] );
+    }
+}
+add_action( 'save_post', 'se_save_custom_eventshortdescription' );
+
+function se_get_event_shortdescription( $post ) {
+    $eventshortdescription = get_post_meta( $post->ID, 'eventshortdescription', true );
+    return $eventshortdescription;
+}
+
 
 
 
@@ -399,6 +438,7 @@ function se_load_events_index( $a ) {
             $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
             $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
             $label = se_get_event_label( $post );
+            $eventshortdescription = se_get_event_shortdescription( $post );
             $pluginContainer .= '<div class="event">';
             $pluginContainer .= '<div class="event__name"><a class="event__name-link" href="' . get_option( 'simple-events-events-page' ) . '">' . $post->post_title . '</a></div>';
             $pluginContainer .= '<div class="event__date">' . $date . '</div>';
@@ -412,6 +452,9 @@ function se_load_events_index( $a ) {
                 $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
                         . '<a class="event__background-link" href="' . get_option( 'simple-events-events-page' ) . '"><span class="sr-only">' . $post->post_title . 'Link</span></a>'
                         . '</div>';
+            }
+            if ( !empty( $eventshortdescription ) ) {
+                $pluginContainer .= '<div class="event__shortdescription">' . $eventshortdescription . '</div>';    
             }
             if ( !empty( $post->post_content ) ) {
                 
