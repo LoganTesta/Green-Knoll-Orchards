@@ -7,11 +7,15 @@ require ( '../../../../../wp-load.php' );
 include ( plugin_dir_path(__FILE__) . "/simple-events.php" );
 
 
-$numberOfEventsPerRow = (int)( get_option( 'simple-events-per-row' ) );
-if ( $numberOfEventsPerRow <= 0 ) {
-    $numberOfEventsPerRow = 2;
-}
+$numberOfEventsPerRow = (int)( get_option( 'simple-events-events-per-row' ) );
+$eventWidthMobile = 50;
 
+if ( $numberOfEventsPerRow <= 0 ) {
+    $numberOfEventsPerRow = 1;
+}
+if ( $numberOfEventsPerRow < 2) {
+    $eventWidthMobile = 100;
+}
 $eventWidthDesktop = 100/$numberOfEventsPerRow;
 
 
@@ -31,7 +35,7 @@ if ( $eventImageWidthHeight <= 0 ) {
 .events-container__heading { padding-bottom: 0; text-align: center; font-size: 20px; font-weight: bold; }
 .events-container__inner-wrapper { padding-top: 20px; }
 
-.event { float: left; width: 50%; padding: 0 20px 15px 20px; }
+.event { float: left; width: <?php echo $eventWidthMobile; ?>%; padding: 0 20px 15px 20px; }
 .event__background { display: block; width: 100%; height: <?php echo 0.6 * $eventImageWidthHeight; ?>px; margin-left: 0; margin-bottom: 15px; max-width: 100%; border-radius: <?php echo get_option( 'simple-events-border-radius' ); ?>px; }
 .event__title { padding-bottom: 4px; }
 .event__content { padding-bottom: 5px; }

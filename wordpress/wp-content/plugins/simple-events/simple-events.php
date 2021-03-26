@@ -107,13 +107,15 @@ function se_generate_settings_page() {
                 <span class="admin-input-container__default-settings-text">Default: 5px</span>
             </div>
             <div class="admin-input-container">
-                <span class="admin-input-container__label">Number of Events Per Row</span>         
-                <input id="simpleEventsEventsPerRow0" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="2" <?php if(get_option( 'simple-events-events-per-row' ) === "2") { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsEventsPerRow0">2</label>
-                <input id="simpleEventsEventsPerRow1" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="3" <?php if(get_option( 'simple-events-events-per-row' ) === "3") { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsEventsPerRow1">3</label>
-                <input id="simpleEventsEventsPerRow2" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="4" <?php if(get_option( 'simple-events-events-per-row' ) === "4") { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsEventsPerRow2">4</label>
+                <span class="admin-input-container__label">Number of Events Per Row</span>       
+                <input id="simpleEventsEventsPerRow0" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="1" <?php if(get_option( 'simple-events-events-per-row' ) === "1") { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="simpleEventsEventsPerRow0">1</label>
+                <input id="simpleEventsEventsPerRow1" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="2" <?php if(get_option( 'simple-events-events-per-row' ) === "2") { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="simpleEventsEventsPerRow1">2</label>
+                <input id="simpleEventsEventsPerRow2" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="3" <?php if(get_option( 'simple-events-events-per-row' ) === "3") { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="simpleEventsEventsPerRow2">3</label>
+                <input id="simpleEventsEventsPerRow3" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="4" <?php if(get_option( 'simple-events-events-per-row' ) === "4") { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="simpleEventsEventsPerRow3">4</label>
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="simple-events-number-to-display">Events to Display (Empty: display all)</label>
@@ -440,7 +442,7 @@ function se_load_events_index( $a ) {
             $label = se_get_event_label( $post );
             $eventshortdescription = se_get_event_shortdescription( $post );
             $pluginContainer .= '<div class="event">';
-            $pluginContainer .= '<div class="event__name"><a class="event__name-link" href="' . get_option( 'simple-events-events-page' ) . '">' . $post->post_title . '</a></div>';
+            $pluginContainer .= '<div class="event__title"><a class="event__name-link" href="' . get_option( 'simple-events-events-page' ) . '">' . $post->post_title . '</a></div>';
             $pluginContainer .= '<div class="event__date">' . $date . '</div>';
             if ( !empty( $startTime ) ) {
                 $pluginContainer .= '<div class="event__starttime">&nbsp;from ' . $startTime . '</div>';
