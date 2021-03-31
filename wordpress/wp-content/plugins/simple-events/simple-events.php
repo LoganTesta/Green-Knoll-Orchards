@@ -452,7 +452,9 @@ function se_load_events_index( $a ) {
             }
             if ( !empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
-                        . '<a class="event__background-link" href="' . get_option( 'simple-events-events-page' ) . '"><span class="sr-only">' . $post->post_title . 'Link</span></a>'
+                        . '<a class="event__background-link" href="' . get_option( 'simple-events-events-page' ) . '">'                      
+                        . '<span class="sr-only">' . $post->post_title . 'Link</span></a>'
+                        . '<div class="event__label">' . $label . '</div>'
                         . '</div>';
             }
             if ( !empty( $eventshortdescription ) ) {
