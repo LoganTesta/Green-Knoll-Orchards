@@ -326,6 +326,9 @@ input[type="submit"]:focus { background: var(--color-3); }
 .products-container.index .product .product__name-link { display: inline-block; position: absolute; top: 15px; right: 26px; padding: 10px 12px; border: 2px solid var(--color-2); border-radius: 4px; font-size: 1.25em; font-weight: 700; background-color: rgba(255, 255, 255, 0.9); color: var(--color-2); transition: all 110ms ease-in-out; }
 .products-container.index .product .product__name-link:hover { background-color: rgba(255, 255, 255, 0.62); color: var(--color-2); text-decoration: underline; transition: all 110ms ease-in-out; }
 
+/*Simple Events plugin customization.*/
+.event__title { font-size: 25px; }
+
 
 
 /*Clearing variable width columns */

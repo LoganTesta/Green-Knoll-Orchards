@@ -37,7 +37,8 @@ if ( $eventImageWidthHeight <= 0 ) {
 
 .event { float: left; width: <?php echo $eventWidthMobile; ?>%; padding: 0 20px 15px 20px; }
 .event__background { display: block; width: 100%; height: <?php echo 0.6 * $eventImageWidthHeight; ?>px; margin-left: 0; margin-bottom: 15px; max-width: 100%; border-radius: <?php echo get_option( 'simple-events-border-radius' ); ?>px; }
-.event__title { padding-bottom: 4px; }
+.event__title { padding-bottom: 4px; font-size: 20px; }
+.event__name-link { text-decoration: none; }
 .event__content { padding-bottom: 5px; }
 .event__price { padding-right: 25px; font-size: 18px; font-weight: bold; }
 .event__date { display: inline-block; }
