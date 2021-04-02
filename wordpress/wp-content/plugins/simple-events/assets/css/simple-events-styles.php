@@ -8,13 +8,13 @@ include ( plugin_dir_path(__FILE__) . "/simple-events.php" );
 
 
 $numberOfEventsPerRow = (int)( get_option( 'simple-events-events-per-row' ) );
-$eventWidthMobile = 50;
+$eventWidthTablet = 50;
 
 if ( $numberOfEventsPerRow <= 0 ) {
     $numberOfEventsPerRow = 1;
 }
 if ( $numberOfEventsPerRow < 2) {
-    $eventWidthMobile = 100;
+    $eventWidthTablet = 100;
 }
 $eventWidthDesktop = 100/$numberOfEventsPerRow;
 
@@ -35,7 +35,7 @@ if ( $eventImageWidthHeight <= 0 ) {
 .events-container__heading { padding-bottom: 0; text-align: center; font-size: 20px; font-weight: bold; }
 .events-container__inner-wrapper { padding-top: 20px; }
 
-.event { float: left; width: <?php echo $eventWidthMobile; ?>%; padding: 0 20px 15px 20px; }
+.event { float: left; width: 100%; padding: 0 20px 15px 20px; }
 .event__background { display: block; width: 100%; height: <?php echo 0.6 * $eventImageWidthHeight; ?>px; margin-left: 0; margin-bottom: 15px; max-width: 100%; border-radius: <?php echo get_option( 'simple-events-border-radius' ); ?>px; }
 .event__title { padding-bottom: 4px; font-size: 20px; }
 .event__name-link { text-decoration: none; }
@@ -80,7 +80,7 @@ if ( $eventImageWidthHeight <= 0 ) {
 @media only screen and (min-width: 768px){
     .events-container__heading { font-size: 24px; }
 
-    .event { }   
+    .event { width: <?php echo $eventWidthTablet; ?>%; }   
     .event__background { height: <?php echo $eventImageWidthHeight; ?>px; }
     
     .event:last-of-type { padding-bottom: 15px; }
