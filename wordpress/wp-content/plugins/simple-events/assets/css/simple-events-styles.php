@@ -41,7 +41,7 @@ if ( $eventImageWidthHeight <= 0 ) {
 .event__name-link { text-decoration: none; }
 .event__content { padding-bottom: 5px; }
 .event__price { padding-right: 25px; font-size: 18px; font-weight: bold; }
-.event__date { display: inline-block; }
+.event__date { display: block; }
 .event__starttime { display: inline-block; }
 .event__endtime { display: inline-block; }
 .event__label { display: inline-block; font-size: 18px; font-style: italic; }
@@ -54,7 +54,7 @@ if ( $eventImageWidthHeight <= 0 ) {
 /*For index page*/
 .events-container.index .event { padding: 0 15px 50px 15px; }
 
-.events-container.index .event__background { position: relative; margin-bottom: 0; border-radius: 0; }
+.events-container.index .event__background { position: relative; border-radius: 0; }
 .events-container.index .event__background-link { display: block; height: 100%; }
 .events-container.index .event__label { position: absolute; top: 15px; right: 10px; padding: 10px 8px; border: 2px solid #333333; background-color: rgba(255, 255, 255, 0.9); font-size: 22px; font-style: normal; }
 

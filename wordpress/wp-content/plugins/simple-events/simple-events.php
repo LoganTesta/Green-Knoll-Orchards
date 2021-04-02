@@ -442,20 +442,20 @@ function se_load_events_index( $a ) {
             $label = se_get_event_label( $post );
             $eventshortdescription = se_get_event_shortdescription( $post );
             $pluginContainer .= '<div class="event">';
-            $pluginContainer .= '<div class="event__title"><a class="event__name-link" href="' . get_option( 'simple-events-events-page' ) . '">' . $post->post_title . '</a></div>';
-            $pluginContainer .= '<div class="event__date">' . $date . '</div>';
-            if ( !empty( $startTime ) ) {
-                $pluginContainer .= '<div class="event__starttime">&nbsp;from ' . $startTime . '</div>';
-            }
-            if ( !empty( $endTime ) ) {
-                $pluginContainer .= '<div class="event__endtime">&nbsp;- ' . $endTime . '</div>';
-            }
             if ( !empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
                         . '<a class="event__background-link" href="' . get_option( 'simple-events-events-page' ) . '">'                      
                         . '<span class="sr-only">' . $post->post_title . 'Link</span></a>'
                         . '<div class="event__label">' . $label . '</div>'
                         . '</div>';
+            }
+            $pluginContainer .= '<div class="event__title"><a class="event__name-link" href="' . get_option( 'simple-events-events-page' ) . '">' . $post->post_title . '</a></div>';
+            $pluginContainer .= '<div class="event__date">' . $date . '</div>';
+            if ( !empty( $startTime ) ) {
+                $pluginContainer .= '<div class="event__starttime">from ' . $startTime . '</div>';
+            }
+            if ( !empty( $endTime ) ) {
+                $pluginContainer .= '<div class="event__endtime">&nbsp;- ' . $endTime . '</div>';
             }
             if ( !empty( $eventshortdescription ) ) {
                 $pluginContainer .= '<div class="event__shortdescription">' . $eventshortdescription . '</div>';    
@@ -528,7 +528,7 @@ function se_load_events( $a ) {
                 $pluginContainer .= '<div class="event__endtime">&nbsp;- ' . $endTime . '</div>';
             }
             if ( !empty( $price ) ) {
-                    $pluginContainer .= '<div class="event__price">&nbsp;Cost: ' . $price . '</div>';
+                    $pluginContainer .= '<div class="event__price">Cost: ' . $price . '</div>';
             }
             if ( !empty( $label ) ) {
                 $pluginContainer .= '<div class="event__label">' . $label . '</div>';
