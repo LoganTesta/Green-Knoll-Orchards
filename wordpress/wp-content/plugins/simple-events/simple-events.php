@@ -450,7 +450,7 @@ function se_load_events_index( $a ) {
                         . '</div>';
             }
             $pluginContainer .= '<div class="event__title"><a class="event__name-link" href="' . get_option( 'simple-events-events-page' ) . '">' . $post->post_title . '</a></div>';
-            $pluginContainer .= '<div class="event__date">' . $date . '</div>';
+            $pluginContainer .= '<div class="event__date">' . $date . '</div> ';
             if ( !empty( $startTime ) ) {
                 $pluginContainer .= '<div class="event__starttime">from ' . $startTime . '</div>';
             }
@@ -458,7 +458,7 @@ function se_load_events_index( $a ) {
                 $pluginContainer .= '<div class="event__endtime">&nbsp;- ' . $endTime . '</div>';
             }
             if ( !empty( $eventshortdescription ) ) {
-                $pluginContainer .= '<div class="event__shortdescription">' . $eventshortdescription . '</div>';    
+                $pluginContainer .= '<div class="event__short-description">' . $eventshortdescription . '</div>';    
             }
             if ( !empty( $post->post_content ) ) {
                 

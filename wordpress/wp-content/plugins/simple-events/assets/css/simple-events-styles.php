@@ -39,12 +39,12 @@ if ( $eventImageWidthHeight <= 0 ) {
 .event__background { display: block; width: 100%; height: <?php echo 0.6 * $eventImageWidthHeight; ?>px; margin-left: 0; margin-bottom: 15px; max-width: 100%; border-radius: <?php echo get_option( 'simple-events-border-radius' ); ?>px; }
 .event__title { padding-bottom: 4px; font-size: 20px; }
 .event__name-link { text-decoration: none; }
-.event__content { padding-bottom: 5px; }
 .event__price { padding-right: 25px; font-size: 18px; font-weight: bold; }
-.event__date { display: block; }
-.event__starttime { display: inline-block; }
-.event__endtime { display: inline-block; }
+.event__date { display: inline-block; font-weight: bold; }
+.event__starttime { display: inline-block; font-style: italic; }
+.event__endtime { display: inline-block; font-style: italic; }
 .event__label { display: inline-block; font-size: 18px; font-style: italic; }
+.event__content { padding-top: 20px; }
 
 .event:last-of-type { padding-bottom: 0; }
 .events-container__inner-wrapper::after { content: ""; display: block; clear: both; }
@@ -57,7 +57,7 @@ if ( $eventImageWidthHeight <= 0 ) {
 .events-container.index .event__background { position: relative; border-radius: 0; }
 .events-container.index .event__background-link { display: block; height: 100%; }
 .events-container.index .event__label { position: absolute; top: 15px; right: 10px; padding: 10px 8px; border: 2px solid #333333; background-color: rgba(255, 255, 255, 0.9); font-size: 22px; font-style: normal; }
-
+.events-container.index .event__short-description { padding-top: 20px; }
 
 
 /*Clearing variable width columns */
