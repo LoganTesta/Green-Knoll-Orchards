@@ -35,14 +35,14 @@ if ( $eventImageWidthHeight <= 0 ) {
 .events-container__heading { padding-bottom: 0; text-align: center; font-size: 20px; font-weight: bold; }
 .events-container__inner-wrapper { padding-top: 20px; }
 
-.event { float: left; width: 100%; padding: 0 20px 15px 20px; }
+.event { float: left; width: 100%; padding: 0 20px 15px 20px; font-size: 16px; }
 .event__background { display: block; width: 100%; height: <?php echo 0.6 * $eventImageWidthHeight; ?>px; margin-left: 0; margin-bottom: 15px; max-width: 100%; border-radius: <?php echo get_option( 'simple-events-border-radius' ); ?>px; }
-.event__title { padding-bottom: 4px; font-size: 20px; }
+.event__title { padding-bottom: 4px; font-size: 20px; font-weight: bold; }
 .event__name-link { text-decoration: none; }
 .event__price { padding-right: 25px; font-size: 18px; font-weight: bold; }
-.event__date { display: inline-block; font-weight: bold; }
-.event__starttime { display: inline-block; font-style: italic; }
-.event__endtime { display: inline-block; font-style: italic; }
+.event__date { display: inline-block; font-size: 18px; font-weight: bold; }
+.event__starttime { display: inline-block; font-size: 18px; font-style: italic; }
+.event__endtime { display: inline-block; font-size: 18px; font-style: italic; }
 .event__label { display: inline-block; font-size: 18px; font-style: italic; }
 .event__content { padding-top: 20px; }
 
@@ -92,6 +92,7 @@ if ( $eventImageWidthHeight <= 0 ) {
     .events-container__heading { font-size: 28px; }
 
     .event { width: <?php echo $eventWidthDesktop; ?>%; }
+    .event__title { font-size: 24px; }
     .event__background { height: <?php echo 0.8 * $eventImageWidthHeight; ?>px; }
     
     
