@@ -32,7 +32,7 @@ if ( $eventImageWidthHeight <= 0 ) {
 
 .events-container { }
 .events-container:after { content: ""; display: block; clear: both; }
-.events-container__heading { padding-bottom: 0; text-align: center; font-size: 20px; font-weight: bold; }
+.events-container__heading { padding-bottom: 0; text-align: center; font-size: 22px; font-weight: bold; }
 .events-container__inner-wrapper { padding-top: 20px; }
 
 .event { float: left; width: 100%; padding: 0 20px 15px 20px; font-size: 16px; }
@@ -56,7 +56,7 @@ if ( $eventImageWidthHeight <= 0 ) {
 
 .events-container.index .event__background { position: relative; border-radius: 0; }
 .events-container.index .event__background-link { display: block; height: 100%; }
-.events-container.index .event__label { position: absolute; top: 15px; right: 10px; padding: 10px 8px; border: 2px solid #333333; background-color: rgba(255, 255, 255, 0.9); font-size: 22px; font-style: normal; }
+.events-container.index .event__label { position: absolute; top: 15px; right: 10px; padding: 10px 8px; border: 2px solid #333333; background-color: rgba(255, 255, 255, 0.9); font-style: normal; }
 .events-container.index .event__short-description { padding-top: 20px; }
 
 
@@ -98,6 +98,8 @@ if ( $eventImageWidthHeight <= 0 ) {
     
     /*For index page*/
     .events-container.index .event { padding-bottom: 0; }
+    
+    .events-container.index .event__label { font-size: 24px; }
 }
 
 

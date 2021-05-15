@@ -327,7 +327,16 @@ input[type="submit"]:focus { background: var(--color-3); }
 .products-container.index .product .product__name-link:hover { background-color: rgba(255, 255, 255, 0.62); color: var(--color-2); text-decoration: underline; transition: all 110ms ease-in-out; }
 
 /*Simple Events plugin customization.*/
-.event__title { font-size: 25px; }
+.events-container__heading { font-size: 1.375em; }
+
+.event { font-size: 1em; }
+
+.event__title { font-size: 1.25em; }
+.event__price { font-size: 1.125em;  }
+.event__date { font-size: 1.125em; }
+.event__starttime { font-size: 1.125em; }
+.event__endtime {  font-size: 1.125em; }
+.event__label { font-size: 1.125em; }
 
 
 
@@ -452,6 +461,10 @@ input[type="submit"]:focus { background: var(--color-3); }
     .product__label { font-size: 1.125em; }
     
     .product.two, .product.three { padding-bottom: 0; }
+    
+    
+    /*Simple Events plugin customization.*/
+    .events-container__heading { font-size: 1.5em; }
 }
 
 
@@ -514,6 +527,15 @@ input[type="submit"]:focus { background: var(--color-3); }
     /*Plugins*/
     /*Website Products plugin customization.*/
     .product { padding-bottom: 0; }
+    
+    
+    /*Simple Events plugin customization.*/
+    .events-container__heading { font-size: 1.75em; }
+    
+    .event__title { font-size: 1.5em; }
+    
+    /*For index page*/
+    .events-container.index .event__label { font-size: 1.5em; }
     
     
     /*Contact Form 7*/
