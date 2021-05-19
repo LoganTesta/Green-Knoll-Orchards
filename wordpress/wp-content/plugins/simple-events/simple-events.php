@@ -499,45 +499,38 @@ function se_load_events( $a ) {
     $pluginContainer .= '<div class="events-container__heading">' . get_option( 'simple-events-leading-text' ) . '</div>';
     $pluginContainer .= '<div class="events-container__inner-wrapper">';
     
-    $numberToDisplay = get_option( 'simple-events-number-to-display' );
-    if( $numberToDisplay === "" ) {
-        $numberToDisplay = -1;
-    }
-    $numberToDisplay = (int) $numberToDisplay;
     $count = 0;
     foreach ($posts as $post) {
-        if( $count < $numberToDisplay  || $numberToDisplay === -1){
-            $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
-            $price = se_get_event_price( $post );
-            $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
-            $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
-            $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
-            $label = se_get_event_label( $post );
-            $pluginContainer .= '<div class="event">';
-            $pluginContainer .= '<div class="event__title">' . $post->post_title . '</div>';
-            if ( !empty( $url_thumb ) ) {
-                $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
-            }
-            if ( !empty( $date ) ) {
-                $pluginContainer .= '<div class="event__date">' . $date . '</div>';
-            }
-            if ( !empty( $startTime ) ) {
-                $pluginContainer .= ' at <div class="event__starttime">' . $startTime . '.</div>';
-            }
-            if ( !empty( $endTime ) ) {
-                $pluginContainer .= '<div class="event__endtime">&nbsp;- ' . $endTime . '</div>';
-            }
-            if ( !empty( $price ) ) {
-                    $pluginContainer .= '<div class="event__price">Cost: ' . $price . '</div>';
-            }
-            if ( !empty( $label ) ) {
-                $pluginContainer .= '<div class="event__label">' . $label . '</div>';
-            }
-            if ( !empty( $post->post_content ) ) {
-                $pluginContainer .= '<p class="event__content">' . $post->post_content . '</p>';
-            }
-            $pluginContainer .= '</div>';
+        $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
+        $price = se_get_event_price( $post );
+        $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
+        $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
+        $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
+        $label = se_get_event_label( $post );
+        $pluginContainer .= '<div class="event">';
+        $pluginContainer .= '<div class="event__title">' . $post->post_title . '</div>';
+        if ( !empty( $url_thumb ) ) {
+            $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
         }
+        if ( !empty( $date ) ) {
+            $pluginContainer .= '<div class="event__date">' . $date . '</div>';
+        }
+        if ( !empty( $startTime ) ) {
+            $pluginContainer .= ' at <div class="event__starttime">' . $startTime . '.</div>';
+        }
+        if ( !empty( $endTime ) ) {
+            $pluginContainer .= '<div class="event__endtime">&nbsp;- ' . $endTime . '</div>';
+        }
+        if ( !empty( $price ) ) {
+                $pluginContainer .= '<div class="event__price">Cost: ' . $price . '</div>';
+        }
+        if ( !empty( $label ) ) {
+            $pluginContainer .= '<div class="event__label">' . $label . '</div>';
+        }
+        if ( !empty( $post->post_content ) ) {
+            $pluginContainer .= '<p class="event__content">' . $post->post_content . '</p>';
+        }
+        $pluginContainer .= '</div>';      
         $count++;
     }
     $pluginContainer .= '</div>';
