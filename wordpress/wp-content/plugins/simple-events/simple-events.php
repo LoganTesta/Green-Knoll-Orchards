@@ -437,8 +437,14 @@ function se_load_events_index( $a ) {
             $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
             $price = se_get_event_price( $post );
             $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
-            $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
-            $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
+            $startTime = "";
+            $endTime = "";
+            if ( se_get_event_starttime( $post ) !== "" ) {
+                $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
+            }
+            if ( se_get_event_eventendtime( $post ) !== "" ) {
+                $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
+            }
             $label = se_get_event_label( $post );
             $eventshortdescription = se_get_event_shortdescription( $post );
             $pluginContainer .= '<div class="event">';
@@ -454,8 +460,12 @@ function se_load_events_index( $a ) {
             if ( !empty( $startTime ) ) {
                 $pluginContainer .= '<div class="event__starttime">from ' . $startTime . '</div>';
             }
+            $eventStartAndEndText = "";
+            if ( !empty( $startTime ) && !empty( $endTime ) ) {
+                $eventStartAndEndText = "&nbsp;- ";
+            }
             if ( !empty( $endTime ) ) {
-                $pluginContainer .= '<div class="event__endtime">&nbsp;- ' . $endTime . '</div>';
+                $pluginContainer .= '<div class="event__endtime">' . $eventStartAndEndText . $endTime . '</div>';
             }
             if ( !empty( $eventshortdescription ) ) {
                 $pluginContainer .= '<div class="event__short-description">' . $eventshortdescription . '</div>';    
@@ -504,8 +514,14 @@ function se_load_events( $a ) {
         $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
         $price = se_get_event_price( $post );
         $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
-        $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
-        $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
+        $startTime = "";
+        $endTime = "";
+        if ( se_get_event_starttime( $post ) !== "" ) {
+            $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
+        }
+        if ( se_get_event_eventendtime( $post ) !== "" ) {
+            $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
+        }
         $label = se_get_event_label( $post );
         $pluginContainer .= '<div class="event">';
         $pluginContainer .= '<div class="event__title">' . $post->post_title . '</div>';
@@ -518,8 +534,12 @@ function se_load_events( $a ) {
         if ( !empty( $startTime ) ) {
             $pluginContainer .= ' at <div class="event__starttime">' . $startTime . '.</div>';
         }
+        $eventStartAndEndText = "";
+        if ( !empty( $startTime ) && !empty( $endTime ) ) {
+            $eventStartAndEndText = "&nbsp;- ";
+        }
         if ( !empty( $endTime ) ) {
-            $pluginContainer .= '<div class="event__endtime">&nbsp;- ' . $endTime . '</div>';
+            $pluginContainer .= '<div class="event__endtime">' . $eventStartAndEndText . $endTime . '</div>';
         }
         if ( !empty( $price ) ) {
                 $pluginContainer .= '<div class="event__price">Cost: ' . $price . '</div>';
