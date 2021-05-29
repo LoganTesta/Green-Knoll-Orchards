@@ -446,7 +446,14 @@ function se_load_events_index( $a ) {
                 $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
             }
             $label = se_get_event_label( $post );
+            $eventtext = "";
             $eventshortdescription = se_get_event_shortdescription( $post );
+            $eventcontent = $post->post_content;
+            if ( !empty ( $eventshortdescription ) ) {
+                $eventtext = $eventshortdescription;
+            } else {
+                $eventtext = wp_trim_words( $eventcontent, 60 );
+            }
             $pluginContainer .= '<div class="event">';
             if ( !empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
@@ -467,12 +474,7 @@ function se_load_events_index( $a ) {
             if ( !empty( $endTime ) ) {
                 $pluginContainer .= '<div class="event__endtime">' . $eventStartAndEndText . $endTime . '</div>';
             }
-            if ( !empty( $eventshortdescription ) ) {
-                $pluginContainer .= '<div class="event__short-description">' . $eventshortdescription . '</div>';    
-            }
-            if ( !empty( $post->post_content ) ) {
-                
-            }
+            $pluginContainer .= '<div class="event__short-description">' . $eventtext . '</div>';    
             $pluginContainer .= '</div>';
         }
         $count++;
