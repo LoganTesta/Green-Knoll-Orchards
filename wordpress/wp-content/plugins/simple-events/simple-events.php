@@ -326,7 +326,7 @@ function se_save_custom_eventendtime( $post_id ) {
         if( $_POST['eventstarttime'] <= $_POST['eventendtime'] ) {
             update_post_meta( $post->ID, 'eventendtime', $_POST['eventendtime'] );
         } else {
-            update_post_meta( $post->ID, 'eventendtime', $_POST['eventstarttime'] );
+            update_post_meta( $post->ID, 'eventendtime', $_POST['eventendtime'] );
         }
     }
 }
@@ -335,6 +335,44 @@ add_action( 'save_post', 'se_save_custom_eventendtime' );
 function se_get_event_eventendtime( $post ) {
     $eventendtime = get_post_meta( $post->ID, 'eventendtime', true );
     return $eventendtime;
+}
+
+
+function se_save_custom_eventenddate( $post_id ) {
+    global $post;
+    
+    if( isset( $_POST['eventenddate']) ) {
+        if( $_POST['eventstarttime'] <= $_POST['eventenddate'] ) {
+            update_post_meta( $post->ID, 'eventenddate', $_POST['eventenddate'] );
+        } else {
+            update_post_meta( $post->ID, 'eventenddate', $_POST['eventenddate'] );
+        }
+    }
+}
+add_action( 'save_post', 'se_save_custom_eventenddate' );
+
+function se_get_event_eventenddate( $post ) {
+    $eventenddate = get_post_meta( $post->ID, 'eventenddate', true );
+    return $eventenddate;
+}
+
+
+function se_save_custom_eventtimes( $post_id ) {
+    global $post;
+    
+    if( isset( $_POST['eventtimes']) ) {
+        if( $_POST['eventstarttime'] <= $_POST['eventtimes'] ) {
+            update_post_meta( $post->ID, 'eventtimes', $_POST['eventtimes'] );
+        } else {
+            update_post_meta( $post->ID, 'eventtimes', $_POST['eventtimes'] );
+        }
+    }
+}
+add_action( 'save_post', 'se_save_custom_eventtimes' );
+
+function se_get_event_eventtimes( $post ) {
+    $eventtimes = get_post_meta( $post->ID, 'eventtimes', true );
+    return $eventtimes;
 }
 
 
@@ -479,14 +517,22 @@ function se_load_events_index( $a ) {
         if( $count < $numberToDisplay  || $numberToDisplay === -1){
             $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
             $price = se_get_event_price( $post );
-            $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
+            $date;
             $startTime = "";
             $endTime = "";
-            if ( se_get_event_starttime( $post ) !== "" ) {
-                $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
-            }
-            if ( se_get_event_eventendtime( $post ) !== "" ) {
-                $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
+            $eventenddate = "";
+            $eventtimes = "";
+            if ( se_get_is_multiday( $post ) !== "Multi-day" ) {
+                $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
+                if ( se_get_event_starttime( $post ) !== "" ) {
+                    $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
+                }
+                if ( se_get_event_eventendtime( $post ) !== "" ) {
+                    $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
+                } 
+            } else {
+                $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) ) . " - " . date( "F j, Y", strtotime( se_get_event_eventenddate( $post ) ) );
+                $eventtimes = se_get_event_eventtimes( $post );
             }
             $label = se_get_event_label( $post );
             $eventtext = "";
@@ -507,15 +553,20 @@ function se_load_events_index( $a ) {
             }
             $pluginContainer .= '<div class="event__title"><a class="event__name-link" href="' . get_option( 'simple-events-events-page' ) . '">' . $post->post_title . '</a></div>';
             $pluginContainer .= '<div class="event__date">' . $date . '</div> ';
-            if ( !empty( $startTime ) ) {
-                $pluginContainer .= '<div class="event__starttime">from ' . $startTime . '</div>';
-            }
-            $eventStartAndEndText = "";
-            if ( !empty( $startTime ) && !empty( $endTime ) ) {
-                $eventStartAndEndText = "&nbsp;- ";
-            }
-            if ( !empty( $endTime ) ) {
-                $pluginContainer .= '<div class="event__endtime">' . $eventStartAndEndText . $endTime . '</div>';
+            if ( se_get_is_multiday( $post ) !== "Multi-day" ) {
+                if ( !empty( $startTime ) ) {
+                    $pluginContainer .= '<div class="event__starttime">from ' . $startTime . '</div>';
+                }
+                $eventStartAndEndText = "";
+                if ( !empty( $startTime ) && !empty( $endTime ) ) {
+                    $eventStartAndEndText = "&nbsp;- ";
+                }
+                if ( !empty( $endTime ) ) {
+                    $pluginContainer .= '<div class="event__endtime">' . $eventStartAndEndText . $endTime . '</div>';
+                }
+            } else {
+            
+                
             }
             $pluginContainer .= '<div class="event__short-description">' . $eventtext . '</div>';    
             $pluginContainer .= '</div>';
