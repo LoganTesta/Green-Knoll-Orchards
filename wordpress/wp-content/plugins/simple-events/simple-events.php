@@ -143,10 +143,18 @@ function se_url_custom_metabox() {
     update_post_meta( $post->ID, 'eventprice', $eventprice );
     $eventdate = sanitize_text_field( get_post_meta( $post->ID, 'eventdate', true ) );
     update_post_meta( $post->ID, 'eventdate', $eventdate );
+    $ismultiday = sanitize_text_field( get_post_meta( $post->ID, 'ismultiday', true ) );
+    update_post_meta( $post->ID, 'ismultiday', $ismultiday );
     $eventstarttime = sanitize_text_field( get_post_meta( $post->ID, 'eventstarttime', true ) );
     update_post_meta( $post->ID, 'eventstarttime', $eventstarttime );
     $eventendtime = sanitize_text_field( get_post_meta( $post->ID, 'eventendtime', true ) );
     update_post_meta( $post->ID, 'eventendtime', $eventendtime );
+    $eventenddate = sanitize_text_field( get_post_meta( $post->ID, 'eventenddate', true ) );
+    update_post_meta( $post->ID, 'eventenddate', $eventenddate );
+    $eventtimes = sanitize_text_field( get_post_meta( $post->ID, 'eventtimes', true ) );
+    update_post_meta( $post->ID, 'eventtimes', $eventtimes );
+    
+
     $eventlabel = sanitize_text_field( get_post_meta( $post->ID, 'eventlabel', true ) );
     update_post_meta( $post->ID, 'eventlabel', $eventlabel );
     $eventorder = sanitize_text_field( get_post_meta( $post->ID, 'eventorder', true ) );
@@ -183,15 +191,35 @@ function se_url_custom_metabox() {
         </label>
     </p>
     <p>
-        <label for="eventstarttime">Start Time:<br />
-            <input id="eventstarttime" name="eventstarttime" size="37" type="time" value="<?php if( isset( $eventstarttime ) ) { echo $eventstarttime; } ?>" />
-        </label>
+        <span>Event Length: <?php echo $ismultiday; ?></span><br /> 
+        <label for="ismultiday0">1 day</label>
+        <input id="ismultiday0" name="ismultiday" type="radio" value="1 day" <?php if( $ismultiday === "1 day" ) { echo 'checked="checked"'; } ?> />
+        <label for="ismultiday1">Multi-day</label>
+        <input id="ismultiday1" name="ismultiday" type="radio" value="Multi-day" <?php if( $ismultiday === "Multi-day" ) { echo 'checked="checked"'; } ?> />    
     </p>
-    <p>
-        <label for="eventendtime">End Time:<br />
-            <input id="eventendtime" name="eventendtime" size="37" type="time" value="<?php if( isset( $eventendtime ) ) { echo $eventendtime; } ?>" />
-        </label>
-    </p>
+    <?php if ( $ismultiday !== "Multi-day" ) { ?>
+        <p>
+            <label for="eventstarttime">Start Time:<br />
+                <input id="eventstarttime" name="eventstarttime" size="37" type="time" value="<?php if( isset( $eventstarttime ) ) { echo $eventstarttime; } ?>" />
+            </label>
+        </p>
+        <p>
+            <label for="eventendtime">End Time:<br />
+                <input id="eventendtime" name="eventendtime" size="37" type="time" value="<?php if( isset( $eventendtime ) ) { echo $eventendtime; } ?>" />
+            </label>
+        </p>
+    <?php } else { ?>
+        <p>
+            <label for="eventenddate">End Date:<br />
+                <input id="eventenddate" name="eventenddate" size="37" type="date" value="<?php if( isset( $eventenddate ) ) { echo $eventenddate; } ?>" />
+            </label>
+        </p>
+        <p>
+            <label for="eventtimes">Event Times:<br />
+                <input id="eventtimes" name="eventtimes" size="37" value="<?php if( isset( $eventtimes ) ) { echo $eventtimes; } ?>" />
+            </label>
+        </p>
+    <?php } ?>
     <p>
         <label for="eventlabel">Event Label:<br />
             <input id="eventlabel" name="eventlabel" size="37" value="<?php if( isset( $eventlabel ) ) { echo $eventlabel; } ?>" />
@@ -258,6 +286,21 @@ add_action( 'save_post', 'se_save_custom_eventdate' );
 function se_get_event_date( $post ) {
     $eventdate = get_post_meta( $post->ID, 'eventdate', true );
     return $eventdate;
+}
+
+
+function se_save_custom_ismultiday( $post_id ) {
+    global $post;
+    
+    if( isset( $_POST['ismultiday']) ) {
+        update_post_meta( $post->ID, 'ismultiday', $_POST['ismultiday'] );
+    }
+}
+add_action( 'save_post', 'se_save_custom_ismultiday' );
+
+function se_get_is_multiday( $post ) {
+    $ismultiday = get_post_meta( $post->ID, 'ismultiday', true );
+    return $ismultiday;
 }
 
 
