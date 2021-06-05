@@ -554,19 +554,24 @@ function se_load_events_index( $a ) {
             $pluginContainer .= '<div class="event__title"><a class="event__name-link" href="' . get_option( 'simple-events-events-page' ) . '">' . $post->post_title . '</a></div>';
             $pluginContainer .= '<div class="event__date">' . $date . '</div> ';
             if ( se_get_is_multiday( $post ) !== "Multi-day" ) {
-                if ( !empty( $startTime ) ) {
-                    $pluginContainer .= '<div class="event__starttime">from ' . $startTime . '</div>';
-                }
-                $eventStartAndEndText = "";
                 if ( !empty( $startTime ) && !empty( $endTime ) ) {
-                    $eventStartAndEndText = "&nbsp;- ";
-                }
-                if ( !empty( $endTime ) ) {
-                    $pluginContainer .= '<div class="event__endtime">' . $eventStartAndEndText . $endTime . '</div>';
+                    $pluginContainer .= '<div class="event__times">';
+                    if ( !empty( $startTime ) ) {
+                        $pluginContainer .= '<div class="event__starttime">from ' . $startTime . '</div>';
+                    }
+                    $eventStartAndEndText = "";
+                    if ( !empty( $startTime ) && !empty( $endTime ) ) {
+                        $eventStartAndEndText = "&nbsp;- ";
+                    }
+                    if ( !empty( $endTime ) ) {
+                        $pluginContainer .= '<div class="event__endtime">' . $eventStartAndEndText . $endTime . '</div>';
+                    }
+                    $pluginContainer .= '</div>';
                 }
             } else {
-            
-                
+                if ( !empty( $eventtimes ) ) {
+                    $pluginContainer .= '<div class="event__times">' . $eventtimes . '</div>';
+                }
             }
             $pluginContainer .= '<div class="event__short-description">' . $eventtext . '</div>';    
             $pluginContainer .= '</div>';
