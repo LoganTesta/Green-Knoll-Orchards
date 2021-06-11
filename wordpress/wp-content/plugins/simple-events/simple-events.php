@@ -182,12 +182,12 @@ function se_url_custom_metabox() {
     ?>
     <p>
         <label for="eventprice">Price:<br />
-            <input id="eventprice" name="eventprice" size="37" value="<?php if( isset( $eventprice ) ) { echo $eventprice; } ?>" />
+            <input id="eventprice" name="eventprice" value="<?php if( isset( $eventprice ) ) { echo $eventprice; } ?>" />
         </label>
     </p>
     <p>
         <label for="eventdate">Date:<br />
-            <input id="eventdate" name="eventdate" size="37" type="date" value="<?php if( isset( $eventdate ) ) { echo $eventdate; } ?>" />
+            <input id="eventdate" name="eventdate" type="date" value="<?php if( isset( $eventdate ) ) { echo $eventdate; } ?>" />
         </label>
     </p>
     <p>
@@ -200,34 +200,34 @@ function se_url_custom_metabox() {
     <?php if ( $ismultiday !== "Multi-day" ) { ?>
         <p>
             <label for="eventstarttime">Start Time:<br />
-                <input id="eventstarttime" name="eventstarttime" size="37" type="time" value="<?php if( isset( $eventstarttime ) ) { echo $eventstarttime; } ?>" />
+                <input id="eventstarttime" name="eventstarttime" type="time" value="<?php if( isset( $eventstarttime ) ) { echo $eventstarttime; } ?>" />
             </label>
         </p>
         <p>
             <label for="eventendtime">End Time:<br />
-                <input id="eventendtime" name="eventendtime" size="37" type="time" value="<?php if( isset( $eventendtime ) ) { echo $eventendtime; } ?>" />
+                <input id="eventendtime" name="eventendtime" type="time" value="<?php if( isset( $eventendtime ) ) { echo $eventendtime; } ?>" />
             </label>
         </p>
     <?php } else { ?>
         <p>
             <label for="eventenddate">End Date:<br />
-                <input id="eventenddate" name="eventenddate" size="37" type="date" value="<?php if( isset( $eventenddate ) ) { echo $eventenddate; } ?>" />
+                <input id="eventenddate" name="eventenddate" type="date" value="<?php if( isset( $eventenddate ) ) { echo $eventenddate; } ?>" />
             </label>
         </p>
         <p>
             <label for="eventtimes">Event Times:<br />
-                <textarea id="eventtimes" name="eventtimes" size="37"><?php if( isset( $eventtimes ) ) { echo $eventtimes; } ?></textarea>
+                <textarea id="eventtimes" name="eventtimes"><?php if( isset( $eventtimes ) ) { echo $eventtimes; } ?></textarea>
             </label>
         </p>
     <?php } ?>
     <p>
         <label for="eventlabel">Event Label:<br />
-            <input id="eventlabel" name="eventlabel" size="37" value="<?php if( isset( $eventlabel ) ) { echo $eventlabel; } ?>" />
+            <input id="eventlabel" name="eventlabel" value="<?php if( isset( $eventlabel ) ) { echo $eventlabel; } ?>" />
         </label>
     </p>
     <p>
         <label for="eventorder">Event Order:<br />
-            <input id="eventorder" size="37" type="number" min="1" name="eventorder" value="<?php if( isset($eventorder) ) { echo $eventorder; } ?>" />
+            <input id="eventorder" type="number" min="1" name="eventorder" value="<?php if( isset($eventorder) ) { echo $eventorder; } ?>" />
         </label>
     </p>
  <?php 

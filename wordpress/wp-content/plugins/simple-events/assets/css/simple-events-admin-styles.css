@@ -20,7 +20,7 @@
 .events-settings-form .admin-input-container .simple-events-border-radius { width: 80px; }
 
 /*Event sidebar*/
-.postbox-container input,
+.postbox-container input:not([type="radio"]),
 .postbox-container textarea { width: 100%; }
 
 
