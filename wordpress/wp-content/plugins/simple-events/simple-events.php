@@ -322,11 +322,11 @@ function se_get_event_starttime( $post ) {
 function se_save_custom_eventendtime( $post_id ) {
     global $post;
     
-    if( isset( $_POST['eventendtime']) ) {
-        if( $_POST['eventstarttime'] <= $_POST['eventendtime'] ) {
+    if ( isset( $_POST['eventendtime']) ) {
+        if ( $_POST['eventstarttime'] <= $_POST['eventendtime'] ) {
             update_post_meta( $post->ID, 'eventendtime', $_POST['eventendtime'] );
         } else {
-            update_post_meta( $post->ID, 'eventendtime', $_POST['eventendtime'] );
+            update_post_meta( $post->ID, 'eventendtime', '' );
         }
     }
 }
@@ -342,10 +342,10 @@ function se_save_custom_eventenddate( $post_id ) {
     global $post;
     
     if( isset( $_POST['eventenddate']) ) {
-        if( $_POST['eventstarttime'] <= $_POST['eventenddate'] ) {
+        if( $_POST['eventdate'] <= $_POST['eventenddate'] ) {
             update_post_meta( $post->ID, 'eventenddate', $_POST['eventenddate'] );
         } else {
-            update_post_meta( $post->ID, 'eventenddate', $_POST['eventenddate'] );
+            update_post_meta( $post->ID, 'eventenddate', '' );
         }
     }
 }
@@ -364,7 +364,7 @@ function se_save_custom_eventtimes( $post_id ) {
         if( $_POST['eventstarttime'] <= $_POST['eventtimes'] ) {
             update_post_meta( $post->ID, 'eventtimes', $_POST['eventtimes'] );
         } else {
-            update_post_meta( $post->ID, 'eventtimes', $_POST['eventtimes'] );
+            update_post_meta( $post->ID, 'eventtimes', '' );
         }
     }
 }
@@ -433,9 +433,8 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "simple-events" ){
             'image' => __( 'Image' ), 
             'content' => __( 'Event Text' ),
             'eventprice' => __( 'Event Price', 'swe' ),
-            'eventdate' => __( 'Event Date', 'swe' ),
-            'eventstarttime' => __( 'Event Start Time', 'swe' ),
-            'eventendtime' => __( 'Event End Time', 'swe' ),
+            'eventdate' => __( 'Start Date', 'swe' ),
+            'eventenddate' => __( 'End Date' ),
             'order' => __( 'Order' ),
             'date' => __( 'Date' ),
         );   
@@ -446,8 +445,12 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "simple-events" ){
     //Add images and other data to posts admin
     add_action( 'manage_posts_custom_column', 'se_add_data_to_admin_columns', 10, 2 );
     function se_add_data_to_admin_columns( $column, $post_id ) {
-        if( 'image' === $column ) {
+        
+        if ( 'image' === $column ) {
             echo get_the_post_thumbnail( $post_id, array(100, 100) );
+        }
+        if ( 'content' === $column ) {
+            echo wp_trim_words( get_post_field( 'post_content', $post_id ), 30 );
         }
         if ( 'eventprice' === $column ) {
             echo get_post_meta( $post_id, 'eventprice', true);
@@ -455,14 +458,8 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "simple-events" ){
         if ( 'eventdate' === $column ) {
             echo get_post_meta( $post_id, 'eventdate', true);
         }
-        if ( 'eventstarttime' === $column ) {
-            echo get_post_meta( $post_id, 'eventstarttime', true);
-        }
-        if ( 'eventendtime' === $column ) {
-            echo get_post_meta( $post_id, 'eventendtime', true);
-        }
-        if( 'content' === $column ) {
-            echo get_post_field( 'post_content', $post_id );
+        if ( 'eventenddate' === $column ) {
+            echo get_post_meta( $post_id, 'eventenddate', true);
         }
         if( 'order' === $column ) {
             echo get_post_meta( $post_id, 'eventorder', true );
