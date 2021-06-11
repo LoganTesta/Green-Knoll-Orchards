@@ -216,7 +216,7 @@ function se_url_custom_metabox() {
         </p>
         <p>
             <label for="eventtimes">Event Times:<br />
-                <input id="eventtimes" name="eventtimes" size="37" value="<?php if( isset( $eventtimes ) ) { echo $eventtimes; } ?>" />
+                <textarea id="eventtimes" name="eventtimes" size="37"><?php if( isset( $eventtimes ) ) { echo $eventtimes; } ?></textarea>
             </label>
         </p>
     <?php } ?>
@@ -277,7 +277,7 @@ function se_get_event_price( $post ) {
 function se_save_custom_eventdate( $post_id ) {
     global $post;
     
-    if( isset( $_POST['eventdate']) ) {
+    if ( isset( $_POST['eventdate']) ) {
         update_post_meta( $post->ID, 'eventdate', $_POST['eventdate'] );
     }
 }
@@ -292,7 +292,7 @@ function se_get_event_date( $post ) {
 function se_save_custom_ismultiday( $post_id ) {
     global $post;
     
-    if( isset( $_POST['ismultiday']) ) {
+    if ( isset( $_POST['ismultiday']) ) {
         update_post_meta( $post->ID, 'ismultiday', $_POST['ismultiday'] );
     }
 }
@@ -322,7 +322,7 @@ function se_get_event_starttime( $post ) {
 function se_save_custom_eventendtime( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['eventendtime']) ) {
+    if ( isset( $_POST['eventendtime'] ) ) {
         if ( $_POST['eventstarttime'] <= $_POST['eventendtime'] ) {
             update_post_meta( $post->ID, 'eventendtime', $_POST['eventendtime'] );
         } else {
@@ -342,7 +342,7 @@ function se_save_custom_eventenddate( $post_id ) {
     global $post;
     
     if( isset( $_POST['eventenddate']) ) {
-        if( $_POST['eventdate'] <= $_POST['eventenddate'] ) {
+        if ( $_POST['eventdate'] <= $_POST['eventenddate'] ) {
             update_post_meta( $post->ID, 'eventenddate', $_POST['eventenddate'] );
         } else {
             update_post_meta( $post->ID, 'eventenddate', '' );
@@ -360,8 +360,8 @@ function se_get_event_eventenddate( $post ) {
 function se_save_custom_eventtimes( $post_id ) {
     global $post;
     
-    if( isset( $_POST['eventtimes']) ) {
-        if( $_POST['eventstarttime'] <= $_POST['eventtimes'] ) {
+    if ( isset( $_POST['eventtimes']) ) {
+        if ( $_POST['eventstarttime'] <= $_POST['eventtimes'] ) {
             update_post_meta( $post->ID, 'eventtimes', $_POST['eventtimes'] );
         } else {
             update_post_meta( $post->ID, 'eventtimes', '' );
@@ -379,7 +379,7 @@ function se_get_event_eventtimes( $post ) {
 function se_save_custom_event_label( $post_id ) {
     global $post;
     
-    if( isset($_POST['eventlabel']) ) {
+    if( isset( $_POST['eventlabel'] ) ) {
         update_post_meta( $post->ID, 'eventlabel', $_POST['eventlabel'] );
     }
 }
@@ -394,7 +394,7 @@ function se_get_event_label( $post ) {
 function se_save_custom_order( $post_id ) {
     global $post;
     
-    if( isset($_POST['eventorder']) ) {
+    if ( isset($_POST['eventorder']) ) {
         update_post_meta( $post->ID, 'eventorder', $_POST['eventorder'] );
     }
 }
@@ -409,7 +409,7 @@ function se_get_order( $post ) {
 function se_save_custom_eventshortdescription( $post_id ) {
     global $post;
     
-    if( isset( $_POST['eventshortdescription']) ) {
+    if ( isset( $_POST['eventshortdescription']) ) {
         update_post_meta( $post->ID, 'eventshortdescription', $_POST['eventshortdescription'] );
     }
 }
@@ -453,13 +453,13 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "simple-events" ){
             echo wp_trim_words( get_post_field( 'post_content', $post_id ), 30 );
         }
         if ( 'eventprice' === $column ) {
-            echo get_post_meta( $post_id, 'eventprice', true);
+            echo get_post_meta( $post_id, 'eventprice', true );
         }
         if ( 'eventdate' === $column ) {
-            echo get_post_meta( $post_id, 'eventdate', true);
+            echo get_post_meta( $post_id, 'eventdate', true );
         }
         if ( 'eventenddate' === $column ) {
-            echo get_post_meta( $post_id, 'eventenddate', true);
+            echo get_post_meta( $post_id, 'eventenddate', true );
         }
         if( 'order' === $column ) {
             echo get_post_meta( $post_id, 'eventorder', true );
