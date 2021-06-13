@@ -617,11 +617,19 @@ function se_load_events( $a ) {
         $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
         $startTime = "";
         $endTime = "";
-        if ( se_get_event_starttime( $post ) !== "" ) {
-            $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
-        }
-        if ( se_get_event_eventendtime( $post ) !== "" ) {
-            $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
+        $eventenddate = "";
+        $eventtimes = "";
+        if ( se_get_is_multiday( $post ) !== "Multi-day" ) {
+            $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
+            if ( se_get_event_starttime( $post ) !== "" ) {
+                $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
+            }
+            if ( se_get_event_eventendtime( $post ) !== "" ) {
+                $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
+            } 
+        } else {
+            $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) ) . " - " . date( "F j, Y", strtotime( se_get_event_eventenddate( $post ) ) );
+            $eventtimes = se_get_event_eventtimes( $post );
         }
         $label = se_get_event_label( $post );
         $pluginContainer .= '<div class="event">';
@@ -630,18 +638,28 @@ function se_load_events( $a ) {
             $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
         }
         if ( !empty( $date ) ) {
-            $pluginContainer .= '<div class="event__date">' . $date . '</div>';
+            $pluginContainer .= '<div class="event__date">' . $date . '</div> ';
         }
-        if ( !empty( $startTime ) ) {
-            $pluginContainer .= ' at <div class="event__starttime">' . $startTime . '.</div>';
-        }
-        $eventStartAndEndText = "";
-        if ( !empty( $startTime ) && !empty( $endTime ) ) {
-            $eventStartAndEndText = "&nbsp;- ";
-        }
-        if ( !empty( $endTime ) ) {
-            $pluginContainer .= '<div class="event__endtime">' . $eventStartAndEndText . $endTime . '</div>';
-        }
+        if ( se_get_is_multiday( $post ) !== "Multi-day" ) {
+            if ( !empty( $startTime ) && !empty( $endTime ) ) {
+                $pluginContainer .= '<div class="event__times">';
+                if ( !empty( $startTime ) ) {
+                    $pluginContainer .= '<div class="event__starttime">from ' . $startTime . '</div>';
+                }
+                $eventStartAndEndText = "";
+                if ( !empty( $startTime ) && !empty( $endTime ) ) {
+                    $eventStartAndEndText = "&nbsp;- ";
+                }
+                if ( !empty( $endTime ) ) {
+                    $pluginContainer .= '<div class="event__endtime">' . $eventStartAndEndText . $endTime . '</div>';
+                }
+                $pluginContainer .= '</div>';
+            }
+        } else {
+            if ( !empty( $eventtimes ) ) {
+                $pluginContainer .= '<div class="event__times">' . $eventtimes . '</div>';
+            }
+        }        
         if ( !empty( $price ) ) {
                 $pluginContainer .= '<div class="event__price">Cost: ' . $price . '</div>';
         }
