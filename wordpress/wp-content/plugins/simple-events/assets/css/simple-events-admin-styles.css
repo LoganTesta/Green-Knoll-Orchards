@@ -19,6 +19,13 @@
 
 .events-settings-form .admin-input-container .simple-events-border-radius { width: 80px; }
 
+
+/*General Admin styles*/
+.admin-sidebar-section { padding-top: 15px; padding-bottom: 15px; }
+.admin-subheader { padding-top: 15px; font-weight: bold; }
+.admin-sidebar-section .admin-subheader:nth-of-type(1) { padding-top: 0; }
+
+
 /*Event sidebar*/
 .postbox-container input:not([type="radio"]),
 .postbox-container textarea { width: 100%; }
