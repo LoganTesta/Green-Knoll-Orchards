@@ -547,9 +547,11 @@ function se_load_events_index( $a ) {
             if ( !empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
                         . '<a class="event__background-link" href="' . get_option( 'simple-events-events-page' ) . '">'                      
-                        . '<span class="sr-only">' . $post->post_title . 'Link</span></a>'
-                        . '<div class="event__label">' . $label . '</div>'
-                        . '</div>';
+                        . '<span class="sr-only">' . $post->post_title . 'Link</span></a>';
+                if ( !empty( $label ) ) {
+                    $pluginContainer .= '<div class="event__label">' . $label . '</div>';
+                }
+                $pluginContainer .= '</div>';
             }
             $pluginContainer .= '<div class="event__title"><a class="event__name-link" href="' . get_option( 'simple-events-events-page' ) . '">' . $post->post_title . '</a></div>';
             $pluginContainer .= '<div class="event__date">' . $date . '</div> ';
