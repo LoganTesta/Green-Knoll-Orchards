@@ -389,7 +389,7 @@ input[type="submit"]:focus { background: var(--color-3); }
 @media only screen and (min-width: 700px){
     /*Plugins*/
     /*General Testimonials plugin customization.*/
-    .testimonial { padding-bottom: 0px; }
+    .testimonial { }
     .testimonial:last-of-type { padding-bottom: 0px; }
     .testimonial__provided-name { font-size: 1em; }
     .testimonial__comma { font-size: 1em; }
@@ -537,6 +537,9 @@ input[type="submit"]:focus { background: var(--color-3); }
     
     /*For index page*/
     .events-container.index .event__label { font-size: 1.5em; }
+    
+    /*General Testimonials plugin customization.*/
+    .testimonial { padding-bottom: 0px; }
     
     
     /*Contact Form 7*/
