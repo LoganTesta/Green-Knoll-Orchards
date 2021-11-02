@@ -83,7 +83,7 @@ if ( $eventImageWidthHeight <= 0 ) {
     .events-container__heading { font-size: 24px; }
 
     .event { width: <?php echo $eventWidthTablet; ?>%; }   
-    .event__background { height: <?php echo $eventImageWidthHeight; ?>px; }
+    .event__background { height: <?php echo 0.95 * $eventImageWidthHeight; ?>px; }
     
     .event:last-of-type { padding-bottom: 15px; }
 }
@@ -95,7 +95,7 @@ if ( $eventImageWidthHeight <= 0 ) {
 
     .event { width: <?php echo $eventWidthDesktop; ?>%; padding-bottom: 60px; }
     .event__title { font-size: 24px; }
-    .event__background { height: <?php echo 0.8 * $eventImageWidthHeight; ?>px; }
+    .event__background { height: <?php echo $eventImageWidthHeight; ?>px; }
     
     
     /*For index page*/
