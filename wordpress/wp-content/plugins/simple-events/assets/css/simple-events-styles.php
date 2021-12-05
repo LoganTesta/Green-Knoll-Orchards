@@ -94,8 +94,8 @@ if ( $eventImageWidthHeight <= 0 ) {
     .events-container__heading { font-size: 28px; }
 
     .event { width: <?php echo $eventWidthDesktop; ?>%; padding-bottom: 60px; }
-    .event__title { font-size: 24px; }
     .event__background { height: <?php echo $eventImageWidthHeight; ?>px; }
+    .event__title { font-size: 24px; }
     
     
     /*For index page*/

@@ -635,10 +635,10 @@ function se_load_events( $a ) {
         }
         $label = se_get_event_label( $post );
         $pluginContainer .= '<div class="event">';
-        $pluginContainer .= '<div class="event__title">' . $post->post_title . '</div>';
         if ( !empty( $url_thumb ) ) {
             $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
         }
+        $pluginContainer .= '<div class="event__title">' . $post->post_title . '</div>';
         if ( !empty( $date ) ) {
             $pluginContainer .= '<div class="event__date">' . $date . '</div> ';
         }
