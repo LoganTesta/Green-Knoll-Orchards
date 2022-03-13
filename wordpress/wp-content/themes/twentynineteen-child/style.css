@@ -340,7 +340,11 @@ input[type="submit"]:focus { background: var(--color-3); }
 
 /*Meta Slider*/
 .content-area.about .metaslider { }
-
+.metaslider .flexslider .flex-control-nav { bottom: -40px; }
+.metaslider .flex-control-paging li a { width: 12px; height: 12px; background: rgba(87, 140, 61, 0.5); }
+.metaslider .flexslider .flex-control-nav li a { margin-left: 10px; margin-right: 10px; }
+.metaslider .flex-control-paging li a:hover { background: rgba(87, 140, 61, 0.7); }
+.metaslider .flex-control-paging li a.flex-active { background: rgba(87, 140, 61, 0.9); }
 
 
 /*Clearing variable width columns */
