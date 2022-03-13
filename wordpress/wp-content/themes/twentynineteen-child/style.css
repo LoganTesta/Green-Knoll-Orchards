@@ -338,6 +338,10 @@ input[type="submit"]:focus { background: var(--color-3); }
 .event__label { font-size: 1.125em; }
 
 
+/*Meta Slider*/
+.content-area.about .metaslider { }
+
+
 
 /*Clearing variable width columns */
 @media only screen and (max-width: 767px){   
@@ -545,6 +549,11 @@ input[type="submit"]:focus { background: var(--color-3); }
     /*Contact Form 7*/
     .wpcf7 { width: 50%; max-width: 750px; }
     .wpcf7-textarea { }
+    
+    
+    /*Meta Slider*/
+    .content-area.about .metaslider { float: right; width: 50%; padding-left: 30px; }
+    
 }
 
 
