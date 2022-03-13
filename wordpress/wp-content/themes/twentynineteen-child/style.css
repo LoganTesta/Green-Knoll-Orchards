@@ -339,7 +339,18 @@ input[type="submit"]:focus { background: var(--color-3); }
 
 
 /*Meta Slider*/
-.content-area.about .metaslider { }
+.content-area.about .metaslider { padding-bottom: 20px; }
+
+.metaslider .flexslider .caption-wrap { opacity: 0.8; background: var(--color-2); text-align: center; }
+
+.metaslider.ml-slider .flexslider .flex-direction-nav li a { opacity: 0; text-indent: 0; line-height: 16px; background-image: none; }
+.metaslider.ml-slider .flexslider:hover .flex-direction-nav li a { opacity: 1; }
+.metaslider.ml-slider .flexslider .flex-direction-nav li a::before { line-height: 16px; font-size: 60px; font-weight: bold; 
+                                                                     text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.9); color: rgba(46, 89, 101, 0.9); }
+.metaslider.ml-slider .flexslider .flex-direction-nav li .flex-prev::before { content: "\2039" !important; }
+.metaslider.ml-slider .flexslider .flex-direction-nav li .flex-next::before { content: "\203A" !important; }
+
+
 .metaslider .flexslider .flex-control-nav { bottom: -40px; }
 .metaslider .flex-control-paging li a { width: 12px; height: 12px; background: rgba(87, 140, 61, 0.5); }
 .metaslider .flexslider .flex-control-nav li a { margin-left: 10px; margin-right: 10px; }
@@ -556,7 +567,7 @@ input[type="submit"]:focus { background: var(--color-3); }
     
     
     /*Meta Slider*/
-    .content-area.about .metaslider { float: right; width: 50%; padding-left: 30px; }
+    .content-area.about .metaslider { float: right; width: 50%; padding-bottom: 0; padding-left: 30px; }
     
 }
 
