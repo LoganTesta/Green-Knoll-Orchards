@@ -343,10 +343,14 @@ input[type="submit"]:focus { background: var(--color-3); }
 
 .metaslider .flexslider .caption-wrap { opacity: 0.8; background: var(--color-2); text-align: center; }
 
-.metaslider.ml-slider .flexslider .flex-direction-nav li a { opacity: 0; text-indent: 0; line-height: 16px; background-image: none; }
+.metaslider.ml-slider .flexslider .flex-direction-nav li a { opacity: 0; width: 40px; height: 40px; text-indent: 0; text-align: center; 
+                                                             background-image: none; }
 .metaslider.ml-slider .flexslider:hover .flex-direction-nav li a { opacity: 1; }
-.metaslider.ml-slider .flexslider .flex-direction-nav li a::before { line-height: 16px; font-size: 60px; font-weight: bold; 
-                                                                     text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.9); color: rgba(46, 89, 101, 0.9); }
+.metaslider.ml-slider .flexslider .flex-direction-nav li a::before { display: block; width: 40px; height: 40px; padding-top: 4px; 
+                                                                     border: 2px solid rgba(255, 255, 255, 0.9); border-radius: 40px; line-height: 16px;
+                                                                     font-size: 48px; text-shadow: none; background-color: rgba(46, 89, 101, 0.8);
+                                                                     color: rgba(255, 255, 255, 0.8); transition: 0.4s ease-in; }
+.metaslider.ml-slider .flexslider .flex-direction-nav li a:hover::before { background-color: rgba(46, 89, 101, 0.6); transition: 0.4s ease-in; }
 .metaslider.ml-slider .flexslider .flex-direction-nav li .flex-prev::before { content: "\2039" !important; }
 .metaslider.ml-slider .flexslider .flex-direction-nav li .flex-next::before { content: "\203A" !important; }
 
