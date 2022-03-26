@@ -357,6 +357,8 @@ input[type="submit"]:focus { background: var(--color-3); }
 .metaslider .flex-control-paging li a:hover { background: rgba(87, 140, 61, 0.7); }
 .metaslider .flex-control-paging li a.flex-active { background: rgba(87, 140, 61, 0.9); }
 
+.metaslider .flexslider .caption { padding: 4px 5px; line-height: 1.4; font-size: 0.8em; }
+
 
 /*Clearing variable width columns */
 @media only screen and (max-width: 767px){   
@@ -485,6 +487,11 @@ input[type="submit"]:focus { background: var(--color-3); }
     
     /*Simple Events plugin customization.*/
     .events-container__heading { font-size: 1.5em; }
+    
+    
+    /*Plugins*/
+    /*Meta Slider*/
+    .metaslider .flexslider .caption { padding: 5px 10px; line-height: 1.4em; font-size: 1em; }
 }
 
 
