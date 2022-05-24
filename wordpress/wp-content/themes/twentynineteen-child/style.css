@@ -196,9 +196,9 @@ input[type="submit"]:focus { background: var(--color-3); }
 
 
 /*Header*/
-.site .site-header { height: 600px; background: url('assets/images/cherry-farm-trees.jpg') 0% 0%/cover no-repeat; }
+.site .site-header { height: 380px; background: url('assets/images/cherry-farm-trees.jpg') 0% 0%/cover no-repeat; }
 .site-branding-container { }
-.entry .entry-header { position: absolute; top: 540px; margin-top: 0; margin-bottom: 0; }
+.entry .entry-header { position: absolute; top: 320px; margin-top: 0; margin-bottom: 0; }
 .site-header.featured-image { min-height: 0px; margin-bottom: 0; }
 .site-header.featured-image .site-featured-image .post-thumbnail img { height: auto; top: 0px; }
 .site-header.featured-image .site-branding-container::after, 
@@ -211,7 +211,7 @@ input[type="submit"]:focus { background: var(--color-3); }
 .site-header .site-branding-container .site-title a:hover { opacity: 0.8; }
 .site-header.featured-image .main-navigation a:focus { color: var(--color-1); }
 .site-header.featured-image .main-navigation .sub-menu a:focus { color: #ffffff; }
-.site-branding { padding: 20px; border-radius: 4px; box-shadow: 0 0 0 6px rgba(87, 140, 61, 0.9); background-color: rgba(255, 255, 255, 0.8); }
+.site-branding { padding: 15px; border-radius: 4px; box-shadow: 0 0 0 6px rgba(87, 140, 61, 0.9); background-color: rgba(255, 255, 255, 0.8); }
 .entry .entry-title { color: #ffffff; text-shadow: 1.2px 2.4px var(--color-2); }
 .site-header .site-branding-container .site-branding .site-description { font-size: 1.125em; font-weight: bold; color: #333333; text-shadow: 0.7px 1.4px #ffffff; }
 
@@ -227,10 +227,10 @@ input[type="submit"]:focus { background: var(--color-3); }
 /*Nav*/
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):hover > .sub-menu, 
 .main-navigation .main-menu .menu-item-has-children:not(.off-canvas):focus > .sub-menu, 
-.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu { margin-top: 8px; }
+.main-navigation .main-menu .menu-item-has-children.is-focused:not(.off-canvas) > .sub-menu { padding-top: 5px; padding-bottom: 5px; margin-top: 8px; }
 .main-navigation .main-menu > li.menu-item-has-children .submenu-expand.main-menu-more-toggle { padding-top: 8px; }
 .site-header .main-navigation .main-menu { font-size: 0; }
-.site-header .main-navigation .main-menu li { font-size: 1.05rem; }
+.site-header .main-navigation .main-menu li { font-size: 0.8rem; }
 .site-header .main-navigation .main-menu > li > a { margin-right: 1em; color: #333333; text-shadow: 1px 1px #ffffff; }
 .site-header .main-navigation .main-menu > li > a:hover, 
 .main-navigation .main-menu > li > a:hover + svg { opacity: 1; color: var(--color-1); text-shadow: 1px 1px #ffffff; }
@@ -242,7 +242,6 @@ input[type="submit"]:focus { background: var(--color-3); }
 .main-navigation .sub-menu > li > .menu-item-link-return:focus { background-color: var(--color-1); }
 .current_page_item a { border-bottom: 3px solid rgba(87, 140, 61, 1); }
 .current_page_item a:hover { border-bottom: 3px solid rgba(87, 140, 61, 0.8); }
-.main-navigation .sub-menu li { padding-top: 4px; padding-bottom: 10px; }
 .main-navigation .sub-menu li:hover { background-color: var(--color-3); }
 .main-navigation .sub-menu li:hover a { background-color: var(--color-3); }
 .main-navigation .sub-menu > li > a, 
@@ -521,7 +520,7 @@ input[type="submit"]:focus { background: var(--color-3); }
     .site-header .site-branding-container .site-title a, 
     .site-header .site-branding-container .site-title a:link, 
     .site-header .site-branding-container .site-title a:visited { font-size: 2em; }
-    .site-branding { width: 845px; }
+    .site-branding { width: 845px; padding: 20px; }
     .site-header .site-branding-container .site-branding .site-description { font-size: 1.4em; }
     .site .site-header { height: 400px;}
     
