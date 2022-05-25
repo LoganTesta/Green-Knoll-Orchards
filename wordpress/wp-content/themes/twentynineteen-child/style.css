@@ -527,7 +527,7 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
     .site-branding-container { padding-top: 60px; }
     .site-header .site-branding-container .site-title a, 
     .site-header .site-branding-container .site-title a:link, 
-    .site-header .site-branding-container .site-title a:visited { font-size: 2em; }
+    .site-header .site-branding-container .site-title a:visited { font-size: 1.8em; }
     .site-branding { width: 845px; padding: 20px; }
     .site-header .site-branding-container .site-branding .site-description { font-size: 1.4em; }
     .site .site-header { height: 400px;}
