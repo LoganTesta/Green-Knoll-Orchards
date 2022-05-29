@@ -10,6 +10,17 @@
 
 /***############### Website Specific Styles. ***/
 
+/*Prevent twentynineteen theme print styles from showing link URLs*/
+html a:link, html a:visited, html a {
+    text-decoration: none;
+}
+
+html a[href^="http"]::after {
+    content: none;
+}
+
+
+/*Header*/
 article.entry .entry-header, 
 footer.site-footer .site-info {
     margin-left: 1rem;
