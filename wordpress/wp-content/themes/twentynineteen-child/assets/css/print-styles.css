@@ -21,6 +21,11 @@ html a[href^="http"]::after {
 
 
 /*Header*/
+html .site-header.featured-image .site-featured-image .entry-header, 
+html .site-header.featured-image .site-branding-container {
+    margin-bottom: auto;
+}
+
 article.entry .entry-header, 
 footer.site-footer .site-info {
     margin-left: 1rem;
