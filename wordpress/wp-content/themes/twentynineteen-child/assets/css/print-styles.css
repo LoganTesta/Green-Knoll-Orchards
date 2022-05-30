@@ -19,6 +19,11 @@ html a[href^="http"]::after {
     content: none;
 }
 
+/*Prevent mid-item splitting onto two pages if possible*/
+.product,
+.testimonial, 
+.event__background { break-inside: avoid; page-break-inside: avoid; /*Older version*/ }
+
 
 /*Header*/
 html .site-header.featured-image .site-featured-image .entry-header, 
