@@ -19,6 +19,7 @@ html body {
 
 /*Prevent twentynineteen theme print styles from showing link URLs*/
 html a:link, html a:visited, html a {
+    font-weight: normal;
     text-decoration: none;
 }
 
