@@ -52,3 +52,20 @@ html .site-header.featured-image#masthead .site-title a {
     text-shadow: 1px 2px rgba(255, 255, 255, 1);
     color: var(--color-1);
 }
+
+
+
+@media only print and (min-width: 500px){  
+    
+    /*Header*/
+    .site-branding-container { padding-top: 20px; }
+    
+    
+    /*Index page*/
+    .index-intro__bg-image { height: 280px; }
+    
+    
+    /*Plugins*/
+    /*Meta Slider*/
+    div.metaslider .flexslider .slides li { height: 280px; }
+}

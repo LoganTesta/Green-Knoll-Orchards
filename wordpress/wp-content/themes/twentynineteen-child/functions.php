@@ -15,6 +15,7 @@
 add_image_size( "medium_square_crop", 400, 400, true );
 
 add_action( 'wp_enqueue_scripts', function() {
-    wp_enqueue_style( 'parent-style', "" . get_template_directory_uri() . '/style.css?mod=06012022' );
-    wp_enqueue_style( 'print-styles', "" . get_stylesheet_directory_uri() . '/assets/css/print-styles.css?mod=06012022', array(), '', 'print' );
+    wp_enqueue_style( 'parent-style', "" . get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'main-styles', "" . get_stylesheet_directory_uri() . '/assets/css/main-styles.css?mod=06022022');
+    wp_enqueue_style( 'print-styles', "" . get_stylesheet_directory_uri() . '/assets/css/print-styles.css?mod=06022022', array(), '', 'print' );
 });
