@@ -53,6 +53,10 @@ html .site-header.featured-image#masthead .site-title a {
     color: var(--color-1);
 }
 
+html .site-header.featured-image .site-branding .site-description {
+    text-shadow: 0.7px 1.4px #ffffff;
+}
+
 
 
 @media only print and (min-width: 500px){  
