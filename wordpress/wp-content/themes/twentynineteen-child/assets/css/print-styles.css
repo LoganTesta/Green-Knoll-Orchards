@@ -16,6 +16,16 @@ html body {
     font-family: "NonBreakingSpaceOverride", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
 
+html h2, 
+html h3, 
+html h4 {
+    margin-top: 0;
+}
+
+html h4 {
+    font-size: 1.125em;
+}
+
 
 /*Prevent twentynineteen theme print styles from showing link URLs*/
 html a:link, html a:visited, html a {
@@ -57,6 +67,11 @@ html .site-header.featured-image .site-branding .site-description {
     text-shadow: 0.7px 1.4px #ffffff;
 }
 
+/*Plugins*/
+/*Simple Events*/
+html .event__title .event__name-link { font-weight: inherit; }
+
+
 
 
 @media only print and (min-width: 500px){  
@@ -72,4 +87,12 @@ html .site-header.featured-image .site-branding .site-description {
     /*Plugins*/
     /*Meta Slider*/
     div.metaslider .flexslider .slides li { height: 280px; }
+    
+    
+    /*Website Products*/
+    .product__background { height: 192px; }
+    
+    
+    /*Simple Events*/
+    .event__background { height: 192px; }
 }
