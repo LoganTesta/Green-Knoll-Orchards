@@ -36,7 +36,7 @@ if ( $eventImageWidthHeight <= 0 ) {
 .events-container__inner-wrapper { padding-top: 20px; }
 
 .event { float: left; width: 100%; padding: 0 20px 60px 20px; font-size: 16px; }
-.event__background { display: block; width: 100%; height: <?php echo 0.6 * $eventImageWidthHeight; ?>px; margin-left: 0; margin-bottom: 15px; max-width: 100%; border-radius: <?php echo get_option( 'simple-events-border-radius' ); ?>px; }
+.event__background { display: block; width: 100%; height: <?php echo 0.8 * $eventImageWidthHeight; ?>px; margin-left: 0; margin-bottom: 15px; max-width: 100%; border-radius: <?php echo get_option( 'simple-events-border-radius' ); ?>px; }
 .event__title { padding-bottom: 12px; font-size: 20px; font-weight: bold; }
 .event__name-link { text-decoration: none; }
 .event__price { padding-right: 25px; font-size: 18px; font-weight: bold; }
@@ -74,7 +74,7 @@ if ( $eventImageWidthHeight <= 0 ) {
 
 
 @media only screen and (min-width: 500px){ 
-    .event__background { height: <?php echo 0.8 * $eventImageWidthHeight; ?>px; }
+    .event__background { height: <?php echo 1.1 * $eventImageWidthHeight; ?>px; }
 }
 
 

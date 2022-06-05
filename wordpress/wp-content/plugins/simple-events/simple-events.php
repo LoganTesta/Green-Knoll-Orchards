@@ -95,10 +95,10 @@ function se_generate_settings_page() {
                 <input id="simpleEventsEventsPage" class="admin-input-container__input simple-events-events-page" name="simple-events-events-page" type="text" value="<?php echo get_option( 'simple-events-events-page' ); ?>" />
             </div>
             <div class="admin-input-container">
-                <label class="admin-input-container__label" for="simple-events-image-width-height">Max Image Height (80-400px)</label>
-                <input id="simpleEventsNumberToDisplay" class="admin-input-container__input smaller simple-events-image-width-height" name="simple-events-image-width-height" type="number" value="<?php echo get_option( 'simple-events-image-width-height' ); ?>" min="80" max="400" />
+                <label class="admin-input-container__label" for="simple-events-image-width-height">Max Image Height (200-500px)</label>
+                <input id="simpleEventsNumberToDisplay" class="admin-input-container__input smaller simple-events-image-width-height" name="simple-events-image-width-height" type="number" value="<?php echo get_option( 'simple-events-image-width-height' ); ?>" min="200" max="500" />
                 <span class="admin-input-container__trailing-text">px</span>
-                <span class="admin-input-container__default-settings-text">Default: 240px</span>
+                <span class="admin-input-container__default-settings-text">Default: 260px</span>
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="simple-events-border-radius">Image Border Radius</label>
