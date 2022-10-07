@@ -368,7 +368,12 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
  .wpcf7-textarea { height: 250px; }
  .wpcf7 form.invalid .wpcf7-response-output, 
  .wpcf7 form.unaccepted .wpcf7-response-output { border-color: var(--color-3); }
-
+ 
+ 
+ /*Ventus*/
+ #colophon .widget-column #weather-map-2.widget { margin-left: auto; margin-right: auto; }
+ .widget-title { text-align: center; }
+ 
 
 
 @media only screen and (min-width: 500px){
