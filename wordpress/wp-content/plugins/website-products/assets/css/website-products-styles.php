@@ -68,8 +68,9 @@ if ( $productImageWidthHeight <= 0 ) {
 
 
 
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 700px){
     .products-container__heading { font-size: 24px; }
+    .products-container__inner-wrapper { margin-left: -15px; margin-right: 15px; }
 
     .product { }   
     .product__background { height: <?php echo $productImageWidthHeight; ?>px; }
@@ -83,10 +84,6 @@ if ( $productImageWidthHeight <= 0 ) {
     .products-container__heading { font-size: 28px; }
 
     .product { width: <?php echo $productWidthDesktop; ?>%; }
-    .product:nth-of-type(<?php echo $numberOfProductsPerRow; ?>n+1),
-    .products-container.index .product:nth-of-type(<?php echo $numberOfProductsPerRow; ?>n+1) { padding-left: 0; }
-    .product:nth-of-type(<?php echo $numberOfProductsPerRow; ?>n+<?php echo $numberOfProductsPerRow; ?>),
-    .products-container.index .product:nth-of-type(<?php echo $numberOfProductsPerRow; ?>n+<?php echo $numberOfProductsPerRow; ?>) { padding-right: 0; }
     .product__background { height: <?php echo 0.8 * $productImageWidthHeight; ?>px; }
     
     
