@@ -68,7 +68,7 @@ if ( $productImageWidthHeight <= 0 ) {
 
 
 
-@media only screen and (min-width: 700px){
+@media only screen and (min-width: 768px){
     .products-container__heading { font-size: 24px; }
     .products-container__inner-wrapper { margin-left: -15px; margin-right: 15px; }
 

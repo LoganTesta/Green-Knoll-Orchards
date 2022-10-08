@@ -81,6 +81,7 @@ if ( $eventImageWidthHeight <= 0 ) {
 
 @media only screen and (min-width: 768px){
     .events-container__heading { font-size: 24px; }
+    .events-container__inner-wrapper { margin-left: -15px; margin-right: -15px; }
 
     .event { width: <?php echo $eventWidthTablet; ?>%; }   
     .event__background { height: <?php echo 0.95 * $eventImageWidthHeight; ?>px; }
