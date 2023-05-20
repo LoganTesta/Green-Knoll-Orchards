@@ -1,10 +1,9 @@
-
 <?php
 
-header ( "Content-type: text/css; charset: UTF-8" );
+header( "Content-type: text/css; charset: UTF-8" );
 
-require ( '../../../../../wp-load.php' );
-include ( plugin_dir_path(__FILE__) . "/simple-events.php" );
+require( '../../../../../wp-load.php' );
+include( plugin_dir_path(__FILE__) . "/simple-events.php" );
 
 
 $numberOfEventsPerRow = (int)( get_option( 'simple-events-events-per-row' ) );
