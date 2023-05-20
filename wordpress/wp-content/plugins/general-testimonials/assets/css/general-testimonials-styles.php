@@ -1,10 +1,9 @@
-
 <?php
 
-header ( "Content-type: text/css; charset: UTF-8" );
+header( "Content-type: text/css; charset: UTF-8" );
 
-require ( '../../../../../wp-load.php' );
-include ( plugin_dir_path(__FILE__) . "/general-testimonials.php" );
+require( '../../../../../wp-load.php' );
+include( plugin_dir_path(__FILE__) . "/general-testimonials.php" );
 
 
 $numberOfTestimonialsPerRow = (int)( get_option( 'general-testimonials-testimonials-per-row' ) );
