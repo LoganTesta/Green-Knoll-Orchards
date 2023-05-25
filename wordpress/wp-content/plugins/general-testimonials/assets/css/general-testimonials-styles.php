@@ -6,6 +6,8 @@ require( '../../../../../wp-load.php' );
 include( plugin_dir_path(__FILE__) . "/general-testimonials.php" );
 
 
+$leadingTextPosition = get_option( 'general-testimonials-leading-text-position' );
+
 $numberOfTestimonialsPerRow = (int)( get_option( 'general-testimonials-testimonials-per-row' ) );
 $numberOfTestimonialsPerRowTablet = (int)( get_option( 'general-testimonials-testimonials-per-row' ) );
 $testimonialWidthTablet = 50;
@@ -50,7 +52,7 @@ if ( $generalTestimonialsFloatImageDirection === "left" ) {
 
 ?>
 
-.testimonials-container__heading { padding-bottom: 0; text-align: center; }
+.testimonials-container__heading { padding-bottom: 0; text-align: <?php echo $leadingTextPosition; ?>; }
 .testimonials-container__inner-wrapper { padding-top: 30px; }
 
 .testimonial { padding-bottom: 50px; }

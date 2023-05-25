@@ -46,7 +46,8 @@ add_action( 'admin_menu', 'gt_admin_menu' );
 
 /*Set up the settings page inputs*/
 function gt_register_settings() {
-    add_option( 'general-testimonials-leading-text', 'Customer Testimonials' );
+    add_option( 'general-testimonials-leading-text', "Customer Testimonials" );
+    add_option( 'general-testimonials-leading-text-position', "center" );
     add_option( 'general-testimonials-image-width-height', "120" );
     add_option( 'general-testimonials-border-radius', "15" );
     add_option( 'general-testimonials-float-image-direction', "left" );
@@ -54,6 +55,7 @@ function gt_register_settings() {
     add_option( 'general-testimonials-number-to-display', "" );
 
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-leading-text', 'gt_validatetextfield' );
+    register_setting( 'general-testimonials-settings-group', 'general-testimonials-leading-text-position', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-image-width-height', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-border-radius', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-float-image-direction', 'gt_validatetextfield' );
@@ -77,6 +79,15 @@ function gt_generate_settings_page() {
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="general-testimonials-leading-text">Testimonials Leading Text</label>
                 <input id="generalTestimonialsLeadingText" class="admin-input-container__input general-testimonials-leading-text" name="general-testimonials-leading-text" type="text" value="<?php echo get_option( 'general-testimonials-leading-text' ); ?>" />
+            </div>
+            <div class="admin-input-container">
+                <span class="admin-input-container__label">Leading Text Position</span>   
+                <label class="" for="generalTestimonialsLeadingTextPosition0">left</label>
+                <input id="generalTestimonialsLeadingTextPosition0" class="general-testimonials-leading-text-position" name="general-testimonials-leading-text-position" type="radio" value="left" <?php if( get_option( 'general-testimonials-leading-text-position' ) === "left" ) { echo 'checked="checked"'; } ?> />
+                <label class="" for="generalTestimonialsLeadingTextPosition1">center</label>
+                <input id="generalTestimonialsLeadingTextPosition1" class="general-testimonials-leading-text-position" name="general-testimonials-leading-text-position" type="radio" value="center" <?php if( get_option( 'general-testimonials-leading-text-position' ) === "center" ) { echo 'checked="checked"'; } ?> />
+                <label class="" for="generalTestimonialsLeadingTextPosition2">right</label>
+                <input id="generalTestimonialsLeadingTextPosition2" class="general-testimonials-leading-text-position" name="general-testimonials-leading-text-position" type="radio" value="right" <?php if( get_option( 'general-testimonials-leading-text-position' ) === "right" ) { echo 'checked="checked"'; } ?> />        
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="general-testimonials-image-width-height">Image Width, Height (Max, 60-150px)</label>
@@ -105,7 +116,7 @@ function gt_generate_settings_page() {
                 <label class="admin-input-container__label--right" for="generalTestimonialsTestimonialsPerRow1">2</label>
                 <input id="generalTestimonialsTestimonialsPerRow2" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="3" <?php if( get_option( 'general-testimonials-testimonials-per-row' ) === "3" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="generalTestimonialsTestimonialsPerRow2">3</label>
-                                <input id="generalTestimonialsTestimonialsPerRow3" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="4" <?php if( get_option( 'general-testimonials-testimonials-per-row' ) === "4" ) { echo 'checked="checked"'; } ?> />
+                <input id="generalTestimonialsTestimonialsPerRow3" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="4" <?php if( get_option( 'general-testimonials-testimonials-per-row' ) === "4" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="generalTestimonialsTestimonialsPerRow3">4</label>
             </div>
             <div class="admin-input-container">
