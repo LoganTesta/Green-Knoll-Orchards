@@ -51,6 +51,7 @@
 					<?php rewind_posts(); ?>
 				</div>
 			<?php endif; ?>
+                        <?php get_search_form(); ?>
 		</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
