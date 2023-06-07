@@ -241,12 +241,17 @@ input[type="submit"]:focus { background: var(--color-3); }
 
 
 /*Search form*/
+#searchForm .search-controls { display: none; }
+#searchForm.show .search-controls { display: inline-block; }
 .search-form { position: absolute; top: 240px; right: 20px; }
-.search-controls { display: inline-block; }
+.search-form .search-form__label { display: block; padding-bottom: 2px; font-size: 24px; font-weight: bold; color: #ffffff; }
+.search-form .search-form__input { width: 160px; padding: 8px; border-radius: 15px; }
+.search-form .search-form__button { margin-left: 10px; }
+.search-form__search { position: relative; top: 8px; margin-left: 15px; }
 .search-form__search-icon { display: block; width: 20px; height: 30px; background: url('../images/search-icon.png') 50% 50%/cover no-repeat; cursor: pointer; }
 #searchForm.show .search-form__search-icon { display: none; }
 .search-form__close-search-icon { display: none; }
-
+#searchForm.show .search-form__search { margin-left: 15px; }
 #searchForm.show .search-form__close-search-icon { display: block; width: 20px; height: 30px; color: #ffffff; 
                                  background: url('../images/search-icon-close.png') 50% 50%/cover no-repeat; cursor: pointer; }
 
@@ -412,6 +417,12 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
 
 
 @media only screen and (min-width: 700px){
+    
+    /*Search form*/
+    .search-form { position: absolute; top: 260px; right: 15px; width: auto; }
+    .search-form .search-form__input { width: auto; }
+    
+    
     /*Plugins*/
     /*General Testimonials plugin customization.*/
     .testimonial { }
