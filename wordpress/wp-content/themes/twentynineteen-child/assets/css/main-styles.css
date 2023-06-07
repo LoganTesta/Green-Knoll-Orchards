@@ -242,6 +242,13 @@ input[type="submit"]:focus { background: var(--color-3); }
 
 /*Search form*/
 .search-form { position: absolute; top: 240px; right: 20px; }
+.search-controls { display: inline-block; }
+.search-form__search-icon { display: block; width: 20px; height: 30px; background: url('../images/search-icon.png') 50% 50%/cover no-repeat; cursor: pointer; }
+#searchForm.show .search-form__search-icon { display: none; }
+.search-form__close-search-icon { display: none; }
+
+#searchForm.show .search-form__close-search-icon { display: block; width: 20px; height: 30px; color: #ffffff; 
+                                 background: url('../images/search-icon-close.png') 50% 50%/cover no-repeat; cursor: pointer; }
 
 
 /*Content*/
