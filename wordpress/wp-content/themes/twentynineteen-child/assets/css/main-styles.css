@@ -147,6 +147,25 @@ h2::before,
 .entry .entry-content a { text-decoration: none; }
 .entry .entry-content a.button, .entry .entry-content a:hover { color: var(--color-3); }
 
+input, 
+textarea,
+input[type="text"], 
+input[type="email"], 
+input[type="url"], 
+input[type="password"], 
+input[type="search"], 
+input[type="number"], 
+input[type="tel"], 
+input[type="range"], 
+input[type="date"], 
+input[type="month"], 
+input[type="week"], 
+input[type="time"], 
+input[type="datetime"], 
+input[type="datetime-local"], 
+input[type="color"], 
+input[type="submit"] { border-radius: 5px; }
+
 .button, button, input[type="button"], 
 input[type="reset"],
 input[type="submit"] { background: var(--color-1); }
@@ -249,7 +268,7 @@ input[type="submit"]:focus { background: var(--color-3); }
 #searchForm.show .search-controls { display: inline-block; }
 .search-form { position: absolute; top: 240px; right: 20px; }
 .search-form .search-form__label { display: block; padding-bottom: 2px; font-size: 24px; font-weight: bold; color: #ffffff; }
-.search-form .search-form__input { width: 160px; padding: 8px; line-height: 0; }
+.search-form .search-form__input { width: 115px; padding: 8px; line-height: 0; }
 .search-form .search-form__button { display: block; padding-top: 23px; padding-bottom: 23px; margin-left: 10px; line-height: 0; }
 .search-form__search { position: relative; top: 8px; margin-left: 15px; }
 .search-form__search-icon { display: block; width: 20px; height: 30px; background: url('../images/search-icon.png') 50% 50%/cover no-repeat; cursor: pointer; }
