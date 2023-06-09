@@ -5,8 +5,8 @@ get_header();
 ?>
 
 
-<div class="inner-wrapper">
-    <div class="content page-content">
+<div class="inner-wrapper entry">
+    <div class="content page-content entry-content">
         <div class="content-row">    
             <div class="col-sma-12 search-results">
                 <h2 class="">Showing <?php echo $wp_query->found_posts; ?> result<?php if ( $wp_query->found_posts !== 1 ) { echo "s"; } ?> for 
