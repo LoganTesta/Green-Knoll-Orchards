@@ -334,6 +334,16 @@ input[type="submit"]:focus { background: var(--color-3); }
 /*Contact Us page*/
 
 
+/*Search page*/
+.search-results .search-item { padding-bottom: 40px; }
+.search-results .search-item__image-container { display: block; float: left; width: 32%; height: 180px; padding-left: 0; padding-bottom: 0; max-width: 300px; }
+.search-results .search-item__image-link { display: block; overflow: hidden; }
+.search-results .search-item__image { width: auto; height: 80px; }
+
+.search-results .search-item__content-wrapper { float: left; width: 100%; padding-left: 0; }
+.search-results .search-item.has-image .search-item__content-wrapper { width: 68%; padding-left: 15px; }
+
+
 /*Plugins*/
 /*Website Products plugin customization.*/
 .products-container__heading { font-size: 28px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; letter-spacing: -0.02em; line-height: 1.2; color: var(--color-2); }
@@ -610,6 +620,14 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
 
 
     /*Contact Us page*/
+    
+    
+    /*Search page*/
+    .search-results .search-item { padding-bottom: 60px; }
+    .search-results .search-item__image-container { max-width: 300px; height: 200px; }
+    .search-results .search-item__image-link { height: 200px; }
+    .search-results .search-item__image { height: 200px; }
+    .search-item__content-wrapper { width: 70%; }
     
     
     /*Plugins*/
