@@ -268,8 +268,9 @@ input[type="submit"]:focus { background: var(--color-3); }
 #searchForm.show .search-controls { display: inline-block; }
 .search-form { position: absolute; top: 240px; right: 20px; }
 .search-form .search-form__label { display: block; font-size: 24px; font-weight: bold; color: #ffffff; }
-.search-form .search-form__input { width: 115px; padding: 8px; line-height: 0; }
-.search-form .search-form__button { display: block; padding-top: 23px; padding-bottom: 23px; margin-left: 5px; line-height: 0; }
+.search-form .search-form__input { width: 115px; padding: 8px; line-height: 0; background-color: rgba(255, 255, 255, 0.8); }
+.search-form .search-form__button { display: block; padding-top: 23px; padding-bottom: 23px; margin-left: 5px; line-height: 0; background: rgba(87, 140, 61, 0.8); }
+.search-form .search-form__button:hover { background: rgba(153, 160, 70, 0.8); }
 .search-form__search { position: relative; top: 8px; margin-left: 15px; }
 .search-form__search-icon { display: block; width: 20px; height: 30px; background: url('../images/search-icon.png') 50% 50%/cover no-repeat; cursor: pointer; }
 #searchForm.show .search-form__search-icon { display: none; }
