@@ -21,11 +21,13 @@ get_header();
                                 $titlePrefix = "<span class='search-item__title__prefix'>(Post)</span> ";
                             } else if ( get_post_type() === "page" ) {
                                 $titlePrefix = "<span class='search-item__title__prefix'>(Page)</span> ";
-                            } else if ( get_post_type() === "product" ) {
+                            } else if ( get_post_type() === "product" || get_post_type() === "website-products" ) {
                                 $titlePrefix = "<span class='search-item__title__prefix'>(Product)</span> ";
                             } else if ( get_post_type() === "general-testimonials" ) {
                                 $titlePrefix = "<span class='search-item__title__prefix'>(Testimonial)</span> ";
-                            }
+                            } else if ( get_post_type() === "simple-events" ) {
+                                $titlePrefix = "<span class='search-item__title__prefix'>(Event)</span> ";
+                            } 
                             ?>                                                        
                             <div class="search-item <?php if ( has_post_thumbnail() ) { echo "has-image"; } ?>" id="<?php the_title(); ?>">
                                 <?php if ( has_post_thumbnail() ) { ?>
