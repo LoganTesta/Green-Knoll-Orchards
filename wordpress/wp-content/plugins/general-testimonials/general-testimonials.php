@@ -146,6 +146,8 @@ function gt_url_custom_metabox() {
     update_post_meta( $post->ID, 'testimoniallabel', $testimoniallabel );
     $testimonialurl = sanitize_text_field( get_post_meta( $post->ID, 'testimonialurl', true ) );
     update_post_meta( $post->ID, 'testimonialurl', $testimonialurl );
+    $testimonialdate = sanitize_text_field( get_post_meta( $post->ID, 'testimonialdate', true ) );
+    update_post_meta( $post->ID, 'testimonialdate', $testimonialdate );   
     $testimonialorder = sanitize_text_field( get_post_meta( $post->ID, 'testimonialorder', true ) );
     if( isset( $testimonialorder ) === false || $testimonialorder === "" ) {
         $testimonialorder = "n/a";
@@ -194,7 +196,12 @@ function gt_url_custom_metabox() {
             <input id="testimonialurl" size="37" name="testimonialurl" value="<?php if( isset( $testimonialurl ) ) { echo $testimonialurl; } ?>" />
         </label>
     </p>
-        <p>
+    <p>
+        <label for="testimonialdate">Date<br />
+            <input id="testimonialdate" size="37" name="testimonialdate" type="date" value="<?php if( isset( $testimonialdate ) ) { echo $testimonialdate; } ?>" />
+        </label>
+    </p>
+    <p>
         <label for="testimonialorder">Testimonial Order:<br />
             <input id="testimonialorder" size="37" type="number" min="1" name="testimonialorder" value="<?php if( isset( $testimonialorder ) ) { echo $testimonialorder; } ?>" />
         </label>
@@ -246,6 +253,21 @@ add_action( 'save_post', 'gt_save_custom_url' );
 function gt_get_url( $post ) {
     $testimonialurl = get_post_meta( $post->ID, 'testimonialurl', true );
     return $testimonialurl;
+}
+
+
+function gt_save_testimonialdate( $post_id ) {
+    global $post;
+    
+    if( isset( $_POST['testimonialdate'] ) ) {
+        update_post_meta( $post->ID, 'testimonialdate', $_POST['testimonialdate'] );
+    }
+}
+add_action( 'save_post', 'gt_save_testimonialdate' );
+
+function gt_get_testimonialdate( $post ) {
+    $testimonialdate = get_post_meta( $post->ID, 'testimonialdate', true );
+    return $testimonialdate;
 }
 
 
@@ -363,6 +385,7 @@ function gt_load_testimonials( $a ) {
             $providedName = gt_get_testimonialprovidedname( $post );
             $label = gt_get_testimoniallabel( $post );
             $link = gt_get_url( $post );
+            $testimonialDate = gt_get_testimonialdate( $post );
             $pluginContainer .= '<div class="testimonial">';
             if ( !empty( $url_thumb ) ) {
                 $pluginContainer .= '<img class="testimonial__image" src="' . $url_thumb . '" alt="' . $url_altText . '" />';
@@ -385,6 +408,7 @@ function gt_load_testimonials( $a ) {
                     $pluginContainer .= '<span class="testimonial__label">' . $label . '</span>';
                 }
             }
+            $pluginContainer .= '' . $testimonialDate;
             $pluginContainer .= '</div>';
         }
         $count++;
