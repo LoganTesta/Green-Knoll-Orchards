@@ -385,7 +385,10 @@ function gt_load_testimonials( $a ) {
             $providedName = gt_get_testimonialprovidedname( $post );
             $label = gt_get_testimoniallabel( $post );
             $link = gt_get_url( $post );
-            $testimonialDate = gt_get_testimonialdate( $post );
+            $testimonialDate = strtotime( gt_get_testimonialdate( $post ) );
+            if ( !empty( gt_get_testimonialdate( $post ) ) ) {
+                $testimonialDate = date( 'F Y', $testimonialDate );
+            }
             $pluginContainer .= '<div class="testimonial">';
             if ( !empty( $url_thumb ) ) {
                 $pluginContainer .= '<img class="testimonial__image" src="' . $url_thumb . '" alt="' . $url_altText . '" />';
@@ -408,7 +411,13 @@ function gt_load_testimonials( $a ) {
                     $pluginContainer .= '<span class="testimonial__label">' . $label . '</span>';
                 }
             }
-            $pluginContainer .= '' . $testimonialDate;
+            if ( !empty( $testimonialDate ) ) { 
+                if ( !empty( $providedName ) && !empty( $label ) ) {
+                    $pluginContainer .= '<span class="testimonial__comma">,</span><span class="testimonial__date"> ' . $testimonialDate . '</span>';
+                } else {
+                    $pluginContainer .= '<span class="testimonial__date">' . $testimonialDate . '</span>';
+                }
+            }
             $pluginContainer .= '</div>';
         }
         $count++;
