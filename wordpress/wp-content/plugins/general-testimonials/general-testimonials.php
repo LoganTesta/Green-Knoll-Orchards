@@ -312,6 +312,7 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "general-testimonials
             'testimonialprovidedname' => __( 'Provided Name', 'gt' ),
             'order' => __( 'Order' ),
             'date' => __( 'Date' ),
+            'testimonialdate' => __( 'Testimonial Date', 'gt' ),
         );   
         return $columns;
     }
@@ -331,6 +332,9 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "general-testimonials
         }
         if( 'order' === $column ) {
             echo get_post_meta( $post_id, 'testimonialorder', true );
+        }
+        if ( 'testimonialdate' === $column ) {
+            echo get_post_meta( $post_id, 'testimonialdate', true );
         }
     }
 
@@ -387,7 +391,7 @@ function gt_load_testimonials( $a ) {
             $link = gt_get_url( $post );
             $testimonialDate = strtotime( gt_get_testimonialdate( $post ) );
             if ( !empty( gt_get_testimonialdate( $post ) ) ) {
-                $testimonialDate = date( 'F Y', $testimonialDate );
+                $testimonialDate = date( 'F j, Y', $testimonialDate );
             }
             $pluginContainer .= '<div class="testimonial">';
             if ( !empty( $url_thumb ) ) {
