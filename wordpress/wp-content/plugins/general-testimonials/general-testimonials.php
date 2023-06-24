@@ -166,7 +166,7 @@ function gt_url_custom_metabox() {
     }
    
     $errorslink = "";
-    if ( !preg_match( "/http(s?):\/\//", $testimonialurl ) && $testimonialurl !== "" ) {
+    if ( ! preg_match( "/http(s?):\/\//", $testimonialurl ) && $testimonialurl !== "" ) {
         $errorslink = "This URL is not valid";
         $testimonialurl = "http://";
     }
@@ -390,33 +390,33 @@ function gt_load_testimonials( $postQuery ) {
             $label = gt_get_testimoniallabel( $post );
             $link = gt_get_url( $post );
             $testimonialDate = strtotime( gt_get_testimonialdate( $post ) );
-            if ( !empty( gt_get_testimonialdate( $post ) ) ) {
+            if ( ! empty( gt_get_testimonialdate( $post ) ) ) {
                 $testimonialDate = date( 'F j, Y', $testimonialDate );
             }
             $pluginContainer .= '<div class="testimonial">';
-            if ( !empty( $url_thumb ) ) {
+            if ( ! empty( $url_thumb ) ) {
                 $pluginContainer .= '<img class="testimonial__image" src="' . $url_thumb . '" alt="' . $url_altText . '" />';
             }
             $pluginContainer .= '<h4 class="testimonial__title">' . $post->post_title . '</h4>';
-            if ( !empty( $post->post_content ) ) {
+            if ( ! empty( $post->post_content ) ) {
                 $pluginContainer .= '<p class="testimonial__content">' . $post->post_content . '</p>';
             }
-            if ( !empty( $providedName ) ) {
-                if ( !empty( $link ) ) {
+            if ( ! empty( $providedName ) ) {
+                if ( ! empty( $link ) ) {
                     $pluginContainer .= '<span class="testimonial__provided-name"><a class="testimonial__link" href="' . $link . '" target="__blank">' . $providedName . '</a></span>';
                 } else {
                     $pluginContainer .= '<span class="testimonial__provided-name">' . $providedName . '</span>';
                 }
             }
-            if ( !empty( $label ) ) {
-                if ( !empty( $providedName ) ) {
+            if ( ! empty( $label ) ) {
+                if ( ! empty( $providedName ) ) {
                     $pluginContainer .= '<span class="testimonial__comma">,</span><span class="testimonial__label"> ' . $label . '</span>';
                 } else {
                     $pluginContainer .= '<span class="testimonial__label">' . $label . '</span>';
                 }
             }
-            if ( !empty( $testimonialDate ) ) { 
-                if ( !empty( $providedName ) && !empty( $label ) ) {
+            if ( ! empty( $testimonialDate ) ) { 
+                if ( ! empty( $providedName ) && ! empty( $label ) ) {
                     $pluginContainer .= '<span class="testimonial__comma">,</span><span class="testimonial__date"> ' . $testimonialDate . '</span>';
                 } else {
                     $pluginContainer .= '<span class="testimonial__date">' . $testimonialDate . '</span>';
