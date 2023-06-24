@@ -8,14 +8,14 @@ include( plugin_dir_path(__FILE__) . "/general-testimonials.php" );
 
 $leadingTextPosition = get_option( 'general-testimonials-leading-text-position' );
 
-$numberOfTestimonialsPerRow = (int)( get_option( 'general-testimonials-testimonials-per-row' ) );
-$numberOfTestimonialsPerRowTablet = (int)( get_option( 'general-testimonials-testimonials-per-row' ) );
+$numberOfTestimonialsPerRow = ( int )( get_option( 'general-testimonials-testimonials-per-row' ) );
+$numberOfTestimonialsPerRowTablet = ( int )( get_option( 'general-testimonials-testimonials-per-row' ) );
 $testimonialWidthTablet = 50;
 $testimonialWidth;
 if ( $numberOfTestimonialsPerRow <= 0 ) {
     $numberOfTestimonialsPerRow = 2;
 }
-if ( $numberOfTestimonialsPerRow < 2) {
+if ( $numberOfTestimonialsPerRow < 2 ) {
     $testimonialWidthTablet = 100;
 }
 if ( $numberOfTestimonialsPerRow > 2 ) {
@@ -24,7 +24,7 @@ if ( $numberOfTestimonialsPerRow > 2 ) {
 $testimonialWidth = 100/$numberOfTestimonialsPerRow;
 
 
-$testimonialImageWidthHeight = (int)( get_option( 'general-testimonials-image-width-height' ) );
+$testimonialImageWidthHeight = ( int ) ( get_option( 'general-testimonials-image-width-height' ) );
 if ( $testimonialImageWidthHeight <= 0 ) {
     $testimonialImageWidthHeight = 150;
 } elseif ( 0 < $testimonialImageWidthHeight && $testimonialImageWidthHeight < 60 ) {
@@ -45,7 +45,7 @@ $generalTestimonialsImageTabletPlusMarginRight = "15px";
 if ( $generalTestimonialsFloatImageDirection === "left" ) {
     $generalTestimonialsImageTabletPlusMarginLeft = "0";
     $generalTestimonialsImageTabletPlusMarginRight = "15px";    
-} elseif ( $generalTestimonialsFloatImageDirection === "right" ){
+} elseif ( $generalTestimonialsFloatImageDirection === "right" ) {
     $generalTestimonialsImageTabletPlusMarginLeft = "5px";
     $generalTestimonialsImageTabletPlusMarginRight = "0";    
 }

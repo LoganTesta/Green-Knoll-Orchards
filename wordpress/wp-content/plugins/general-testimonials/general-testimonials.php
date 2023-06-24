@@ -13,11 +13,11 @@ defined( 'ABSPATH' ) or exit( "File protected." );
 
 add_action( 'admin_enqueue_scripts', function(){ 
     wp_enqueue_style( 'general-testimonials-admin-styling', plugin_dir_url(__FILE__) . '/assets/css/general-testimonials-admin-styles.css' ); 
-});
+} );
 
 add_action( 'wp_enqueue_scripts', function(){ 
   wp_enqueue_style( 'general-testimonials-styling', plugin_dir_url(__FILE__) . '/assets/css/general-testimonials-styles.php' ); 
-});
+} );
 
 
 function gt_create_testimonial_post_type() {
@@ -83,11 +83,11 @@ function gt_generate_settings_page() {
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Leading Text Position</span>   
                 <label class="" for="generalTestimonialsLeadingTextPosition0">left</label>
-                <input id="generalTestimonialsLeadingTextPosition0" class="general-testimonials-leading-text-position" name="general-testimonials-leading-text-position" type="radio" value="left" <?php if( get_option( 'general-testimonials-leading-text-position' ) === "left" ) { echo 'checked="checked"'; } ?> />
+                <input id="generalTestimonialsLeadingTextPosition0" class="general-testimonials-leading-text-position" name="general-testimonials-leading-text-position" type="radio" value="left" <?php if ( get_option( 'general-testimonials-leading-text-position' ) === "left" ) { echo 'checked="checked"'; } ?> />
                 <label class="" for="generalTestimonialsLeadingTextPosition1">center</label>
-                <input id="generalTestimonialsLeadingTextPosition1" class="general-testimonials-leading-text-position" name="general-testimonials-leading-text-position" type="radio" value="center" <?php if( get_option( 'general-testimonials-leading-text-position' ) === "center" ) { echo 'checked="checked"'; } ?> />
+                <input id="generalTestimonialsLeadingTextPosition1" class="general-testimonials-leading-text-position" name="general-testimonials-leading-text-position" type="radio" value="center" <?php if ( get_option( 'general-testimonials-leading-text-position' ) === "center" ) { echo 'checked="checked"'; } ?> />
                 <label class="" for="generalTestimonialsLeadingTextPosition2">right</label>
-                <input id="generalTestimonialsLeadingTextPosition2" class="general-testimonials-leading-text-position" name="general-testimonials-leading-text-position" type="radio" value="right" <?php if( get_option( 'general-testimonials-leading-text-position' ) === "right" ) { echo 'checked="checked"'; } ?> />        
+                <input id="generalTestimonialsLeadingTextPosition2" class="general-testimonials-leading-text-position" name="general-testimonials-leading-text-position" type="radio" value="right" <?php if ( get_option( 'general-testimonials-leading-text-position' ) === "right" ) { echo 'checked="checked"'; } ?> />        
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="general-testimonials-image-width-height">Image Width, Height (Max, 60-150px)</label>
@@ -103,20 +103,20 @@ function gt_generate_settings_page() {
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Float Image Direction</span>         
-                <input id="generalTestimonialsFloatImageDirection0" class="general-testimonials-float-image-direction" name="general-testimonials-float-image-direction" type="radio" value="left" <?php if( get_option( 'general-testimonials-float-image-direction' ) === "left" ) { echo 'checked="checked"'; } ?> />
+                <input id="generalTestimonialsFloatImageDirection0" class="general-testimonials-float-image-direction" name="general-testimonials-float-image-direction" type="radio" value="left" <?php if ( get_option( 'general-testimonials-float-image-direction' ) === "left" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="generalTestimonialsFloatImageDirection0">Left</label>
-                <input id="generalTestimonialsFloatImageDirection1" class="general-testimonials-float-image-direction" name="general-testimonials-float-image-direction" type="radio" value="right" <?php if( get_option( 'general-testimonials-float-image-direction' ) === "right" ) { echo 'checked="checked"'; } ?> />
+                <input id="generalTestimonialsFloatImageDirection1" class="general-testimonials-float-image-direction" name="general-testimonials-float-image-direction" type="radio" value="right" <?php if ( get_option( 'general-testimonials-float-image-direction' ) === "right" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="generalTestimonialsFloatImageDirection1">Right</label>
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Number of Testimonials Per Row (Max)</span>         
-                <input id="generalTestimonialsTestimonialsPerRow0" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="1" <?php if( get_option( 'general-testimonials-testimonials-per-row' ) === "1" ) { echo 'checked="checked"'; } ?> />
+                <input id="generalTestimonialsTestimonialsPerRow0" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="1" <?php if ( get_option( 'general-testimonials-testimonials-per-row' ) === "1" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="generalTestimonialsTestimonialsPerRow0">1</label>
-                <input id="generalTestimonialsTestimonialsPerRow1" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="2" <?php if( get_option( 'general-testimonials-testimonials-per-row' ) === "2" ) { echo 'checked="checked"'; } ?> />
+                <input id="generalTestimonialsTestimonialsPerRow1" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="2" <?php if ( get_option( 'general-testimonials-testimonials-per-row' ) === "2" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="generalTestimonialsTestimonialsPerRow1">2</label>
-                <input id="generalTestimonialsTestimonialsPerRow2" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="3" <?php if( get_option( 'general-testimonials-testimonials-per-row' ) === "3" ) { echo 'checked="checked"'; } ?> />
+                <input id="generalTestimonialsTestimonialsPerRow2" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="3" <?php if ( get_option( 'general-testimonials-testimonials-per-row' ) === "3" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="generalTestimonialsTestimonialsPerRow2">3</label>
-                <input id="generalTestimonialsTestimonialsPerRow3" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="4" <?php if( get_option( 'general-testimonials-testimonials-per-row' ) === "4" ) { echo 'checked="checked"'; } ?> />
+                <input id="generalTestimonialsTestimonialsPerRow3" class="general-testimonials-testimonials-per-row" name="general-testimonials-testimonials-per-row" type="radio" value="4" <?php if ( get_option( 'general-testimonials-testimonials-per-row' ) === "4" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="generalTestimonialsTestimonialsPerRow3">4</label>
             </div>
             <div class="admin-input-container">
@@ -149,19 +149,19 @@ function gt_url_custom_metabox() {
     $testimonialdate = sanitize_text_field( get_post_meta( $post->ID, 'testimonialdate', true ) );
     update_post_meta( $post->ID, 'testimonialdate', $testimonialdate );   
     $testimonialorder = sanitize_text_field( get_post_meta( $post->ID, 'testimonialorder', true ) );
-    if( isset( $testimonialorder ) === false || $testimonialorder === "" ) {
+    if ( isset( $testimonialorder ) === false || $testimonialorder === "" ) {
         $testimonialorder = "n/a";
     }
     update_post_meta( $post->ID, 'testimonialorder', $testimonialorder );
 
 
     $errorsprovidedname = "";
-    if( isset( $errorsprovidedname ) ){
+    if ( isset( $errorsprovidedname ) ) {
         echo $errorsprovidedname;
     }
     
     $errorslabel = "";
-    if( isset( $errorslabel ) ){
+    if ( isset( $errorslabel ) ) {
         echo $errorslabel;
     }
    
@@ -171,39 +171,39 @@ function gt_url_custom_metabox() {
         $testimonialurl = "http://";
     }
     
-    if( isset( $errorslink ) ){
+    if ( isset( $errorslink ) ){
         echo $errorslink;
     }
     
     $errorsorder = "";
-    if( isset( $errorsorder ) ){
+    if ( isset( $errorsorder ) ) {
         echo $errorsorder;
     }
     
     ?>
     <p>
         <label for="testimonialprovidedname">Provided Testimonial Name:<br />
-            <input id="testimonialprovidedname" name="testimonialprovidedname" size="37" value="<?php if( isset( $testimonialprovidedname ) ) { echo $testimonialprovidedname; } ?>" />
+            <input id="testimonialprovidedname" name="testimonialprovidedname" size="37" value="<?php if ( isset( $testimonialprovidedname ) ) { echo $testimonialprovidedname; } ?>" />
         </label>
     </p>
     <p>
         <label for="testimoniallabel">Testimonial Label:<br />
-            <input id="testimoniallabel" name="testimoniallabel" size="37" value="<?php if( isset( $testimoniallabel ) ) { echo $testimoniallabel; } ?>" />
+            <input id="testimoniallabel" name="testimoniallabel" size="37" value="<?php if ( isset( $testimoniallabel ) ) { echo $testimoniallabel; } ?>" />
         </label>
     </p>
     <p>
         <label for="testimonialurl">Related URL:<br />
-            <input id="testimonialurl" size="37" name="testimonialurl" value="<?php if( isset( $testimonialurl ) ) { echo $testimonialurl; } ?>" />
+            <input id="testimonialurl" size="37" name="testimonialurl" value="<?php if ( isset( $testimonialurl ) ) { echo $testimonialurl; } ?>" />
         </label>
     </p>
     <p>
         <label for="testimonialdate">Date<br />
-            <input id="testimonialdate" size="37" name="testimonialdate" type="date" value="<?php if( isset( $testimonialdate ) ) { echo $testimonialdate; } ?>" />
+            <input id="testimonialdate" size="37" name="testimonialdate" type="date" value="<?php if ( isset( $testimonialdate ) ) { echo $testimonialdate; } ?>" />
         </label>
     </p>
     <p>
         <label for="testimonialorder">Testimonial Order:<br />
-            <input id="testimonialorder" size="37" type="number" min="1" name="testimonialorder" value="<?php if( isset( $testimonialorder ) ) { echo $testimonialorder; } ?>" />
+            <input id="testimonialorder" size="37" type="number" min="1" name="testimonialorder" value="<?php if ( isset( $testimonialorder ) ) { echo $testimonialorder; } ?>" />
         </label>
     </p>
  <?php 
@@ -214,7 +214,7 @@ function gt_url_custom_metabox() {
 function gt_save_custom_testimonialprovidedname( $post_id ) {
     global $post;
     
-    if( isset( $_POST['testimonialprovidedname'] ) ) {
+    if ( isset( $_POST['testimonialprovidedname'] ) ) {
         update_post_meta( $post->ID, 'testimonialprovidedname', $_POST['testimonialprovidedname'] );
     }
 }
@@ -229,7 +229,7 @@ function gt_get_testimonialprovidedname( $post ) {
 function gt_save_custom_testimoniallabel( $post_id ) {
     global $post;
     
-    if( isset( $_POST['testimoniallabel'] ) ) {
+    if ( isset( $_POST['testimoniallabel'] ) ) {
         update_post_meta( $post->ID, 'testimoniallabel', $_POST['testimoniallabel'] );
     }
 }
@@ -244,7 +244,7 @@ function gt_get_testimoniallabel( $post ) {
 function gt_save_custom_url( $post_id ) {
     global $post;
     
-    if( isset( $_POST['testimonialurl'] ) ) {
+    if ( isset( $_POST['testimonialurl'] ) ) {
         update_post_meta( $post->ID, 'testimonialurl', $_POST['testimonialurl'] );
     }
 }
@@ -259,7 +259,7 @@ function gt_get_url( $post ) {
 function gt_save_testimonialdate( $post_id ) {
     global $post;
     
-    if( isset( $_POST['testimonialdate'] ) ) {
+    if ( isset( $_POST['testimonialdate'] ) ) {
         update_post_meta( $post->ID, 'testimonialdate', $_POST['testimonialdate'] );
     }
 }
@@ -290,7 +290,7 @@ function gt_get_order( $post ) {
 /*Adjust admin columns for Testimonials*/
 if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "general-testimonials" ){
 
-    add_filter('admin_bar_menu', 'gt_setup_instructions');
+    add_filter( 'admin_bar_menu', 'gt_setup_instructions' );
     function gt_setup_instructions() {
         if ( get_admin_page_title() === 'General Testimonials' ) {
             echo '<div class="general-testimonials__instructions">
@@ -321,16 +321,16 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "general-testimonials
     //Add images and other data to posts admin
     add_action( 'manage_posts_custom_column', 'gt_add_data_to_admin_columns', 10, 2 );
     function gt_add_data_to_admin_columns( $column, $post_id ) {
-        if( 'image' === $column ) {
+        if ( 'image' === $column ) {
             echo get_the_post_thumbnail( $post_id, array( 100, 100 ) );
         }
         if ( 'testimonialprovidedname' === $column ) {
             echo get_post_meta( $post_id, 'testimonialprovidedname', true );
         }
-        if( 'content' === $column ) {
+        if ( 'content' === $column ) {
             echo get_post_field( 'post_content', $post_id );
         }
-        if( 'order' === $column ) {
+        if ( 'order' === $column ) {
             echo get_post_meta( $post_id, 'testimonialorder', true );
         }
         if ( 'testimonialdate' === $column ) {
@@ -352,13 +352,13 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "general-testimonials
 
 
 //Register the shortcode so we can show testimonials.
-function gt_load_testimonials( $a ) {
+function gt_load_testimonials( $postQuery ) {
     $pluginContainer = "";
     $args = array(
         "post_type" => "general-testimonials"
     );
 
-    if ( isset( $a['rand'] ) && $a['rand'] == true ) {
+    if ( isset( $postQuery['rand'] ) && $postQuery['rand'] == true ) {
         $args['orderby'] = 'rand';
     } else {
         $args['orderby'] = 'meta_value';
@@ -366,8 +366,8 @@ function gt_load_testimonials( $a ) {
         $args['order'] = 'ASC';
     }
 
-    if ( isset( $a['max'] ) ) {
-        $args['posts_per_page'] = (int) $a['max'];
+    if ( isset( $postQuery['max'] ) ) {
+        $args['posts_per_page'] = ( int ) $postQuery['max'];
     }
 
     //Get all testimonials.
@@ -377,13 +377,13 @@ function gt_load_testimonials( $a ) {
     $pluginContainer .= '<div class="testimonials-container__inner-wrapper">';
     
     $numberToDisplay = get_option( 'general-testimonials-number-to-display' );
-    if( $numberToDisplay === "" ) {
+    if ( $numberToDisplay === "" ) {
         $numberToDisplay = -1;
     }
-    $numberToDisplay = (int) $numberToDisplay;
+    $numberToDisplay = ( int ) $numberToDisplay;
     $count = 0;
     foreach ( $posts as $post ) {
-        if( $count < $numberToDisplay || $numberToDisplay === -1 ){
+        if ( $count < $numberToDisplay || $numberToDisplay === -1 ){
             $url_thumb = wp_get_attachment_thumb_url( get_post_thumbnail_id( $post->ID ) );
             $url_altText = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
             $providedName = gt_get_testimonialprovidedname( $post );
