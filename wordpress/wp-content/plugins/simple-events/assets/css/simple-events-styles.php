@@ -6,19 +6,19 @@ require( '../../../../../wp-load.php' );
 include( plugin_dir_path(__FILE__) . "/simple-events.php" );
 
 
-$numberOfEventsPerRow = (int)( get_option( 'simple-events-events-per-row' ) );
+$numberOfEventsPerRow = ( int )( get_option( 'simple-events-events-per-row' ) );
 $eventWidthTablet = 50;
 
 if ( $numberOfEventsPerRow <= 0 ) {
     $numberOfEventsPerRow = 1;
 }
-if ( $numberOfEventsPerRow < 2) {
+if ( $numberOfEventsPerRow < 2 ) {
     $eventWidthTablet = 100;
 }
 $eventWidthDesktop = 100/$numberOfEventsPerRow;
 
 
-$eventImageWidthHeight = (int)( get_option( 'simple-events-image-width-height' ) );
+$eventImageWidthHeight = ( int )( get_option( 'simple-events-image-width-height' ) );
 if ( $eventImageWidthHeight <= 0 ) {
     $eventImageWidthHeight = 200;
 } elseif ( 0 < $eventImageWidthHeight && $eventImageWidthHeight < 80 ) {

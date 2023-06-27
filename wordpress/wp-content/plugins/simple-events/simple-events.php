@@ -11,13 +11,13 @@
 defined( 'ABSPATH' ) or exit( "File protected." );
 
 
-add_action( 'admin_enqueue_scripts', function(){ 
+add_action( 'admin_enqueue_scripts', function() { 
     wp_enqueue_style( 'simple-events-admin-styling', plugin_dir_url(__FILE__) . '/assets/css/simple-events-admin-styles.css' ); 
-});
+} );
 
-add_action( 'wp_enqueue_scripts', function(){ 
+add_action( 'wp_enqueue_scripts', function() { 
   wp_enqueue_style( 'simple-events-styling', plugin_dir_url(__FILE__) . '/assets/css/simple-events-styles.php' ); 
-});
+} );
 
 
 function se_create_event_post_type() {
@@ -38,7 +38,7 @@ add_action( 'init', 'se_create_event_post_type' );
 
 
 /*Set up the settings page*/
-function se_admin_menu(){
+function se_admin_menu() {
     add_submenu_page( 'edit.php?post_type=simple-events', 'Settings', 'Settings', 'manage_options', 'simple-events', 'se_generate_settings_page' );
 }
 add_action( 'admin_menu', 'se_admin_menu' );
@@ -62,7 +62,7 @@ function se_register_settings() {
     register_setting( 'simple-events-settings-group', 'simple-events-events-per-row', 'se_validatetextfield' );  
     register_setting( 'simple-events-settings-group', 'simple-events-number-to-display', 'se_validatetextfield' );  
 }
-add_action( 'admin_init', 'se_register_settings');
+add_action( 'admin_init', 'se_register_settings' );
 
 
 function se_validatetextfield( $input ) {
@@ -108,13 +108,13 @@ function se_generate_settings_page() {
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Number of Events Per Row</span>       
-                <input id="simpleEventsEventsPerRow0" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="1" <?php if(get_option( 'simple-events-events-per-row' ) === "1") { echo 'checked="checked"'; } ?> />
+                <input id="simpleEventsEventsPerRow0" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="1" <?php if(get_option( 'simple-events-events-per-row' ) === "1" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsEventsPerRow0">1</label>
-                <input id="simpleEventsEventsPerRow1" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="2" <?php if(get_option( 'simple-events-events-per-row' ) === "2") { echo 'checked="checked"'; } ?> />
+                <input id="simpleEventsEventsPerRow1" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="2" <?php if(get_option( 'simple-events-events-per-row' ) === "2" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsEventsPerRow1">2</label>
-                <input id="simpleEventsEventsPerRow2" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="3" <?php if(get_option( 'simple-events-events-per-row' ) === "3") { echo 'checked="checked"'; } ?> />
+                <input id="simpleEventsEventsPerRow2" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="3" <?php if(get_option( 'simple-events-events-per-row' ) === "3" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsEventsPerRow2">3</label>
-                <input id="simpleEventsEventsPerRow3" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="4" <?php if(get_option( 'simple-events-events-per-row' ) === "4") { echo 'checked="checked"'; } ?> />
+                <input id="simpleEventsEventsPerRow3" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="4" <?php if(get_option( 'simple-events-events-per-row' ) === "4" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsEventsPerRow3">4</label>
             </div>
             <div class="admin-input-container">
@@ -128,8 +128,8 @@ function se_generate_settings_page() {
 
 
 function se_add_custom_metabox_info() {
-    add_meta_box( 'custom-metabox', __('Event Information'), 'se_url_custom_metabox', 'simple-events', 'side', 'low' );
-    add_meta_box( 'custom-metabox-main', __('More Event Fields'), 'se_url_more_event_fields', 'simple-events', 'normal', 'low' );
+    add_meta_box( 'custom-metabox', __( 'Event Information' ), 'se_url_custom_metabox', 'simple-events', 'side', 'low' );
+    add_meta_box( 'custom-metabox-main', __( 'More Event Fields' ), 'se_url_more_event_fields', 'simple-events', 'normal', 'low' );
 }
 add_action( 'admin_init', 'se_add_custom_metabox_info' );
 
@@ -165,17 +165,17 @@ function se_url_custom_metabox() {
 
 
     $errorsprice = "";
-    if( isset( $errorsprice ) ){
+    if( isset( $errorsprice ) ) {
         echo $errorsprice;
     }
     
     $errorslabel = "";
-    if( isset( $errorslabel ) ){
+    if( isset( $errorslabel ) ) {
         echo $errorslabel;
     }
     
     $errorsorder = "";
-    if( isset( $errorsorder ) ){
+    if( isset( $errorsorder ) ) {
         echo $errorsorder;
     }
     
@@ -229,7 +229,7 @@ function se_url_custom_metabox() {
         </p>
         <p>
             <label for="eventorder">Event Order:<br />
-                <input id="eventorder" type="number" min="1" name="eventorder" value="<?php if( isset($eventorder) ) { echo $eventorder; } ?>" />
+                <input id="eventorder" type="number" min="1" name="eventorder" value="<?php if ( isset( $eventorder ) ) { echo $eventorder; } ?>" />
             </label>
         </p>
     </div>
@@ -246,7 +246,7 @@ function se_url_more_event_fields() {
     update_post_meta( $post->ID, 'eventshortdescription', $eventshortdescription );
 
     $errorshortdescription = "";
-    if( isset( $shortdescription ) ){
+    if( isset( $shortdescription ) ) {
         echo $shortdescription;
     }
     
@@ -265,7 +265,7 @@ function se_url_more_event_fields() {
 function se_save_custom_eventprice( $post_id ) {
     global $post;
     
-    if( isset( $_POST['eventprice']) ) {
+    if( isset( $_POST['eventprice'] ) ) {
         update_post_meta( $post->ID, 'eventprice', $_POST['eventprice'] );
     }
 }
@@ -280,7 +280,7 @@ function se_get_event_price( $post ) {
 function se_save_custom_eventdate( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['eventdate']) ) {
+    if ( isset( $_POST['eventdate'] ) ) {
         update_post_meta( $post->ID, 'eventdate', $_POST['eventdate'] );
     }
 }
@@ -295,7 +295,7 @@ function se_get_event_date( $post ) {
 function se_save_custom_ismultiday( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['ismultiday']) ) {
+    if ( isset( $_POST['ismultiday'] ) ) {
         update_post_meta( $post->ID, 'ismultiday', $_POST['ismultiday'] );
     }
 }
@@ -310,7 +310,7 @@ function se_get_is_multiday( $post ) {
 function se_save_custom_eventstarttime( $post_id ) {
     global $post;
     
-    if( isset( $_POST['eventstarttime']) ) {
+    if( isset( $_POST['eventstarttime'] ) ) {
         update_post_meta( $post->ID, 'eventstarttime', $_POST['eventstarttime'] );
     }
 }
@@ -344,7 +344,7 @@ function se_get_event_eventendtime( $post ) {
 function se_save_custom_eventenddate( $post_id ) {
     global $post;
     
-    if( isset( $_POST['eventenddate']) ) {
+    if( isset( $_POST['eventenddate'] ) ) {
         if ( $_POST['eventdate'] <= $_POST['eventenddate'] ) {
             update_post_meta( $post->ID, 'eventenddate', $_POST['eventenddate'] );
         } else {
@@ -363,7 +363,7 @@ function se_get_event_eventenddate( $post ) {
 function se_save_custom_eventtimes( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['eventtimes']) ) {
+    if ( isset( $_POST['eventtimes'] ) ) {
         if ( $_POST['eventstarttime'] <= $_POST['eventtimes'] ) {
             update_post_meta( $post->ID, 'eventtimes', $_POST['eventtimes'] );
         } else {
@@ -397,7 +397,7 @@ function se_get_event_label( $post ) {
 function se_save_custom_order( $post_id ) {
     global $post;
     
-    if ( isset($_POST['eventorder']) ) {
+    if ( isset($_POST['eventorder'] ) ) {
         update_post_meta( $post->ID, 'eventorder', $_POST['eventorder'] );
     }
 }
@@ -412,7 +412,7 @@ function se_get_order( $post ) {
 function se_save_custom_eventshortdescription( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['eventshortdescription']) ) {
+    if ( isset( $_POST['eventshortdescription'] ) ) {
         update_post_meta( $post->ID, 'eventshortdescription', $_POST['eventshortdescription'] );
     }
 }
@@ -450,7 +450,7 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "simple-events" ){
     function se_add_data_to_admin_columns( $column, $post_id ) {
         
         if ( 'image' === $column ) {
-            echo get_the_post_thumbnail( $post_id, array(100, 100) );
+            echo get_the_post_thumbnail( $post_id, array( 100, 100 ) );
         }
         if ( 'content' === $column ) {
             echo wp_trim_words( get_post_field( 'post_content', $post_id ), 30 );
@@ -473,7 +473,7 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "simple-events" ){
     //Determine order of events shown in admin*/
     add_action( 'pre_get_posts', 'se_custom_post_order_sort' );
     function se_custom_post_order_sort( $query ) { 
-        if ( $query->is_main_query() && $_GET[ 'post_type' ] === "simple-events" ){
+        if ( $query->is_main_query() && $_GET[ 'post_type' ] === "simple-events" ) {
             $query->set( 'orderby', 'meta_value' );
             $query->set( 'meta_key', 'eventorder' );
             $query->set( 'order', 'ASC' );
@@ -483,13 +483,13 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "simple-events" ){
 
 
 //Register the shortcode so we can show events on a different page, most likely the index page.
-function se_load_events_index( $a ) {
+function se_load_events_index( $postQuery ) {
     $pluginContainer = "";
     $args = array(
         "post_type" => "simple-events"
     );
 
-    if ( isset( $a['rand'] ) && $a['rand'] == true ) {
+    if ( isset( $postQuery['rand'] ) && $postQuery['rand'] == true ) {
         $args['orderby'] = 'rand';
     } else {
         $args['orderby'] = 'meta_value';
@@ -497,24 +497,24 @@ function se_load_events_index( $a ) {
         $args['order'] = 'ASC';
     }
 
-    if ( isset( $a['max']) ) {
-        $args['posts_per_page'] = (int) $a['max'];
+    if ( isset( $postQuery['max']) ) {
+        $args['posts_per_page'] = ( int ) $postQuery['max'];
     }
 
     //Get all events.
-    $posts = get_posts($args);
+    $posts = get_posts( $args );
     $pluginContainer .= '<div class="events-container index">';
     $pluginContainer .= '<div class="events-container__heading index">' . get_option( 'simple-events-leading-text-index' ) . '</div>';
     $pluginContainer .= '<div class="events-container__inner-wrapper">';
 
     $numberToDisplay = get_option( 'simple-events-events-per-row' );
-    if( $numberToDisplay === "" ) {
+    if ( $numberToDisplay === "" ) {
         $numberToDisplay = -1;
     }
-    $numberToDisplay = (int) $numberToDisplay;
+    $numberToDisplay = ( int ) $numberToDisplay;
     $count = 0;
-    foreach ($posts as $post) {
-        if( $count < $numberToDisplay  || $numberToDisplay === -1){
+    foreach ( $posts as $post ) {
+        if ( $count < $numberToDisplay  || $numberToDisplay === -1 ) {
             $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
             $price = se_get_event_price( $post );
             $date;
@@ -523,7 +523,7 @@ function se_load_events_index( $a ) {
             $eventenddate = "";
             $eventtimes = "";
             if ( se_get_is_multiday( $post ) !== "Multi-day" ) {
-                $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
+                $date = date( 'F j, Y', strtotime( se_get_event_date( $post ) ) );
                 if ( se_get_event_starttime( $post ) !== "" ) {
                     $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
                 }
@@ -531,24 +531,24 @@ function se_load_events_index( $a ) {
                     $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
                 } 
             } else {
-                $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) ) . " - " . date( "F j, Y", strtotime( se_get_event_eventenddate( $post ) ) );
+                $date = date( 'F j, Y', strtotime( se_get_event_date( $post ) ) ) . " - " . date( "F j, Y", strtotime( se_get_event_eventenddate( $post ) ) );
                 $eventtimes = se_get_event_eventtimes( $post );
             }
             $label = se_get_event_label( $post );
             $eventtext = "";
             $eventshortdescription = se_get_event_shortdescription( $post );
             $eventcontent = $post->post_content;
-            if ( !empty ( $eventshortdescription ) ) {
+            if ( ! empty ( $eventshortdescription ) ) {
                 $eventtext = $eventshortdescription;
             } else {
                 $eventtext = wp_trim_words( $eventcontent, 60 );
             }
             $pluginContainer .= '<div class="event">';
-            if ( !empty( $url_thumb ) ) {
+            if ( ! empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
                         . '<a class="event__background-link" href="' . get_option( 'simple-events-events-page' ) . '">'                      
                         . '<span class="sr-only">' . $post->post_title . 'Link</span></a>';
-                if ( !empty( $label ) ) {
+                if ( ! empty( $label ) ) {
                     $pluginContainer .= '<div class="event__label">' . $label . '</div>';
                 }
                 $pluginContainer .= '</div>';
@@ -556,22 +556,22 @@ function se_load_events_index( $a ) {
             $pluginContainer .= '<div class="event__title"><a class="event__name-link" href="' . get_option( 'simple-events-events-page' ) . '">' . $post->post_title . '</a></div>';
             $pluginContainer .= '<div class="event__date">' . $date . '</div> ';
             if ( se_get_is_multiday( $post ) !== "Multi-day" ) {
-                if ( !empty( $startTime ) && !empty( $endTime ) ) {
+                if ( ! empty( $startTime ) && ! empty( $endTime ) ) {
                     $pluginContainer .= '<div class="event__times">';
-                    if ( !empty( $startTime ) ) {
+                    if ( ! empty( $startTime ) ) {
                         $pluginContainer .= '<div class="event__starttime">from ' . $startTime . '</div>';
                     }
                     $eventStartAndEndText = "";
-                    if ( !empty( $startTime ) && !empty( $endTime ) ) {
+                    if ( ! empty( $startTime ) && ! empty( $endTime ) ) {
                         $eventStartAndEndText = "&nbsp;- ";
                     }
-                    if ( !empty( $endTime ) ) {
+                    if ( ! empty( $endTime ) ) {
                         $pluginContainer .= '<div class="event__endtime">' . $eventStartAndEndText . $endTime . '</div>';
                     }
                     $pluginContainer .= '</div>';
                 }
             } else {
-                if ( !empty( $eventtimes ) ) {
+                if ( ! empty( $eventtimes ) ) {
                     $pluginContainer .= '<div class="event__times">' . $eventtimes . '</div>';
                 }
             }
@@ -588,13 +588,13 @@ function se_load_events_index( $a ) {
 
 
 //Register the shortcode so we can show events.
-function se_load_events( $a ) {
+function se_load_events( $postQuery ) {
     $pluginContainer = "";
     $args = array(
         "post_type" => "simple-events"
     );
 
-    if ( isset( $a['rand'] ) && $a['rand'] == true ) {
+    if ( isset( $postQuery['rand'] ) && $postQuery['rand'] == true ) {
         $args['orderby'] = 'rand';
     } else {
         $args['orderby'] = 'meta_value';
@@ -602,27 +602,27 @@ function se_load_events( $a ) {
         $args['order'] = 'ASC';
     }
 
-    if ( isset( $a['max']) ) {
-        $args['posts_per_page'] = (int) $a['max'];
+    if ( isset( $postQuery['max'] ) ) {
+        $args['posts_per_page'] = ( int ) $postQuery['max'];
     }
 
     //Get all events.
-    $posts = get_posts($args);
+    $posts = get_posts( $args );
     $pluginContainer .= '<div class="events-container">';
     $pluginContainer .= '<div class="events-container__heading">' . get_option( 'simple-events-leading-text' ) . '</div>';
     $pluginContainer .= '<div class="events-container__inner-wrapper">';
     
     $count = 0;
-    foreach ($posts as $post) {
+    foreach ( $posts as $post ) {
         $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
         $price = se_get_event_price( $post );
-        $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
+        $date = date( 'F j, Y', strtotime( se_get_event_date( $post ) ) );
         $startTime = "";
         $endTime = "";
         $eventenddate = "";
         $eventtimes = "";
         if ( se_get_is_multiday( $post ) !== "Multi-day" ) {
-            $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) );
+            $date = date( 'F j, Y', strtotime( se_get_event_date( $post ) ) );
             if ( se_get_event_starttime( $post ) !== "" ) {
                 $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
             }
@@ -630,45 +630,45 @@ function se_load_events( $a ) {
                 $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
             } 
         } else {
-            $date = date('F j, Y', strtotime( se_get_event_date( $post ) ) ) . " - " . date( "F j, Y", strtotime( se_get_event_eventenddate( $post ) ) );
+            $date = date( 'F j, Y', strtotime( se_get_event_date( $post ) ) ) . " - " . date( "F j, Y", strtotime( se_get_event_eventenddate( $post ) ) );
             $eventtimes = se_get_event_eventtimes( $post );
         }
         $label = se_get_event_label( $post );
         $pluginContainer .= '<div class="event">';
-        if ( !empty( $url_thumb ) ) {
+        if ( ! empty( $url_thumb ) ) {
             $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
         }
         $pluginContainer .= '<div class="event__title">' . $post->post_title . '</div>';
-        if ( !empty( $date ) ) {
+        if ( ! empty( $date ) ) {
             $pluginContainer .= '<div class="event__date">' . $date . '</div> ';
         }
         if ( se_get_is_multiday( $post ) !== "Multi-day" ) {
-            if ( !empty( $startTime ) && !empty( $endTime ) ) {
+            if ( ! empty( $startTime ) && ! empty( $endTime ) ) {
                 $pluginContainer .= '<div class="event__times">';
-                if ( !empty( $startTime ) ) {
+                if ( ! empty( $startTime ) ) {
                     $pluginContainer .= '<div class="event__starttime">from ' . $startTime . '</div>';
                 }
                 $eventStartAndEndText = "";
-                if ( !empty( $startTime ) && !empty( $endTime ) ) {
+                if ( ! empty( $startTime ) && ! empty( $endTime ) ) {
                     $eventStartAndEndText = "&nbsp;- ";
                 }
-                if ( !empty( $endTime ) ) {
+                if ( ! empty( $endTime ) ) {
                     $pluginContainer .= '<div class="event__endtime">' . $eventStartAndEndText . $endTime . '</div>';
                 }
                 $pluginContainer .= '</div>';
             }
         } else {
-            if ( !empty( $eventtimes ) ) {
+            if ( ! empty( $eventtimes ) ) {
                 $pluginContainer .= '<div class="event__times">' . $eventtimes . '</div>';
             }
         }        
-        if ( !empty( $price ) ) {
+        if ( ! empty( $price ) ) {
                 $pluginContainer .= '<div class="event__price">Cost: ' . $price . '</div>';
         }
-        if ( !empty( $label ) ) {
+        if ( ! empty( $label ) ) {
             $pluginContainer .= '<div class="event__label">' . $label . '</div>';
         }
-        if ( !empty( $post->post_content ) ) {
+        if ( ! empty( $post->post_content ) ) {
             $pluginContainer .= '<p class="event__content">' . $post->post_content . '</p>';
         }
         $pluginContainer .= '</div>';      
