@@ -11,21 +11,21 @@
 defined( 'ABSPATH' ) or exit( "File protected." );
 
 
-add_action( 'admin_enqueue_scripts', function(){ 
+add_action( 'admin_enqueue_scripts', function() { 
     wp_enqueue_style( 'website-products-admin-styling', plugin_dir_url(__FILE__) . '/assets/css/website-products-admin-styles.css' ); 
-});
+} );
 
-add_action( 'wp_enqueue_scripts', function(){ 
+add_action( 'wp_enqueue_scripts', function() { 
   wp_enqueue_style( 'website-products-styling', plugin_dir_url(__FILE__) . '/assets/css/website-products-styles.php' ); 
-});
+} );
 
 
 function pw_create_product_post_type() {
-    register_post_type('website-products',
+    register_post_type( 'website-products',
             array(
                 'labels' => array(
-                    'name' => __('Website Products'),
-                    'singular_name' => __('Website Product')
+                    'name' => __( 'Website Products' ),
+                    'singular_name' => __( 'Website Product' )
                 ),
                 'public' => true,
                 'show_in_menu' => true,
@@ -38,7 +38,7 @@ add_action( 'init', 'pw_create_product_post_type' );
 
 
 /*Set up the settings page*/
-function pw_admin_menu(){
+function pw_admin_menu() {
     add_submenu_page( 'edit.php?post_type=website-products', 'Settings', 'Settings', 'manage_options', 'website-products', 'pw_generate_settings_page' );
 }
 add_action( 'admin_menu', 'pw_admin_menu' );
@@ -62,7 +62,7 @@ function pw_register_settings() {
     register_setting( 'website-products-settings-group', 'website-products-products-per-row', 'pw_validatetextfield' );  
     register_setting( 'website-products-settings-group', 'website-products-number-to-display', 'pw_validatetextfield' );  
 }
-add_action( 'admin_init', 'pw_register_settings');
+add_action( 'admin_init', 'pw_register_settings' );
 
 
 function pw_validatetextfield( $input ) {
@@ -108,11 +108,11 @@ function pw_generate_settings_page() {
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Number of Products Per Row</span>         
-                <input id="websiteProductsProductsPerRow0" class="website-products-products-per-row" name="website-products-products-per-row" type="radio" value="2" <?php if(get_option( 'website-products-products-per-row' ) === "2") { echo 'checked="checked"'; } ?> />
+                <input id="websiteProductsProductsPerRow0" class="website-products-products-per-row" name="website-products-products-per-row" type="radio" value="2" <?php if ( get_option( 'website-products-products-per-row' ) === "2" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="websiteProductsProductsPerRow0">2</label>
-                <input id="websiteProductsProductsPerRow1" class="website-products-products-per-row" name="website-products-products-per-row" type="radio" value="3" <?php if(get_option( 'website-products-products-per-row' ) === "3") { echo 'checked="checked"'; } ?> />
+                <input id="websiteProductsProductsPerRow1" class="website-products-products-per-row" name="website-products-products-per-row" type="radio" value="3" <?php if ( get_option( 'website-products-products-per-row' ) === "3" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="websiteProductsProductsPerRow1">3</label>
-                <input id="websiteProductsProductsPerRow2" class="website-products-products-per-row" name="website-products-products-per-row" type="radio" value="4" <?php if(get_option( 'website-products-products-per-row' ) === "4") { echo 'checked="checked"'; } ?> />
+                <input id="websiteProductsProductsPerRow2" class="website-products-products-per-row" name="website-products-products-per-row" type="radio" value="4" <?php if ( get_option( 'website-products-products-per-row' ) === "4" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="websiteProductsProductsPerRow2">4</label>
             </div>
             <div class="admin-input-container">
@@ -126,7 +126,7 @@ function pw_generate_settings_page() {
 
 
 function pw_add_custom_metabox_info() {
-    add_meta_box('custom-metabox', __('Product Information'), 'pw_url_custom_metabox', 'website-products', 'side', 'low');
+    add_meta_box( 'custom-metabox', __( 'Product Information' ), 'pw_url_custom_metabox', 'website-products', 'side', 'low' );
 }
 add_action( 'admin_init', 'pw_add_custom_metabox_info' );
 
@@ -141,43 +141,43 @@ function pw_url_custom_metabox() {
     $productlabel = sanitize_text_field( get_post_meta( $post->ID, 'productlabel', true ) );
     update_post_meta( $post->ID, 'productlabel', $productlabel );
     $productorder = sanitize_text_field( get_post_meta( $post->ID, 'productorder', true ) );
-    if( isset( $productorder ) === false || $productorder === "" ) {
+    if ( isset( $productorder ) === false || $productorder === "" ) {
         $productorder = "n/a";
     }
     update_post_meta( $post->ID, 'productorder', $productorder );
 
 
     $errorsprice = "";
-    if( isset( $errorsprice ) ){
+    if ( isset( $errorsprice ) ) {
         echo $errorsprice;
     }
     
     $errorslabel = "";
-    if( isset( $errorslabel ) ){
+    if ( isset( $errorslabel ) ) {
         echo $errorslabel;
     }
     
     $errorsorder = "";
-    if( isset( $errorsorder ) ){
+    if ( isset( $errorsorder ) ) {
         echo $errorsorder;
     }
     
     ?>
     <p>
         <label for="productprice">Price:<br />
-            <input id="productprice" name="productprice" size="37" value="<?php if( isset($productprice ) ) { echo $productprice; } ?>" />
+            <input id="productprice" name="productprice" size="37" value="<?php if ( isset( $productprice ) ) { echo $productprice; } ?>" />
         </label>
     </p>
     <p>
         <label for="productlabel">Product Label:<br />
-            <input id="productlabel" name="productlabel" size="37" value="<?php if( isset( $productlabel ) ) { echo $productlabel; } ?>" />
+            <input id="productlabel" name="productlabel" size="37" value="<?php if ( isset( $productlabel ) ) { echo $productlabel; } ?>" />
         </label>
     </p>
     <p>
     </p>
         <p>
         <label for="productorder">Product Order:<br />
-            <input id="productorder" size="37" type="number" min="1" name="productorder" value="<?php if( isset($productorder) ) { echo $productorder; } ?>" />
+            <input id="productorder" size="37" type="number" min="1" name="productorder" value="<?php if ( isset( $productorder ) ) { echo $productorder; } ?>" />
         </label>
     </p>
  <?php 
@@ -188,7 +188,7 @@ function pw_url_custom_metabox() {
 function pw_save_custom_productprice( $post_id ) {
     global $post;
     
-    if( isset( $_POST['productprice']) ) {
+    if ( isset( $_POST['productprice'] ) ) {
         update_post_meta( $post->ID, 'productprice', $_POST['productprice'] );
     }
 }
@@ -203,7 +203,7 @@ function pw_get_productprice( $post ) {
 function pw_save_custom_productlabel( $post_id ) {
     global $post;
     
-    if( isset($_POST['productlabel']) ) {
+    if ( isset( $_POST['productlabel'] ) ) {
         update_post_meta( $post->ID, 'productlabel', $_POST['productlabel'] );
     }
 }
@@ -218,7 +218,7 @@ function pw_get_productlabel( $post ) {
 function pw_save_custom_order( $post_id ) {
     global $post;
     
-    if( isset($_POST['productorder']) ) {
+    if ( isset( $_POST['productorder'] ) ) {
         update_post_meta( $post->ID, 'productorder', $_POST['productorder'] );
     }
 }
@@ -232,7 +232,7 @@ function pw_get_order( $post ) {
 
 
 /*Adjust admin columns for Products*/
-if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "website-products" ){
+if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "website-products" ) {
     add_filter( 'manage_posts_columns', 'pw_setup_adjust_admin_columns' );
     function pw_setup_adjust_admin_columns( $columns ) {
         $columns = array(
@@ -251,16 +251,16 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "website-products" ){
     //Add images and other data to posts admin
     add_action( 'manage_posts_custom_column', 'pw_add_data_to_admin_columns', 10, 2 );
     function pw_add_data_to_admin_columns( $column, $post_id ) {
-        if( 'image' === $column ) {
-            echo get_the_post_thumbnail( $post_id, array(100, 100) );
+        if ( 'image' === $column ) {
+            echo get_the_post_thumbnail( $post_id, array( 100, 100 ) );
         }
         if ( 'productprice' === $column ) {
-            echo get_post_meta( $post_id, 'productprice', true);
+            echo get_post_meta( $post_id, 'productprice', true );
         }
-        if( 'content' === $column ) {
+        if ( 'content' === $column ) {
             echo get_post_field( 'post_content', $post_id );
         }
-        if( 'order' === $column ) {
+        if ( 'order' === $column ) {
             echo get_post_meta( $post_id, 'productorder', true );
         }
     }
@@ -269,7 +269,7 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "website-products" ){
     //Determine order of products shown in admin*/
     add_action( 'pre_get_posts', 'pw_custom_post_order_sort' );
     function pw_custom_post_order_sort( $query ) { 
-        if ( $query->is_main_query() && $_GET[ 'post_type' ] === "website-products" ){
+        if ( $query->is_main_query() && $_GET[ 'post_type' ] === "website-products" ) {
             $query->set( 'orderby', 'meta_value' );
             $query->set( 'meta_key', 'productorder' );
             $query->set( 'order', 'ASC' );
@@ -279,13 +279,13 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "website-products" ){
 
 
 //Register the shortcode so we can show products on a different page, most likely the index page.
-function pw_load_products_index( $a ) {
+function pw_load_products_index( $postQuery ) {
     $pluginContainer = "";
     $args = array(
         "post_type" => "website-products"
     );
 
-    if ( isset( $a['rand'] ) && $a['rand'] == true ) {
+    if ( isset( $postQuery['rand'] ) && $postQuery['rand'] == true ) {
         $args['orderby'] = 'rand';
     } else {
         $args['orderby'] = 'meta_value';
@@ -293,35 +293,35 @@ function pw_load_products_index( $a ) {
         $args['order'] = 'ASC';
     }
 
-    if ( isset( $a['max']) ) {
-        $args['posts_per_page'] = (int) $a['max'];
+    if ( isset( $postQuery['max'] ) ) {
+        $args['posts_per_page'] = ( int ) $postQuery['max'];
     }
 
     //Get all products.
-    $posts = get_posts($args);
+    $posts = get_posts( $args );
     $pluginContainer .= '<div class="products-container index">';
     $pluginContainer .= '<div class="products-container__heading index">' . get_option( 'website-products-leading-text-index' ) . '</div>';
     $pluginContainer .= '<div class="products-container__inner-wrapper">';
 
     $numberToDisplay = get_option( 'website-products-products-per-row' );
-    if( $numberToDisplay === "" ) {
+    if ( $numberToDisplay === "" ) {
         $numberToDisplay = -1;
     }
-    $numberToDisplay = (int) $numberToDisplay;
+    $numberToDisplay = ( int ) $numberToDisplay;
     $count = 0;
-    foreach ($posts as $post) {
-        if( $count < $numberToDisplay  || $numberToDisplay === -1){
+    foreach ( $posts as $post ) {
+        if ( $count < $numberToDisplay  || $numberToDisplay === -1 ) {
             $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
             $price = pw_get_productprice( $post );
             $label = pw_get_productlabel( $post );
             $pluginContainer .= '<div class="product">';
             $pluginContainer .= '<div class="product__name"><a class="product__name-link" href="' . get_option( 'website-products-products-page' ) . '">' . $post->post_title . '</a></div>';
-            if ( !empty( $url_thumb ) ) {
+            if ( ! empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
                         . '<a class="product__background-link" href="' . get_option( 'website-products-products-page' ) . '"><span class="sr-only">' . $post->post_title . 'Link</span></a>'
                         . '</div>';
             }
-            if ( !empty( $post->post_content ) ) {
+            if ( ! empty( $post->post_content ) ) {
                 
             }
             $pluginContainer .= '</div>';
@@ -336,13 +336,13 @@ function pw_load_products_index( $a ) {
 
 
 //Register the shortcode so we can show products.
-function pw_load_products( $a ) {
+function pw_load_products( $postQuery ) {
     $pluginContainer = "";
     $args = array(
         "post_type" => "website-products"
     );
 
-    if ( isset( $a['rand'] ) && $a['rand'] == true ) {
+    if ( isset( $postQuery['rand'] ) && $postQuery['rand'] === true ) {
         $args['orderby'] = 'rand';
     } else {
         $args['orderby'] = 'meta_value';
@@ -350,39 +350,39 @@ function pw_load_products( $a ) {
         $args['order'] = 'ASC';
     }
 
-    if ( isset( $a['max']) ) {
-        $args['posts_per_page'] = (int) $a['max'];
+    if ( isset( $postQuery['max'] ) ) {
+        $args['posts_per_page'] = ( int ) $postQuery['max'];
     }
 
     //Get all products.
-    $posts = get_posts($args);
+    $posts = get_posts( $args );
     $pluginContainer .= '<div class="products-container">';
     $pluginContainer .= '<div class="products-container__heading">' . get_option( 'website-products-leading-text' ) . '</div>';
     $pluginContainer .= '<div class="products-container__inner-wrapper">';
     
     $numberToDisplay = get_option( 'website-products-number-to-display' );
-    if( $numberToDisplay === "" ) {
+    if ( $numberToDisplay === "" ) {
         $numberToDisplay = -1;
     }
-    $numberToDisplay = (int) $numberToDisplay;
+    $numberToDisplay = ( int ) $numberToDisplay;
     $count = 0;
-    foreach ($posts as $post) {
-        if( $count < $numberToDisplay  || $numberToDisplay === -1){
+    foreach ( $posts as $post ) {
+        if ( $count < $numberToDisplay || $numberToDisplay === -1 ) {
             $url_thumb = get_the_post_thumbnail_url( $post->ID, 'medium_large' ); 
             $price = pw_get_productprice( $post );
             $label = pw_get_productlabel( $post );
             $pluginContainer .= '<div class="product">';
             $pluginContainer .= '<div class="product__title">' . $post->post_title . '</div>';
-            if ( !empty( $url_thumb ) ) {
+            if ( ! empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
             }
-            if ( !empty( $price ) ) {
+            if ( ! empty( $price ) ) {
                     $pluginContainer .= '<div class="product__price">' . $price . '</div>';
             }
-            if ( !empty( $label ) ) {
+            if ( ! empty( $label ) ) {
                 $pluginContainer .= '<div class="product__label">' . $label . '</div>';
             }
-            if ( !empty( $post->post_content ) ) {
+            if ( ! empty( $post->post_content ) ) {
                 $pluginContainer .= '<p class="product__content">' . $post->post_content . '</p>';
             }
             $pluginContainer .= '</div>';

@@ -6,7 +6,7 @@ require( '../../../../../wp-load.php' );
 include( plugin_dir_path(__FILE__) . "/website-products.php" );
 
 
-$numberOfProductsPerRow = (int)( get_option( 'website-products-products-per-row' ) );
+$numberOfProductsPerRow = ( int )( get_option( 'website-products-products-per-row' ) );
 if ( $numberOfProductsPerRow <= 0 ) {
     $numberOfProductsPerRow = 2;
 }
@@ -14,7 +14,7 @@ if ( $numberOfProductsPerRow <= 0 ) {
 $productWidthDesktop = 100/$numberOfProductsPerRow;
 
 
-$productImageWidthHeight = (int)( get_option( 'website-products-image-width-height' ) );
+$productImageWidthHeight = ( int )( get_option( 'website-products-image-width-height' ) );
 if ( $productImageWidthHeight <= 0 ) {
     $productImageWidthHeight = 200;
 } elseif ( 0 < $productImageWidthHeight && $productImageWidthHeight < 80 ) {
