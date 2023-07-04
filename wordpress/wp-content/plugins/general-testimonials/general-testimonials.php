@@ -439,14 +439,14 @@ function gt_load_testimonials( $postQuery ) {
                 }
             }
             if ( ! empty( $testimonialLocation ) ) { 
-                if ( ! empty( $providedName ) && ! empty( $label ) ) {
+                if ( ! empty( $providedName ) || ! empty( $label ) ) {
                     $pluginContainer .= '<span class="testimonial__comma">,</span><span class="testimonial__location"> ' . $testimonialLocation . '</span>';
                 } else {
                     $pluginContainer .= '<span class="testimonial__location">' . $testimonialLocation . '</span>';
                 }
             }
             if ( ! empty( $testimonialDate ) ) { 
-                if ( ! empty( $providedName ) && ! empty( $label ) && ! empty( $testimonialLocation ) ) {
+                if ( ! empty( $providedName ) || ! empty( $label ) || ! empty( $testimonialLocation ) ) {
                     $pluginContainer .= '<span class="testimonial__comma">,</span><span class="testimonial__date"> ' . $testimonialDate . '</span>';
                 } else {
                     $pluginContainer .= '<span class="testimonial__date">' . $testimonialDate . '</span>';
