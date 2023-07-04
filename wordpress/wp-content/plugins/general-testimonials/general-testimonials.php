@@ -144,6 +144,8 @@ function gt_url_custom_metabox() {
     update_post_meta( $post->ID, 'testimonialprovidedname', $testimonialprovidedname );
     $testimoniallabel = sanitize_text_field( get_post_meta( $post->ID, 'testimoniallabel', true ) );
     update_post_meta( $post->ID, 'testimoniallabel', $testimoniallabel );
+    $testimoniallocation = sanitize_text_field( get_post_meta( $post->ID, 'testimoniallocation', true ) );
+    update_post_meta( $post->ID, 'testimoniallocation', $testimoniallocation );
     $testimonialurl = sanitize_text_field( get_post_meta( $post->ID, 'testimonialurl', true ) );
     update_post_meta( $post->ID, 'testimonialurl', $testimonialurl );
     $testimonialdate = sanitize_text_field( get_post_meta( $post->ID, 'testimonialdate', true ) );
@@ -189,6 +191,11 @@ function gt_url_custom_metabox() {
     <p>
         <label for="testimoniallabel">Testimonial Label:<br />
             <input id="testimoniallabel" name="testimoniallabel" size="37" value="<?php if ( isset( $testimoniallabel ) ) { echo $testimoniallabel; } ?>" />
+        </label>
+    </p>
+    <p>
+        <label for="testimoniallocation">Location:<br />
+            <input id="testimoniallocation" name="testimoniallocation" size="37" value="<?php if ( isset( $testimoniallocation ) ) { echo $testimoniallocation; } ?>" />
         </label>
     </p>
     <p>
@@ -238,6 +245,21 @@ add_action( 'save_post', 'gt_save_custom_testimoniallabel' );
 function gt_get_testimoniallabel( $post ) {
     $testimoniallabel = get_post_meta( $post->ID, 'testimoniallabel', true );
     return $testimoniallabel;
+}
+
+
+function gt_save_custom_testimoniallocation( $post_id ) {
+    global $post;
+    
+    if ( isset( $_POST['testimoniallocation'] ) ) {
+        update_post_meta( $post->ID, 'testimoniallocation', $_POST['testimoniallocation'] );
+    }
+}
+add_action( 'save_post', 'gt_save_custom_testimoniallocation' );
+
+function gt_get_testimoniallocation( $post ) {
+    $testimoniallocation = get_post_meta( $post->ID, 'testimoniallocation', true );
+    return $testimoniallocation;
 }
 
 
@@ -386,9 +408,10 @@ function gt_load_testimonials( $postQuery ) {
         if ( $count < $numberToDisplay || $numberToDisplay === -1 ){
             $url_thumb = wp_get_attachment_thumb_url( get_post_thumbnail_id( $post->ID ) );
             $url_altText = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
+            $link = gt_get_url( $post );
             $providedName = gt_get_testimonialprovidedname( $post );
             $label = gt_get_testimoniallabel( $post );
-            $link = gt_get_url( $post );
+            $testimonialLocation = gt_get_testimoniallocation( $post );
             $testimonialDate = strtotime( gt_get_testimonialdate( $post ) );
             if ( ! empty( gt_get_testimonialdate( $post ) ) ) {
                 $testimonialDate = date( 'F j, Y', $testimonialDate );
@@ -415,8 +438,15 @@ function gt_load_testimonials( $postQuery ) {
                     $pluginContainer .= '<span class="testimonial__label">' . $label . '</span>';
                 }
             }
-            if ( ! empty( $testimonialDate ) ) { 
+            if ( ! empty( $testimonialLocation ) ) { 
                 if ( ! empty( $providedName ) && ! empty( $label ) ) {
+                    $pluginContainer .= '<span class="testimonial__comma">,</span><span class="testimonial__location"> ' . $testimonialLocation . '</span>';
+                } else {
+                    $pluginContainer .= '<span class="testimonial__location">' . $testimonialLocation . '</span>';
+                }
+            }
+            if ( ! empty( $testimonialDate ) ) { 
+                if ( ! empty( $providedName ) && ! empty( $label ) && ! empty( $testimonialLocation ) ) {
                     $pluginContainer .= '<span class="testimonial__comma">,</span><span class="testimonial__date"> ' . $testimonialDate . '</span>';
                 } else {
                     $pluginContainer .= '<span class="testimonial__date">' . $testimonialDate . '</span>';
