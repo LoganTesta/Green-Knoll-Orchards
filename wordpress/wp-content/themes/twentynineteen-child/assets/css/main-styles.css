@@ -414,6 +414,7 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
 .testimonial__provided-name { color: var(--color-1); }
 .testimonial__comma { color: var(--color-1); }
 .testimonial__label { color: var(--color-3); }
+.testimonial__location { color: var(--color-1); }
 .testimonial__date { color: var(--color-1); }
 
 
@@ -474,6 +475,7 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
     .testimonial__comma { font-size: 1em; }
     .testimonial__label { font-size: 1em; }
     .testimonial__link { font-size: 1em; }
+    .testimonial__location { font-size: 1em; }
     .testimonial__date { font-size: 1em; }
     
     
