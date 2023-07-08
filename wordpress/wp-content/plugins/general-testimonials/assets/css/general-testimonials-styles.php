@@ -64,6 +64,7 @@ if ( $generalTestimonialsFloatImageDirection === "left" ) {
 .testimonial__label { font-size: 17px; font-style: italic; }
 .testimonial__location { font-size: 17px; }
 .testimonial__date { font-size: 17px; }
+.testimonial__rating { font-size: 17px; } 
 
 .testimonials-container__inner-wrapper::after { content: ""; display: block; clear: both; }
 .testimonial__link { font-size: 17px; font-weight: bold; }
