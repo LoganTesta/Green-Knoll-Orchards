@@ -416,6 +416,7 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
 .testimonial__label { color: var(--color-3); }
 .testimonial__location { color: var(--color-1); }
 .testimonial__date { color: var(--color-1); }
+.testimonial__rating { color: var(--color-1); }
 
 
  /*Contact Form 7*/
