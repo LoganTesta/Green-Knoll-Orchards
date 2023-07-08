@@ -439,7 +439,20 @@ function gt_load_testimonials( $postQuery ) {
                 $testimonialDate = date( 'F j, Y', $testimonialDate );
             }
             $testimonialRating = gt_get_testimonialrating( $post );
-            
+            if ( $testimonialRating === "0" ) {
+                $testimonialRating = "&#9734; &#9734; &#9734; &#9734; &#9734;";
+            } else if ( $testimonialRating === "1" ) {
+                $testimonialRating = "&#9733; &#9734; &#9734; &#9734; &#9734;";
+            } else if ( $testimonialRating === "2" ) {
+                $testimonialRating = "&#9733; &#9733; &#9734; &#9734; &#9734;";
+            } else if ( $testimonialRating === "3" ) {
+                $testimonialRating = "&#9733; &#9733; &#9733; &#9734; &#9734;";
+            } else if ( $testimonialRating === "4" ) {
+                $testimonialRating = "&#9733; &#9733; &#9733; &#9733; &#9734;";
+            } else if ( $testimonialRating === "5" ) {
+                $testimonialRating = "&#9733; &#9733; &#9733; &#9733; &#9733;";
+            }
+             
             $pluginContainer .= '<div class="testimonial">';
             if ( ! empty( $url_thumb ) ) {
                 $pluginContainer .= '<img class="testimonial__image" src="' . $url_thumb . '" alt="' . $url_altText . '" />';
@@ -477,7 +490,7 @@ function gt_load_testimonials( $postQuery ) {
                 }
             }    
             if ( ! empty( $testimonialRating ) ) {
-                $pluginContainer .= '<div class="testimonial__rating">Rating: ' . $testimonialRating . '/5</div>';
+                $pluginContainer .= '<div class="testimonial__rating">' . $testimonialRating . '</div>';
             }
             $pluginContainer .= '</div>';
         }
