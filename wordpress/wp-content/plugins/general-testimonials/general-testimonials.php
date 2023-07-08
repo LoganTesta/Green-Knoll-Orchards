@@ -149,7 +149,9 @@ function gt_url_custom_metabox() {
     $testimonialurl = sanitize_text_field( get_post_meta( $post->ID, 'testimonialurl', true ) );
     update_post_meta( $post->ID, 'testimonialurl', $testimonialurl );
     $testimonialdate = sanitize_text_field( get_post_meta( $post->ID, 'testimonialdate', true ) );
-    update_post_meta( $post->ID, 'testimonialdate', $testimonialdate );   
+    update_post_meta( $post->ID, 'testimonialdate', $testimonialdate ); 
+    $testimonialrating = sanitize_text_field( get_post_meta( $post->ID, 'testimonialrating', true ) );
+    update_post_meta( $post->ID, 'testimonialrating', $testimonialrating ); 
     $testimonialorder = sanitize_text_field( get_post_meta( $post->ID, 'testimonialorder', true ) );
     if ( isset( $testimonialorder ) === false || $testimonialorder === "" ) {
         $testimonialorder = "n/a";
@@ -206,6 +208,11 @@ function gt_url_custom_metabox() {
     <p>
         <label for="testimonialdate">Date<br />
             <input id="testimonialdate" size="37" name="testimonialdate" type="date" value="<?php if ( isset( $testimonialdate ) ) { echo $testimonialdate; } ?>" />
+        </label>
+    </p>
+    <p>
+        <label for="testimonialrating">Rating<br />
+            <input id="testimonialrating" size="37" name="testimonialrating" type="number" min="0" max="5" value="<?php if ( isset( $testimonialrating ) ) { echo $testimonialrating; } ?>" />
         </label>
     </p>
     <p>
@@ -290,6 +297,21 @@ add_action( 'save_post', 'gt_save_testimonialdate' );
 function gt_get_testimonialdate( $post ) {
     $testimonialdate = get_post_meta( $post->ID, 'testimonialdate', true );
     return $testimonialdate;
+}
+
+
+function gt_save_testimonialrating( $post_id ) {
+    global $post;
+    
+    if ( isset( $_POST['testimonialrating'] ) ) {
+        update_post_meta( $post->ID, 'testimonialrating', $_POST['testimonialrating'] );
+    }
+}
+add_action( 'save_post', 'gt_save_testimonialrating' );
+
+function gt_get_testimonialrating( $post ) {
+    $testimonialrating = get_post_meta( $post->ID, 'testimonialrating', true );
+    return $testimonialrating;
 }
 
 
@@ -416,6 +438,8 @@ function gt_load_testimonials( $postQuery ) {
             if ( ! empty( gt_get_testimonialdate( $post ) ) ) {
                 $testimonialDate = date( 'F j, Y', $testimonialDate );
             }
+            $testimonialRating = gt_get_testimonialrating( $post );
+            
             $pluginContainer .= '<div class="testimonial">';
             if ( ! empty( $url_thumb ) ) {
                 $pluginContainer .= '<img class="testimonial__image" src="' . $url_thumb . '" alt="' . $url_altText . '" />';
@@ -451,6 +475,9 @@ function gt_load_testimonials( $postQuery ) {
                 } else {
                     $pluginContainer .= '<span class="testimonial__date">' . $testimonialDate . '</span>';
                 }
+            }    
+            if ( ! empty( $testimonialRating ) ) {
+                $pluginContainer .= '<div class="testimonial__rating">Rating: ' . $testimonialRating . '/5</div>';
             }
             $pluginContainer .= '</div>';
         }
