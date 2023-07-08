@@ -478,6 +478,7 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
     .testimonial__link { font-size: 1em; }
     .testimonial__location { font-size: 1em; }
     .testimonial__date { font-size: 1em; }
+    .testimonial__rating { font-size: 1em; }
     
     
     /*Website Products plugin customization.*/
