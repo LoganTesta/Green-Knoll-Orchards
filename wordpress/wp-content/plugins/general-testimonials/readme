@@ -1,22 +1,27 @@
 
 === General Testimonials ==
-Contributors: Tualatin Top Bakery
-Tags: testimonials, customers
+Contributors: Green Knoll Orchards
+Tags: testimonials, reviews, customers
+Requires PHP: 5.6
 Stable tag: 1.0
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 
 Add customer testimonials to your site, with layout and styling customizations.
 
 
 == Description ==
-Add customer testimonials to your site, with layout and styling customizations.  Use the shortcode [general_testimonials] where you want to output testimonials.
+Add customer testimonials to your site, with layout and styling customizations.  Easy to use and fast to set up.  
+
+Includes support for testimonial name, image, description, location, rating, and additional fields.  Set the section label, testimonials image size, order, and more.
 
 
 == Installation == 
-1. Upload the 'general-testimonials' folder in '/wp-content/plugins' directory.
+1. Upload the 'general-testimonials' folder in '/wp-content/plugins/' directory.
 2. Activate the plugin in the Plugins menu in WordPress.
+3. Use the shortcode [general_testimonials] where you want to output testimonials.
 
 
 == Screenshots ==
 
-1. A sample of the General Testimonials plugin in use.
-
+1. [https://www.greenknollorchards.com/wp-content/plugins/general-testimonials/assets/images/screenshot-1.png A sample of the General Testimonials plugin in use.]
