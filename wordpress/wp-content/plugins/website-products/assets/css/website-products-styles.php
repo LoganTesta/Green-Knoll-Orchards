@@ -49,6 +49,15 @@ if ( $productImageWidthHeight <= 0 ) {
 .products-container.index .product__background-link { display: block; height: 100%; }
 
 
+/* For custom post type */
+.website-products-product {}
+.website-products-product__title {} 
+.website-products-product__image {}
+.website-products-product__price {}
+.website-products-product__label {}
+.website-products-product__content {}
+
+
 
 /*Clearing variable width columns */
 @media only screen and (max-width: 1199px){   

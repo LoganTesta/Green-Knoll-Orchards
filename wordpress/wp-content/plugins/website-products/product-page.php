@@ -9,6 +9,8 @@ get_header();
         <h1 class="website-products-product__title"><?php echo get_the_title(); ?></h1>
         <img class="website-products-product__image" src="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( get_the_ID() ), "full" ); ?>" 
              alt="<?php echo get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt' , true ); ?>" />
+        <div class="website-products-product__price"><?php echo pw_get_productprice( $post ); ?></div>
+        <div class="website-products-product__label"><?php echo pw_get_productlabel( $post ); ?></div>
         <div class="website-products-product__content"><?php the_content(); ?></div>
     </div>
 
