@@ -401,14 +401,3 @@ add_filter( 'widget_text', 'do_shortcode' );
 
 add_shortcode( "website_products", "pw_load_products" );
 add_filter( 'widget_text', 'do_shortcode' );
-
-
-function pw_product_page_template( $page_template ) {
-    if ( is_singular( 'website-products' ) ) {
-        $page_template = dirname( __FILE__ ) . '/product-page.php';
-    }
-    return $page_template;
-}
-
-add_filter( 'template_include', 'pw_product_page_template' );
-
