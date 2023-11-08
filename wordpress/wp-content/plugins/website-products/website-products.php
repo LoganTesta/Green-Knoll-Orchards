@@ -318,8 +318,8 @@ function pw_load_products_index( $postQuery ) {
             $pluginContainer .= '<div class="product__name"><a class="product__name-link" href="' . get_option( 'website-products-products-page' ) . '">' . $post->post_title . '</a></div>';
             if ( ! empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
-                        . '<a class="product__background-link" href="' . get_option( 'website-products-products-page' ) . '"><span class="sr-only">' . $post->post_title . 'Link</span></a>'
-                        . '</div>';
+                    . '<a class="product__background-link" href="' . get_option( 'website-products-products-page' ) . '"><span class="sr-only">' . $post->post_title . ' Link</span></a>'
+                    . '</div>';
             }
             if ( ! empty( $post->post_content ) ) {
                 
@@ -372,9 +372,11 @@ function pw_load_products( $postQuery ) {
             $price = pw_get_productprice( $post );
             $label = pw_get_productlabel( $post );
             $pluginContainer .= '<div class="product">';
-            $pluginContainer .= '<div class="product__title">' . $post->post_title . '</div>';
+            $pluginContainer .= '<div class="product__title">' . $post->post_title . '</div>';             
             if ( ! empty( $url_thumb ) ) {
-                $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
+                $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
+                        . '<a class="product__background-link" href="' . get_permalink( $post->ID ) . '"><span class="sr-only">' . $post->post_title . ' Link</span></a>'
+                        . '</div>';
             }
             if ( ! empty( $price ) ) {
                     $pluginContainer .= '<div class="product__price">' . $price . '</div>';
