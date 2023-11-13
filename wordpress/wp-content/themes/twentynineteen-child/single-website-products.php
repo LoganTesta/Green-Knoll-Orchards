@@ -5,7 +5,7 @@
 get_header();
 ?>
 
-    <div class="website-products-product">
+    <div class="website-products website-products-product">
         <div class="website-products-product__inner-wrapper">
             <div class="website-products-breadcrumbs">
                 <div class="website-products-breadcrumbs__breadcrumb">

@@ -370,7 +370,8 @@ input[type="submit"]:focus { background: var(--color-3); }
 .products-container.index .products-container__inner-wrapper { padding-top: 0; }
 
 /*For individual product pages*/
-.website-products-breadcrumbs__breadcrumb-link { font-size: 24px; }
+.website-products .website-products-breadcrumbs__breadcrumb-link { font-size: 24px; font-weight: bold; color: var(--color-2); }
+.website-products .website-products-breadcrumbs__breadcrumb-link:hover { color: var(--color-3); }
 .website-products-product { }
 .website-products-product__inner-wrapper { padding: 20px 15px; }
 .website-products-product__title { position: absolute; top: 320px; font-size: 1.375em; color: #ffffff; text-shadow: 1.2px 2.4px var(--color-2); }

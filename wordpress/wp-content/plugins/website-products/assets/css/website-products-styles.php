@@ -52,7 +52,7 @@ if ( $productImageWidthHeight <= 0 ) {
 
 /*For individual product pages*/
 .website-products-breadcrumbs__breadcrumb { padding-bottom: 20px; }
-.website-products-breadcrumbs__breadcrumb-link { display: block; }
+.website-products-breadcrumbs__breadcrumb-link { display: inline-block; }
 
 
 
