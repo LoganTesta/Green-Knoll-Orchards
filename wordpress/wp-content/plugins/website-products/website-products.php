@@ -299,7 +299,7 @@ function pw_load_products_index( $postQuery ) {
 
     //Get all products.
     $posts = get_posts( $args );
-    $pluginContainer .= '<div class="products-container index">';
+    $pluginContainer .= '<div class="website-products products-container index">';
     $pluginContainer .= '<div class="products-container__heading index">' . get_option( 'website-products-leading-text-index' ) . '</div>';
     $pluginContainer .= '<div class="products-container__inner-wrapper">';
 
@@ -315,7 +315,7 @@ function pw_load_products_index( $postQuery ) {
             $price = pw_get_productprice( $post );
             $label = pw_get_productlabel( $post );
             $pluginContainer .= '<div class="product">';
-            $pluginContainer .= '<div class="product__name"><a class="product__name-link" href="' . get_option( 'website-products-products-page' ) . '">' . $post->post_title . '</a></div>';
+            $pluginContainer .= '<div class="product__title"><a class="product__title-link" href="' . get_option( 'website-products-products-page' ) . '">' . $post->post_title . '</a></div>';
             if ( ! empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
                     . '<a class="product__background-link" href="' . get_option( 'website-products-products-page' ) . '"><span class="sr-only">' . $post->post_title . ' Link</span></a>'
@@ -356,7 +356,7 @@ function pw_load_products( $postQuery ) {
 
     //Get all products.
     $posts = get_posts( $args );
-    $pluginContainer .= '<div class="products-container">';
+    $pluginContainer .= '<div class="website-products products-container">';
     $pluginContainer .= '<div class="products-container__heading">' . get_option( 'website-products-leading-text' ) . '</div>';
     $pluginContainer .= '<div class="products-container__inner-wrapper">';
     
