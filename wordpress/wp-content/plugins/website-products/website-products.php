@@ -372,7 +372,7 @@ function pw_load_products( $postQuery ) {
             $price = pw_get_productprice( $post );
             $label = pw_get_productlabel( $post );
             $pluginContainer .= '<div class="product">';
-            $pluginContainer .= '<div class="product__title">' . $post->post_title . '</div>';             
+            $pluginContainer .= '<div class="product__title"><a class="product__title-link" href="' . get_permalink( $post->ID ) . '">' . $post->post_title . '</a></div>';            
             if ( ! empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
                         . '<a class="product__background-link" href="' . get_permalink( $post->ID ) . '"><span class="sr-only">' . $post->post_title . ' Link</span></a>'

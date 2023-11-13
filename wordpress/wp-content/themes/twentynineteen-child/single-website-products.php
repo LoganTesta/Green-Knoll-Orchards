@@ -8,7 +8,9 @@ get_header();
     <div class="website-products-product">
         <div class="website-products-product__inner-wrapper">
             <div class="website-products-breadcrumbs">
-                <a class="website-products-breadcrumbs__breadcrumb" href="<?php echo get_option( "website-products-products-page" ); ?>">Back to <?php echo get_option( "website-products-leading-text" ); ?></a>
+                <div class="website-products-breadcrumbs__breadcrumb">
+                    <a class="website-products-breadcrumbs__breadcrumb-link" href="<?php echo get_option( "website-products-products-page" ); ?>">Back to <?php echo get_option( "website-products-leading-text" ); ?></a>
+                </div>
             </div>
             <img class="website-products-product__image" src="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( get_the_ID() ), "full" ); ?>" 
                  alt="<?php echo get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt' , true ); ?>" />
