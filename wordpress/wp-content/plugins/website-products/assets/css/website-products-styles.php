@@ -49,6 +49,10 @@ if ( $productImageWidthHeight <= 0 ) {
 .products-container.index .product__background-link { display: block; height: 100%; }
 
 
+/* */
+.website-products-breadcrumbs__breadcrumb { display: block; padding-bottom: 20px; }
+
+
 
 /*Clearing variable width columns */
 @media only screen and (max-width: 1199px){   
