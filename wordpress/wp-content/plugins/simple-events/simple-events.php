@@ -516,6 +516,20 @@ function se_load_events_index( $postQuery ) {
         $args['posts_per_page'] = ( int ) $postQuery['max'];
     }
 
+    $dateLayout = intval( get_option( 'simple-events-date-layout' ) );
+    $dateLayoutFormat = "";
+     if ( $dateLayout === 1 ) {
+        $dateLayoutFormat = 'm/d/Y';
+    } else if ( $dateLayout === 2 ) {
+        $dateLayoutFormat = 'd/m/Y';
+    } else if ( $dateLayout === 3 ) {
+         $dateLayoutFormat = 'F j, Y';
+    } else if ( $dateLayout === 4 ) {
+         $dateLayoutFormat = 'j F Y';
+    } else if ( $dateLayout === 5 ) {
+         $dateLayoutFormat = 'F Y';
+    }
+    
     //Get all events.
     $posts = get_posts( $args );
     $pluginContainer .= '<div class="events-container index">';
@@ -538,7 +552,7 @@ function se_load_events_index( $postQuery ) {
             $eventenddate = "";
             $eventtimes = "";
             if ( se_get_is_multiday( $post ) !== "Multi-day" ) {
-                $date = date( 'F j, Y', strtotime( se_get_event_date( $post ) ) );
+                $date = date( $dateLayoutFormat, strtotime( se_get_event_date( $post ) ) );
                 if ( se_get_event_starttime( $post ) !== "" ) {
                     $startTime = date( "g:i a", strtotime( se_get_event_starttime( $post ) ) );
                 }
@@ -546,7 +560,7 @@ function se_load_events_index( $postQuery ) {
                     $endTime = date( "g:i a", strtotime( se_get_event_eventendtime( $post ) ) );
                 } 
             } else {
-                $date = date( 'F j, Y', strtotime( se_get_event_date( $post ) ) ) . " - " . date( "F j, Y", strtotime( se_get_event_eventenddate( $post ) ) );
+                $date = date( $dateLayoutFormat, strtotime( se_get_event_date( $post ) ) ) . " - " . date( $dateLayoutFormat, strtotime( se_get_event_eventenddate( $post ) ) );
                 $eventtimes = se_get_event_eventtimes( $post );
             }
             $label = se_get_event_label( $post );
@@ -701,6 +715,3 @@ add_filter( 'widget_text', 'do_shortcode' );
 
 add_shortcode( "simple_events", "se_load_events" );
 add_filter( 'widget_text', 'do_shortcode' );
-
-
-
