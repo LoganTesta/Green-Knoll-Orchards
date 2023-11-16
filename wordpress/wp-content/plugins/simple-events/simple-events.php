@@ -52,6 +52,7 @@ function se_register_settings() {
     add_option( 'simple-events-image-width-height', "240" );
     add_option( 'simple-events-border-radius', "5" );
     add_option( 'simple-events-events-per-row', "3" );
+    add_option( 'simple-events-date-layout', "3" );
     add_option( 'simple-events-number-to-display', "" );
 
     register_setting( 'simple-events-settings-group', 'simple-events-leading-text', 'se_validatetextfield' );
@@ -59,7 +60,8 @@ function se_register_settings() {
     register_setting( 'simple-events-settings-group', 'simple-events-events-page', 'se_validatetextfield' );
     register_setting( 'simple-events-settings-group', 'simple-events-image-width-height', 'se_validatetextfield' );
     register_setting( 'simple-events-settings-group', 'simple-events-border-radius', 'se_validatetextfield' );
-    register_setting( 'simple-events-settings-group', 'simple-events-events-per-row', 'se_validatetextfield' );  
+    register_setting( 'simple-events-settings-group', 'simple-events-events-per-row', 'se_validatetextfield' ); 
+    register_setting( 'simple-events-settings-group', ' simple-events-date-layout', 'se_validatetextfield' );
     register_setting( 'simple-events-settings-group', 'simple-events-number-to-display', 'se_validatetextfield' );  
 }
 add_action( 'admin_init', 'se_register_settings' );
@@ -116,6 +118,19 @@ function se_generate_settings_page() {
                 <label class="admin-input-container__label--right" for="simpleEventsEventsPerRow2">3</label>
                 <input id="simpleEventsEventsPerRow3" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="4" <?php if(get_option( 'simple-events-events-per-row' ) === "4" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsEventsPerRow3">4</label>
+            </div>
+            <div class="admin-input-container">
+                <span class="admin-input-container__label">Layout of Event Dates</span>       
+                <input id="simpleEventsDateLayout0" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="1" <?php if(get_option( 'simple-events-date-layout' ) === "1" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout0">mm/dd/year</label>
+                <input id="simpleEventsDateLayout1" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="2" <?php if(get_option( 'simple-events-date-layout' ) === "2" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout1">dd/mm/year</label>
+                <input id="simpleEventsDateLayout2" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="3" <?php if(get_option( 'simple-events-date-layout' ) === "3" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout2">Month Day, Year (default)</label>
+                <input id="simpleEventsDateLayout3" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="4" <?php if(get_option( 'simple-events-date-layout' ) === "4" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout3">Day Month, Year</label>
+                <input id="simpleEventsDateLayout4" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="5" <?php if(get_option( 'simple-events-date-layout' ) === "5" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout4">Month Year</label>
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="simple-events-number-to-display">Events to Display (Empty: display all)</label>
