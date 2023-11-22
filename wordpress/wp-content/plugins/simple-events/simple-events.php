@@ -177,24 +177,24 @@ function se_url_custom_metabox() {
     $eventlabel = sanitize_text_field( get_post_meta( $post->ID, 'eventlabel', true ) );
     update_post_meta( $post->ID, 'eventlabel', $eventlabel );
     $eventorder = sanitize_text_field( get_post_meta( $post->ID, 'eventorder', true ) );
-    if( isset( $eventorder ) === false || $eventorder === "" ) {
+    if ( isset( $eventorder ) === false || $eventorder === "" ) {
         $eventorder = "n/a";
     }
     update_post_meta( $post->ID, 'eventorder', $eventorder );
 
 
     $errorsprice = "";
-    if( isset( $errorsprice ) ) {
+    if ( isset( $errorsprice ) ) {
         echo $errorsprice;
     }
     
     $errorslabel = "";
-    if( isset( $errorslabel ) ) {
+    if ( isset( $errorslabel ) ) {
         echo $errorslabel;
     }
     
     $errorsorder = "";
-    if( isset( $errorsorder ) ) {
+    if ( isset( $errorsorder ) ) {
         echo $errorsorder;
     }
     
@@ -202,48 +202,48 @@ function se_url_custom_metabox() {
     <div id="eventVariables">
         <p>
             <label for="eventprice">Price:<br />
-                <input id="eventprice" name="eventprice" value="<?php if( isset( $eventprice ) ) { echo $eventprice; } ?>" />
+                <input id="eventprice" name="eventprice" value="<?php if ( isset( $eventprice ) ) { echo $eventprice; } ?>" />
             </label>
         </p>
         <p>
             <label for="eventdate">Date:<br />
-                <input id="eventdate" name="eventdate" type="date" value="<?php if( isset( $eventdate ) ) { echo $eventdate; } ?>" />
+                <input id="eventdate" name="eventdate" type="date" value="<?php if ( isset( $eventdate ) ) { echo $eventdate; } ?>" />
             </label>
         </p>
         <p>
             <span>Event Length: <?php echo $ismultiday; ?></span><br /> 
             <label for="ismultiday0">1 day</label>
-            <input id="ismultiday0" name="ismultiday" type="radio" value="1 day" <?php if( $ismultiday === "1 day" ) { echo 'checked="checked"'; } ?> />
+            <input id="ismultiday0" name="ismultiday" type="radio" value="1 day" <?php if ( $ismultiday === "1 day" ) { echo 'checked="checked"'; } ?> />
             <label for="ismultiday1">Multi-day</label>
-            <input id="ismultiday1" name="ismultiday" type="radio" value="Multi-day" <?php if( $ismultiday === "Multi-day" ) { echo 'checked="checked"'; } ?> />    
+            <input id="ismultiday1" name="ismultiday" type="radio" value="Multi-day" <?php if ( $ismultiday === "Multi-day" ) { echo 'checked="checked"'; } ?> />    
         </p>
         <div class="admin-sidebar-section">
             <p class="admin-subheader">Single Day times ONLY:</p>
             <p>
                 <label for="eventstarttime">Start Time:<br />
-                    <input id="eventstarttime" name="eventstarttime" type="time" value="<?php if( isset( $eventstarttime ) ) { echo $eventstarttime; } ?>" />
+                    <input id="eventstarttime" name="eventstarttime" type="time" value="<?php if ( isset( $eventstarttime ) ) { echo $eventstarttime; } ?>" />
                 </label>
             </p>
             <p>
                 <label for="eventendtime">End Time:<br />
-                    <input id="eventendtime" name="eventendtime" type="time" value="<?php if( isset( $eventendtime ) ) { echo $eventendtime; } ?>" />
+                    <input id="eventendtime" name="eventendtime" type="time" value="<?php if ( isset( $eventendtime ) ) { echo $eventendtime; } ?>" />
                 </label>
             </p>
             <p class="admin-subheader">Multi-day times and dates ONLY:</p>
             <p>
                 <label for="eventenddate">End Date:<br />
-                    <input id="eventenddate" name="eventenddate" type="date" value="<?php if( isset( $eventenddate ) ) { echo $eventenddate; } ?>" />
+                    <input id="eventenddate" name="eventenddate" type="date" value="<?php if ( isset( $eventenddate ) ) { echo $eventenddate; } ?>" />
                 </label>
             </p>
             <p>
                 <label for="eventtimes">Event Times:<br />
-                    <textarea id="eventtimes" name="eventtimes"><?php if( isset( $eventtimes ) ) { echo $eventtimes; } ?></textarea>
+                    <textarea id="eventtimes" name="eventtimes"><?php if ( isset( $eventtimes ) ) { echo $eventtimes; } ?></textarea>
                 </label>
             </p>
         </div>
         <p>
             <label for="eventlabel">Event Label:<br />
-                <input id="eventlabel" name="eventlabel" value="<?php if( isset( $eventlabel ) ) { echo $eventlabel; } ?>" />
+                <input id="eventlabel" name="eventlabel" value="<?php if ( isset( $eventlabel ) ) { echo $eventlabel; } ?>" />
             </label>
         </p>
         <p>
@@ -265,14 +265,14 @@ function se_url_more_event_fields() {
     update_post_meta( $post->ID, 'eventshortdescription', $eventshortdescription );
 
     $errorshortdescription = "";
-    if( isset( $shortdescription ) ) {
+    if ( isset( $shortdescription ) ) {
         echo $shortdescription;
     }
     
     ?>
     <p>
         <label for="eventshortdescription">Short Description (max 200 characters):<br />
-            <textarea id="eventshortdescription" name="eventshortdescription" maxlength="200"><?php if( isset( $eventshortdescription ) ) { echo $eventshortdescription; } ?></textarea>
+            <textarea id="eventshortdescription" name="eventshortdescription" maxlength="200"><?php if ( isset( $eventshortdescription ) ) { echo $eventshortdescription; } ?></textarea>
         </label>
     </p>
     
@@ -284,7 +284,7 @@ function se_url_more_event_fields() {
 function se_save_custom_eventprice( $post_id ) {
     global $post;
     
-    if( isset( $_POST['eventprice'] ) ) {
+    if ( isset( $_POST['eventprice'] ) ) {
         update_post_meta( $post->ID, 'eventprice', $_POST['eventprice'] );
     }
 }
@@ -329,7 +329,7 @@ function se_get_is_multiday( $post ) {
 function se_save_custom_eventstarttime( $post_id ) {
     global $post;
     
-    if( isset( $_POST['eventstarttime'] ) ) {
+    if ( isset( $_POST['eventstarttime'] ) ) {
         update_post_meta( $post->ID, 'eventstarttime', $_POST['eventstarttime'] );
     }
 }
@@ -363,7 +363,7 @@ function se_get_event_eventendtime( $post ) {
 function se_save_custom_eventenddate( $post_id ) {
     global $post;
     
-    if( isset( $_POST['eventenddate'] ) ) {
+    if ( isset( $_POST['eventenddate'] ) ) {
         if ( $_POST['eventdate'] <= $_POST['eventenddate'] ) {
             update_post_meta( $post->ID, 'eventenddate', $_POST['eventenddate'] );
         } else {
@@ -401,7 +401,7 @@ function se_get_event_eventtimes( $post ) {
 function se_save_custom_event_label( $post_id ) {
     global $post;
     
-    if( isset( $_POST['eventlabel'] ) ) {
+    if ( isset( $_POST['eventlabel'] ) ) {
         update_post_meta( $post->ID, 'eventlabel', $_POST['eventlabel'] );
     }
 }
@@ -483,7 +483,7 @@ if ( isset( $_GET['post_type'] ) && $_GET['post_type'] === "simple-events" ){
         if ( 'eventenddate' === $column ) {
             echo get_post_meta( $post_id, 'eventenddate', true );
         }
-        if( 'order' === $column ) {
+        if ( 'order' === $column ) {
             echo get_post_meta( $post_id, 'eventorder', true );
         }
     }
