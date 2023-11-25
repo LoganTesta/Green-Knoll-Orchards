@@ -123,11 +123,11 @@ function se_generate_settings_page() {
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Order Events By:</span>       
-                <input id="simpleEventsOrderBy0" class="simple-events-order-by" name="simple-events-order-by" type="radio" value="1" <?php if ( get_option( 'simple-events-order-by' ) === "1" ) { echo 'checked="checked"'; } ?> />
+                <input id="simpleEventsOrderBy0" class="simple-events-order-by" name="simple-events-order-by" type="radio" value="eventorder" <?php if ( get_option( 'simple-events-order-by' ) === "eventorder" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsOrderBy0">Post set event order (default)</label>
-                <input id="simpleEventsOrderBy1" class="simple-events-order-by" name="simple-events-order-by" type="radio" value="2" <?php if ( get_option( 'simple-events-order-by' ) === "2" ) { echo 'checked="checked"'; } ?> />
+                <input id="simpleEventsOrderBy1" class="simple-events-order-by" name="simple-events-order-by" type="radio" value="eventdateasc" <?php if ( get_option( 'simple-events-order-by' ) === "eventdateasc" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsOrderBy1">Event Date (ASC)</label>
-                <input id="simpleEventsOrderBy2" class="simple-events-order-by" name="simple-events-order-by" type="radio" value="3" <?php if ( get_option( 'simple-events-order-by' ) === "3" ) { echo 'checked="checked"'; } ?> />
+                <input id="simpleEventsOrderBy2" class="simple-events-order-by" name="simple-events-order-by" type="radio" value="eventdatedesc" <?php if ( get_option( 'simple-events-order-by' ) === "eventdatedesc" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsOrderBy2">Event Date (DESC)</label>
             </div>
             <div class="admin-input-container">
@@ -521,10 +521,21 @@ function se_load_events_index( $postQuery ) {
 
     if ( isset( $postQuery['rand'] ) && $postQuery['rand'] == true ) {
         $args['orderby'] = 'rand';
-    } else {
+    } else {   
+        $eventOrderSetting = get_option( 'simple-events-order-by' );
+        $metaKey = "eventorder";
+        $order = "ASC";
+        
+        if ( $eventOrderSetting === "eventdateasc" ) {
+            $metaKey = 'eventdate';
+        } else if ( $eventOrderSetting === "eventdatedesc" ) {
+            $metaKey = 'eventdate';
+            $order = "DESC";
+        }
+        
         $args['orderby'] = 'meta_value';
-        $args['meta_key'] = 'eventorder';
-        $args['order'] = 'ASC';
+        $args['meta_key'] = $metaKey;
+        $args['order'] = $order;
     }
 
     if ( isset( $postQuery['max']) ) {
@@ -645,9 +656,20 @@ function se_load_events( $postQuery ) {
     if ( isset( $postQuery['rand'] ) && $postQuery['rand'] == true ) {
         $args['orderby'] = 'rand';
     } else {
+        $eventOrderSetting = get_option( 'simple-events-order-by' );
+        $metaKey = "eventorder";
+        $order = "ASC";
+        
+        if ( $eventOrderSetting === "eventdateasc" ) {
+            $metaKey = 'eventdate';
+        } else if ( $eventOrderSetting === "eventdatedesc" ) {
+            $metaKey = 'eventdate';
+            $order = "DESC";
+        }
+        
         $args['orderby'] = 'meta_value';
-        $args['meta_key'] = 'eventorder';
-        $args['order'] = 'ASC';
+        $args['meta_key'] = $metaKey;
+        $args['order'] = $order;
     }
 
     if ( isset( $postQuery['max'] ) ) {
