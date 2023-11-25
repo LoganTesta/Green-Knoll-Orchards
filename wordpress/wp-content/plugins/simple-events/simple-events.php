@@ -52,6 +52,7 @@ function se_register_settings() {
     add_option( 'simple-events-image-width-height', "240" );
     add_option( 'simple-events-border-radius', "5" );
     add_option( 'simple-events-events-per-row', "3" );
+    add_option( 'simple-events-order-by', "1" );
     add_option( 'simple-events-date-layout', "3" );
     add_option( 'simple-events-number-to-display', "" );
 
@@ -61,7 +62,8 @@ function se_register_settings() {
     register_setting( 'simple-events-settings-group', 'simple-events-image-width-height', 'se_validatetextfield' );
     register_setting( 'simple-events-settings-group', 'simple-events-border-radius', 'se_validatetextfield' );
     register_setting( 'simple-events-settings-group', 'simple-events-events-per-row', 'se_validatetextfield' ); 
-    register_setting( 'simple-events-settings-group', ' simple-events-date-layout', 'se_validatetextfield' );
+    register_setting( 'simple-events-settings-group', 'simple-events-order-by', 'se_validatetextfield' ); 
+    register_setting( 'simple-events-settings-group', 'simple-events-date-layout', 'se_validatetextfield' );
     register_setting( 'simple-events-settings-group', 'simple-events-number-to-display', 'se_validatetextfield' );  
 }
 add_action( 'admin_init', 'se_register_settings' );
@@ -118,6 +120,15 @@ function se_generate_settings_page() {
                 <label class="admin-input-container__label--right" for="simpleEventsEventsPerRow2">3</label>
                 <input id="simpleEventsEventsPerRow3" class="simple-events-events-per-row" name="simple-events-events-per-row" type="radio" value="4" <?php if ( get_option( 'simple-events-events-per-row' ) === "4" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsEventsPerRow3">4</label>
+            </div>
+            <div class="admin-input-container">
+                <span class="admin-input-container__label">Order Events By:</span>       
+                <input id="simpleEventsOrderBy0" class="simple-events-order-by" name="simple-events-order-by" type="radio" value="1" <?php if ( get_option( 'simple-events-order-by' ) === "1" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="simpleEventsOrderBy0">Post set event order (default)</label>
+                <input id="simpleEventsOrderBy1" class="simple-events-order-by" name="simple-events-order-by" type="radio" value="2" <?php if ( get_option( 'simple-events-order-by' ) === "2" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="simpleEventsOrderBy1">Event Date (ASC)</label>
+                <input id="simpleEventsOrderBy2" class="simple-events-order-by" name="simple-events-order-by" type="radio" value="3" <?php if ( get_option( 'simple-events-order-by' ) === "3" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="simpleEventsOrderBy2">Event Date (DESC)</label>
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Layout of Event Dates</span>       
@@ -522,7 +533,7 @@ function se_load_events_index( $postQuery ) {
 
     $dateLayout = intval( get_option( 'simple-events-date-layout' ) );
     $dateLayoutFormat = "";
-     if ( $dateLayout === 1 ) {
+    if ( $dateLayout === 1 ) {
         $dateLayoutFormat = 'm/d/Y';
     } else if ( $dateLayout === 2 ) {
         $dateLayoutFormat = 'd/m/Y';
@@ -645,7 +656,7 @@ function se_load_events( $postQuery ) {
     
     $dateLayout = intval( get_option( 'simple-events-date-layout' ) );
     $dateLayoutFormat = "";
-     if ( $dateLayout === 1 ) {
+    if ( $dateLayout === 1 ) {
         $dateLayoutFormat = 'm/d/Y';
     } else if ( $dateLayout === 2 ) {
         $dateLayoutFormat = 'd/m/Y';
