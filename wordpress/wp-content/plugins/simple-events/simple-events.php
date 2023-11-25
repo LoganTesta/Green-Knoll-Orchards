@@ -93,7 +93,7 @@ function se_generate_settings_page() {
                 <input id="simpleEventsLeadingTextIndex" class="admin-input-container__input simple-events-leading-text-index" name="simple-events-leading-text-index" type="text" value="<?php echo get_option( 'simple-events-leading-text-index' ); ?>" />
             </div>
             <div class="admin-input-container">
-                <label class="admin-input-container__label" for="simple-events-events-page">Events Page (page's URL Slug)</label>
+                <label class="admin-input-container__label" for="simple-events-events-page">Events Page Slug, don't add lead slash (/)</label>
                 <input id="simpleEventsEventsPage" class="admin-input-container__input simple-events-events-page" name="simple-events-events-page" type="text" value="<?php echo get_option( 'simple-events-events-page' ); ?>" />
             </div>
             <div class="admin-input-container">
