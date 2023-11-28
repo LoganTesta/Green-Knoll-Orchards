@@ -518,25 +518,23 @@ function se_load_events_index( $postQuery ) {
     $args = array(
         "post_type" => "simple-events"
     );
+   
+    
+    $eventOrderSetting = get_option( 'simple-events-order-by' );
+    $metaKey = "eventorder";
+    $order = "ASC";
 
-    if ( isset( $postQuery['rand'] ) && $postQuery['rand'] == true ) {
-        $args['orderby'] = 'rand';
-    } else {   
-        $eventOrderSetting = get_option( 'simple-events-order-by' );
-        $metaKey = "eventorder";
-        $order = "ASC";
-        
-        if ( $eventOrderSetting === "eventdateasc" ) {
-            $metaKey = 'eventdate';
-        } else if ( $eventOrderSetting === "eventdatedesc" ) {
-            $metaKey = 'eventdate';
-            $order = "DESC";
-        }
-        
-        $args['orderby'] = 'meta_value';
-        $args['meta_key'] = $metaKey;
-        $args['order'] = $order;
+    if ( $eventOrderSetting === "eventdateasc" ) {
+        $metaKey = 'eventdate';
+    } else if ( $eventOrderSetting === "eventdatedesc" ) {
+        $metaKey = 'eventdate';
+        $order = "DESC";
     }
+
+    $args['orderby'] = 'meta_value';
+    $args['meta_key'] = $metaKey;
+    $args['order'] = $order;
+    
 
     if ( isset( $postQuery['max']) ) {
         $args['posts_per_page'] = ( int ) $postQuery['max'];
@@ -653,24 +651,22 @@ function se_load_events( $postQuery ) {
         "post_type" => "simple-events"
     );
 
-    if ( isset( $postQuery['rand'] ) && $postQuery['rand'] == true ) {
-        $args['orderby'] = 'rand';
-    } else {
-        $eventOrderSetting = get_option( 'simple-events-order-by' );
-        $metaKey = "eventorder";
-        $order = "ASC";
-        
-        if ( $eventOrderSetting === "eventdateasc" ) {
-            $metaKey = 'eventdate';
-        } else if ( $eventOrderSetting === "eventdatedesc" ) {
-            $metaKey = 'eventdate';
-            $order = "DESC";
-        }
-        
-        $args['orderby'] = 'meta_value';
-        $args['meta_key'] = $metaKey;
-        $args['order'] = $order;
+
+    $eventOrderSetting = get_option( 'simple-events-order-by' );
+    $metaKey = "eventorder";
+    $order = "ASC";
+
+    if ( $eventOrderSetting === "eventdateasc" ) {
+        $metaKey = 'eventdate';
+    } else if ( $eventOrderSetting === "eventdatedesc" ) {
+        $metaKey = 'eventdate';
+        $order = "DESC";
     }
+
+    $args['orderby'] = 'meta_value';
+    $args['meta_key'] = $metaKey;
+    $args['order'] = $order;
+    
 
     if ( isset( $postQuery['max'] ) ) {
         $args['posts_per_page'] = ( int ) $postQuery['max'];
