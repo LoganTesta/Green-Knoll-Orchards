@@ -124,11 +124,13 @@ function se_generate_settings_page() {
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Order Events By:</span>       
                 <input id="simpleEventsOrderBy0" class="simple-events-order-by" name="simple-events-order-by" type="radio" value="eventorder" <?php if ( get_option( 'simple-events-order-by' ) === "eventorder" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsOrderBy0">Post set event order (default)</label>
+                <label class="admin-input-container__label--right" for="simpleEventsOrderBy0">Event order (default)</label>
                 <input id="simpleEventsOrderBy1" class="simple-events-order-by" name="simple-events-order-by" type="radio" value="eventdateasc" <?php if ( get_option( 'simple-events-order-by' ) === "eventdateasc" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsOrderBy1">Event Date (ASC)</label>
                 <input id="simpleEventsOrderBy2" class="simple-events-order-by" name="simple-events-order-by" type="radio" value="eventdatedesc" <?php if ( get_option( 'simple-events-order-by' ) === "eventdatedesc" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsOrderBy2">Event Date (DESC)</label>
+                <input id="simpleEventsOrderBy3" class="simple-events-order-by" name="simple-events-order-by" type="radio" value="eventtitleasc" <?php if ( get_option( 'simple-events-order-by' ) === "eventtitleasc" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="simpleEventsOrderBy3">Event Title (ASC)</label>
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Layout of Event Dates</span>       
@@ -521,17 +523,26 @@ function se_load_events_index( $postQuery ) {
    
     
     $eventOrderSetting = get_option( 'simple-events-order-by' );
+    $orderBy = "meta_value";
     $metaKey = "eventorder";
-    $order = "ASC";
+    $order = "";
 
     if ( $eventOrderSetting === "eventdateasc" ) {
-        $metaKey = 'eventdate';
+        $orderBy = "";
+        $metaKey = "eventdate";
+        $order = "ASC";
     } else if ( $eventOrderSetting === "eventdatedesc" ) {
-        $metaKey = 'eventdate';
+        $orderBy = "";
+        $metaKey = "eventdate";
         $order = "DESC";
+    } else if ( $eventOrderSetting === "eventtitleasc" ) {
+        $orderBy = "title";
+        $metaKey = "";
+        $order = "ASC";
     }
 
-    $args['orderby'] = 'meta_value';
+    
+    $args['orderby'] =  $orderBy;
     $args['meta_key'] = $metaKey;
     $args['order'] = $order;
     
@@ -653,17 +664,26 @@ function se_load_events( $postQuery ) {
 
 
     $eventOrderSetting = get_option( 'simple-events-order-by' );
+    $orderBy = "meta_value";
     $metaKey = "eventorder";
-    $order = "ASC";
+    $order = "";
 
     if ( $eventOrderSetting === "eventdateasc" ) {
-        $metaKey = 'eventdate';
+        $orderBy = "";
+        $metaKey = "eventdate";
+        $order = "ASC";
     } else if ( $eventOrderSetting === "eventdatedesc" ) {
-        $metaKey = 'eventdate';
+        $orderBy = "";
+        $metaKey = "eventdate";
         $order = "DESC";
+    } else if ( $eventOrderSetting === "eventtitleasc" ) {
+        $orderBy = "title";
+        $metaKey = "";
+        $order = "ASC";
     }
 
-    $args['orderby'] = 'meta_value';
+    
+    $args['orderby'] =  $orderBy;
     $args['meta_key'] = $metaKey;
     $args['order'] = $order;
     
