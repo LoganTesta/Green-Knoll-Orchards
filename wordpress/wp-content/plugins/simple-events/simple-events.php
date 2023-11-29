@@ -131,6 +131,8 @@ function se_generate_settings_page() {
                 <label class="admin-input-container__label--right" for="simpleEventsOrderBy2">Event Date (DESC)</label>
                 <input id="simpleEventsOrderBy3" class="simple-events-order-by" name="simple-events-order-by" type="radio" value="eventtitleasc" <?php if ( get_option( 'simple-events-order-by' ) === "eventtitleasc" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsOrderBy3">Event Title (ASC)</label>
+                <input id="simpleEventsOrderBy4" class="simple-events-order-by" name="simple-events-order-by" type="radio" value="eventtitledesc" <?php if ( get_option( 'simple-events-order-by' ) === "eventtitledesc" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="simpleEventsOrderBy4">Event Title (DESC)</label>
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Layout of Event Dates</span>       
@@ -539,6 +541,10 @@ function se_load_events_index( $postQuery ) {
         $orderBy = "title";
         $metaKey = "";
         $order = "ASC";
+    } else if ( $eventOrderSetting === "eventtitledesc" ) {
+        $orderBy = "title";
+        $metaKey = "";
+        $order = "DESC";
     }
 
     
@@ -680,6 +686,10 @@ function se_load_events( $postQuery ) {
         $orderBy = "title";
         $metaKey = "";
         $order = "ASC";
+    } else if ( $eventOrderSetting === "eventtitledesc" ) {
+        $orderBy = "title";
+        $metaKey = "";
+        $order = "DESC";
     }
 
     
