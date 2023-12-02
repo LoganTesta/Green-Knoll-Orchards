@@ -387,6 +387,7 @@ input[type="submit"]:focus { background: var(--color-3); }
 .event__title { font-size: 1.25em; }
 .event__price { font-size: 1.125em;  }
 .event__date { font-size: 1.125em; }
+.event__location { font-size: 1.125em; }
 .event__times { font-size: 1.125em; }
 .event__label { font-size: 1.125em; }
 
