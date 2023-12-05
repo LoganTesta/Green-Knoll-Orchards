@@ -30,7 +30,8 @@ function se_create_event_post_type() {
                 'public' => true,
                 'show_in_menu' => true,
                 'supports' => array( 'title', 'editor', 'thumbnail', 'custom_fields' ),
-                'hierarchical' => false
+                'hierarchical' => false,
+                'taxonomies' => array( 'category' )
             )
     );
 }
