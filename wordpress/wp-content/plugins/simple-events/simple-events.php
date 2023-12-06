@@ -651,6 +651,25 @@ function se_load_events_index( $postQuery ) {
             } else {
                 $eventtext = wp_trim_words( $eventcontent, 60 );
             }
+            
+            
+            $eventCategories = "";
+            $categories = get_the_category( $post->ID );
+            
+            $categoryNumber = 0;
+            $numberOfCategories = count( $categories );
+            if ( ! empty( $categories ) ) {
+                foreach( $categories as $category ) {
+                    if ( $categoryNumber < $numberOfCategories - 1 ) {
+                        $eventCategories .= $category->name . ", ";
+                    } else { 
+                        $eventCategories .= $category->name . " ";
+                    }
+                    $categoryNumber++;
+                }
+            }
+            
+            
             $pluginContainer .= '<div class="event">';
             if ( ! empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
@@ -686,7 +705,8 @@ function se_load_events_index( $postQuery ) {
                     $pluginContainer .= '<div class="event__times">' . $eventtimes . '</div>';
                 }
             }
-            $pluginContainer .= '<div class="event__short-description">' . $eventtext . '</div>';    
+            $pluginContainer .= '<div class="event__short-description">' . $eventtext . '</div>';
+            $pluginContainer .= '<div class="event__categories">' . $eventCategories . '</div>';
             $pluginContainer .= '</div>';
         }
         $count++;

@@ -58,8 +58,9 @@ if ( $eventImageWidthHeight <= 0 ) {
 .events-container.index .event__background { position: relative; border-radius: 0; }
 .events-container.index .event__background-link { display: block; height: 100%; }
 .events-container.index .event__label { position: absolute; top: 15px; right: 10px; padding: 10px 8px; border: 2px solid #333333; background-color: rgba(255, 255, 255, 0.9); font-style: normal; }
-.events-container.index  .event__title { padding-bottom: 4px; }
+.events-container.index .event__title { padding-bottom: 4px; }
 .events-container.index .event__short-description { padding-top: 20px; }
+.events-container.index .event__categories { font-weight: bold; } 
 
 
 /*Clearing variable width columns */
