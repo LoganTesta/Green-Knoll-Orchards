@@ -683,7 +683,7 @@ function se_load_events_index( $postQuery ) {
             $pluginContainer .= '<div class="event__title"><a class="event__name-link" href="' . get_option( 'simple-events-events-page' ) . '">' . $post->post_title . '</a></div>';
             $pluginContainer .= '<div class="event__date">' . $date . '</div> ';
             if ( ! empty( $location ) ) {
-                $pluginContainer .= '<div class="event__location">Location: ' . $location . '</div> ';
+                $pluginContainer .= '<div class="event__location">' . $location . '</div> ';
             }
             if ( se_get_is_multiday( $post ) !== "Multi-day" ) {
                 if ( ! empty( $startTime ) && ! empty( $endTime ) ) {
@@ -806,6 +806,7 @@ function se_load_events( $postQuery ) {
             $eventtimes = se_get_event_eventtimes( $post );
         }
         $label = se_get_event_label( $post );
+        $location = se_get_location ( $post );
         $pluginContainer .= '<div class="event">';
         if ( ! empty( $url_thumb ) ) {
             $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
@@ -813,6 +814,9 @@ function se_load_events( $postQuery ) {
         $pluginContainer .= '<div class="event__title">' . $post->post_title . '</div>';
         if ( ! empty( $date ) ) {
             $pluginContainer .= '<div class="event__date">' . $date . '</div> ';
+        }
+        if ( ! empty( $location ) ) {
+            $pluginContainer .= '<div class="event__location">' . $location . '</div> ';
         }
         if ( se_get_is_multiday( $post ) !== "Multi-day" ) {
             if ( ! empty( $startTime ) && ! empty( $endTime ) ) {
