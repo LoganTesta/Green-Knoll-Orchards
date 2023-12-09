@@ -294,13 +294,21 @@ function se_url_more_event_fields() {
         echo $shortdescription;
     }
     
+    $eventorganizer = sanitize_text_field( get_post_meta( $post->ID, 'eventorganizer', true ) );
+    update_post_meta( $post->ID, 'eventorganizer', $eventorganizer );
+    
     ?>
     <p>
         <label for="eventshortdescription">Short Description (max 200 characters):<br />
             <textarea id="eventshortdescription" name="eventshortdescription" maxlength="200"><?php if ( isset( $eventshortdescription ) ) { echo $eventshortdescription; } ?></textarea>
         </label>
     </p>
-    
+    <p>
+        <label for="eventorganizer">Organizer:<br />
+            <textarea id="eventorganizer" name="eventorganizer" maxlength="200"><?php if ( isset( $eventorganizer ) ) { echo $eventorganizer; } ?></textarea>
+        </label>
+    </p>
+
  <?php 
 }
 
@@ -453,6 +461,21 @@ function se_get_location( $post ) {
 }
 
 
+function se_save_custom_organizer( $post_id ) {
+    global $post;
+    
+    if ( isset($_POST['eventorganizer'] ) ) {
+        update_post_meta( $post->ID, 'eventorganizer', $_POST['eventorganizer'] );
+    }
+}
+add_action( 'save_post', 'se_save_custom_organizer' );
+
+function se_get_organizer( $post ) {
+    $eventorganizer = get_post_meta( $post->ID, 'eventorganizer', true );
+    return $eventorganizer;
+}
+
+
 function se_save_custom_order( $post_id ) {
     global $post;
     
@@ -481,8 +504,6 @@ function se_get_event_shortdescription( $post ) {
     $eventshortdescription = get_post_meta( $post->ID, 'eventshortdescription', true );
     return $eventshortdescription;
 }
-
-
 
 
 /*Adjust admin columns for Events*/
@@ -642,7 +663,8 @@ function se_load_events_index( $postQuery ) {
                 $eventtimes = se_get_event_eventtimes( $post );
             }
             $label = se_get_event_label( $post );
-            $location = se_get_location ( $post );
+            $location = se_get_location( $post );
+            $organizer = se_get_organizer( $post );
             $eventtext = "";
             $eventshortdescription = se_get_event_shortdescription( $post );
             $eventcontent = $post->post_content;
@@ -684,6 +706,9 @@ function se_load_events_index( $postQuery ) {
             $pluginContainer .= '<div class="event__date">' . $date . '</div> ';
             if ( ! empty( $location ) ) {
                 $pluginContainer .= '<div class="event__location">' . $location . '</div> ';
+            }
+            if ( ! empty( $location ) ) {
+                $pluginContainer .= '<div class="event__organizer">' . $organizer . '</div> ';
             }
             if ( se_get_is_multiday( $post ) !== "Multi-day" ) {
                 if ( ! empty( $startTime ) && ! empty( $endTime ) ) {
@@ -806,7 +831,8 @@ function se_load_events( $postQuery ) {
             $eventtimes = se_get_event_eventtimes( $post );
         }
         $label = se_get_event_label( $post );
-        $location = se_get_location ( $post );
+        $location = se_get_location( $post );
+        $organizer = se_get_organizer( $post );
         $pluginContainer .= '<div class="event">';
         if ( ! empty( $url_thumb ) ) {
             $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
@@ -817,6 +843,9 @@ function se_load_events( $postQuery ) {
         }
         if ( ! empty( $location ) ) {
             $pluginContainer .= '<div class="event__location">' . $location . '</div> ';
+        }
+        if ( ! empty( $location ) ) {
+            $pluginContainer .= '<div class="event__organizer">' . $organizer . '</div> ';
         }
         if ( se_get_is_multiday( $post ) !== "Multi-day" ) {
             if ( ! empty( $startTime ) && ! empty( $endTime ) ) {
