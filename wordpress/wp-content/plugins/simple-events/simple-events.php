@@ -858,6 +858,7 @@ function se_load_events( $postQuery ) {
         }
         $label = se_get_event_label( $post );
         $location = se_get_location( $post );
+        $locationaddress = se_get_locationaddress( $post );
         $organizer = se_get_organizer( $post );
         $pluginContainer .= '<div class="event">';
         if ( ! empty( $url_thumb ) ) {
@@ -870,7 +871,10 @@ function se_load_events( $postQuery ) {
         if ( ! empty( $location ) ) {
             $pluginContainer .= '<div class="event__location">' . $location . '</div> ';
         }
-        if ( ! empty( $location ) ) {
+        if ( ! empty( $locationaddress ) ) {
+            $pluginContainer .= '<div class="event__location-address">' . $locationaddress . '</div> ';
+        }
+        if ( ! empty( $organizer ) ) {
             $pluginContainer .= '<div class="event__organizer">' . $organizer . '</div> ';
         }
         if ( se_get_is_multiday( $post ) !== "Multi-day" ) {
