@@ -456,7 +456,7 @@ function se_get_event_label( $post ) {
 function se_save_custom_location( $post_id ) {
     global $post;
     
-    if ( isset($_POST['eventlocation'] ) ) {
+    if ( isset( $_POST['eventlocation'] ) ) {
         update_post_meta( $post->ID, 'eventlocation', $_POST['eventlocation'] );
     }
 }
@@ -486,7 +486,7 @@ function se_get_locationaddress( $post ) {
 function se_save_custom_organizer( $post_id ) {
     global $post;
     
-    if ( isset($_POST['eventorganizer'] ) ) {
+    if ( isset( $_POST['eventorganizer'] ) ) {
         update_post_meta( $post->ID, 'eventorganizer', $_POST['eventorganizer'] );
     }
 }
@@ -501,7 +501,7 @@ function se_get_organizer( $post ) {
 function se_save_custom_order( $post_id ) {
     global $post;
     
-    if ( isset($_POST['eventorder'] ) ) {
+    if ( isset( $_POST['eventorder'] ) ) {
         update_post_meta( $post->ID, 'eventorder', $_POST['eventorder'] );
     }
 }
