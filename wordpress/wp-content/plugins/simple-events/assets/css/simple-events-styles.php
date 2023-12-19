@@ -41,6 +41,7 @@ if ( $eventImageWidthHeight <= 0 ) {
 .event__price { padding-right: 25px; font-size: 18px; font-weight: bold; }
 .event__date { display: inline-block; font-size: 18px; font-weight: bold; }
 .event__location { display: block; font-size: 18px; font-weight: bold; }
+.event__location-address { display: block; font-size: 18px; font-weight: bold; }
 .event__organizer { display: block; font-size: 18px; font-weight: bold; font-style: italic; }
 .event__times {  display: inline-block; font-size: 18px; font-style: italic; }
 .event__starttime { display: inline-block; }

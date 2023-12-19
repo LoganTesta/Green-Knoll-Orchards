@@ -196,6 +196,8 @@ function se_url_custom_metabox() {
     update_post_meta( $post->ID, 'eventlabel', $eventlabel );
     $eventlocation = sanitize_text_field( get_post_meta( $post->ID, 'eventlocation', true ) );
     update_post_meta( $post->ID, 'eventlocation', $eventlocation );
+    $eventlocationaddress = sanitize_text_field( get_post_meta( $post->ID, 'eventlocationaddress', true ) );
+    update_post_meta( $post->ID, 'eventlocationaddress', $eventlocationaddress );
     $eventorder = sanitize_text_field( get_post_meta( $post->ID, 'eventorder', true ) );
     if ( isset( $eventorder ) === false || $eventorder === "" ) {
         $eventorder = "n/a";
@@ -269,6 +271,11 @@ function se_url_custom_metabox() {
         <p>
             <label for="eventlocation">Location:<br />
                 <input id="eventlocation" name="eventlocation" value="<?php if ( isset( $eventlocation ) ) { echo $eventlocation; } ?>" />
+            </label>
+        </p>
+        <p>
+            <label for="eventlocationaddress">Location Address:<br />
+                <input id="eventlocationaddress" name="eventlocationaddress" value="<?php if ( isset( $eventlocationaddress ) ) { echo $eventlocationaddress; } ?>" />
             </label>
         </p>
         <p>
@@ -458,6 +465,21 @@ add_action( 'save_post', 'se_save_custom_location' );
 function se_get_location( $post ) {
     $eventlocation = get_post_meta( $post->ID, 'eventlocation', true );
     return $eventlocation;
+}
+
+
+function se_save_custom_locationaddress( $post_id ) {
+    global $post;
+    
+    if ( isset( $_POST['eventlocationaddress'] ) ) {
+        update_post_meta( $post->ID, 'eventlocationaddress', $_POST['eventlocationaddress'] );
+    }
+}
+add_action( 'save_post', 'se_save_custom_locationaddress' );
+
+function se_get_locationaddress( $post ) {
+    $eventlocationaddress = get_post_meta( $post->ID, 'eventlocationaddress', true );
+    return $eventlocationaddress;
 }
 
 
@@ -664,6 +686,7 @@ function se_load_events_index( $postQuery ) {
             }
             $label = se_get_event_label( $post );
             $location = se_get_location( $post );
+            $locationaddress = se_get_locationaddress( $post );
             $organizer = se_get_organizer( $post );
             $eventtext = "";
             $eventshortdescription = se_get_event_shortdescription( $post );
@@ -707,7 +730,10 @@ function se_load_events_index( $postQuery ) {
             if ( ! empty( $location ) ) {
                 $pluginContainer .= '<div class="event__location">' . $location . '</div> ';
             }
-            if ( ! empty( $location ) ) {
+            if ( ! empty( $locationaddress ) ) {
+                $pluginContainer .= '<div class="event__location-address">' . $locationaddress . '</div> ';
+            }
+            if ( ! empty( $organizer ) ) {
                 $pluginContainer .= '<div class="event__organizer">' . $organizer . '</div> ';
             }
             if ( se_get_is_multiday( $post ) !== "Multi-day" ) {
