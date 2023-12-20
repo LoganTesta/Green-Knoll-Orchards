@@ -757,7 +757,9 @@ function se_load_events_index( $postQuery ) {
                 }
             }
             $pluginContainer .= '<div class="event__short-description">' . $eventtext . '</div>';
-            $pluginContainer .= '<div class="event__categories">' . $eventCategories . '</div>';
+            if ( ! empty( $eventCategories ) ) {
+                $pluginContainer .= '<div class="event__categories">' . $eventCategories . '</div>';
+            }
             $pluginContainer .= '</div>';
         }
         $count++;
@@ -828,7 +830,7 @@ function se_load_events( $postQuery ) {
          $dateLayoutFormat = 'F Y';
     }
     
-
+    
     //Get all events.
     $posts = get_posts( $args );
     $pluginContainer .= '<div class="events-container">';
@@ -860,6 +862,25 @@ function se_load_events( $postQuery ) {
         $location = se_get_location( $post );
         $locationaddress = se_get_locationaddress( $post );
         $organizer = se_get_organizer( $post );
+        
+        
+        $eventCategories = "";
+        $categories = get_the_category( $post->ID );
+
+        $categoryNumber = 0;
+        $numberOfCategories = count( $categories );
+        if ( ! empty( $categories ) ) {
+            foreach( $categories as $category ) {
+                if ( $categoryNumber < $numberOfCategories - 1 ) {
+                    $eventCategories .= $category->name . ", ";
+                } else { 
+                    $eventCategories .= $category->name . " ";
+                }
+                $categoryNumber++;
+            }
+        }
+        
+        
         $pluginContainer .= '<div class="event">';
         if ( ! empty( $url_thumb ) ) {
             $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
@@ -902,6 +923,9 @@ function se_load_events( $postQuery ) {
         }
         if ( ! empty( $label ) ) {
             $pluginContainer .= '<div class="event__label">' . $label . '</div>';
+        }
+        if ( ! empty( $eventCategories ) ) {
+            $pluginContainer .= '<div class="event__categories">' . $eventCategories . '</div>';
         }
         if ( ! empty( $post->post_content ) ) {
             $pluginContainer .= '<p class="event__content">' . $post->post_content . '</p>';

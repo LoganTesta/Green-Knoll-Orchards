@@ -46,7 +46,8 @@ if ( $eventImageWidthHeight <= 0 ) {
 .event__times {  display: inline-block; font-size: 18px; font-style: italic; }
 .event__starttime { display: inline-block; }
 .event__endtime { display: inline-block; }
-.event__label { display: inline-block; font-size: 18px; font-style: italic; }
+.event__label { font-size: 18px; font-style: italic; }
+.event__categories { font-weight: bold; }
 .event__content { padding-top: 20px; }
 
 .event:last-of-type { padding-bottom: 0; }
@@ -62,7 +63,6 @@ if ( $eventImageWidthHeight <= 0 ) {
 .events-container.index .event__label { position: absolute; top: 15px; right: 10px; padding: 10px 8px; border: 2px solid #333333; background-color: rgba(255, 255, 255, 0.9); font-style: normal; }
 .events-container.index .event__title { padding-bottom: 4px; }
 .events-container.index .event__short-description { padding-top: 20px; }
-.events-container.index .event__categories { font-weight: bold; } 
 
 
 /*Clearing variable width columns */
