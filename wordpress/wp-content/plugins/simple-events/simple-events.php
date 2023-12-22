@@ -168,7 +168,7 @@ function se_generate_settings_page() {
 
 function se_add_custom_metabox_info() {
     add_meta_box( 'custom-metabox', __( 'Event Information' ), 'se_url_custom_metabox', 'simple-events', 'side', 'low' );
-    add_meta_box( 'custom-metabox-main', __( 'Event Fields' ), 'se_url_more_event_fields', 'simple-events', 'normal', 'high' );
+    add_meta_box( 'custom-metabox-fields', __( 'Event Fields' ), 'se_url_event_fields', 'simple-events', 'normal', 'high' );
 }
 add_action( 'admin_init', 'se_add_custom_metabox_info' );
 
@@ -289,7 +289,7 @@ function se_url_custom_metabox() {
 
 
 //Admin area HTML and logic 
-function se_url_more_event_fields() {
+function se_url_event_fields() {
     global $post;
     
     /*Gather the input data, sanitize it, and update the database.*/
