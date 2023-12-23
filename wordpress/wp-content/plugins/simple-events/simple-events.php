@@ -154,7 +154,9 @@ function se_generate_settings_page() {
                 <input id="simpleEventsDateLayout5" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="6" <?php if ( get_option( 'simple-events-date-layout' ) === "6" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsDateLayout5">dd Mon. Year</label>
                 <input id="simpleEventsDateLayout6" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="7" <?php if ( get_option( 'simple-events-date-layout' ) === "7" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsDateLayout6">Month Year</label>
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout6">Mon. dd or. Year</label>
+                <input id="simpleEventsDateLayout7" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="8" <?php if ( get_option( 'simple-events-date-layout' ) === "8" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout7">Month Year</label>
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="simple-events-number-to-display">Events to Display (Empty: display all)</label>
@@ -648,9 +650,11 @@ function se_load_events_index( $postQuery ) {
     } else if ( $dateLayout === 6 ) {
          $dateLayoutFormat = 'd M. Y';
     } else if ( $dateLayout === 7 ) {
+         $dateLayoutFormat = 'F jS Y';
+    } else if ( $dateLayout === 8 ) {
          $dateLayoutFormat = 'F Y';
     }
-    
+      
     //Get all events.
     $posts = get_posts( $args );
     $pluginContainer .= '<div class="events-container index">';
@@ -827,9 +831,10 @@ function se_load_events( $postQuery ) {
     } else if ( $dateLayout === 6 ) {
          $dateLayoutFormat = 'd M. Y';
     } else if ( $dateLayout === 7 ) {
+         $dateLayoutFormat = 'F jS Y';
+    } else if ( $dateLayout === 8 ) {
          $dateLayoutFormat = 'F Y';
     }
-    
     
     //Get all events.
     $posts = get_posts( $args );
