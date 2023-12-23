@@ -142,19 +142,19 @@ function se_generate_settings_page() {
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Layout of Event Dates</span>       
                 <input id="simpleEventsDateLayout0" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="1" <?php if ( get_option( 'simple-events-date-layout' ) === "1" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsDateLayout0">mm/dd/year</label>
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout0">mm/dd/year 05/14/2023</label>
                 <input id="simpleEventsDateLayout1" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="2" <?php if ( get_option( 'simple-events-date-layout' ) === "2" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsDateLayout1">dd/mm/year</label>
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout1">dd/mm/year 14/05/2023</label>
                 <input id="simpleEventsDateLayout2" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="3" <?php if ( get_option( 'simple-events-date-layout' ) === "3" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsDateLayout2">Month Day, Year (default)</label>
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout2">Month Day, Year (default) May 14, 2023</label>
                 <input id="simpleEventsDateLayout3" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="4" <?php if ( get_option( 'simple-events-date-layout' ) === "4" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsDateLayout3">Day Month Year</label>
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout3">Day Month Year 14 May 2023</label>
                 <input id="simpleEventsDateLayout4" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="5" <?php if ( get_option( 'simple-events-date-layout' ) === "5" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsDateLayout4">Mon. dd Year</label>
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout4">Mon. dd Year May 14 2023</label>
                 <input id="simpleEventsDateLayout5" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="6" <?php if ( get_option( 'simple-events-date-layout' ) === "6" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsDateLayout5">dd Mon. Year</label>
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout5">dd Mon. Year 14 May 2023</label>
                 <input id="simpleEventsDateLayout6" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="7" <?php if ( get_option( 'simple-events-date-layout' ) === "7" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsDateLayout6">Mon. dd or. Year</label>
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout6">Mon. dd or. Year May 14th 2023</label>
                 <input id="simpleEventsDateLayout7" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="8" <?php if ( get_option( 'simple-events-date-layout' ) === "8" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsDateLayout7">Month Year</label>
             </div>
@@ -646,9 +646,9 @@ function se_load_events_index( $postQuery ) {
     } else if ( $dateLayout === 4 ) {
          $dateLayoutFormat = 'j F Y';
     } else if ( $dateLayout === 5 ) {
-         $dateLayoutFormat = 'M. d Y';
+         $dateLayoutFormat = 'M d Y';
     } else if ( $dateLayout === 6 ) {
-         $dateLayoutFormat = 'd M. Y';
+         $dateLayoutFormat = 'd M Y';
     } else if ( $dateLayout === 7 ) {
          $dateLayoutFormat = 'F jS Y';
     } else if ( $dateLayout === 8 ) {
@@ -827,9 +827,9 @@ function se_load_events( $postQuery ) {
     } else if ( $dateLayout === 4 ) {
          $dateLayoutFormat = 'j F Y';
     } else if ( $dateLayout === 5 ) {
-         $dateLayoutFormat = 'M. d Y';
+         $dateLayoutFormat = 'M d Y';
     } else if ( $dateLayout === 6 ) {
-         $dateLayoutFormat = 'd M. Y';
+         $dateLayoutFormat = 'd M Y';
     } else if ( $dateLayout === 7 ) {
          $dateLayoutFormat = 'F jS Y';
     } else if ( $dateLayout === 8 ) {
