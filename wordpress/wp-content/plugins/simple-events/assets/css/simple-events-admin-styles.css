@@ -19,6 +19,11 @@
 
 .events-settings-form .admin-input-container .simple-events-border-radius { width: 80px; }
 
+.events-settings-form .admin-input-container__label--right { display: inline-block; max-width: 100px; }
+.events-settings-form .admin-input-container__label--right .date-format { display: block; padding-bottom: 4px; }
+.events-settings-form .admin-input-container__label--right .date-example { display: block; }
+.events-settings-form .admin-input-container__label--right.has-additional-date-info .date-example { display: block; padding-bottom: 4px; }
+
 
 /*General Admin styles*/
 .admin-sidebar-section { padding-top: 15px; padding-bottom: 15px; }

@@ -139,24 +139,34 @@ function se_generate_settings_page() {
                 <input id="simpleEventsOrderBy6" class="simple-events-order-by" name="simple-events-order-by" type="radio" value="eventpricedesc" <?php if ( get_option( 'simple-events-order-by' ) === "eventpricedesc" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsOrderBy6">Price (decreasing)</label>
             </div>
-            <div class="admin-input-container">
+            <div class="admin-input-container event-dates-layout">
                 <span class="admin-input-container__label">Layout of Event Dates</span>       
                 <input id="simpleEventsDateLayout0" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="1" <?php if ( get_option( 'simple-events-date-layout' ) === "1" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsDateLayout0">mm/dd/year 05/14/2023</label>
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout0">
+                    <span class="date-format">mm/dd/year</span> <span class="date-example">05/14/2023</span>
+                </label>
                 <input id="simpleEventsDateLayout1" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="2" <?php if ( get_option( 'simple-events-date-layout' ) === "2" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsDateLayout1">dd/mm/year 14/05/2023</label>
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout1">
+                    <span class="date-format">dd/mm/year</span> <span class="date-example">14/05/2023</span>
+                </label>
                 <input id="simpleEventsDateLayout2" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="3" <?php if ( get_option( 'simple-events-date-layout' ) === "3" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsDateLayout2">Month Day, Year (default) May 14, 2023</label>
+                <label class="admin-input-container__label--right has-additional-date-info" for="simpleEventsDateLayout2">
+                    <span class="date-format">Month Day, Year</span> <span class="date-example">May 14, 2023</span> <span class="additional-date-info">(default)</span></label>
                 <input id="simpleEventsDateLayout3" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="4" <?php if ( get_option( 'simple-events-date-layout' ) === "4" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsDateLayout3">Day Month Year 14 May 2023</label>
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout3">
+                    <span class="date-format">Day Month Year</span> <span class="date-example">14 May 2023</span></label>
                 <input id="simpleEventsDateLayout4" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="5" <?php if ( get_option( 'simple-events-date-layout' ) === "5" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsDateLayout4">Mon. dd Year May 14 2023</label>
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout4">
+                    <span class="date-format">Mon. dd Year</span> <span class="date-example">May 14 2023</span></label>
                 <input id="simpleEventsDateLayout5" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="6" <?php if ( get_option( 'simple-events-date-layout' ) === "6" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsDateLayout5">dd Mon. Year 14 May 2023</label>
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout5">
+                    <span class="date-format">dd Mon. Year</span> <span class="date-example">14 May 2023</span></label>
                 <input id="simpleEventsDateLayout6" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="7" <?php if ( get_option( 'simple-events-date-layout' ) === "7" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsDateLayout6">Mon. dd or. Year May 14th 2023</label>
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout6">
+                    <span class="date-format">Mon. dd or. Year</span> <span class="date-example">May 14th 2023</span></label>
                 <input id="simpleEventsDateLayout7" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="8" <?php if ( get_option( 'simple-events-date-layout' ) === "8" ) { echo 'checked="checked"'; } ?> />
-                <label class="admin-input-container__label--right" for="simpleEventsDateLayout7">Month Year</label>
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout7">
+                    <span class="date-format">Month Year</span> <span class="date-example">May 2023</span></label>
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="simple-events-number-to-display">Events to Display (Empty: display all)</label>
