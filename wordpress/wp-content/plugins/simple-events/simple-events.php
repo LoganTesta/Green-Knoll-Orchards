@@ -154,19 +154,28 @@ function se_generate_settings_page() {
                     <span class="date-format">Month Day, Year</span> <span class="date-example">May 14, 2023</span> <span class="additional-date-info">(default)</span></label>
                 <input id="simpleEventsDateLayout3" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="4" <?php if ( get_option( 'simple-events-date-layout' ) === "4" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsDateLayout3">
-                    <span class="date-format">Day Month Year</span> <span class="date-example">14 May 2023</span></label>
+                    <span class="date-format">Day Month Year</span> <span class="date-example">14 May 2023</span>
+                </label>
                 <input id="simpleEventsDateLayout4" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="5" <?php if ( get_option( 'simple-events-date-layout' ) === "5" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsDateLayout4">
-                    <span class="date-format">Mon. dd Year</span> <span class="date-example">May 14 2023</span></label>
+                    <span class="date-format">Mon. dd Year</span> <span class="date-example">May 14 2023</span>
+                </label>
                 <input id="simpleEventsDateLayout5" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="6" <?php if ( get_option( 'simple-events-date-layout' ) === "6" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsDateLayout5">
-                    <span class="date-format">dd Mon. Year</span> <span class="date-example">14 May 2023</span></label>
+                    <span class="date-format">dd Mon. Year</span> <span class="date-example">14 May 2023</span>
+                </label>
                 <input id="simpleEventsDateLayout6" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="7" <?php if ( get_option( 'simple-events-date-layout' ) === "7" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsDateLayout6">
-                    <span class="date-format">Mon. dd or. Year</span> <span class="date-example">May 14th 2023</span></label>
+                    <span class="date-format">Mon. dd or. Year</span> <span class="date-example">May 14th 2023</span>
+                </label>
                 <input id="simpleEventsDateLayout7" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="8" <?php if ( get_option( 'simple-events-date-layout' ) === "8" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="simpleEventsDateLayout7">
-                    <span class="date-format">Month Year</span> <span class="date-example">May 2023</span></label>
+                    <span class="date-format">Mon. dd or. Year</span> <span class="date-example">14th May 2023</span>
+                </label>
+                <input id="simpleEventsDateLayout8" class="simple-events-date-layout" name="simple-events-date-layout" type="radio" value="9" <?php if ( get_option( 'simple-events-date-layout' ) === "9" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="simpleEventsDateLayout8">
+                    <span class="date-format">Month Year</span> <span class="date-example">May 2023</span>
+                </label>
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="simple-events-number-to-display">Events to Display (Empty: display all)</label>
@@ -662,9 +671,11 @@ function se_load_events_index( $postQuery ) {
     } else if ( $dateLayout === 7 ) {
          $dateLayoutFormat = 'F jS Y';
     } else if ( $dateLayout === 8 ) {
+         $dateLayoutFormat = 'jS F Y';
+    } else if ( $dateLayout === 9 ) {
          $dateLayoutFormat = 'F Y';
     }
-      
+    
     //Get all events.
     $posts = get_posts( $args );
     $pluginContainer .= '<div class="events-container index">';
