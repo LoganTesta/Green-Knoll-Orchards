@@ -14,12 +14,12 @@
 .events-settings-form .admin-input-container__label { display: block; padding-bottom: 4px; font-weight: 600; }
 .events-settings-form .admin-input-container__input { display: inline-block; width: 100%; }
 
-.events-settings-form .admin-input-container__label--right { padding-right: 15px; }
+.events-settings-form .admin-input-container__label--right { display: inline-block; max-width: 100px; padding-right: 15px; }
 .events-settings-form .admin-input-container__input.smaller { width: 100px; }
 
 .events-settings-form .admin-input-container .simple-events-border-radius { width: 80px; }
 
-.events-settings-form .admin-input-container__label--right { display: inline-block; max-width: 100px; }
+.events-settings-form .admin-input-container.event-dates-layout .admin-input-container__label--right { min-height: 70px; }
 .events-settings-form .admin-input-container__label--right .date-format { display: block; padding-bottom: 4px; }
 .events-settings-form .admin-input-container__label--right .date-example { display: block; }
 .events-settings-form .admin-input-container__label--right.has-additional-date-info .date-example { display: block; padding-bottom: 4px; }
