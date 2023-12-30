@@ -65,6 +65,12 @@ if ( $eventImageWidthHeight <= 0 ) {
 .events-container.index .event__short-description { padding-top: 20px; }
 
 
+/*For individual product pages*/
+.simple-events-breadcrumbs__breadcrumb { padding-bottom: 20px; }
+.simple-events-breadcrumbs__breadcrumb-link { display: inline-block; }
+
+
+
 /*Clearing variable width columns */
 @media only screen and (max-width: 1199px){   
     .events-container__inner-wrapper > div:nth-child(2n+1){ content: ""; display: block; clear: both; }
