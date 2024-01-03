@@ -359,7 +359,7 @@ input[type="submit"]:focus { background: var(--color-3); }
 .website-products.products-container .product__title-link:hover { background-color: rgba(255, 255, 255, 0.62); color: var(--color-2); text-decoration: underline; transition: all 110ms ease-in-out; }
 
 .product__background { }
-.product__background-link { display: block; height: 100%; transition: all 110ms ease-in-out; }
+.product__background-link { transition: all 110ms ease-in-out; }
 .product__background-link:hover { background-color: var(--color-2-low-moderately-opaque); transition: all 110ms ease-in-out; }
 .product__price { font-weight: 600; color: var(--color-2); }
 .product__label { color: var(--color-3); }
