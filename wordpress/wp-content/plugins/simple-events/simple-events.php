@@ -909,9 +909,13 @@ function se_load_events( $postQuery ) {
         
         $pluginContainer .= '<div class="event">';
         if ( ! empty( $url_thumb ) ) {
-            $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat"></div>';
+            $pluginContainer .= '<div class="event__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
+                    . '<a class="event__background-link" href="' . get_permalink( $post->ID ) . '"><span class="sr-only">' . $post->post_title . ' Link</span></a>'
+                    . '</div>';
         }
-        $pluginContainer .= '<div class="event__title">' . $post->post_title . '</div>';
+        $pluginContainer .= '<div class="event__title">'
+                . '<a class="event__title-link" href="' . get_permalink( $post->ID ) . '">' . $post->post_title . '</a>'
+                . '</div>';
         if ( ! empty( $date ) ) {
             $pluginContainer .= '<div class="event__date">' . $date . '</div> ';
         }
