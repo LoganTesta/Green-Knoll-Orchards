@@ -1,7 +1,9 @@
 
 /*WordPress Admin styling customization for this plugin.*/
-.simple-events__plugin-title { padding-top: 5px; padding-bottom: 15px; font-size: 23px; font-weight: 400; }
-.simple-events__instructions { display: block; padding-bottom: 20px; }
+.simple-events__settings-header { box-sizing: border-box; max-width: 700px; padding: 10px 20px; border: 1px solid #c3c4c7; margin-top: 15px; 
+                                 margin-bottom: 30px; border-radius: 4px; background-color: #ffffff; }
+.simple-events__plugin-title { padding-top: 5px; padding-bottom: 15px; font-size: 23px; font-weight: 600; }
+.simple-events__instructions { display: block; }
 
 .events-settings-form { padding-right: 10px; }
 

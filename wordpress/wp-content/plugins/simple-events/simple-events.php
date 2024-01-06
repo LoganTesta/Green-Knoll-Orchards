@@ -78,12 +78,14 @@ function se_validatetextfield( $input ) {
 
 function se_generate_settings_page() {
     ?>
-    <h1 class="simple-events__plugin-title">Simple Events Settings</h1>
-    <div class="simple-events__instructions">
-        <p>Add simple events to your site, with layout and styling customizations.</p>
-        <p>Use the shortcode [simple-events] where you want to output events.</p>
-        <p>There is also a second shortcode, [simple-events_index], for when when you wish to create events on another page such as the index.  This different layout 
-            includes links to your events page, and in the plugin settings you can set a different header text too. </p>
+    <div class="simple-events__settings-header">
+        <h1 class="simple-events__plugin-title">Simple Events Settings</h1>
+        <div class="simple-events__instructions">
+            <p>Add simple events to your site, with layout and styling customizations.</p>
+            <p>Use the shortcode [simple-events] where you want to output events.</p>
+            <p>There is also a second shortcode, [simple-events_index], for when when you wish to create events on another page such as the index.  This different layout 
+                includes links to your events page, and in the plugin settings you can set a different header text too. </p>
+        </div>
     </div>
     <form class="events-settings-form" method="post" action="options.php">
         <?php settings_fields( 'simple-events-settings-group' ); ?>
