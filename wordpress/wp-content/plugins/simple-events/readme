@@ -3,12 +3,25 @@
 Contributors: Green Knoll Orchards
 Tags: events, information
 Stable tag: 1.0
+Requires at least:
+Tested up to:
+Requires PHP: 
+
 
 Add upcoming and past events to your site on multiple pages. 
 
 
 == Description ==
-Add upcoming and past events to your site on multiple pages. 
+Add upcoming and past events to your site on multiple pages. Set the date and time.  Supports both one day and multi-day events.
+You can also add other fields like event description, price, location, and more, and order events several ways.
+
+
+== Frequently Asked Questions ==
+=Can you change the order in which the events are arranged?=
+Yes.  In addition to the default order, at the time of this writing, the plugin supports ordering events by date, title, and price.
+
+=Does the plugin offer different date formats=
+Yes, the plugin supports several different date formats.
 
 
 == Installation == 
@@ -17,6 +30,12 @@ Add upcoming and past events to your site on multiple pages.
 
 
 == Screenshots ==
+
+== Changelog ==
+
+= 1.0 =
+
+== Upgrade Notice ==
 
 
 
