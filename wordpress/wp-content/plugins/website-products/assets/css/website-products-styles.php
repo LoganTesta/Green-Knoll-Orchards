@@ -10,8 +10,14 @@ $numberOfProductsPerRow = ( int )( get_option( 'website-products-products-per-ro
 if ( $numberOfProductsPerRow <= 0 ) {
     $numberOfProductsPerRow = 2;
 }
-
 $productWidthDesktop = 100/$numberOfProductsPerRow;
+
+
+$numberOfProductsProductsPagePerRow = ( int )( get_option( 'website-products-products-page-products-per-row' ) );
+if ( $numberOfProductsProductsPagePerRow <= 0 ) {
+    $numberOfProductsProductsPagePerRow = 2;
+}
+$productWidthProductsPageDesktop = 100/$numberOfProductsProductsPagePerRow;
 
 
 $productImageWidthHeight = ( int )( get_option( 'website-products-image-width-height' ) );
@@ -64,6 +70,8 @@ if ( $productImageWidthHeight <= 0 ) {
 
 @media only screen and (min-width: 1200px){
     .products-container__inner-wrapper > div:nth-child(<?php echo $numberOfProductsPerRow; ?>n+1){ content: ""; display: block; clear: both; }
+    
+    .products-container.products-page .products-container__inner-wrapper > div:nth-child(<?php echo $numberOfProductsProductsPagePerRow; ?>n+1){ content: ""; display: block; clear: both; }
 }
 
 
@@ -90,6 +98,7 @@ if ( $productImageWidthHeight <= 0 ) {
     .products-container__heading { font-size: 28px; }
 
     .product { width: <?php echo $productWidthDesktop; ?>%; }
+    .products-container.products-page .product { width: <?php echo $productWidthProductsPageDesktop; ?>%; }
     .product__background { height: <?php echo 0.8 * $productImageWidthHeight; ?>px; }
     
     

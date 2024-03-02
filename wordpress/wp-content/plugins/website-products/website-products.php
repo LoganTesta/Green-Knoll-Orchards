@@ -52,6 +52,7 @@ function pw_register_settings() {
     add_option( 'website-products-image-width-height', "240" );
     add_option( 'website-products-border-radius', "5" );
     add_option( 'website-products-products-per-row', "3" );
+    add_option( 'website-products-products-page-products-per-row', "3" );
     add_option( 'website-products-number-to-display', "" );
 
     register_setting( 'website-products-settings-group', 'website-products-leading-text', 'pw_validatetextfield' );
@@ -60,6 +61,7 @@ function pw_register_settings() {
     register_setting( 'website-products-settings-group', 'website-products-image-width-height', 'pw_validatetextfield' );
     register_setting( 'website-products-settings-group', 'website-products-border-radius', 'pw_validatetextfield' );
     register_setting( 'website-products-settings-group', 'website-products-products-per-row', 'pw_validatetextfield' );  
+    register_setting( 'website-products-settings-group', 'website-products-products-page-products-per-row', 'pw_validatetextfield' ); 
     register_setting( 'website-products-settings-group', 'website-products-number-to-display', 'pw_validatetextfield' );  
 }
 add_action( 'admin_init', 'pw_register_settings' );
@@ -114,6 +116,15 @@ function pw_generate_settings_page() {
                 <label class="admin-input-container__label--right" for="websiteProductsProductsPerRow1">3</label>
                 <input id="websiteProductsProductsPerRow2" class="website-products-products-per-row" name="website-products-products-per-row" type="radio" value="4" <?php if ( get_option( 'website-products-products-per-row' ) === "4" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="websiteProductsProductsPerRow2">4</label>
+            </div>
+            <div class="admin-input-container">
+                <span class="admin-input-container__label">Number of Products Per Row Products Page</span>         
+                <input id="websiteProductsProductsPageProductsPerRow0" class="website-products-products-page-products-per-row" name="website-products-products-page-products-per-row" type="radio" value="2" <?php if ( get_option( 'website-products-products-page-products-per-row' ) === "2" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="websiteProductsProductsPageProductsPerRow0">2</label>
+                <input id="websiteProductsProductsPageProductsPerRow1" class="website-products-products-page-products-per-row" name="website-products-products-page-products-per-row" type="radio" value="3" <?php if ( get_option( 'website-products-products-page-products-per-row' ) === "3" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="websiteProductsProductsPageProductsPerRow1">3</label>
+                <input id="websiteProductsProductsPageProductsPerRow2" class="website-products-products-page-products-per-row" name="website-products-products-page-products-per-row" type="radio" value="4" <?php if ( get_option( 'website-products-products-page-products-per-row' ) === "4" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="websiteProductsProductsPageProductsPerRow2">4</label>
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="website-products-number-to-display">Products to Display (Empty: display all)</label>
@@ -356,7 +367,7 @@ function pw_load_products( $postQuery ) {
 
     //Get all products.
     $posts = get_posts( $args );
-    $pluginContainer .= '<div class="website-products products-container">';
+    $pluginContainer .= '<div class="website-products products-container products-page">';
     $pluginContainer .= '<div class="products-container__heading">' . get_option( 'website-products-leading-text' ) . '</div>';
     $pluginContainer .= '<div class="products-container__inner-wrapper">';
     
