@@ -18,6 +18,18 @@ if ( $numberOfEventsPerRow < 2 ) {
 $eventWidthDesktop = 100/$numberOfEventsPerRow;
 
 
+$numberOfEventsEventsPagePerRow = ( int )( get_option( 'simple-events-event-page-events-per-row' ) );
+$eventWidthEventsPageTablet = 50;
+
+if ( $numberOfEventsEventsPagePerRow <= 0 ) {
+    $numberOfEventsEventsPagePerRow = 1;
+}
+if ( $numberOfEventsEventsPagePerRow < 2 ) {
+    $eventWidthEventsPageTablet = 100;
+}
+$eventWidthEventsPageDesktop = 100/$numberOfEventsEventsPagePerRow;
+
+
 $eventImageWidthHeight = ( int )( get_option( 'simple-events-image-width-height' ) );
 if ( $eventImageWidthHeight <= 0 ) {
     $eventImageWidthHeight = 200;
@@ -80,6 +92,7 @@ if ( $eventImageWidthHeight <= 0 ) {
 
 @media only screen and (min-width: 1200px){
     .events-container__inner-wrapper > div:nth-child(<?php echo $numberOfEventsPerRow; ?>n+1){ content: ""; display: block; clear: both; }
+    .events-page .events-container__inner-wrapper > div:nth-child(<?php echo $numberOfEventsEventsPagePerRow; ?>n+1){ content: ""; display: block; clear: both; }
 }
 
 
@@ -94,7 +107,8 @@ if ( $eventImageWidthHeight <= 0 ) {
     .events-container__heading { font-size: 24px; }
     .events-container__inner-wrapper { margin-left: -15px; margin-right: -15px; }
 
-    .event { width: <?php echo $eventWidthTablet; ?>%; }   
+    .event { width: <?php echo $eventWidthTablet; ?>%; } 
+    .events-page .event { width: <?php echo $eventWidthEventsPageTablet; ?>%; } 
     .event__background { height: <?php echo 0.95 * $eventImageWidthHeight; ?>px; }
     
     .event:last-of-type { padding-bottom: 15px; }
@@ -106,6 +120,7 @@ if ( $eventImageWidthHeight <= 0 ) {
     .events-container__heading { font-size: 28px; }
 
     .event { width: <?php echo $eventWidthDesktop; ?>%; padding-bottom: 60px; }
+    .events-page .event { width: <?php echo $eventWidthEventsPageDesktop; ?>%; padding-bottom: 60px; }
     .event__background { height: <?php echo $eventImageWidthHeight; ?>px; }
     .event__title { font-size: 24px; }
     
