@@ -69,7 +69,7 @@ if ( $productImageWidthHeight <= 0 ) {
 }
 
 @media only screen and (min-width: 1200px){
-    .products-container__inner-wrapper > div:nth-child(<?php echo $numberOfProductsPerRow; ?>n+1){ content: ""; display: block; clear: both; }
+    .products-container.index .products-container__inner-wrapper > div:nth-child(<?php echo $numberOfProductsPerRow; ?>n+1){ content: ""; display: block; clear: both; }
     
     .products-container.products-page .products-container__inner-wrapper > div:nth-child(<?php echo $numberOfProductsProductsPagePerRow; ?>n+1){ content: ""; display: block; clear: both; }
 }
