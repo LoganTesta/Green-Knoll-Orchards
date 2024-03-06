@@ -91,8 +91,8 @@ if ( $eventImageWidthHeight <= 0 ) {
 }
 
 @media only screen and (min-width: 1200px){
-    .events-container__inner-wrapper > div:nth-child(<?php echo $numberOfEventsPerRow; ?>n+1){ content: ""; display: block; clear: both; }
-    .events-page .events-container__inner-wrapper > div:nth-child(<?php echo $numberOfEventsEventsPagePerRow; ?>n+1){ content: ""; display: block; clear: both; }
+    .events-container.index .events-container__inner-wrapper > div:nth-child(<?php echo $numberOfEventsPerRow; ?>n+1){ content: ""; display: block; clear: both; }
+    .events-container.events-page .events-container__inner-wrapper > div:nth-child(<?php echo $numberOfEventsEventsPagePerRow; ?>n+1){ content: ""; display: block; clear: both; }
 }
 
 
