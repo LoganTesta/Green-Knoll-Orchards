@@ -381,7 +381,8 @@ function se_get_event_price( $post ) {
 function se_save_custom_eventdate( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['eventdate'] ) ) {
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+    if ( isset( $_POST['eventdate'] ) && $nonceToVerify ) {
         update_post_meta( $post->ID, 'eventdate', $_POST['eventdate'] );
     }
 }
@@ -396,7 +397,8 @@ function se_get_event_date( $post ) {
 function se_save_custom_ismultiday( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['ismultiday'] ) ) {
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+    if ( isset( $_POST['ismultiday'] ) && $nonceToVerify ) {
         update_post_meta( $post->ID, 'ismultiday', $_POST['ismultiday'] );
     }
 }
@@ -411,7 +413,8 @@ function se_get_is_multiday( $post ) {
 function se_save_custom_eventstarttime( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['eventstarttime'] ) ) {
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+    if ( isset( $_POST['eventstarttime'] ) && $nonceToVerify ) {
         update_post_meta( $post->ID, 'eventstarttime', $_POST['eventstarttime'] );
     }
 }
