@@ -429,7 +429,8 @@ function se_get_event_starttime( $post ) {
 function se_save_custom_eventendtime( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['eventendtime'] ) ) {
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+    if ( isset( $_POST['eventendtime'] ) && $nonceToVerify ) {
         if ( $_POST['eventstarttime'] <= $_POST['eventendtime'] ) {
             update_post_meta( $post->ID, 'eventendtime', $_POST['eventendtime'] );
         } else {
@@ -448,7 +449,8 @@ function se_get_event_eventendtime( $post ) {
 function se_save_custom_eventenddate( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['eventenddate'] ) ) {
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+    if ( isset( $_POST['eventenddate'] ) && $nonceToVerify ) {
         if ( $_POST['eventdate'] <= $_POST['eventenddate'] ) {
             update_post_meta( $post->ID, 'eventenddate', $_POST['eventenddate'] );
         } else {
@@ -467,7 +469,8 @@ function se_get_event_eventenddate( $post ) {
 function se_save_custom_eventtimes( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['eventtimes'] ) ) {
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+    if ( isset( $_POST['eventtimes'] ) && $nonceToVerify ) {
         if ( $_POST['eventstarttime'] <= $_POST['eventtimes'] ) {
             update_post_meta( $post->ID, 'eventtimes', $_POST['eventtimes'] );
         } else {
@@ -486,7 +489,8 @@ function se_get_event_eventtimes( $post ) {
 function se_save_custom_event_label( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['eventlabel'] ) ) {
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+    if ( isset( $_POST['eventlabel'] ) && $nonceToVerify ) {
         update_post_meta( $post->ID, 'eventlabel', $_POST['eventlabel'] );
     }
 }
