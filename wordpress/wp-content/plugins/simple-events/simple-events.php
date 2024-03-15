@@ -505,7 +505,8 @@ function se_get_event_label( $post ) {
 function se_save_custom_location( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['eventlocation'] ) ) {
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+    if ( isset( $_POST['eventlocation'] ) && $nonceToVerify ) {
         update_post_meta( $post->ID, 'eventlocation', $_POST['eventlocation'] );
     }
 }
@@ -520,7 +521,8 @@ function se_get_location( $post ) {
 function se_save_custom_locationaddress( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['eventlocationaddress'] ) ) {
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+    if ( isset( $_POST['eventlocationaddress'] ) && $nonceToVerify ) {
         update_post_meta( $post->ID, 'eventlocationaddress', $_POST['eventlocationaddress'] );
     }
 }
@@ -535,7 +537,8 @@ function se_get_locationaddress( $post ) {
 function se_save_custom_organizer( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['eventorganizer'] ) ) {
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+    if ( isset( $_POST['eventorganizer'] ) && $nonceToVerify ) {
         update_post_meta( $post->ID, 'eventorganizer', $_POST['eventorganizer'] );
     }
 }
@@ -550,7 +553,8 @@ function se_get_organizer( $post ) {
 function se_save_custom_order( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['eventorder'] ) ) {
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+    if ( isset( $_POST['eventorder'] ) && ! $nonceToVerify ) {
         update_post_meta( $post->ID, 'eventorder', $_POST['eventorder'] );
     }
 }
@@ -565,7 +569,8 @@ function se_get_order( $post ) {
 function se_save_custom_eventshortdescription( $post_id ) {
     global $post;
     
-    if ( isset( $_POST['eventshortdescription'] ) ) {
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+    if ( isset( $_POST['eventshortdescription'] ) && $nonceToVerify ) {
         update_post_meta( $post->ID, 'eventshortdescription', $_POST['eventshortdescription'] );
     }
 }
