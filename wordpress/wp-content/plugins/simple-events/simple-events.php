@@ -364,10 +364,12 @@ function se_save_custom_eventprice( $post_id ) {
     global $post;
     
     $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
-    if ( isset( $_POST['eventprice'] ) && $nonceToVerify ) {
-        update_post_meta( $post->ID, 'eventprice', $_POST['eventprice'] );
-    } else {
-        wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
+    if ( isset( $_POST['eventprice'] ) ) {
+        if ( $nonceToVerify ) {
+            update_post_meta( $post->ID, 'eventprice', $_POST['eventprice'] );
+        } else {
+            wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
+        }
     }
 }
 add_action( 'save_post', 'se_save_custom_eventprice' );
@@ -382,8 +384,12 @@ function se_save_custom_eventdate( $post_id ) {
     global $post;
     
     $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
-    if ( isset( $_POST['eventdate'] ) && $nonceToVerify ) {
-        update_post_meta( $post->ID, 'eventdate', $_POST['eventdate'] );
+    if ( isset( $_POST['eventdate'] ) ) {
+        if ( $nonceToVerify ) {
+            update_post_meta( $post->ID, 'eventdate', $_POST['eventdate'] );
+        } else {
+            wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
+        }
     }
 }
 add_action( 'save_post', 'se_save_custom_eventdate' );
@@ -398,8 +404,12 @@ function se_save_custom_ismultiday( $post_id ) {
     global $post;
     
     $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
-    if ( isset( $_POST['ismultiday'] ) && $nonceToVerify ) {
-        update_post_meta( $post->ID, 'ismultiday', $_POST['ismultiday'] );
+    if ( isset( $_POST['ismultiday'] ) ) {
+        if ( $nonceToVerify ) {
+            update_post_meta( $post->ID, 'ismultiday', $_POST['ismultiday'] );
+        } else {
+            wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
+        }
     }
 }
 add_action( 'save_post', 'se_save_custom_ismultiday' );
@@ -414,8 +424,12 @@ function se_save_custom_eventstarttime( $post_id ) {
     global $post;
     
     $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
-    if ( isset( $_POST['eventstarttime'] ) && $nonceToVerify ) {
-        update_post_meta( $post->ID, 'eventstarttime', $_POST['eventstarttime'] );
+    if ( isset( $_POST['eventstarttime'] ) ) {
+        if ( $nonceToVerify ) {
+            update_post_meta( $post->ID, 'eventstarttime', $_POST['eventstarttime'] );
+        } else {
+            wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
+        }
     }
 }
 add_action( 'save_post', 'se_save_custom_eventstarttime' );
