@@ -444,11 +444,15 @@ function se_save_custom_eventendtime( $post_id ) {
     global $post;
     
     $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
-    if ( isset( $_POST['eventendtime'] ) && $nonceToVerify ) {
-        if ( $_POST['eventstarttime'] <= $_POST['eventendtime'] ) {
-            update_post_meta( $post->ID, 'eventendtime', $_POST['eventendtime'] );
+    if ( isset( $_POST['eventendtime'] ) ) {
+        if ( $nonceToVerify ) { 
+            if ( $_POST['eventstarttime'] <= $_POST['eventendtime'] ) {
+                update_post_meta( $post->ID, 'eventendtime', $_POST['eventendtime'] );
+            } else {
+                update_post_meta( $post->ID, 'eventendtime', '' );
+            }
         } else {
-            update_post_meta( $post->ID, 'eventendtime', '' );
+            wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
         }
     }
 }
@@ -464,11 +468,15 @@ function se_save_custom_eventenddate( $post_id ) {
     global $post;
     
     $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
-    if ( isset( $_POST['eventenddate'] ) && $nonceToVerify ) {
-        if ( $_POST['eventdate'] <= $_POST['eventenddate'] ) {
-            update_post_meta( $post->ID, 'eventenddate', $_POST['eventenddate'] );
+    if ( isset( $_POST['eventenddate'] ) ) {
+        if ( $nonceToVerify ) { 
+            if ( $_POST['eventdate'] <= $_POST['eventenddate'] ) {
+                update_post_meta( $post->ID, 'eventenddate', $_POST['eventenddate'] );
+            } else {
+                update_post_meta( $post->ID, 'eventenddate', '' );
+            }
         } else {
-            update_post_meta( $post->ID, 'eventenddate', '' );
+            wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
         }
     }
 }
@@ -484,11 +492,15 @@ function se_save_custom_eventtimes( $post_id ) {
     global $post;
     
     $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
-    if ( isset( $_POST['eventtimes'] ) && $nonceToVerify ) {
-        if ( $_POST['eventstarttime'] <= $_POST['eventtimes'] ) {
-            update_post_meta( $post->ID, 'eventtimes', $_POST['eventtimes'] );
+    if ( isset( $_POST['eventtimes'] ) ) {
+        if ( $nonceToVerify ) { 
+            if ( $_POST['eventstarttime'] <= $_POST['eventtimes'] ) {
+                update_post_meta( $post->ID, 'eventtimes', $_POST['eventtimes'] );
+            } else {
+                update_post_meta( $post->ID, 'eventtimes', '' );
+            }
         } else {
-            update_post_meta( $post->ID, 'eventtimes', '' );
+            wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
         }
     }
 }
