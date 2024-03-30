@@ -211,7 +211,7 @@ function gt_url_custom_metabox() {
         </label>
     </p>
     <p>
-        <label for="testimonialrating">Rating<br />
+        <label for="testimonialrating">Rating (0-5)<br />
             <input id="testimonialrating" size="37" name="testimonialrating" type="number" min="0" max="5" value="<?php if ( isset( $testimonialrating ) ) { echo $testimonialrating; } ?>" />
         </label>
     </p>
