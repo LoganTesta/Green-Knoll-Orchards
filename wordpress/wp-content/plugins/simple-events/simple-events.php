@@ -538,7 +538,7 @@ function se_save_custom_location( $post_id ) {
     $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
     if ( isset( $_POST['eventlocation'] ) ) {
         if ( $nonceToVerify ) {
-        update_post_meta( $post->ID, 'eventlocation', $_POST['eventlocation'] );
+            update_post_meta( $post->ID, 'eventlocation', $_POST['eventlocation'] );
         } else {
             wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
         }
@@ -558,7 +558,7 @@ function se_save_custom_locationaddress( $post_id ) {
     $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
     if ( isset( $_POST['eventlocationaddress'] ) ) {
         if ( $nonceToVerify ) {
-        update_post_meta( $post->ID, 'eventlocationaddress', $_POST['eventlocationaddress'] );
+            update_post_meta( $post->ID, 'eventlocationaddress', $_POST['eventlocationaddress'] );
         } else {
             wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
         }
