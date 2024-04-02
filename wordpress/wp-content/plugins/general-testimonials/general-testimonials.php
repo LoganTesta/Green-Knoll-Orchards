@@ -139,6 +139,8 @@ add_action( 'admin_init', 'gt_add_custom_metabox_info' );
 function gt_url_custom_metabox() {
     global $post;
     
+    wp_nonce_field( 'settings_group_nonce_save', 'settings_group_nonce' );
+    
     /*Gather the input data, sanitize it, and update the database.*/
     $testimonialprovidedname = sanitize_text_field( get_post_meta( $post->ID, 'testimonialprovidedname', true ) );
     update_post_meta( $post->ID, 'testimonialprovidedname', $testimonialprovidedname );
@@ -228,8 +230,14 @@ function gt_url_custom_metabox() {
 function gt_save_custom_testimonialprovidedname( $post_id ) {
     global $post;
     
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+    
     if ( isset( $_POST['testimonialprovidedname'] ) ) {
-        update_post_meta( $post->ID, 'testimonialprovidedname', $_POST['testimonialprovidedname'] );
+        if ( $nonceToVerify ) {
+            update_post_meta( $post->ID, 'testimonialprovidedname', $_POST['testimonialprovidedname'] );
+        } else {
+            wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
+        }
     }
 }
 add_action( 'save_post', 'gt_save_custom_testimonialprovidedname' );
@@ -243,8 +251,14 @@ function gt_get_testimonialprovidedname( $post ) {
 function gt_save_custom_testimoniallabel( $post_id ) {
     global $post;
     
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+    
     if ( isset( $_POST['testimoniallabel'] ) ) {
-        update_post_meta( $post->ID, 'testimoniallabel', $_POST['testimoniallabel'] );
+        if ( $nonceToVerify ) {
+            update_post_meta( $post->ID, 'testimoniallabel', $_POST['testimoniallabel'] );
+        }  else {
+            wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
+        }
     }
 }
 add_action( 'save_post', 'gt_save_custom_testimoniallabel' );
