@@ -413,12 +413,16 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
 .metaslider .flexslider .caption-wrap { opacity: 0.8; background: var(--color-2); text-align: center; }
 
 .metaslider.ml-slider .flexslider .flex-direction-nav li a { opacity: 0; width: 30px; height: 30px; border-radius: 40px; text-indent: 0; font-size: 0; line-height: 16px; 
-                                                             text-align: center; text-shadow: none; background-image: none; transition: 0.4s ease-in; }
+                                                             text-align: center; text-shadow: none; background-image: none !important; transition: 0.4s ease-in; }
 .metaslider.ml-slider .flexslider:hover .flex-direction-nav li a { opacity: 1; border: 2px solid rgba(255, 255, 255, 0.9); font-size: 36px;                                                                   
-                                                                   background-color: rgba(46, 89, 101, 0.8); color: rgba(255, 255, 255, 0.8); transition: 0.4s ease-in; }
-.metaslider.ml-slider .flexslider .flex-direction-nav li a:hover { background-color: rgba(46, 89, 101, 0.4); transition: 0.4s ease-in; }
-.metaslider-flex.ms-theme-default .flexslider .flex-prev:focus,
-.metaslider-flex.ms-theme-default .flexslider .flex-next:focus { background: var(--color-2) !important; height: 30px !important; }
+                                                                   background-color: rgba(46, 89, 101, 0.8) !important; color: rgba(255, 255, 255, 0.8); transition: 0.4s ease-in; }
+
+.metaslider.ml-slider .flexslider .flex-direction-nav li a:hover { background-color: rgba(46, 89, 101, 0.4) !important; transition: 0.4s ease-in; }
+
+.metaslider-flex.ms-theme-default .flex-prev:focus
+.metaslider-flex.ms-theme-default .flex-next:focus { background-image: none !important; background-color: rgba(46, 89, 101, 0.4) !important;}
+.metaslider .metaslider-flex.ms-theme-default .flexslider .flex-prev:focus,
+.metaslider .metaslider-flex.ms-theme-default .flexslider .flex-next:focus { background: none !important; height: 30px !important; }
 
 .metaslider .flexslider .flex-control-nav { bottom: -40px; }
 .metaslider .flex-control-paging li a { width: 12px; height: 12px; background: rgba(87, 140, 61, 0.5); }
