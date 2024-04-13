@@ -229,7 +229,6 @@ function gt_url_custom_metabox() {
 //Save user provided field data.
 function gt_save_custom_testimonialprovidedname( $post_id ) {
     global $post;
-    
     $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
     
     if ( isset( $_POST['testimonialprovidedname'] ) ) {
@@ -250,7 +249,6 @@ function gt_get_testimonialprovidedname( $post ) {
 
 function gt_save_custom_testimoniallabel( $post_id ) {
     global $post;
-    
     $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
     
     if ( isset( $_POST['testimoniallabel'] ) ) {
@@ -271,9 +269,14 @@ function gt_get_testimoniallabel( $post ) {
 
 function gt_save_custom_testimoniallocation( $post_id ) {
     global $post;
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
     
     if ( isset( $_POST['testimoniallocation'] ) ) {
-        update_post_meta( $post->ID, 'testimoniallocation', $_POST['testimoniallocation'] );
+        if ( $nonceToVerify ) {
+            update_post_meta( $post->ID, 'testimoniallocation', $_POST['testimoniallocation'] );
+        } else {
+            wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
+        }
     }
 }
 add_action( 'save_post', 'gt_save_custom_testimoniallocation' );
@@ -286,9 +289,14 @@ function gt_get_testimoniallocation( $post ) {
 
 function gt_save_custom_url( $post_id ) {
     global $post;
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
     
     if ( isset( $_POST['testimonialurl'] ) ) {
-        update_post_meta( $post->ID, 'testimonialurl', $_POST['testimonialurl'] );
+        if ( $nonceToVerify ) {
+            update_post_meta( $post->ID, 'testimonialurl', $_POST['testimonialurl'] );
+        } else {
+            wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
+        }
     }
 }
 add_action( 'save_post', 'gt_save_custom_url' );
@@ -301,9 +309,14 @@ function gt_get_url( $post ) {
 
 function gt_save_testimonialdate( $post_id ) {
     global $post;
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
     
     if ( isset( $_POST['testimonialdate'] ) ) {
+        if ( $nonceToVerify ) {
         update_post_meta( $post->ID, 'testimonialdate', $_POST['testimonialdate'] );
+        } else {
+            wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
+        }
     }
 }
 add_action( 'save_post', 'gt_save_testimonialdate' );
