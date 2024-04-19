@@ -53,6 +53,7 @@ function gt_register_settings() {
     add_option( 'general-testimonials-float-image-direction', "left" );
     add_option( 'general-testimonials-testimonials-per-row', "2" );
     add_option( 'general-testimonials-number-to-display', "" );
+    add_option( 'general-testimonials-rating-scale', "0-5" );
 
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-leading-text', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-leading-text-position', 'gt_validatetextfield' );
@@ -61,6 +62,7 @@ function gt_register_settings() {
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-float-image-direction', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-testimonials-per-row', 'gt_validatetextfield' );  
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-number-to-display', 'gt_validatetextfield' );  
+    register_setting( 'general-testimonials-settings-group', 'general-testimonials-rating-scale', 'gt_validatetextfield' );  
 }
 add_action( 'admin_init', 'gt_register_settings' );
 
@@ -123,6 +125,15 @@ function gt_generate_settings_page() {
                 <label class="admin-input-container__label" for="general-testimonials-number-to-display">Testimonials to Display (Empty: display all)</label>
                 <input id="generalTestimonialsNumberToDisplay" class="admin-input-container__input smaller general-testimonials-number-to-display" name="general-testimonials-number-to-display" type="number" value="<?php echo get_option( 'general-testimonials-number-to-display' ); ?>" />
             </div>
+            <div class="admin-input-container">
+                <span class="admin-input-container__label">Testimonials Rating Scale</span>         
+                <input id="generalTestimonialsRatingScale0" class="general-testimonials-rating-scale" name="general-testimonials-rating-scale" type="radio" value="0-4" <?php if ( get_option( 'general-testimonials-rating-scale' ) === "0-4" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="generalTestimonialsRatingScale0">0-4</label>
+                <input id="generalTestimonialsRatingScale1" class="general-testimonials-rating-scale" name="general-testimonials-rating-scale" type="radio" value="0-5" <?php if ( get_option( 'general-testimonials-rating-scale' ) === "0-5" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="generalTestimonialsRatingScale1">0-5</label>
+                <input id="generalTestimonialsRatingScale2" class="general-testimonials-rating-scale" name="general-testimonials-rating-scale" type="radio" value="0-10" <?php if ( get_option( 'general-testimonials-rating-scale' ) === "0-10" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="generalTestimonialsRatingScale2">0-10</label>
+            </div>
             <?php submit_button(); ?>
         </form>
     <?php
@@ -138,6 +149,10 @@ add_action( 'admin_init', 'gt_add_custom_metabox_info' );
 //Admin area HTML and logic 
 function gt_url_custom_metabox() {
     global $post;
+    
+    $ratingScale = get_option( 'general-testimonials-rating-scale' );
+    $maxRating = substr( $ratingScale, 2 );
+    
     
     wp_nonce_field( 'settings_group_nonce_save', 'settings_group_nonce' );
     
@@ -213,8 +228,8 @@ function gt_url_custom_metabox() {
         </label>
     </p>
     <p>
-        <label for="testimonialrating">Rating (0-5)<br />
-            <input id="testimonialrating" size="37" name="testimonialrating" type="number" min="0" max="5" value="<?php if ( isset( $testimonialrating ) ) { echo $testimonialrating; } ?>" />
+        <label for="testimonialrating">Rating (<?php echo $ratingScale; ?>)<br />
+            <input id="testimonialrating" size="37" name="testimonialrating" type="number" min="0" max="<?php echo $maxRating?>" value="<?php if ( isset( $testimonialrating ) ) { echo $testimonialrating; } ?>" />
         </label>
     </p>
     <p>
@@ -476,20 +491,61 @@ function gt_load_testimonials( $postQuery ) {
                 $testimonialDate = date( 'F j, Y', $testimonialDate );
             }
             $testimonialRating = gt_get_testimonialrating( $post );
-            if ( $testimonialRating === "0" ) {
-                $testimonialRating = "&#9734; &#9734; &#9734; &#9734; &#9734;";
-            } else if ( $testimonialRating === "1" ) {
-                $testimonialRating = "&#9733; &#9734; &#9734; &#9734; &#9734;";
-            } else if ( $testimonialRating === "2" ) {
-                $testimonialRating = "&#9733; &#9733; &#9734; &#9734; &#9734;";
-            } else if ( $testimonialRating === "3" ) {
-                $testimonialRating = "&#9733; &#9733; &#9733; &#9734; &#9734;";
-            } else if ( $testimonialRating === "4" ) {
-                $testimonialRating = "&#9733; &#9733; &#9733; &#9733; &#9734;";
-            } else if ( $testimonialRating === "5" ) {
-                $testimonialRating = "&#9733; &#9733; &#9733; &#9733; &#9733;";
-            }
-             
+            $ratingScale = get_option( 'general-testimonials-rating-scale' );
+            
+            if ( $ratingScale === "0-4") {
+                if ( $testimonialRating === "0" ) {
+                    $testimonialRating = "&#9734; &#9734; &#9734; &#9734;";
+                } else if ( $testimonialRating === "1" ) {
+                    $testimonialRating = "&#9733; &#9734; &#9734; &#9734;";
+                } else if ( $testimonialRating === "2" ) {
+                    $testimonialRating = "&#9733; &#9733; &#9734; &#9734;";
+                } else if ( $testimonialRating === "3" ) {
+                    $testimonialRating = "&#9733; &#9733; &#9733; &#9734;";
+                } else if ( $testimonialRating === "4" ) {
+                    $testimonialRating = "&#9733; &#9733; &#9733; &#9733;";
+                } 
+            } else if ( $ratingScale === "0-10") {
+                if ( $testimonialRating === "0" ) {
+                    $testimonialRating = "&#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;";
+                } else if ( $testimonialRating === "1" ) {
+                    $testimonialRating = "&#9733; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;";
+                } else if ( $testimonialRating === "2" ) {
+                    $testimonialRating = "&#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;";
+                } else if ( $testimonialRating === "3" ) {
+                    $testimonialRating = "&#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734; &#9734;";
+                } else if ( $testimonialRating === "4" ) {
+                    $testimonialRating = "&#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734; &#9734;";
+                } else if ( $testimonialRating === "5" ) {
+                    $testimonialRating = "&#9733; &#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734; &#9734;";
+                } else if ( $testimonialRating === "6" ) {
+                    $testimonialRating = "&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734;";
+                } else if ( $testimonialRating === "7" ) {
+                    $testimonialRating = "&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9734; &#9734; &#9734;";
+                } else if ( $testimonialRating === "8" ) {
+                    $testimonialRating = "&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9734; &#9734;";
+                } else if ( $testimonialRating === "9" ) {
+                    $testimonialRating = "&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9734;";
+                } else if ( $testimonialRating === "10" ) {
+                    $testimonialRating = "&#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733; &#9733;";
+                } 
+            } else if ( $ratingScale === "0-5" || $ratingScale === "" ) {
+                if ( $testimonialRating === "0" ) {
+                    $testimonialRating = "&#9734; &#9734; &#9734; &#9734; &#9734;";
+                } else if ( $testimonialRating === "1" ) {
+                    $testimonialRating = "&#9733; &#9734; &#9734; &#9734; &#9734;";
+                } else if ( $testimonialRating === "2" ) {
+                    $testimonialRating = "&#9733; &#9733; &#9734; &#9734; &#9734;";
+                } else if ( $testimonialRating === "3" ) {
+                    $testimonialRating = "&#9733; &#9733; &#9733; &#9734; &#9734;";
+                } else if ( $testimonialRating === "4" ) {
+                    $testimonialRating = "&#9733; &#9733; &#9733; &#9733; &#9734;";
+                } else if ( $testimonialRating === "5" ) {
+                    $testimonialRating = "&#9733; &#9733; &#9733; &#9733; &#9733;";
+                }
+            } 
+            
+            
             $pluginContainer .= '<div class="testimonial">';
             if ( ! empty( $url_thumb ) ) {
                 $pluginContainer .= '<img class="testimonial__image" src="' . $url_thumb . '" alt="' . $url_altText . '" />';
