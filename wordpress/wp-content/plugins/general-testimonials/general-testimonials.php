@@ -74,6 +74,26 @@ function gt_validatetextfield( $input ) {
 
 
 function gt_generate_settings_page() {
+    global $post;
+    
+    $ratingScale = get_option( 'general-testimonials-rating-scale' );
+    $maxRating = substr( $ratingScale, 2 );
+        
+    $args = array(
+        "post_type" => "general-testimonials"
+    );
+    $posts = get_posts( $args );
+    $numberOfPosts = count( $posts );
+   
+    foreach ( $posts as $aPost ) {
+        $testimonialrating =  gt_get_testimonialrating( $aPost );
+        if ( $testimonialrating > $maxRating ) {
+            $testimonialrating = "";
+        }
+        update_post_meta( $aPost->ID, 'testimonialrating', $testimonialrating );
+    }
+    
+    
     ?>
     <h1 class="general-testimonials__plugin-title">General Testimonials Settings</h1>
     <form class="testimonials-settings-form" method="post" action="options.php">
@@ -126,7 +146,7 @@ function gt_generate_settings_page() {
                 <input id="generalTestimonialsNumberToDisplay" class="admin-input-container__input smaller general-testimonials-number-to-display" name="general-testimonials-number-to-display" type="number" value="<?php echo get_option( 'general-testimonials-number-to-display' ); ?>" />
             </div>
             <div class="admin-input-container">
-                <span class="admin-input-container__label">Testimonials Rating Scale</span>         
+                <span class="admin-input-container__label">Testimonials Rating Scale. Note: reducing the max rating will set any ratings above the new max value to empty.</span>         
                 <input id="generalTestimonialsRatingScale0" class="general-testimonials-rating-scale" name="general-testimonials-rating-scale" type="radio" value="0-4" <?php if ( get_option( 'general-testimonials-rating-scale' ) === "0-4" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="generalTestimonialsRatingScale0">0-4</label>
                 <input id="generalTestimonialsRatingScale1" class="general-testimonials-rating-scale" name="general-testimonials-rating-scale" type="radio" value="0-5" <?php if ( get_option( 'general-testimonials-rating-scale' ) === "0-5" ) { echo 'checked="checked"'; } ?> />
@@ -150,11 +170,12 @@ add_action( 'admin_init', 'gt_add_custom_metabox_info' );
 function gt_url_custom_metabox() {
     global $post;
     
+    wp_nonce_field( 'settings_group_nonce_save', 'settings_group_nonce' );
+    
     $ratingScale = get_option( 'general-testimonials-rating-scale' );
     $maxRating = substr( $ratingScale, 2 );
     
-    
-    wp_nonce_field( 'settings_group_nonce_save', 'settings_group_nonce' );
+
     
     /*Gather the input data, sanitize it, and update the database.*/
     $testimonialprovidedname = sanitize_text_field( get_post_meta( $post->ID, 'testimonialprovidedname', true ) );
