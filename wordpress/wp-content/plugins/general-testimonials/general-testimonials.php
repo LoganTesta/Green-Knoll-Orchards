@@ -54,6 +54,7 @@ function gt_register_settings() {
     add_option( 'general-testimonials-testimonials-per-row', "2" );
     add_option( 'general-testimonials-number-to-display', "" );
     add_option( 'general-testimonials-rating-scale', "0-5" );
+    add_option( 'general-testimonials-date-layout', "1" );
 
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-leading-text', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-leading-text-position', 'gt_validatetextfield' );
@@ -63,6 +64,7 @@ function gt_register_settings() {
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-testimonials-per-row', 'gt_validatetextfield' );  
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-number-to-display', 'gt_validatetextfield' );  
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-rating-scale', 'gt_validatetextfield' );  
+    register_setting( 'general-testimonials-settings-group', 'general-testimonials-date-layout', 'gt_validatetextfield' );
 }
 add_action( 'admin_init', 'gt_register_settings' );
 
@@ -153,6 +155,15 @@ function gt_generate_settings_page() {
                 <label class="admin-input-container__label--right" for="generalTestimonialsRatingScale1">0-5</label>
                 <input id="generalTestimonialsRatingScale2" class="general-testimonials-rating-scale" name="general-testimonials-rating-scale" type="radio" value="0-10" <?php if ( get_option( 'general-testimonials-rating-scale' ) === "0-10" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="generalTestimonialsRatingScale2">0-10</label>
+            </div>
+            <div class="admin-input-container">
+                <span class="admin-input-container__label">Date Layout</span>         
+                <input id="generalTestimonialsDateLayout0" class="general-testimonials-date-layout" name="general-testimonials-date-layout" type="radio" value="1" <?php if ( get_option( 'general-testimonials-date-layout' ) === "1" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="generalTestimonialsDateLayout0">May 14, 2023 (default)</label>
+                <input id="generalTestimonialsDateLayout1" class="general-testimonials-date-layout" name="general-testimonials-date-layout" type="radio" value="2" <?php if ( get_option( 'general-testimonials-date-layout' ) === "2" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="generalTestimonialsDateLayout1">May 2023</label>
+                <input id="generalTestimonialsDateLayout2" class="general-testimonials-date-layout" name="general-testimonials-date-layout" type="radio" value="3" <?php if ( get_option( 'general-testimonials-date-layout' ) === "3" ) { echo 'checked="checked"'; } ?> />
+                <label class="admin-input-container__label--right" for="generalTestimonialsDateLayout2">14 May 2023</label>
             </div>
             <?php submit_button(); ?>
         </form>
@@ -486,7 +497,17 @@ function gt_load_testimonials( $postQuery ) {
     if ( isset( $postQuery['max'] ) ) {
         $args['posts_per_page'] = ( int ) $postQuery['max'];
     }
-
+    
+    $dateLayout = intval( get_option( 'general-testimonials-date-layout' ) );
+    $dateLayoutFormat = "";
+    if ( $dateLayout === 1 ) {
+        $dateLayoutFormat = 'F j, Y';
+    } else if ( $dateLayout === 2 ) {
+        $dateLayoutFormat = 'F Y';
+    } else if ( $dateLayout === 3 ) {
+         $dateLayoutFormat = 'd M Y';
+    } 
+    
     //Get all testimonials.
     $posts = get_posts( $args );
     $pluginContainer .= '<div class="testimonials-container">';
@@ -509,7 +530,7 @@ function gt_load_testimonials( $postQuery ) {
             $testimonialLocation = gt_get_testimoniallocation( $post );
             $testimonialDate = strtotime( gt_get_testimonialdate( $post ) );
             if ( ! empty( gt_get_testimonialdate( $post ) ) ) {
-                $testimonialDate = date( 'F j, Y', $testimonialDate );
+                $testimonialDate = date( $dateLayoutFormat, $testimonialDate );
             }
             $testimonialRating = gt_get_testimonialrating( $post );
             $ratingScale = get_option( 'general-testimonials-rating-scale' );
