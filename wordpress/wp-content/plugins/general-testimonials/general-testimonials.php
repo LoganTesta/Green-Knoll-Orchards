@@ -54,6 +54,7 @@ function gt_register_settings() {
     add_option( 'general-testimonials-testimonials-per-row', "2" );
     add_option( 'general-testimonials-number-to-display', "" );
     add_option( 'general-testimonials-rating-scale', "0-5" );
+    add_option( 'general-testimonials-star-color', "" );
     add_option( 'general-testimonials-date-layout', "1" );
 
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-leading-text', 'gt_validatetextfield' );
@@ -64,6 +65,7 @@ function gt_register_settings() {
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-testimonials-per-row', 'gt_validatetextfield' );  
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-number-to-display', 'gt_validatetextfield' );  
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-rating-scale', 'gt_validatetextfield' );  
+    register_setting( 'general-testimonials-settings-group', 'general-testimonials-star-color', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-date-layout', 'gt_validatetextfield' );
 }
 add_action( 'admin_init', 'gt_register_settings' );
@@ -121,7 +123,7 @@ function gt_generate_settings_page() {
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="general-testimonials-border-radius">Image Border Radius</label>
-                <input id="generalTestimonialsImageWidthHeight" class="admin-input-container__input general-testimonials-border-radius" name="general-testimonials-border-radius" type="text" value="<?php echo get_option( 'general-testimonials-border-radius' ); ?>" />
+                <input id="generalTestimonialsImageWidthHeight" class="admin-input-container__input medium-width-input general-testimonials-border-radius" name="general-testimonials-border-radius" type="text" value="<?php echo get_option( 'general-testimonials-border-radius' ); ?>" />
                 <span class="admin-input-container__trailing-text">px</span>
                 <span class="admin-input-container__default-settings-text">Default: 15px</span>
             </div>
@@ -155,6 +157,12 @@ function gt_generate_settings_page() {
                 <label class="admin-input-container__label--right" for="generalTestimonialsRatingScale1">0-5</label>
                 <input id="generalTestimonialsRatingScale2" class="general-testimonials-rating-scale" name="general-testimonials-rating-scale" type="radio" value="0-10" <?php if ( get_option( 'general-testimonials-rating-scale' ) === "0-10" ) { echo 'checked="checked"'; } ?> />
                 <label class="admin-input-container__label--right" for="generalTestimonialsRatingScale2">0-10</label>
+            </div>
+            <div class="admin-input-container">
+                <label class="admin-input-container__label" for="general-testimonials-star-color">Rating Star Hex Color</label>
+                <input id="generalTestimonialStarColor" class="admin-input-container__input medium-width-input general-testimonials-star-color" name="general-testimonials-star-color" type="text" value="<?php echo get_option( 'general-testimonials-star-color' ); ?>" />
+                <span class="admin-input-container__trailing-text">Use a 6 digit hex color</span>
+                <span class="admin-input-container__default-settings-text">Default: #000000 (black)</span>
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Date Layout</span>         

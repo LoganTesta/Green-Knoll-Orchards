@@ -7,6 +7,7 @@ include( plugin_dir_path(__FILE__) . "/general-testimonials.php" );
 
 
 $leadingTextPosition = get_option( 'general-testimonials-leading-text-position' );
+$starColor = get_option( 'general-testimonials-star-color' );
 
 $numberOfTestimonialsPerRow = ( int )( get_option( 'general-testimonials-testimonials-per-row' ) );
 $numberOfTestimonialsPerRowTablet = ( int )( get_option( 'general-testimonials-testimonials-per-row' ) );
@@ -64,7 +65,7 @@ if ( $generalTestimonialsFloatImageDirection === "left" ) {
 .testimonial__label { font-size: 17px; font-style: italic; }
 .testimonial__location { font-size: 17px; }
 .testimonial__date { font-size: 17px; }
-.testimonial__rating { font-size: 17px; } 
+.testimonial__rating { font-size: 17px; <?php if ( ! empty ( $starColor ) ) { echo "color: #" . $starColor; } ?> } 
 
 .testimonials-container__inner-wrapper::after { content: ""; display: block; clear: both; }
 .testimonial__link { font-size: 17px; font-weight: bold; }
