@@ -380,7 +380,7 @@ input[type="submit"]:focus { background: var(--color-3); }
 
 
 /*Simple Events plugin customization.*/
-.events-container__heading { font-size: 1.375em; }
+.events-container__heading { font-size: 1.375em; color: var(--color-2); }
 
 .event { font-size: 1em; }
 
@@ -604,7 +604,7 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
     
     
     /*Simple Events plugin customization.*/
-    .events-container__heading { font-size: 1.5em; color: var(--color-2); }
+    .events-container__heading { font-size: 1.5em; }
     
     /*For individual event pages*/
     .simple-events-event__title { top: 300px; }
