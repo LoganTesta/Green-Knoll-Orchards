@@ -159,9 +159,9 @@ function gt_generate_settings_page() {
                 <label class="admin-input-container__label--right" for="generalTestimonialsRatingScale2">0-10</label>
             </div>
             <div class="admin-input-container">
-                <label class="admin-input-container__label" for="general-testimonials-star-color">Rating Star Hex Color</label>
+                <label class="admin-input-container__label" for="general-testimonials-star-color">Rating Star Color. Use a color name or a hex color with a # sign in front. Examples: gold or #ffd700</label>
                 <input id="generalTestimonialStarColor" class="admin-input-container__input medium-width-input general-testimonials-star-color" name="general-testimonials-star-color" type="text" value="<?php echo get_option( 'general-testimonials-star-color' ); ?>" />
-                <span class="admin-input-container__trailing-text">Use a 6 digit hex color</span>
+                <span class="admin-input-container__trailing-text"></span>
                 <span class="admin-input-container__default-settings-text">Default: #000000 (black)</span>
             </div>
             <div class="admin-input-container">
