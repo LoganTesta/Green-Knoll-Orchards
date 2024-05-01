@@ -146,8 +146,8 @@ function gt_generate_settings_page() {
                 <label class="admin-input-container__label--right" for="generalTestimonialsTestimonialsPerRow3">4</label>
             </div>
             <div class="admin-input-container">
-                <label class="admin-input-container__label" for="general-testimonials-number-to-display">Testimonials to Display (Empty: display all)</label>
-                <input id="generalTestimonialsNumberToDisplay" class="admin-input-container__input smaller general-testimonials-number-to-display" name="general-testimonials-number-to-display" type="number" value="<?php echo get_option( 'general-testimonials-number-to-display' ); ?>" />
+                <label class="admin-input-container__label" for="general-testimonials-number-to-display">Number of Testimonials to Display (Empty: display all)</label>
+                <input id="generalTestimonialsNumberToDisplay" class="admin-input-container__input smaller general-testimonials-number-to-display" name="general-testimonials-number-to-display" type="number" min="0" value="<?php echo get_option( 'general-testimonials-number-to-display' ); ?>" />
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Testimonials Rating Scale. Note: reducing the max rating will set any ratings above the new max value to empty.</span>         
