@@ -146,6 +146,8 @@ add_action( 'admin_init', 'pw_add_custom_metabox_info' );
 function pw_url_custom_metabox() {
     global $post;
     
+    wp_nonce_field( 'settings_group_nonce_save', 'settings_group_nonce' );
+    
     /*Gather the input data, sanitize it, and update the database.*/
     $productprice = sanitize_text_field( get_post_meta( $post->ID, 'productprice', true ) );
     update_post_meta( $post->ID, 'productprice', $productprice );
@@ -199,8 +201,13 @@ function pw_url_custom_metabox() {
 function pw_save_custom_productprice( $post_id ) {
     global $post;
     
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
     if ( isset( $_POST['productprice'] ) ) {
-        update_post_meta( $post->ID, 'productprice', $_POST['productprice'] );
+        if ( $nonceToVerify ) {
+            update_post_meta( $post->ID, 'productprice', $_POST['productprice'] );
+        } else {
+            wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
+        }
     }
 }
 add_action( 'save_post', 'pw_save_custom_productprice' );
@@ -214,8 +221,13 @@ function pw_get_productprice( $post ) {
 function pw_save_custom_productlabel( $post_id ) {
     global $post;
     
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
     if ( isset( $_POST['productlabel'] ) ) {
-        update_post_meta( $post->ID, 'productlabel', $_POST['productlabel'] );
+        if ( $nonceToVerify ) {
+            update_post_meta( $post->ID, 'productlabel', $_POST['productlabel'] );
+        } else {
+            wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
+        }
     }
 }
 add_action( 'save_post', 'pw_save_custom_productlabel' );
@@ -229,8 +241,13 @@ function pw_get_productlabel( $post ) {
 function pw_save_custom_order( $post_id ) {
     global $post;
     
+    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
     if ( isset( $_POST['productorder'] ) ) {
-        update_post_meta( $post->ID, 'productorder', $_POST['productorder'] );
+        if ( $nonceToVerify ) {
+            update_post_meta( $post->ID, 'productorder', $_POST['productorder'] );
+        } else {
+            wp_die( "Invalid wp nonce provided", array( 'response' => 403, ) );
+        }
     }
 }
 add_action( 'save_post', 'pw_save_custom_order' );
