@@ -48,6 +48,7 @@ add_action( 'admin_menu', 'gt_admin_menu' );
 function gt_register_settings() {
     add_option( 'general-testimonials-leading-text', "Customer Testimonials" );
     add_option( 'general-testimonials-leading-text-position', "center" );
+    add_option( 'general-testimonials-title-layout', "left" );
     add_option( 'general-testimonials-content-layout', "left" );
     add_option( 'general-testimonials-image-width-height', "120" );
     add_option( 'general-testimonials-border-radius', "15" );
@@ -60,6 +61,7 @@ function gt_register_settings() {
 
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-leading-text', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-leading-text-position', 'gt_validatetextfield' );
+    register_setting( 'general-testimonials-settings-group', 'general-testimonials-title-layout', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-content-layout', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-image-width-height', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-border-radius', 'gt_validatetextfield' );
@@ -116,6 +118,15 @@ function gt_generate_settings_page() {
                 <input id="generalTestimonialsLeadingTextPosition1" class="general-testimonials-leading-text-position" name="general-testimonials-leading-text-position" type="radio" value="center" <?php if ( get_option( 'general-testimonials-leading-text-position' ) === "center" ) { echo 'checked="checked"'; } ?> />
                 <label class="" for="generalTestimonialsLeadingTextPosition2">right</label>
                 <input id="generalTestimonialsLeadingTextPosition2" class="general-testimonials-leading-text-position" name="general-testimonials-leading-text-position" type="radio" value="right" <?php if ( get_option( 'general-testimonials-leading-text-position' ) === "right" ) { echo 'checked="checked"'; } ?> />        
+            </div>
+            <div class="admin-input-container">
+                <span class="admin-input-container__label">Testimonial Title Position</span>   
+                <label class="" for="generalTestimonialsTitleLayout0">left</label>
+                <input id="generalTestimonialsTitleLayout0" class="general-testimonials-title-layout" name="general-testimonials-title-layout" type="radio" value="left" <?php if ( get_option( 'general-testimonials-title-layout' ) === "left" ) { echo 'checked="checked"'; } ?> />
+                <label class="" for="generalTestimonialsTitleLayout1">center</label>
+                <input id="generalTestimonialsTitleLayout1" class="general-testimonials-title-layout" name="general-testimonials-title-layout" type="radio" value="center" <?php if ( get_option( 'general-testimonials-title-layout' ) === "center" ) { echo 'checked="checked"'; } ?> />
+                <label class="" for="generalTestimonialsTitleLayout2">right</label>
+                <input id="generalTestimonialsTitleLayout2" class="general-testimonials-title-layout" name="general-testimonials-title-layout" type="radio" value="right" <?php if ( get_option( 'general-testimonials-title-layout' ) === "right" ) { echo 'checked="checked"'; } ?> />        
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Content Layout</span>   
@@ -612,40 +623,42 @@ function gt_load_testimonials( $postQuery ) {
                 $pluginContainer .= '<img class="testimonial__image" src="' . $url_thumb . '" alt="' . $url_altText . '" />';
             }
             $pluginContainer .= '<h4 class="testimonial__title">' . $post->post_title . '</h4>';
-            if ( ! empty( $post->post_content ) ) {
-                $pluginContainer .= '<p class="testimonial__content">' . $post->post_content . '</p>';
-            }
-            if ( ! empty( $providedName ) ) {
-                if ( ! empty( $link ) ) {
-                    $pluginContainer .= '<span class="testimonial__provided-name"><a class="testimonial__link" href="' . $link . '" target="__blank">' . $providedName . '</a></span>';
-                } else {
-                    $pluginContainer .= '<span class="testimonial__provided-name">' . $providedName . '</span>';
+            $pluginContainer .= '<div class="testimonial__body">';
+                if ( ! empty( $post->post_content ) ) {
+                    $pluginContainer .= '<p class="testimonial__content">' . $post->post_content . '</p>';
                 }
-            }
-            if ( ! empty( $label ) ) {
                 if ( ! empty( $providedName ) ) {
-                    $pluginContainer .= '<span class="testimonial__comma">,</span><span class="testimonial__label"> ' . $label . '</span>';
-                } else {
-                    $pluginContainer .= '<span class="testimonial__label">' . $label . '</span>';
+                    if ( ! empty( $link ) ) {
+                        $pluginContainer .= '<span class="testimonial__provided-name"><a class="testimonial__link" href="' . $link . '" target="__blank">' . $providedName . '</a></span>';
+                    } else {
+                        $pluginContainer .= '<span class="testimonial__provided-name">' . $providedName . '</span>';
+                    }
                 }
-            }
-            if ( ! empty( $testimonialLocation ) ) { 
-                if ( ! empty( $providedName ) || ! empty( $label ) ) {
-                    $pluginContainer .= '<span class="testimonial__comma">,</span><span class="testimonial__location"> ' . $testimonialLocation . '</span>';
-                } else {
-                    $pluginContainer .= '<span class="testimonial__location">' . $testimonialLocation . '</span>';
+                if ( ! empty( $label ) ) {
+                    if ( ! empty( $providedName ) ) {
+                        $pluginContainer .= '<span class="testimonial__comma">,</span><span class="testimonial__label"> ' . $label . '</span>';
+                    } else {
+                        $pluginContainer .= '<span class="testimonial__label">' . $label . '</span>';
+                    }
                 }
-            }
-            if ( ! empty( $testimonialDate ) ) { 
-                if ( ! empty( $providedName ) || ! empty( $label ) || ! empty( $testimonialLocation ) ) {
-                    $pluginContainer .= '<span class="testimonial__comma">,</span><span class="testimonial__date"> ' . $testimonialDate . '</span>';
-                } else {
-                    $pluginContainer .= '<span class="testimonial__date">' . $testimonialDate . '</span>';
+                if ( ! empty( $testimonialLocation ) ) { 
+                    if ( ! empty( $providedName ) || ! empty( $label ) ) {
+                        $pluginContainer .= '<span class="testimonial__comma">,</span><span class="testimonial__location"> ' . $testimonialLocation . '</span>';
+                    } else {
+                        $pluginContainer .= '<span class="testimonial__location">' . $testimonialLocation . '</span>';
+                    }
                 }
-            }    
-            if ( ! empty( $testimonialRating ) ) {
-                $pluginContainer .= '<div class="testimonial__rating">' . $testimonialRating . '</div>';
-            }
+                if ( ! empty( $testimonialDate ) ) { 
+                    if ( ! empty( $providedName ) || ! empty( $label ) || ! empty( $testimonialLocation ) ) {
+                        $pluginContainer .= '<span class="testimonial__comma">,</span><span class="testimonial__date"> ' . $testimonialDate . '</span>';
+                    } else {
+                        $pluginContainer .= '<span class="testimonial__date">' . $testimonialDate . '</span>';
+                    }
+                }    
+                if ( ! empty( $testimonialRating ) ) {
+                    $pluginContainer .= '<div class="testimonial__rating">' . $testimonialRating . '</div>';
+                }
+            $pluginContainer .= '</div>';
             $pluginContainer .= '</div>';
         }
         $count++;
