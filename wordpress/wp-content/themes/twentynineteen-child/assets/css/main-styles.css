@@ -437,26 +437,26 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
 .testimonials-container__heading { margin-bottom: 16px; font-size: 1.5em; }
 .testimonials-container__inner-wrapper { padding-top: 0; }
 
-.testimonial__title { margin-bottom: 8px; font-weight: 600; letter-spacing: 0.8px; color: var(--color-1); }
-.testimonial__content { padding-bottom: 0; }
-.testimonial__provided-name { color: var(--color-1); }
-.testimonial__comma { color: var(--color-1); }
-.testimonial__label { color: var(--color-3); }
-.testimonial__location { color: var(--color-1); }
-.testimonial__date { color: var(--color-1); }
-.testimonial__rating { color: var(--color-1); }
+.testimonial__title { margin-bottom: 8px; font-size: 1.125em; font-weight: 600; letter-spacing: 0.8px; color: var(--color-1); }
+.testimonial__content { padding-bottom: 0; font-size: 1em; }
+.testimonial__provided-name { font-size: 1em;  color: var(--color-1); }
+.testimonial__comma { font-size: 1em; color: var(--color-1); }
+.testimonial__label { font-size: 1em;  color: var(--color-3); }
+.testimonial__location { font-size: 1em;  color: var(--color-1); }
+.testimonial__date { font-size: 1em; color: var(--color-1); }
+.testimonial__rating { font-size: 1em;  color: var(--color-1); }
 
 
- /*Contact Form 7*/
- .wpcf7 { }
- .wpcf7-textarea { height: 250px; }
- .wpcf7 form.invalid .wpcf7-response-output, 
- .wpcf7 form.unaccepted .wpcf7-response-output { border-color: var(--color-3); }
- 
- 
- /*Ventus*/
- #colophon .widget-column #weather-map-2.widget { margin-left: auto; margin-right: auto; }
- .widget-title { text-align: center; }
+/*Contact Form 7*/
+.wpcf7 { }
+.wpcf7-textarea { height: 250px; }
+.wpcf7 form.invalid .wpcf7-response-output, 
+.wpcf7 form.unaccepted .wpcf7-response-output { border-color: var(--color-3); }
+
+
+/*Ventus*/
+#colophon .widget-column #weather-map-2.widget { margin-left: auto; margin-right: auto; }
+.widget-title { text-align: center; }
  
 
 
@@ -500,13 +500,6 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
     /*General Testimonials plugin customization.*/
     .testimonial { }
     .testimonial:last-of-type { padding-bottom: 0px; }
-    .testimonial__provided-name { font-size: 1em; }
-    .testimonial__comma { font-size: 1em; }
-    .testimonial__label { font-size: 1em; }
-    .testimonial__link { font-size: 1em; }
-    .testimonial__location { font-size: 1em; }
-    .testimonial__date { font-size: 1em; }
-    .testimonial__rating { font-size: 1em; }
     
     
     /*Website Products plugin customization.*/
