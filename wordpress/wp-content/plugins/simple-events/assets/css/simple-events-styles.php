@@ -79,7 +79,7 @@ if ( $eventImageWidthHeight <= 0 ) {
 .events-container.index .event__short-description { padding-top: 20px; }
 
 
-/*For individual product pages*/
+/*For individual event pages*/
 .simple-events-breadcrumbs__breadcrumb { padding-bottom: 20px; }
 .simple-events-breadcrumbs__breadcrumb-link { display: inline-block; }
 

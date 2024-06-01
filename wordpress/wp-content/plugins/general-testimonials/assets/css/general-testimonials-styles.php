@@ -74,6 +74,11 @@ if ( $generalTestimonialsFloatImageDirection === "left" ) {
 .testimonial__link { font-size: 16px; font-weight: bold; }
 
 
+/*For individual event pages*/
+.general-testimonials-breadcrumbs__breadcrumb { padding-bottom: 20px; }
+.general-testimonials-breadcrumbs__breadcrumb-link { display: inline-block; }
+
+
 
 @media only screen and (min-width: 700px){
 

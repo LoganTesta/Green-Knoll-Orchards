@@ -446,6 +446,14 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
 .testimonial__date { font-size: 1em; color: var(--color-1); }
 .testimonial__rating { font-size: 1em;  color: var(--color-1); }
 
+/*For individual testimonial pages*/
+.general-testimonials .general-testimonials-breadcrumbs__breadcrumb-link { font-size: 24px; font-weight: bold; color: var(--color-2); }
+.general-testimonials .general-testimonials-breadcrumbs__breadcrumb-link:hover { color: var(--color-3); }
+.general-testimonials-testimonial { }
+.general-testimonials-testimonial__inner-wrapper { padding: 20px 15px; }
+.general-testimonials-testimonial__title { position: absolute; top: 320px; font-size: 1.375em; color: #ffffff; text-shadow: 1.2px 2.4px var(--color-2); }
+.general-testimonials-testimonial__image { height: 240px; }
+
 
 /*Contact Form 7*/
 .wpcf7 { }
@@ -604,6 +612,14 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
     .simple-events-event__image { height: 350px; }
     
     
+    /*General Testimonials plugin customization.*/
+    .testimonials-container__heading { }
+    
+    /*For individual testimonial pages*/
+    .general-testimonials-testimonial__title { top: 300px; }
+    .general-testimonials-testimonial__image { height: 350px; }
+    
+    
     /*Plugins*/
     /*Meta Slider*/
     div.metaslider .flexslider .slides li { height: auto; }
@@ -714,6 +730,11 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
     /*General Testimonials plugin customization.*/
     .testimonial { padding-bottom: 0px; }
     
+    /*For individual testimonial pages*/
+    .general-testimonials-testimonial__title { top: 320px; }
+    .general-testimonials-testimonial__image { float: right; width: 33.33333%; height: 300px; object-fit: cover; }
+    .general-testimonials-testimonial__image:after { clear: both; }
+    
     
     /*Contact Form 7*/
     .wpcf7 { width: 50%; max-width: 750px; }
@@ -765,6 +786,14 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
     .simple-events-event { max-width: 80%; padding: 0 45px; margin: 0 10%; }
     .simple-events-event__inner-wrapper { padding: 20px 15px; }
     .simple-events-event__image { }
-    .simple-events-event__title { top: 400px; font-size: 1.875em; }     
+    .simple-events-event__title { top: 400px; font-size: 1.875em; }   
+    
+    
+    /*General Testimonials plugin customization.*/
+    /*For individual testimonial pages*/
+    .general-testimonials-testimonial { max-width: 80%; padding: 0 45px; margin: 0 10%; }
+    .general-testimonials-testimonial__inner-wrapper { padding: 20px 15px; }
+    .general-testimonials-testimonial__image { }
+    .general-testimonials-testimonial__title { top: 400px; font-size: 1.875em; }  
     
 }
