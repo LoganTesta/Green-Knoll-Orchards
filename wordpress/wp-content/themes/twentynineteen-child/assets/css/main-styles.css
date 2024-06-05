@@ -439,12 +439,13 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
 
 .testimonial__title { margin-bottom: 8px; font-size: 1.125em; font-weight: 600; letter-spacing: 0.8px; color: var(--color-1); }
 .testimonial__content { padding-bottom: 0; font-size: 1em; }
-.testimonial__provided-name { font-size: 1em;  color: var(--color-1); }
+.testimonial__provided-name { font-size: 1em; color: var(--color-1); }
+.testimonial__link { font-size: 1em; color: var(--color-1); }
 .testimonial__comma { font-size: 1em; color: var(--color-1); }
-.testimonial__label { font-size: 1em;  color: var(--color-3); }
-.testimonial__location { font-size: 1em;  color: var(--color-1); }
+.testimonial__label { font-size: 1em; color: var(--color-3); }
+.testimonial__location { font-size: 1em; color: var(--color-1); }
 .testimonial__date { font-size: 1em; color: var(--color-1); }
-.testimonial__rating { font-size: 1em;  color: var(--color-1); }
+.testimonial__rating { font-size: 1em; color: var(--color-1); }
 
 /*For individual testimonial pages*/
 .general-testimonials .general-testimonials-breadcrumbs__breadcrumb-link { font-size: 24px; font-weight: bold; color: var(--color-2); }
@@ -453,6 +454,11 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
 .general-testimonials-testimonial__inner-wrapper { padding: 20px 15px; }
 .general-testimonials-testimonial__title { position: absolute; top: 320px; font-size: 1.375em; color: #ffffff; text-shadow: 1.2px 2.4px var(--color-2); }
 .general-testimonials-testimonial__image { height: 240px; }
+.general-testimonials-testimonial__provided-name { color: var(--color-1); }
+.general-testimonials-testimonial__url { }
+.general-testimonials-testimonial__label { color: var(--color-3); }
+.general-testimonials-testimonial__location { color: var(--color-1); }
+.general-testimonials-testimonial__date { }
 
 
 /*Contact Form 7*/

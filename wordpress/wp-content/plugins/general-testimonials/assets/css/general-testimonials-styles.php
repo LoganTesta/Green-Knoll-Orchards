@@ -64,6 +64,7 @@ if ( $generalTestimonialsFloatImageDirection === "left" ) {
 .testimonial__body { text-align: <?php echo $contentLayout; ?>; }
 .testimonial__content { font-size: 16px; padding-bottom: 5px; }
 .testimonial__provided-name { font-size: 16px; font-weight: bold; }
+.testimonial__link { font-size: 16px; font-weight: bold; }
 .testimonial__comma { font-size: 16px; }
 .testimonial__label { font-size: 16px; font-style: italic; }
 .testimonial__location { font-size: 16px; }
