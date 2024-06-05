@@ -565,7 +565,7 @@ function gt_load_testimonials( $postQuery ) {
             $testimonialRating = gt_get_testimonialrating( $post );
             $ratingScale = get_option( 'general-testimonials-rating-scale' );
             
-            if ( $ratingScale === "0-4") {
+            if ( $ratingScale === "0-4" ) {
                 if ( $testimonialRating === "0" ) {
                     $testimonialRating = "&#9734; &#9734; &#9734; &#9734;";
                 } else if ( $testimonialRating === "1" ) {
