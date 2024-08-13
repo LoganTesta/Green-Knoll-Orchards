@@ -87,7 +87,7 @@ if ( $ratingScale === "0-4" ) {
         <div class="general-testimonials-testimonial__inner-wrapper">
             <div class="general-testimonials-breadcrumbs">
                 <div class="general-testimonials-breadcrumbs__breadcrumb">
-                    <a class="general-testimonials-breadcrumbs__breadcrumb-link" href="<?php echo esc_url( home_url( '/' ) ); ?>">Back to home page</a>
+                    <a class="general-testimonials-breadcrumbs__breadcrumb-link" href="<?php echo esc_url( home_url( '/' ) ); ?>"><span>&#8592</span> Back to home page</a>
                 </div>
             </div>
             <?php
@@ -131,6 +131,7 @@ if ( $ratingScale === "0-4" ) {
                 if ( ! empty( $testimonialRating ) ) {
                     $testimonialContainer .= '<div class="testimonial__rating">' . $testimonialRating . '</div>';
                 }
+            $testimonialContainer .= '<div class="clear-both"></div>'; 
             $testimonialContainer .= '</div>'; 
             $testimonialContainer .= '</div>'; 
             

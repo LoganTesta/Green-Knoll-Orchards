@@ -658,6 +658,7 @@ function gt_load_testimonials( $postQuery ) {
                 if ( ! empty( $testimonialRating ) ) {
                     $pluginContainer .= '<div class="testimonial__rating">' . $testimonialRating . '</div>';
                 }
+            $pluginContainer .= '<div class="clear-both"></div>'; 
             $pluginContainer .= '</div>';
             $pluginContainer .= '</div>';
         }
