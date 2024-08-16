@@ -20,6 +20,11 @@
 .testimonials-settings-form .admin-input-container .medium-width-input { width: 80px; }
 
 
+/*Sidebar*/
+.postbox-container input:not([type="radio"]),
+.postbox-container textarea { width: 100%; }
+
+
 
 @media only screen and (min-width: 700px){
 
