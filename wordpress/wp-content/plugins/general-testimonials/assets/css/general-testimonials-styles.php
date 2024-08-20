@@ -10,6 +10,7 @@ $leadingTextPosition = get_option( 'general-testimonials-leading-text-position' 
 $titleLayout = get_option( 'general-testimonials-title-layout' );
 $contentLayout = get_option( 'general-testimonials-content-layout' );
 $starColor = get_option( 'general-testimonials-star-color' );
+$starSize = get_option( 'general-testimonials-star-size' );
 
 $numberOfTestimonialsPerRow = ( int )( get_option( 'general-testimonials-testimonials-per-row' ) );
 $numberOfTestimonialsPerRowTablet = ( int )( get_option( 'general-testimonials-testimonials-per-row' ) );
@@ -69,7 +70,7 @@ if ( $generalTestimonialsFloatImageDirection === "left" ) {
 .testimonial__label { font-size: 16px; font-style: italic; }
 .testimonial__location { font-size: 16px; }
 .testimonial__date { font-size: 16px; }
-.testimonial__rating { font-size: 16px; <?php if ( ! empty ( $starColor ) ) { echo "color: " . $starColor; } ?> } 
+.testimonial__rating { <?php if ( ! empty ( $starSize ) ) { echo "font-size: " . $starSize; } ?>px; <?php if ( ! empty ( $starColor ) ) { echo "color: " . $starColor; } ?> } 
 
 .testimonials-container__inner-wrapper::after { content: ""; display: block; clear: both; }
 .testimonial__link { font-size: 16px; font-weight: bold; }

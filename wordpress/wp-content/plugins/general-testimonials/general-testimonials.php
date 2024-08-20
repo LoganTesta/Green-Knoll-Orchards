@@ -57,6 +57,7 @@ function gt_register_settings() {
     add_option( 'general-testimonials-number-to-display', "" );
     add_option( 'general-testimonials-rating-scale', "0-5" );
     add_option( 'general-testimonials-star-color', "" );
+    add_option( 'general-testimonials-star-size', "22" );
     add_option( 'general-testimonials-date-layout', "1" );
 
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-leading-text', 'gt_validatetextfield' );
@@ -70,6 +71,7 @@ function gt_register_settings() {
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-number-to-display', 'gt_validatetextfield' );  
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-rating-scale', 'gt_validatetextfield' );  
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-star-color', 'gt_validatetextfield' );
+    register_setting( 'general-testimonials-settings-group', 'general-testimonials-star-size', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-date-layout', 'gt_validatetextfield' );
 }
 add_action( 'admin_init', 'gt_register_settings' );
@@ -185,6 +187,12 @@ function gt_generate_settings_page() {
                 <input id="generalTestimonialStarColor" class="admin-input-container__input medium-width-input general-testimonials-star-color" name="general-testimonials-star-color" type="text" value="<?php echo get_option( 'general-testimonials-star-color' ); ?>" />
                 <span class="admin-input-container__trailing-text"></span>
                 <span class="admin-input-container__default-settings-text">Default: #000000 (black)</span>
+            </div>
+            <div class="admin-input-container">
+                <label class="admin-input-container__label" for="general-testimonials-star-size">Rating Star font-size (1-100px).</label>
+                <input id="generalTestimonialStarSize" class="admin-input-container__input medium-width-input general-testimonials-star-size" name="general-testimonials-star-size" type="number" min="1" max="100" value="<?php echo get_option( 'general-testimonials-star-size' ); ?>" />
+                <span class="admin-input-container__trailing-text"></span>
+                <span class="admin-input-container__default-settings-text">Default: 22 (px)</span>
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Date Layout</span>         
