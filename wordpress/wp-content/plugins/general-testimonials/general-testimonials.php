@@ -58,6 +58,7 @@ function gt_register_settings() {
     add_option( 'general-testimonials-rating-scale', "0-5" );
     add_option( 'general-testimonials-star-color', "" );
     add_option( 'general-testimonials-star-size', "22" );
+    add_option( 'general-testimonials-show-number-of-words', "" );
     add_option( 'general-testimonials-date-layout', "1" );
 
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-leading-text', 'gt_validatetextfield' );
@@ -72,6 +73,7 @@ function gt_register_settings() {
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-rating-scale', 'gt_validatetextfield' );  
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-star-color', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-star-size', 'gt_validatetextfield' );
+    register_setting( 'general-testimonials-settings-group', 'general-testimonials-show-number-of-words', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-date-layout', 'gt_validatetextfield' );
 }
 add_action( 'admin_init', 'gt_register_settings' );
@@ -193,6 +195,12 @@ function gt_generate_settings_page() {
                 <input id="generalTestimonialStarSize" class="admin-input-container__input medium-width-input general-testimonials-star-size" name="general-testimonials-star-size" type="number" min="1" max="100" value="<?php echo get_option( 'general-testimonials-star-size' ); ?>" />
                 <span class="admin-input-container__trailing-text"></span>
                 <span class="admin-input-container__default-settings-text">Default: 22 (px)</span>
+            </div>
+            <div class="admin-input-container">
+                <label class="admin-input-container__label" for="general-testimonials-show-number-of-words">Show the first ____ words</label>
+                <input id="generalTestimonialShowNumberOfWords" class="admin-input-container__input medium-width-input general-testimonials-show-number-of-words" name="general-testimonials-show-number-of-words" type="number" min="10" max="500" value="<?php echo get_option( 'general-testimonials-show-number-of-words' ); ?>" />
+                <span class="admin-input-container__trailing-text"></span>
+                <span class="admin-input-container__default-settings-text">Default: empty (show all), 10-500 words</span>
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Date Layout</span>         
@@ -562,6 +570,7 @@ function gt_load_testimonials( $postQuery ) {
         if ( $count < $numberToDisplay || $numberToDisplay === -1 ){
             $url_thumb = wp_get_attachment_thumb_url( get_post_thumbnail_id( $post->ID ) );
             $url_altText = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
+            $postContent = $post->post_content;
             $link = gt_get_url( $post );
             $providedName = gt_get_testimonialprovidedname( $post );
             $label = gt_get_testimoniallabel( $post );
@@ -572,7 +581,12 @@ function gt_load_testimonials( $postQuery ) {
             }
             $testimonialRating = gt_get_testimonialrating( $post );
             $ratingScale = get_option( 'general-testimonials-rating-scale' );
-            
+            $showNumberOfWords = get_option( 'general-testimonials-show-number-of-words' );
+            if ( $showNumberOfWords !== "" ) {
+                $postContent = wp_trim_words( $postContent, $showNumberOfWords, '');
+                $postContent = $postContent . " ...";
+            }
+                  
             if ( $ratingScale === "0-4" ) {
                 if ( $testimonialRating === "0" ) {
                     $testimonialRating = "&#9734; &#9734; &#9734; &#9734;";
@@ -632,8 +646,8 @@ function gt_load_testimonials( $postQuery ) {
             }
             $pluginContainer .= '<h4 class="testimonial__title">' . $post->post_title . '</h4>';
             $pluginContainer .= '<div class="testimonial__body">';
-                if ( ! empty( $post->post_content ) ) {
-                    $pluginContainer .= '<p class="testimonial__content">' . $post->post_content . '</p>';
+                if ( ! empty( $postContent ) ) {
+                    $pluginContainer .= '<p class="testimonial__content">' . $postContent . '</p>';
                 }
                 if ( ! empty( $providedName ) ) {
                     if ( ! empty( $link ) ) {
