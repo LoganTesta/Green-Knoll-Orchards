@@ -571,6 +571,15 @@ function gt_load_testimonials( $postQuery ) {
             $url_thumb = wp_get_attachment_thumb_url( get_post_thumbnail_id( $post->ID ) );
             $url_altText = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
             $postContent = $post->post_content;
+            $numberOfWords = str_word_count( $postContent );
+            $showNumberOfWords = get_option( 'general-testimonials-show-number-of-words' );
+            if ( $showNumberOfWords < 10 ) {
+                $showNumberOfWords = 10;
+            } 
+            if ( $showNumberOfWords > 500 ) {
+                $showNumberOfWords = 500;
+            }
+            
             $link = gt_get_url( $post );
             $providedName = gt_get_testimonialprovidedname( $post );
             $label = gt_get_testimoniallabel( $post );
@@ -581,10 +590,11 @@ function gt_load_testimonials( $postQuery ) {
             }
             $testimonialRating = gt_get_testimonialrating( $post );
             $ratingScale = get_option( 'general-testimonials-rating-scale' );
-            $showNumberOfWords = get_option( 'general-testimonials-show-number-of-words' );
             if ( $showNumberOfWords !== "" ) {
                 $postContent = wp_trim_words( $postContent, $showNumberOfWords, '');
-                $postContent = $postContent . " ...";
+                if ( $showNumberOfWords < $numberOfWords ) {
+                    $postContent = $postContent . " ...";
+                }
             }
                   
             if ( $ratingScale === "0-4" ) {
