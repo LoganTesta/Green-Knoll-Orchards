@@ -188,19 +188,19 @@ function gt_generate_settings_page() {
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="general-testimonials-star-color">Rating Star Color. Use a color name or a hex color with a # sign in front. Examples: gold or #ffd700</label>
-                <input id="generalTestimonialStarColor" class="admin-input-container__input medium-width-input general-testimonials-star-color" name="general-testimonials-star-color" type="text" value="<?php echo get_option( 'general-testimonials-star-color' ); ?>" />
+                <input id="generalTestimonialsStarColor" class="admin-input-container__input medium-width-input general-testimonials-star-color" name="general-testimonials-star-color" type="text" value="<?php echo get_option( 'general-testimonials-star-color' ); ?>" />
                 <span class="admin-input-container__trailing-text"></span>
                 <span class="admin-input-container__default-settings-text">Default: #000000 (black)</span>
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="general-testimonials-star-size">Rating Star font-size (1-100px).</label>
-                <input id="generalTestimonialStarSize" class="admin-input-container__input medium-width-input general-testimonials-star-size" name="general-testimonials-star-size" type="number" min="1" max="100" value="<?php echo get_option( 'general-testimonials-star-size' ); ?>" />
+                <input id="generalTestimonialsStarSize" class="admin-input-container__input medium-width-input general-testimonials-star-size" name="general-testimonials-star-size" type="number" min="1" max="100" value="<?php echo get_option( 'general-testimonials-star-size' ); ?>" />
                 <span class="admin-input-container__trailing-text"></span>
                 <span class="admin-input-container__default-settings-text">Default: 22 (px)</span>
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="general-testimonials-show-number-of-words">Show the first ____ words</label>
-                <input id="generalTestimonialShowNumberOfWords" class="admin-input-container__input medium-width-input general-testimonials-show-number-of-words" name="general-testimonials-show-number-of-words" type="number" min="10" max="500" value="<?php echo get_option( 'general-testimonials-show-number-of-words' ); ?>" />
+                <input id="generalTestimonialsShowNumberOfWords" class="admin-input-container__input medium-width-input general-testimonials-show-number-of-words" name="general-testimonials-show-number-of-words" type="number" min="10" max="500" value="<?php echo get_option( 'general-testimonials-show-number-of-words' ); ?>" />
                 <span class="admin-input-container__trailing-text"></span>
                 <span class="admin-input-container__default-settings-text">Default: empty (show all), 10-500 words</span>
             </div>
