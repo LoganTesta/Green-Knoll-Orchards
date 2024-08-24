@@ -605,9 +605,9 @@ function gt_load_testimonials( $postQuery ) {
                 if ( $showNumberOfWords < $numberOfWords ) {
                     
                     if ( $toggleFullTestimonial === "on" ) {
-                        $postContent = $postContent . " <span class='testimonial__ellipsis can-toggle'>...</span>" . $toggleFullTestimonial;
+                        $postContent = $postContent . " <span class='testimonial__ellipsis can-toggle'>...</span>";
                     } else {
-                        $postContent = $postContent . " <span class='testimonial__ellipsis'>...</span>" . $toggleFullTestimonial;
+                        $postContent = $postContent . " <span class='testimonial__ellipsis'>...</span>";
                     }
                 }
             }
