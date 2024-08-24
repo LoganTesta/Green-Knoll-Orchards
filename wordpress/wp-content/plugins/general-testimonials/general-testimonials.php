@@ -59,6 +59,7 @@ function gt_register_settings() {
     add_option( 'general-testimonials-star-color', "" );
     add_option( 'general-testimonials-star-size', "22" );
     add_option( 'general-testimonials-show-number-of-words', "" );
+    add_option( 'general-testimonials-toggle-full-testimonial', "on" );
     add_option( 'general-testimonials-date-layout', "1" );
 
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-leading-text', 'gt_validatetextfield' );
@@ -74,6 +75,7 @@ function gt_register_settings() {
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-star-color', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-star-size', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-show-number-of-words', 'gt_validatetextfield' );
+    register_setting( 'general-testimonials-settings-group', 'general-testimonials-toggle-full-testimonial', 'gt_validatetextfield' );
     register_setting( 'general-testimonials-settings-group', 'general-testimonials-date-layout', 'gt_validatetextfield' );
 }
 add_action( 'admin_init', 'gt_register_settings' );
@@ -201,6 +203,12 @@ function gt_generate_settings_page() {
                 <input id="generalTestimonialShowNumberOfWords" class="admin-input-container__input medium-width-input general-testimonials-show-number-of-words" name="general-testimonials-show-number-of-words" type="number" min="10" max="500" value="<?php echo get_option( 'general-testimonials-show-number-of-words' ); ?>" />
                 <span class="admin-input-container__trailing-text"></span>
                 <span class="admin-input-container__default-settings-text">Default: empty (show all), 10-500 words</span>
+            </div>
+            <div class="admin-input-container">
+                <label class="admin-input-container__label" for="general-testimonials-toggle-full-testimonial">Show the rest of the testimonial on clicking ellipsis?</label>
+                <input id="generalTestimonialsToggleFullTestimonial" class="admin-input-container__input medium-width-input general-testimonials-toggle-full-testimonial" name="general-testimonials-toggle-full-testimonial" type="checkbox" <?php if ( get_option( 'general-testimonials-toggle-full-testimonial' ) === "on") { echo "checked"; } ?> />
+                <span class="admin-input-container__trailing-text"></span>
+                <span class="admin-input-container__default-settings-text">Default: checked</span>
             </div>
             <div class="admin-input-container">
                 <span class="admin-input-container__label">Date Layout</span>         
@@ -573,6 +581,8 @@ function gt_load_testimonials( $postQuery ) {
             $postContent = $post->post_content;
             $numberOfWords = str_word_count( $postContent );
             $showNumberOfWords = get_option( 'general-testimonials-show-number-of-words' );
+            $toggleFullTestimonial = get_option( 'general-testimonials-toggle-full-testimonial' );
+            
             if ( $showNumberOfWords < 10 ) {
                 $showNumberOfWords = 10;
             } 
@@ -593,7 +603,12 @@ function gt_load_testimonials( $postQuery ) {
             if ( $showNumberOfWords !== "" ) {
                 $postContent = wp_trim_words( $postContent, $showNumberOfWords, '');
                 if ( $showNumberOfWords < $numberOfWords ) {
-                    $postContent = $postContent . " ...";
+                    
+                    if ( $toggleFullTestimonial === "on" ) {
+                        $postContent = $postContent . " <span class='testimonial__ellipsis can-toggle'>...</span>" . $toggleFullTestimonial;
+                    } else {
+                        $postContent = $postContent . " <span class='testimonial__ellipsis'>...</span>" . $toggleFullTestimonial;
+                    }
                 }
             }
                   
