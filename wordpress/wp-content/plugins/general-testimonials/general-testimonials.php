@@ -37,6 +37,12 @@ function gt_create_testimonial_post_type() {
 add_action( 'init', 'gt_create_testimonial_post_type' );
 
 
+add_action( 'wp_enqueue_scripts', function() { 
+    wp_register_script( 'general-testimonials-javascript', plugin_dir_url(__FILE__) . '/javascript/general-testimonials-javascript.js' );
+    wp_enqueue_script( 'general-testimonials-javascript', plugin_dir_url(__FILE__) . '/javascript/general-testimonials-javascript.js' );  
+} );
+
+
 /*Set up the settings page*/
 function gt_admin_menu(){
     add_submenu_page( 'edit.php?post_type=general-testimonials', 'Settings', 'Settings', 'manage_options', 'general-testimonials', 'gt_generate_settings_page' );
@@ -602,8 +608,7 @@ function gt_load_testimonials( $postQuery ) {
             $ratingScale = get_option( 'general-testimonials-rating-scale' );
             if ( $showNumberOfWords !== "" ) {
                 $postContent = wp_trim_words( $postContent, $showNumberOfWords, '');
-                if ( $showNumberOfWords < $numberOfWords ) {
-                    
+                if ( $showNumberOfWords < $numberOfWords ) {      
                     if ( $toggleFullTestimonial === "on" ) {
                         $postContent = $postContent . " <span class='testimonial__ellipsis can-toggle'>...</span>";
                     } else {
