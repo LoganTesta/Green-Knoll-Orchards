@@ -584,8 +584,8 @@ function gt_load_testimonials( $postQuery ) {
         if ( $count < $numberToDisplay || $numberToDisplay === -1 ){
             $url_thumb = wp_get_attachment_thumb_url( get_post_thumbnail_id( $post->ID ) );
             $url_altText = get_post_meta( get_post_thumbnail_id( $post->ID ), '_wp_attachment_image_alt', true );
-            $postContent = $post->post_content;
-            $numberOfWords = str_word_count( $postContent );
+            $postContentEntire = $post->post_content;
+            $numberOfWords = str_word_count( $postContentEntire );
             $showNumberOfWords = get_option( 'general-testimonials-show-number-of-words' );
             $toggleFullTestimonial = get_option( 'general-testimonials-toggle-full-testimonial' );
             
@@ -606,21 +606,28 @@ function gt_load_testimonials( $postQuery ) {
             }
             $testimonialRating = gt_get_testimonialrating( $post );
             $ratingScale = get_option( 'general-testimonials-rating-scale' );
-            if ( $showNumberOfWords !== "" ) {
-                $postContent = wp_trim_words( $postContent, $showNumberOfWords, '' );
-                $postContentEntire = $post->post_content;
-                $charactersInPostContent = strlen( $postContent );
-                $laterContent = substr( $postContentEntire, $charactersInPostContent);
-               
-                if ( $showNumberOfWords < $numberOfWords ) {      
-                    if ( $toggleFullTestimonial === "on" ) {
-                        $postContent = $postContent . " <span class='testimonial__ellipsis can-toggle'>...</span>";
-                        $postContent .= "<span class='testimonial__content__hidden-content'>" . $laterContent . "</span>";
-                    } else {
-                        $postContent = $postContent . " <span class='testimonial__ellipsis'>...</span>";
-                    }
+            
+            $postContent = "";
+            
+            if ( $showNumberOfWords !== "" && $showNumberOfWords < $numberOfWords ) {  
+                $startingContent = wp_trim_words( $postContentEntire, $showNumberOfWords, '' );
+ 
+                $postContent .= "<span class='testimonial__content-wrapper hide-some'>";
+                $postContent .= "<span class='testimonial__content-entire'>" . $postContentEntire . "</span>";
+                $postContent .= "<span class='testimonial__content-partial'>" . $startingContent . "</span>";
+                
+                if ( $toggleFullTestimonial === "on" ) {
+                    $postContent .= " <span class='testimonial__ellipsis can-toggle'>...</span>";
+                } else {
+                    $postContent .= " <span class='testimonial__ellipsis'>...</span>";
                 }
+                $postContent .= "</span>";
+            } else {
+                $postContent .= "<span class='testimonial__content-wrapper'>";
+                $postContent .= "<span class='testimonial__content-entire'>" . $postContentEntire . "</span>";
+                $postContent .= "</span>";
             }
+            
                   
             if ( $ratingScale === "0-4" ) {
                 if ( $testimonialRating === "0" ) {

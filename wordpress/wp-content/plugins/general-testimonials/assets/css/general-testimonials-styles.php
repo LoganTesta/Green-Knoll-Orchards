@@ -64,10 +64,15 @@ if ( $generalTestimonialsFloatImageDirection === "left" ) {
 .testimonial__title { padding-bottom: 12px; font-size: 20px; text-align: <?php echo $titleLayout; ?>; }
 .testimonial__body { text-align: <?php echo $contentLayout; ?>; }
 .testimonial__content { font-size: 16px; padding-bottom: 5px; }
-.testimonial__content__hidden-content { display: none; }
-.testimonial__content.show-entire-testimonial { }
+.testimonial__content__entire-content { }
+.testimonial__content-wrapper.hide-some .testimonial__content-entire { display: none; }
 .testimonial__ellipsis { }
+.testimonial__content.open-whole-testimonial .testimonial__ellipsis { display: none; }
 .testimonial__ellipsis.can-toggle:hover { cursor: pointer; }
+.testimonial__content.open-whole-testimonial { }
+.testimonial__content.open-whole-testimonial .testimonial__content-partial { display: none }
+.testimonial__content.open-whole-testimonial .testimonial__ellipsis { display: none; }
+.testimonial__content.open-whole-testimonial .testimonial__content-entire { display: block; }
 .testimonial__provided-name { font-size: 16px; font-weight: bold; }
 .testimonial__link { font-size: 16px; font-weight: bold; }
 .testimonial__comma { font-size: 16px; }
