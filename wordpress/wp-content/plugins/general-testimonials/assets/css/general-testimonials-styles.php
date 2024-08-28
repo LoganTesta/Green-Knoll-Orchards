@@ -64,6 +64,9 @@ if ( $generalTestimonialsFloatImageDirection === "left" ) {
 .testimonial__title { padding-bottom: 12px; font-size: 20px; text-align: <?php echo $titleLayout; ?>; }
 .testimonial__body { text-align: <?php echo $contentLayout; ?>; }
 .testimonial__content { font-size: 16px; padding-bottom: 5px; }
+.testimonial__content__hidden-content { display: none; }
+.testimonial__content.show-entire-testimonial { }
+.testimonial__ellipsis { }
 .testimonial__ellipsis.can-toggle:hover { cursor: pointer; }
 .testimonial__provided-name { font-size: 16px; font-weight: bold; }
 .testimonial__link { font-size: 16px; font-weight: bold; }

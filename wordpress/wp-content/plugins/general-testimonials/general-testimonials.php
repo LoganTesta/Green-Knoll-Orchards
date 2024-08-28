@@ -607,10 +607,15 @@ function gt_load_testimonials( $postQuery ) {
             $testimonialRating = gt_get_testimonialrating( $post );
             $ratingScale = get_option( 'general-testimonials-rating-scale' );
             if ( $showNumberOfWords !== "" ) {
-                $postContent = wp_trim_words( $postContent, $showNumberOfWords, '');
+                $postContent = wp_trim_words( $postContent, $showNumberOfWords, '' );
+                $postContentEntire = $post->post_content;
+                $charactersInPostContent = strlen( $postContent );
+                $laterContent = substr( $postContentEntire, $charactersInPostContent);
+               
                 if ( $showNumberOfWords < $numberOfWords ) {      
                     if ( $toggleFullTestimonial === "on" ) {
                         $postContent = $postContent . " <span class='testimonial__ellipsis can-toggle'>...</span>";
+                        $postContent .= "<span class='testimonial__content__hidden-content'>" . $laterContent . "</span>";
                     } else {
                         $postContent = $postContent . " <span class='testimonial__ellipsis'>...</span>";
                     }

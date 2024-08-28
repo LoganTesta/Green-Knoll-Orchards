@@ -10,7 +10,7 @@ window.addEventListener( "load", function () {
     }
     
     function toggleShowRestOfTestimonial( testimonialWithEllipsisNumber ) {
-        document.getElementsByClassName( "testimonial__content" )[testimonialWithEllipsisNumber].classList.toggle( "showFullTestimonial" );
+        document.getElementsByClassName( "testimonial__content" )[testimonialWithEllipsisNumber].classList.toggle( "show-entire-testimonial" );
     }
 
 }, "false");
