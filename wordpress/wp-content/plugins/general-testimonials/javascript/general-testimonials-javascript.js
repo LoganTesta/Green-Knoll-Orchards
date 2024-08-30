@@ -1,7 +1,6 @@
 
 window.addEventListener( "load", function () {
 
-    let numberOfTestimonialEllipsis = document.getElementsByClassName("testimonial__ellipsis").length;
     let numberOfTestimonials = document.getElementsByClassName("testimonial").length;     
 
     for ( let i = 0; i < numberOfTestimonials; i++ ) {
