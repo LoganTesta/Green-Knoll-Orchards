@@ -1,12 +1,18 @@
 
 window.addEventListener( "load", function () {
-    
-    let numberOfTestimonialEllipsis = document.getElementsByClassName( "testimonial__ellipsis" ).length;
-    for ( let i = 0; i < numberOfTestimonialEllipsis; i++ ) {
-        let currentEllipsis = document.getElementsByClassName( "testimonial__ellipsis" )[i];
-        currentEllipsis.addEventListener( "click", function(){
-            toggleShowRestOfTestimonial(i);
-        }, false);
+
+    let numberOfTestimonialEllipsis = document.getElementsByClassName("testimonial__ellipsis").length;
+    let numberOfTestimonials = document.getElementsByClassName("testimonial").length;     
+
+    for ( let i = 0; i < numberOfTestimonials; i++ ) {
+        let currentTestimonial = document.getElementsByClassName("testimonial")[i];
+        let descendantEllipsesThatCanToggle = currentTestimonial.querySelectorAll(".testimonial__ellipsis.can-toggle");
+        if ( descendantEllipsesThatCanToggle.length > 0 ) {
+            let currentEllipsis = descendantEllipsesThatCanToggle[0];
+            currentEllipsis.addEventListener( "click", function(){
+                toggleShowRestOfTestimonial(i);
+            }, false);
+        }
     }
     
     function toggleShowRestOfTestimonial( testimonialWithEllipsisNumber ) {
