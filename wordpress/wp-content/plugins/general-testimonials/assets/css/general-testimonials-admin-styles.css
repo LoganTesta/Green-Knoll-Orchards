@@ -18,6 +18,7 @@
 .testimonials-settings-form .admin-input-container__input.smaller { width: 100px; }
 
 .testimonials-settings-form .admin-input-container .medium-width-input { width: 80px; }
+.testimonials-settings-form .admin-input-container input[type="checkbox"] { width: auto; }
 
 
 /*Sidebar*/
