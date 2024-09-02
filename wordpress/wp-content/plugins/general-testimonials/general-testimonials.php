@@ -588,8 +588,15 @@ function gt_load_testimonials( $postQuery ) {
             $numberOfWords = str_word_count( $postContentEntire );
             $showNumberOfWords = get_option( 'general-testimonials-show-number-of-words' );
             $toggleFullTestimonial = get_option( 'general-testimonials-toggle-full-testimonial' );
+                    
+            $showFullTestimonial = false;
+            if ( $showNumberOfWords === "" ) {
+                $showNumberOfWords = -1;
+                $showFullTestimonial = true;
+            }
+            $showNumberOfWords = ( int ) $showNumberOfWords;
             
-            if ( $showNumberOfWords < 10 ) {
+            if ( $showFullTestimonial === false && $showNumberOfWords < 10 ) {
                 $showNumberOfWords = 10;
             } 
             if ( $showNumberOfWords > 500 ) {
@@ -609,7 +616,7 @@ function gt_load_testimonials( $postQuery ) {
             
             $postContent = "";
             
-            if ( $showNumberOfWords !== "" && $showNumberOfWords < $numberOfWords ) {  
+            if ( $showFullTestimonial === false && $showNumberOfWords < $numberOfWords ) {  
                 $startingContent = wp_trim_words( $postContentEntire, $showNumberOfWords, '' );
  
                 $postContent .= "<span class='testimonial__content-wrapper hide-some'>";
