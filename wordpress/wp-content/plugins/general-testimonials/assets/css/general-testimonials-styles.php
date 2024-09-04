@@ -56,6 +56,8 @@ if ( $generalTestimonialsFloatImageDirection === "left" ) {
 
 ?>
 
+body {}
+
 .testimonials-container__heading { padding-bottom: 0; font-size: 24px; text-align: <?php echo $leadingTextPosition; ?>; }
 .testimonials-container__inner-wrapper { padding-top: 30px; }
 
