@@ -6,7 +6,6 @@ require( '../../../../../wp-load.php' );
 include( plugin_dir_path(__FILE__) . "/general-testimonials.php" );
 
 
-$titleLayout = get_option( 'general-testimonials-title-layout' );
 $contentLayout = get_option( 'general-testimonials-content-layout' );
 $starColor = get_option( 'general-testimonials-star-color' );
 $starSize = get_option( 'general-testimonials-star-size' );
@@ -64,7 +63,10 @@ if ( $generalTestimonialsFloatImageDirection === "left" ) {
 
 .testimonial { padding-bottom: 50px; }
 .testimonial__image { display: block; width: <?php echo $testimonialImageWidthHeight; ?>px; height: <?php echo $testimonialImageWidthHeight; ?>px; margin-bottom: 8px; margin-left: auto; margin-right: auto; border-radius: <?php echo get_option( 'general-testimonials-border-radius' ); ?>px; }
-.testimonial__title { padding-bottom: 12px; font-size: 20px; text-align: <?php echo $titleLayout; ?>; }
+.testimonial__title { padding-bottom: 12px; font-size: 20px; }
+.testimonial__title.left { text-align: left; }
+.testimonial__title.center { text-align: center; }
+.testimonial__title.right { text-align: right; }
 .testimonial__body { text-align: <?php echo $contentLayout; ?>; }
 .testimonial__content { font-size: 16px; padding-bottom: 5px; }
 .testimonial__content__entire-content { }
