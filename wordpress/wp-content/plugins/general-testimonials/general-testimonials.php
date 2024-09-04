@@ -558,6 +558,10 @@ function gt_load_testimonials( $postQuery ) {
         $args['posts_per_page'] = ( int ) $postQuery['max'];
     }
     
+    
+    $leadingTextPosition = get_option( 'general-testimonials-leading-text-position' );
+    
+
     $dateLayout = intval( get_option( 'general-testimonials-date-layout' ) );
     $dateLayoutFormat = "";
     if ( $dateLayout === 1 ) {
@@ -571,7 +575,7 @@ function gt_load_testimonials( $postQuery ) {
     //Get all testimonials.
     $posts = get_posts( $args );
     $pluginContainer .= '<div class="testimonials-container">';
-    $pluginContainer .= '<h3 class="testimonials-container__heading">' . get_option( 'general-testimonials-leading-text' ) . '</h3>';
+    $pluginContainer .= '<h3 class="testimonials-container__heading ' . $leadingTextPosition . '">' . get_option( 'general-testimonials-leading-text' ) . '</h3>';
     $pluginContainer .= '<div class="testimonials-container__inner-wrapper">';
     
     $numberToDisplay = get_option( 'general-testimonials-number-to-display' );

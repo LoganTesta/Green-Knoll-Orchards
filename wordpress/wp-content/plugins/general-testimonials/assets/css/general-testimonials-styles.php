@@ -6,7 +6,6 @@ require( '../../../../../wp-load.php' );
 include( plugin_dir_path(__FILE__) . "/general-testimonials.php" );
 
 
-$leadingTextPosition = get_option( 'general-testimonials-leading-text-position' );
 $titleLayout = get_option( 'general-testimonials-title-layout' );
 $contentLayout = get_option( 'general-testimonials-content-layout' );
 $starColor = get_option( 'general-testimonials-star-color' );
@@ -56,9 +55,11 @@ if ( $generalTestimonialsFloatImageDirection === "left" ) {
 
 ?>
 
-body {}
+.testimonials-container__heading { padding-bottom: 0; font-size: 24px; }
+.testimonials-container__heading.left { text-align: left; }
+.testimonials-container__heading.center { text-align: center; }
+.testimonials-container__heading.right { text-align: right; }
 
-.testimonials-container__heading { padding-bottom: 0; font-size: 24px; text-align: <?php echo $leadingTextPosition; ?>; }
 .testimonials-container__inner-wrapper { padding-top: 30px; }
 
 .testimonial { padding-bottom: 50px; }
