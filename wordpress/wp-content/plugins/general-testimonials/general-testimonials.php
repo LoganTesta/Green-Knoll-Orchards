@@ -561,6 +561,7 @@ function gt_load_testimonials( $postQuery ) {
     
     $leadingTextPosition = get_option( 'general-testimonials-leading-text-position' );
     $titleLayout = get_option( 'general-testimonials-title-layout' );
+    $contentLayout = get_option( 'general-testimonials-content-layout' );
     
 
     $dateLayout = intval( get_option( 'general-testimonials-date-layout' ) );
@@ -699,7 +700,7 @@ function gt_load_testimonials( $postQuery ) {
                 $pluginContainer .= '<img class="testimonial__image" src="' . $url_thumb . '" alt="' . $url_altText . '" />';
             }
             $pluginContainer .= '<h4 class="testimonial__title ' . $titleLayout . '">' . $post->post_title . '</h4>';
-            $pluginContainer .= '<div class="testimonial__body">';
+            $pluginContainer .= '<div class="testimonial__body ' . $contentLayout . '">';
                 if ( ! empty( $postContent ) ) {
                     $pluginContainer .= '<p class="testimonial__content">' . $postContent . '</p>';
                 }
