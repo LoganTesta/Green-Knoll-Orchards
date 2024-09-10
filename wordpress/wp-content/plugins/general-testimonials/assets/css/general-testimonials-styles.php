@@ -47,7 +47,7 @@ if ( $generalTestimonialsFloatImageDirection === "left" ) {
     $generalTestimonialsImageTabletPlusMarginLeft = "0";
     $generalTestimonialsImageTabletPlusMarginRight = "15px";    
 } elseif ( $generalTestimonialsFloatImageDirection === "right" ) {
-    $generalTestimonialsImageTabletPlusMarginLeft = "5px";
+    $generalTestimonialsImageTabletPlusMarginLeft = "15px";
     $generalTestimonialsImageTabletPlusMarginRight = "0";    
 }
 
