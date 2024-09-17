@@ -27,11 +27,11 @@ $testimonialWidth = 100/$numberOfTestimonialsPerRow;
 
 $testimonialImageWidthHeight = ( int ) ( get_option( 'general-testimonials-image-width-height' ) );
 if ( $testimonialImageWidthHeight <= 0 ) {
-    $testimonialImageWidthHeight = 150;
-} elseif ( 0 < $testimonialImageWidthHeight && $testimonialImageWidthHeight < 60 ) {
-    $testimonialImageWidthHeight = 60;
-} elseif ( $testimonialImageWidthHeight > 150 ) {
-    $testimonialImageWidthHeight = 150;
+    $testimonialImageWidthHeight = 200;
+} elseif ( 0 < $testimonialImageWidthHeight && $testimonialImageWidthHeight < 40 ) {
+    $testimonialImageWidthHeight = 40;
+} elseif ( $testimonialImageWidthHeight > 200 ) {
+    $testimonialImageWidthHeight = 200;
 }
 
 
@@ -61,7 +61,7 @@ if ( $generalTestimonialsFloatImageDirection === "left" ) {
 .testimonials-container__inner-wrapper { padding-top: 30px; }
 
 .testimonial { padding-bottom: 50px; }
-.testimonial__image { display: block; width: <?php echo $testimonialImageWidthHeight; ?>px; height: <?php echo $testimonialImageWidthHeight; ?>px; margin-bottom: 8px; margin-left: auto; margin-right: auto; border-radius: <?php echo get_option( 'general-testimonials-border-radius' ); ?>px; }
+.testimonial__image { display: block; width: <?php echo $testimonialImageWidthHeight; ?>px; height: <?php echo $testimonialImageWidthHeight; ?>px; margin-bottom: 8px; margin-left: auto; margin-right: auto; border-radius: <?php echo get_option( 'general-testimonials-border-radius' ); ?>px; object-fit: cover; }
 .testimonial__title { padding-bottom: 12px; font-size: 20px; }
 .testimonial__title.left { text-align: left; }
 .testimonial__title.center { text-align: center; }

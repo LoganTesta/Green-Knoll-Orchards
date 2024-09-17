@@ -150,8 +150,8 @@ function gt_generate_settings_page() {
                 <input id="generalTestimonialsContentLayout2" class="general-testimonials-content-layout" name="general-testimonials-content-layout" type="radio" value="right" <?php if ( get_option( 'general-testimonials-content-layout' ) === "right" ) { echo 'checked="checked"'; } ?> />        
             </div>
             <div class="admin-input-container">
-                <label class="admin-input-container__label" for="general-testimonials-image-width-height">Image Width, Height (Max, 60-150px)</label>
-                <input id="generalTestimonialsNumberToDisplay" class="admin-input-container__input smaller general-testimonials-image-width-height" name="general-testimonials-image-width-height" type="number" value="<?php echo get_option( 'general-testimonials-image-width-height' ); ?>" min="60" max="150" />
+                <label class="admin-input-container__label" for="general-testimonials-image-width-height">Image Width, Height (Max, 40-200px)</label>
+                <input id="generalTestimonialsNumberToDisplay" class="admin-input-container__input smaller general-testimonials-image-width-height" name="general-testimonials-image-width-height" type="number" value="<?php echo get_option( 'general-testimonials-image-width-height' ); ?>" min="40" max="200" />
                 <span class="admin-input-container__trailing-text">px</span>
                 <span class="admin-input-container__default-settings-text">Default: 120px</span>
             </div>
