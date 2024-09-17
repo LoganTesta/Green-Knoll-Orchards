@@ -157,7 +157,7 @@ function gt_generate_settings_page() {
             </div>
             <div class="admin-input-container">
                 <label class="admin-input-container__label" for="general-testimonials-border-radius">Image Border Radius</label>
-                <input id="generalTestimonialsImageWidthHeight" class="admin-input-container__input medium-width-input general-testimonials-border-radius" name="general-testimonials-border-radius" type="text" value="<?php echo get_option( 'general-testimonials-border-radius' ); ?>" />
+                <input id="generalTestimonialsImageWidthHeight" class="admin-input-container__input medium-width-input general-testimonials-border-radius" name="general-testimonials-border-radius" type="number" value="<?php echo get_option( 'general-testimonials-border-radius' ); ?>" />
                 <span class="admin-input-container__trailing-text">px</span>
                 <span class="admin-input-container__default-settings-text">Default: 15px</span>
             </div>
