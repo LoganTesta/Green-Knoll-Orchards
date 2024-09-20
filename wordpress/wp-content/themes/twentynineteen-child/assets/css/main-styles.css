@@ -141,6 +141,12 @@ a:hover, a:active { color: var(--color-1-semi-opaque); }
 a:focus { outline: none; text-decoration: none; }
 #colophon .site-info a:hover { color: var(--color-1); }
 
+.link-more { }
+.more-link,
+.entry .entry-content .more-link { color: var(--color-2); }
+.more-link:hover,
+.entry .entry-content .more-link:hover { color: var(--color-3); }
+
 h1:not(.site-title)::before, 
 h2::before,
 .entry .entry-title::before { content: none; }
