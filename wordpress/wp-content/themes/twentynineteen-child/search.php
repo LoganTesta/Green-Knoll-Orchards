@@ -9,7 +9,7 @@ get_header();
         <div class="content page-content entry-content">
             <div class="content-row">    
                 <div class="col-sma-12 search-results">
-                    <h2 class="">Showing <?php echo $wp_query->found_posts; ?> result<?php if ( $wp_query->found_posts !== 1 ) { echo "s"; } ?> for 
+                    <h2 class="search-results__header">Showing <?php echo $wp_query->found_posts; ?> result<?php if ( $wp_query->found_posts !== 1 ) { echo "s"; } ?> for 
                         <span class="search-query-text">&ldquo;<?php the_search_query(); ?>&rdquo;</span></h2>                              
                     <div class="search-results" id="searchResults">
                         <?php 

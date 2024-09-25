@@ -344,6 +344,8 @@ input[type="submit"]:focus { background: var(--color-3); }
 
 
 /*Search page*/
+.search-results__header { margin-bottom: 60px; }
+
 .search-results .search-item { padding-bottom: 40px; }
 .search-results .search-item__image-container { display: block; float: left; width: 32%; height: 180px; padding-left: 0; padding-bottom: 0; max-width: 300px; }
 .search-results .search-item__image-link { display: block; overflow: hidden; }
