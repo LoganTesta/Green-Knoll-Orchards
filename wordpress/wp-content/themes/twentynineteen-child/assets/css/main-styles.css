@@ -355,6 +355,9 @@ input[type="submit"]:focus { background: var(--color-3); }
 .search-results .search-item.has-image .search-item__content-wrapper { width: 68%; padding-left: 15px; }
 .search-results .more-link { font-weight: bold; }
 
+.search-item__title__link { color: var(--color-2); }
+.search-item__date { font-weight: bold; color: var(--color-1); }
+
 
 /*Plugins*/
 /*Website Products plugin customization.*/
