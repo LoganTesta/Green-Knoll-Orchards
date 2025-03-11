@@ -138,7 +138,8 @@ h3 { font-size: 1.125em; color: var(--color-2); }
 a { color: var(--color-1); }
 a:visited { color: var(--color-2); }
 a:hover, a:active { color: var(--color-1-semi-opaque); }
-a:focus { outline: none; text-decoration: none; }
+a:focus { text-decoration: none; }
+a:focus-visible { outline: 3px dotted var(--color-1); }
 #colophon .site-info a:hover { color: var(--color-1); }
 
 .link-more { }
@@ -242,6 +243,7 @@ input[type="submit"]:focus { background: var(--color-3); }
 .site-header .site-logo .custom-logo-link:hover, 
 .site-header .site-logo .custom-logo-link:active, 
 .site-header .site-logo .custom-logo-link:focus { box-shadow: 0 0 0 6px rgba(87, 140, 61, 1); background: rgba(255, 255, 255, 0.5); }
+.site-header .site-logo .custom-logo-link:focus-visible { outline: 8px solid var(--color-2); box-shadow: 0 0 0 4px rgba(87, 140, 61, 1); }
 
 
 /*Nav*/
@@ -308,6 +310,7 @@ input[type="submit"]:focus { background: var(--color-3); }
 .site-footer__section:last-of-type { padding-bottom: 0; }
 
 .site-footer__links { text-align: center; }
+.site-footer__social-link { display: block; }
 .footer-navigation { display: block; padding-top: 4px; }
 .footer-navigation .footer-menu li { display: block; padding-bottom: 8px; margin-right: 0; text-align: center; }
 
