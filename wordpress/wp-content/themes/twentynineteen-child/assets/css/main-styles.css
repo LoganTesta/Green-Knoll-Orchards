@@ -197,12 +197,16 @@ input[type="time"]:focus,
 input[type="datetime"]:focus, 
 input[type="datetime-local"]:focus, 
 input[type="color"]:focus, 
-textarea:focus { border-color: var(--color-2); outline: 0; box-shadow: 0 0 3px 3px var(--color-1-semi-opaque); }
+textarea:focus { border-color: var(--color-2); outline: 3px dotted var(--color-1); box-shadow: 0 0 3px 3px var(--color-1-semi-opaque); }
 .button:focus, 
 button:focus, 
 input[type="button"]:focus, 
 input[type="reset"]:focus, 
 input[type="submit"]:focus { background: var(--color-3); }
+button:focus-visible, 
+[type="button"]:focus-visible, 
+[type="reset"]:focus-visible, 
+[type="submit"]:focus-visible { outline: 3px dotted var(--color-1); }
 .fa-2x { font-size: 1.6em; }
 
 
@@ -281,6 +285,7 @@ input[type="submit"]:focus { background: var(--color-3); }
 .search-form .search-form__input:focus { border: 1px solid rgba(46, 89, 101, 0.25); box-shadow: 0 0 3px 4px rgba(255, 255, 255, 0.95); background-color: rgba(255, 255, 255, 0.65); }
 .search-form .search-form__button { display: block; padding-top: 23px; padding-bottom: 23px; margin-left: 5px; line-height: 0; background: rgba(87, 140, 61, 0.8); }
 .search-form .search-form__button:hover { background: rgba(153, 160, 70, 0.8); }
+.search-form .search-form__button:focus-visible { outline: 3px dotted #ffffff; }
 .search-form__search { position: relative; top: 8px; margin-left: 15px; }
 .search-form__search-icon { display: block; width: 20px; height: 30px; padding: 0; background: url('../images/search-icon.png') 50% 50%/cover no-repeat; cursor: pointer; }
 #searchForm.show .search-form__search-icon { display: none; }
