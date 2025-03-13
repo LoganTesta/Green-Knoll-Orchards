@@ -435,10 +435,14 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
 
 .metaslider.ml-slider .flexslider .flex-direction-nav li a { opacity: 0; width: 30px; height: 30px; border-radius: 40px; text-indent: 0; font-size: 0; line-height: 16px; 
                                                              text-align: center; text-shadow: none; background-image: none !important; transition: 0.4s ease-in; }
-.metaslider.ml-slider .flexslider:hover .flex-direction-nav li a { opacity: 1; border: 2px solid rgba(255, 255, 255, 0.9); font-size: 36px;                                                                   
-                                                                   background-color: rgba(46, 89, 101, 0.8) !important; color: rgba(255, 255, 255, 0.8); transition: 0.4s ease-in; }
+.metaslider.ml-slider .flexslider:hover .flex-direction-nav li a,
+.metaslider.ml-slider .flexslider .flex-direction-nav li a:focus-visible { opacity: 1; border: 2px solid rgba(255, 255, 255, 0.9); font-size: 36px;                                                                   
+                                                                          background-color: rgba(46, 89, 101, 0.8) !important; color: rgba(255, 255, 255, 0.8); 
+                                                                          stransition: 0.4s ease-in; }
 
-.metaslider.ml-slider .flexslider .flex-direction-nav li a:hover { background-color: rgba(46, 89, 101, 0.4) !important; transition: 0.4s ease-in; }
+.metaslider.ml-slider .flexslider .flex-direction-nav li a:hover,
+.metaslider.ml-slider .flexslider .flex-direction-nav li a:focus-visible { background-color: rgba(46, 89, 101, 0.4) !important; transition: 0.4s ease-in; }
+.metaslider.ml-slider .flexslider .flex-direction-nav li a:focus-visible { outline: 3px dotted #ffffff; }
 
 .metaslider-flex.ms-theme-default .flex-prev:focus
 .metaslider-flex.ms-theme-default .flex-next:focus { background-image: none !important; background-color: rgba(46, 89, 101, 0.4) !important;}
@@ -450,6 +454,7 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
 .metaslider .flexslider .flex-control-nav li a { margin-left: 10px; margin-right: 10px; }
 .metaslider .flex-control-paging li a:hover { background: rgba(87, 140, 61, 0.7); }
 .metaslider .flex-control-paging li a.flex-active { background: rgba(87, 140, 61, 0.9); }
+.metaslider .flex-control-paging li a:focus-visible { outline: 3px dotted var(--color-2); }
 
 .metaslider .flexslider .caption { padding: 4px 5px; line-height: 1.4; font-size: 0.8em; }
 
