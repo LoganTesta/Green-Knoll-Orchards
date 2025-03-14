@@ -378,6 +378,7 @@ button:focus-visible,
 .product__title { }
 .website-products.products-container .product__title-link { display: inline-block; position: absolute; top: 15px; right: 20px; padding: 6px 8px; border: 2px solid var(--color-2); border-radius: 4px; font-size: 1em; font-weight: 700; background-color: rgba(255, 255, 255, 0.9); color: var(--color-2); transition: all 110ms ease-in-out; }
 .website-products.products-container .product__title-link:hover { background-color: rgba(255, 255, 255, 0.62); color: var(--color-2); text-decoration: underline; transition: all 110ms ease-in-out; }
+.website-products.products-container .product__title-link:focus-visible { outline: 3px dotted #ffffff; }
 
 .product__background { }
 .product__background-link { transition: all 110ms ease-in-out; }
