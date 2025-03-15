@@ -202,11 +202,11 @@ textarea:focus { border-color: var(--color-2); outline: 3px dotted var(--color-1
 button:focus, 
 input[type="button"]:focus, 
 input[type="reset"]:focus, 
-input[type="submit"]:focus { background: var(--color-3); }
+input[type="submit"]:focus { background: var(--color-3); outline-offset: 0; }
 button:focus-visible, 
-[type="button"]:focus-visible, 
-[type="reset"]:focus-visible, 
-[type="submit"]:focus-visible { outline: 3px dotted var(--color-1); }
+input[type="button"]:focus-visible, 
+input[type="reset"]:focus-visible, 
+input[type="submit"]:focus-visible { outline: 3px dotted var(--color-1); }
 .fa-2x { font-size: 1.6em; }
 
 
@@ -487,10 +487,12 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
 .wpcf7-textarea { height: 250px; }
 .wpcf7 form.invalid .wpcf7-response-output, 
 .wpcf7 form.unaccepted .wpcf7-response-output { border-color: var(--color-3); }
+.wp-block-contact-form-7-contact-form-selector #altEmail_container { display: none !important; }
 
 
 /*Ventus*/
 #colophon .widget-column #weather-map-2.widget { margin-left: auto; margin-right: auto; }
+.weather-map-widget iframe:focus-visible { outline: 3px dotted var(--color-2); }
 .widget-title { text-align: center; }
  
 
