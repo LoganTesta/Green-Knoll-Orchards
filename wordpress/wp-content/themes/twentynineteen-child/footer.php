@@ -44,10 +44,10 @@
                         <?php endif; ?> 
                         <div class="site-footer__location site-footer__section <?php if ( has_nav_menu( 'footer' ) ) { echo "col-sma-6 col-lar-3"; } else { echo "col-sma-6 col-lar-4"; } ?>">
                             <div class="site-footer__subheading">Location</div>
-                            <div class="site-footer__location-text">
+                            <address class="site-footer__location-text">
                                 <div>842 Pine Highway</div>
                                 <div>Amity, Oregon 97101</div>
-                            </div>
+                            </address>
                         </div>
                         <div class="site-footer__social site-footer__section <?php if ( has_nav_menu( 'footer' ) ) { echo "col-sma-6 col-lar-3"; } else { echo "col-sma-6 col-lar-4"; } ?>">
                             <div class="site-footer__subheading">Social</div>

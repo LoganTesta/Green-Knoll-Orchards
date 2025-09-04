@@ -134,6 +134,7 @@ h1, h2, h3, h4, h5, h6 { clear: none; margin-top: 0; margin-bottom: 16px; }
 .has-larger-font-size { font-size: 1.375em; }
 h2 { font-size: 1.25em; color: var(--color-3); }
 h3 { font-size: 1.125em; color: var(--color-2); }
+address { font-style: normal; }
 
 a { color: var(--color-1); }
 a:visited { color: var(--color-2); }
