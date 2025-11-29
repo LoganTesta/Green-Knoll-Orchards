@@ -90,7 +90,7 @@ columns display at their designated widths at all device sizes, small (sma) abov
 }
 
 /* General Resuable Classes */
-.sr-only { display: block; width: 0; height: 0; opacity: 0; }
+.hidden-sr-only { display: block; clip-path: polygon(0 0, 0 0, 0 0, 0 0); overflow: hidden; width: 1px; height: 1px; padding: 0; margin: 0; border: 0; }
 .width-100-percent { width: 100%; }
 .clear-both { clear: both; }
 
