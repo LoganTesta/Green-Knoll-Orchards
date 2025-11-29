@@ -4,8 +4,8 @@
 
 <form role="search" class="search-form" id="searchForm" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
     <div class="input-container search-controls">
-        <label class="search-form__label" for="s"></label>
-        <input type="search" class="search-form__input" name="s" placeholder="Search here..." value="<?php echo esc_attr( get_search_query() ); ?>">
+        <label class="search-form__input-label" for="s">Search Label</label>
+        <input type="search" class="search-form__input" id="s" name="s" title="Search here" placeholder="Search here..." value="<?php echo esc_attr( get_search_query() ); ?>">
     </div> 
     <div class="input-container search-controls">
         <button type="submit" class="search-form__button">Search</button>

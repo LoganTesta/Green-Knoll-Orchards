@@ -281,7 +281,7 @@ input[type="submit"]:focus-visible { outline: 3px dotted var(--color-1); }
 #searchForm .search-controls { display: none; }
 #searchForm.show .search-controls { display: inline-block; }
 .search-form { position: absolute; top: 240px; right: 20px; }
-.search-form .search-form__label { display: block; font-size: 24px; font-weight: bold; color: #ffffff; }
+.search-form .search-form__input-label { display: none; font-size: 24px; font-weight: bold; color: #ffffff; }
 .search-form .search-form__input { width: 115px; padding: 8px; line-height: 0; background-color: rgba(255, 255, 255, 0.8); }
 .search-form .search-form__input:focus { border: 1px solid rgba(46, 89, 101, 0.25); box-shadow: 0 0 3px 4px rgba(255, 255, 255, 0.95); background-color: rgba(255, 255, 255, 0.65); }
 .search-form .search-form__button { display: block; padding-top: 23px; padding-bottom: 23px; margin-left: 5px; line-height: 0; background: rgba(87, 140, 61, 0.8); }
