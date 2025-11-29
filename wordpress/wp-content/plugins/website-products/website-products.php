@@ -346,7 +346,7 @@ function pw_load_products_index( $postQuery ) {
             $pluginContainer .= '<div class="product__title"><a class="product__title-link" href="' . get_option( 'website-products-products-page' ) . '">' . $post->post_title . '</a></div>';
             if ( ! empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
-                    . '<a class="product__background-link" href="' . get_option( 'website-products-products-page' ) . '"><span class="sr-only">' . $post->post_title . ' Link</span></a>'
+                    . '<a class="product__background-link" href="' . get_option( 'website-products-products-page' ) . '"><span class="hidden-sr-only">' . $post->post_title . ' Link</span></a>'
                     . '</div>';
             }
             if ( ! empty( $post->post_content ) ) {
@@ -403,7 +403,7 @@ function pw_load_products( $postQuery ) {
             $pluginContainer .= '<div class="product__title"><a class="product__title-link" href="' . get_permalink( $post->ID ) . '">' . $post->post_title . '</a></div>';            
             if ( ! empty( $url_thumb ) ) {
                 $pluginContainer .= '<div class="product__background" style="background: url(' . $url_thumb . ') 0% 0%/cover no-repeat">'
-                        . '<a class="product__background-link" href="' . get_permalink( $post->ID ) . '"><span class="sr-only">' . $post->post_title . ' Link</span></a>'
+                        . '<a class="product__background-link" href="' . get_permalink( $post->ID ) . '"><span class="hidden-sr-only">' . $post->post_title . ' Link</span></a>'
                         . '</div>';
             }
             if ( ! empty( $price ) ) {
