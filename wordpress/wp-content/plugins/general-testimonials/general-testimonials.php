@@ -706,7 +706,7 @@ function gt_load_testimonials( $postQuery ) {
                 }
                 if ( ! empty( $providedName ) ) {
                     if ( ! empty( $link ) ) {
-                        $pluginContainer .= '<span class="testimonial__provided-name"><a class="testimonial__link" href="' . $link . '" target="__blank">' . $providedName . '</a></span>';
+                        $pluginContainer .= '<span class="testimonial__provided-name"><a class="testimonial__link" href="' . $link . '" target="_blank">' . $providedName . '</a></span>';
                     } else {
                         $pluginContainer .= '<span class="testimonial__provided-name">' . $providedName . '</span>';
                     }
