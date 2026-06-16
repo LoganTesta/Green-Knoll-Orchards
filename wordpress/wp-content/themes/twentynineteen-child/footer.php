@@ -45,7 +45,7 @@
                         <div class="site-footer__location site-footer__section <?php if ( has_nav_menu( 'footer' ) ) { echo "col-sma-6 col-lar-3"; } else { echo "col-sma-6 col-lar-4"; } ?>">
                             <div class="site-footer__subheading">Location</div>
                             <address class="site-footer__location-text">
-                                <div>842 Pine Highway</div>
+                                <div>111 A Generic Road</div>
                                 <div>Amity, Oregon 97101</div>
                             </address>
                         </div>
@@ -67,7 +67,7 @@
                             <div class="site-footer__subheading">Hours</div>
                             <div class="">Tuesday - Friday: 10am - 5pm</div>
                             <div class="">Saturday: 9am - 6pm</div>
-                            <div class="site-footer__phone">503-712-0440</div>
+                            <div class="site-footer__phone">503-000-1000</div>
                         </div>
                     </div>
                     <?php
