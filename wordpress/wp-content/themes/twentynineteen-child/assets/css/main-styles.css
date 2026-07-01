@@ -107,20 +107,20 @@ columns display at their designated widths at all device sizes, small (sma) abov
 /***############### Beginning of Website-specific style sheet. ****/
 /*Site color scheme.  Adjacent color scheme, with 45 degrees variation.  */
 /*
-Color 1: #578c3d    tree green     (87, 140, 61)
-Color 2: #2e5965    dark blue      (46, 89, 101)
-Color 3: #99a046    olive green    (153, 160, 70)
+Color 1: #366b1d    tree green     (54, 107, 29)
+Color 2: #17414d    dark blue      (23, 65, 77)
+Color 3: #737a21   olive green     (115, 122, 33)
 
 */
 
 :root {
-    --color-1: #578c3d;
-    --color-2: #2e5965;
-    --color-3: #99a046;
+    --color-1: #366b1d;
+    --color-2: #17414d;
+    --color-3: #737a21;
     --color-1-semi-opaque: rgba(87, 140, 61, 0.6);
-    --color-2-low-moderately-opaque: rgba(46, 89, 101, 0.3);
-    --color-2-more-opaque: rgba(46, 89, 101, 0.62);
-    --color-2-mostly-opaque: rgba(46, 89, 101, 0.85);
+    --color-2-low-moderately-opaque: rgba(23, 65, 77, 0.3);
+    --color-2-more-opaque: rgba(23, 65, 77, 0.62);
+    --color-2-mostly-opaque: rgba(23, 65, 77, 0.85);
 }
 
 
@@ -237,18 +237,18 @@ input[type="submit"]:focus-visible { outline: 3px dotted var(--color-1); }
 .site-header .site-branding-container .site-title a:hover { opacity: 0.8; }
 .site-header.featured-image .main-navigation a:focus { color: var(--color-1); }
 .site-header.featured-image .main-navigation .sub-menu a:focus { color: #ffffff; }
-.site-branding { padding: 15px; border-radius: 4px; box-shadow: 0 0 0 6px rgba(87, 140, 61, 0.9); background-color: rgba(255, 255, 255, 0.8); }
+.site-branding { padding: 15px; border-radius: 4px; box-shadow: 0 0 0 6px rgba(54, 107, 29, 0.9); background-color: rgba(255, 255, 255, 0.8); }
 .entry .entry-title { color: #ffffff; text-shadow: 1.2px 2.4px var(--color-2); }
 .site-header .site-branding-container .site-branding .site-description { font-size: 1.125em; font-weight: bold; color: #333333; text-shadow: 0.7px 1.4px #ffffff; }
 
 
 /*Logo*/
 .site-logo { float: left; padding-right: 15px; }
-.site-header .site-logo .custom-logo-link { box-shadow: 0 0 0 6px rgba(87, 140, 61, 1); background: rgba(255, 255, 255, 0.8); }
+.site-header .site-logo .custom-logo-link { box-shadow: 0 0 0 6px rgba(54, 107, 29, 1); background: rgba(255, 255, 255, 0.8); }
 .site-header .site-logo .custom-logo-link:hover, 
 .site-header .site-logo .custom-logo-link:active, 
-.site-header .site-logo .custom-logo-link:focus { box-shadow: 0 0 0 6px rgba(87, 140, 61, 1); background: rgba(255, 255, 255, 0.5); }
-.site-header .site-logo .custom-logo-link:focus-visible { outline: 8px solid var(--color-2); box-shadow: 0 0 0 4px rgba(87, 140, 61, 1); }
+.site-header .site-logo .custom-logo-link:focus { box-shadow: 0 0 0 6px rgba(54, 107, 29, 1); background: rgba(255, 255, 255, 0.5); }
+.site-header .site-logo .custom-logo-link:focus-visible { outline: 8px solid var(--color-2); box-shadow: 0 0 0 4px rgba(54, 107, 29, 1); }
 
 
 /*Nav*/
@@ -267,8 +267,8 @@ input[type="submit"]:focus-visible { outline: 3px dotted var(--color-1); }
 .main-navigation .sub-menu > li > .menu-item-link-return:hover { background-color: var(--color-3); }
 .main-navigation .sub-menu > li > a:focus,
 .main-navigation .sub-menu > li > .menu-item-link-return:focus { background-color: var(--color-1); }
-.current_page_item a { border-bottom: 3px solid rgba(87, 140, 61, 1); }
-.current_page_item a:hover { border-bottom: 3px solid rgba(87, 140, 61, 0.8); }
+.current_page_item a { border-bottom: 3px solid rgba(54, 107, 29, 1); }
+.current_page_item a:hover { border-bottom: 3px solid rgba(54, 107, 29, 0.8); }
 .main-navigation .sub-menu li:hover { background-color: var(--color-3); }
 .main-navigation .sub-menu li:hover a { background-color: var(--color-3); }
 .main-navigation .sub-menu > li > a, 
@@ -283,8 +283,8 @@ input[type="submit"]:focus-visible { outline: 3px dotted var(--color-1); }
 .search-form { position: absolute; top: 240px; right: 20px; }
 .search-form .search-form__input-label { display: none; font-size: 24px; font-weight: bold; color: #ffffff; }
 .search-form .search-form__input { width: 115px; padding: 8px; line-height: 0; background-color: rgba(255, 255, 255, 0.8); }
-.search-form .search-form__input:focus { border: 1px solid rgba(46, 89, 101, 0.25); box-shadow: 0 0 3px 4px rgba(255, 255, 255, 0.95); background-color: rgba(255, 255, 255, 0.65); }
-.search-form .search-form__button { display: block; padding-top: 23px; padding-bottom: 23px; margin-left: 5px; line-height: 0; background: rgba(87, 140, 61, 0.8); }
+.search-form .search-form__input:focus { border: 1px solid rgba(23, 65, 77, 0.25); box-shadow: 0 0 3px 4px rgba(255, 255, 255, 0.95); background-color: rgba(255, 255, 255, 0.65); }
+.search-form .search-form__button { display: block; padding-top: 23px; padding-bottom: 23px; margin-left: 5px; line-height: 0; background: rgba(54, 107, 29, 0.8); }
 .search-form .search-form__button:hover { background: rgba(153, 160, 70, 0.8); }
 .search-form .search-form__button:focus-visible { outline: 3px dotted #ffffff; }
 .search-form__search { position: relative; top: 8px; margin-left: 15px; }
@@ -439,23 +439,23 @@ div.metaslider .slides img { width: 100%; height: 100%; object-fit: cover; }
                                                              text-align: center; text-shadow: none; background-image: none !important; transition: 0.4s ease-in; }
 .metaslider.ml-slider .flexslider:hover .flex-direction-nav li a,
 .metaslider.ml-slider .flexslider .flex-direction-nav li a:focus-visible { opacity: 1; border: 2px solid rgba(255, 255, 255, 0.9); font-size: 36px;                                                                   
-                                                                          background-color: rgba(46, 89, 101, 0.8) !important; color: rgba(255, 255, 255, 0.8); 
+                                                                          background-color: rgba(23, 65, 77, 0.8) !important; color: rgba(255, 255, 255, 0.8); 
                                                                           transition: 0.4s ease-in; }
 
 .metaslider.ml-slider .flexslider .flex-direction-nav li a:hover,
-.metaslider.ml-slider .flexslider .flex-direction-nav li a:focus-visible { background-color: rgba(46, 89, 101, 0.4) !important; transition: 0.4s ease-in; }
+.metaslider.ml-slider .flexslider .flex-direction-nav li a:focus-visible { background-color: rgba(23, 65, 77, 0.4) !important; transition: 0.4s ease-in; }
 .metaslider.ml-slider .flexslider .flex-direction-nav li a:focus-visible { outline: 3px dotted #ffffff; }
 
 .metaslider-flex.ms-theme-default .flex-prev:focus
-.metaslider-flex.ms-theme-default .flex-next:focus { background-image: none !important; background-color: rgba(46, 89, 101, 0.4) !important; }
+.metaslider-flex.ms-theme-default .flex-next:focus { background-image: none !important; background-color: rgba(23, 65, 77, 0.4) !important; }
 .metaslider .metaslider-flex.ms-theme-default .flexslider .flex-prev:focus,
 .metaslider .metaslider-flex.ms-theme-default .flexslider .flex-next:focus { background: none !important; height: 30px !important; }
 
 .metaslider .flexslider .flex-control-nav { bottom: -40px; }
-.metaslider .flex-control-paging li a { width: 12px; height: 12px; background: rgba(87, 140, 61, 0.5); }
+.metaslider .flex-control-paging li a { width: 12px; height: 12px; background: rgba(54, 107, 29, 0.5); }
 .metaslider .flexslider .flex-control-nav li a { margin-left: 10px; margin-right: 10px; }
-.metaslider .flex-control-paging li a:hover { background: rgba(87, 140, 61, 0.7); }
-.metaslider .flex-control-paging li a.flex-active { background: rgba(87, 140, 61, 0.9); }
+.metaslider .flex-control-paging li a:hover { background: rgba(54, 107, 29, 0.7); }
+.metaslider .flex-control-paging li a.flex-active { background: rgba(54, 107, 29, 0.9); }
 .metaslider .flex-control-paging li a:focus-visible { outline: 3px dotted var(--color-2); }
 
 .metaslider .flexslider .caption { padding: 4px 5px; line-height: 1.4; font-size: 0.8em; }
