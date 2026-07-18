@@ -346,7 +346,7 @@ function gt_save_custom_testimonialprovidedname( $post_id ) {
         }
     }
 }
-add_action( 'save_post', 'gt_save_custom_testimonialprovidedname' );
+add_action( 'save_post_general-testimonials', 'gt_save_custom_testimonialprovidedname' );
 
 function gt_get_testimonialprovidedname( $post ) {
     $testimonialname = get_post_meta( $post->ID, 'testimonialprovidedname', true );
@@ -366,7 +366,7 @@ function gt_save_custom_testimoniallabel( $post_id ) {
         }
     }
 }
-add_action( 'save_post', 'gt_save_custom_testimoniallabel' );
+add_action( 'save_post_general-testimonials', 'gt_save_custom_testimoniallabel' );
 
 function gt_get_testimoniallabel( $post ) {
     $testimoniallabel = get_post_meta( $post->ID, 'testimoniallabel', true );
@@ -386,7 +386,7 @@ function gt_save_custom_testimoniallocation( $post_id ) {
         }
     }
 }
-add_action( 'save_post', 'gt_save_custom_testimoniallocation' );
+add_action( 'save_post_general-testimonials', 'gt_save_custom_testimoniallocation' );
 
 function gt_get_testimoniallocation( $post ) {
     $testimoniallocation = get_post_meta( $post->ID, 'testimoniallocation', true );
@@ -406,7 +406,7 @@ function gt_save_custom_url( $post_id ) {
         }
     }
 }
-add_action( 'save_post', 'gt_save_custom_url' );
+add_action( 'save_post_general-testimonials', 'gt_save_custom_url' );
 
 function gt_get_url( $post ) {
     $testimonialurl = get_post_meta( $post->ID, 'testimonialurl', true );
@@ -426,7 +426,7 @@ function gt_save_testimonialdate( $post_id ) {
         }
     }
 }
-add_action( 'save_post', 'gt_save_testimonialdate' );
+add_action( 'save_post_general-testimonials', 'gt_save_testimonialdate' );
 
 function gt_get_testimonialdate( $post ) {
     $testimonialdate = get_post_meta( $post->ID, 'testimonialdate', true );
@@ -446,7 +446,7 @@ function gt_save_testimonialrating( $post_id ) {
         }
     }
 }
-add_action( 'save_post', 'gt_save_testimonialrating' );
+add_action( 'save_post_general-testimonials', 'gt_save_testimonialrating' );
 
 function gt_get_testimonialrating( $post ) {
     $testimonialrating = get_post_meta( $post->ID, 'testimonialrating', true );
@@ -466,7 +466,7 @@ function gt_save_custom_order( $post_id ) {
         }
     }
 }
-add_action( 'save_post', 'gt_save_custom_order' );
+add_action( 'save_post_general-testimonials', 'gt_save_custom_order' );
 
 function gt_get_order( $post ) {
     $testimonialorder = get_post_meta( $post->ID, 'testimonialorder', true );
