@@ -9,7 +9,7 @@ get_header();
         <div class="website-products-product__inner-wrapper">
             <div class="website-products-breadcrumbs">
                 <div class="website-products-breadcrumbs__breadcrumb">
-                    <a class="website-products-breadcrumbs__breadcrumb-link" href="<?php echo get_option( "website-products-products-page" ); ?>">Back to <?php echo get_option( "website-products-leading-text" ); ?></a>
+                    <a class="website-products-breadcrumbs__breadcrumb-link" href="<?php echo get_home_url() . "/" . get_option( "website-products-products-page" ); ?>">Back to <?php echo get_option( "website-products-leading-text" ); ?></a>
                 </div>
             </div>
             <img class="website-products-product__image" src="<?php echo wp_get_attachment_image_url( get_post_thumbnail_id( get_the_ID() ), "full" ); ?>" 
