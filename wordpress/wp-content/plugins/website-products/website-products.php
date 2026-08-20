@@ -201,8 +201,9 @@ function pw_url_custom_metabox() {
 function pw_save_custom_productprice( $post_id ) {
     global $post;
     
-    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
     if ( isset( $_POST['productprice'] ) ) {
+        $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+        
         if ( $nonceToVerify ) {
             update_post_meta( $post->ID, 'productprice', $_POST['productprice'] );
         } else {
@@ -221,8 +222,9 @@ function pw_get_productprice( $post ) {
 function pw_save_custom_productlabel( $post_id ) {
     global $post;
     
-    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
     if ( isset( $_POST['productlabel'] ) ) {
+        $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+        
         if ( $nonceToVerify ) {
             update_post_meta( $post->ID, 'productlabel', $_POST['productlabel'] );
         } else {
@@ -241,8 +243,9 @@ function pw_get_productlabel( $post ) {
 function pw_save_custom_order( $post_id ) {
     global $post;
     
-    $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
     if ( isset( $_POST['productorder'] ) ) {
+        $nonceToVerify = check_admin_referer( 'settings_group_nonce_save', 'settings_group_nonce' );
+        
         if ( $nonceToVerify ) {
             update_post_meta( $post->ID, 'productorder', $_POST['productorder'] );
         } else {
